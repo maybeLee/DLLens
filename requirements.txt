@@ -1,0 +1,17 @@
+openai==0.27.2
+tensorflow==2.10.0
+torch==2.1.0
+coverage==7.2
+# redis==3.3.2
+tree-sitter==0.20.1
+graphviz
+lark-parser
+z3-solver
+scipy
+networkx
+psutil
+numpy==1.26.2
+matplotlib
+matplotlib_venn
+pyyaml
+notebook

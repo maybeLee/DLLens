@@ -1,0 +1,24 @@
+Link,Status,Bug Count
+https://github.com/pytorch/pytorch/issues/115415,Fixed,1
+https://github.com/pytorch/pytorch/issues/122042,Fixed,1
+https://github.com/pytorch/pytorch/issues/108664,Fixed,1
+https://github.com/pytorch/pytorch/issues/121789,Previously Unknown,1
+https://github.com/pytorch/pytorch/issues/135359,Previously Unknown,1
+https://github.com/pytorch/pytorch/issues/138192,Previously Unknown,1
+https://github.com/pytorch/pytorch/issues/138385,Previously Unknown,1
+https://github.com/pytorch/pytorch/issues/138464,Previously Unknown,1
+https://github.com/pytorch/pytorch/issues/138570,Previously Unknown,1
+https://github.com/pytorch/pytorch/issues/115416,Previously Unknown,1
+https://github.com/pytorch/pytorch/issues/120597,Previously Unknown,1
+https://github.com/pytorch/pytorch/issues/121343,Previously Unknown,1
+https://github.com/pytorch/pytorch/issues/124644,Previously Unknown,1
+https://github.com/pytorch/pytorch/issues/127804,Previously Unknown,1
+https://github.com/pytorch/pytorch/issues/138425,Previously Unknown,1
+https://github.com/pytorch/pytorch/issues/115068,Known,1
+https://github.com/pytorch/pytorch/issues/115239,Known,1
+https://colab.research.google.com/drive/1GdOrWp9SDyFv47tC1d9ld-pqHmI6ynXf?usp=sharing,Known,1
+https://github.com/pytorch/pytorch/issues/122117,Known,1
+https://colab.research.google.com/drive/1yj7BpWHSW1_emztTAdikgRf6CTJt7uzr?usp=sharing,Known,1
+https://github.com/pytorch/pytorch/issues/78484#issuecomment-2419180957,Known,1
+https://github.com/pytorch/pytorch/issues/41245#issuecomment-2423763632,Known,1
+Total Bug,,22

@@ -1,0 +1,37 @@
+Link,Status,Bug Count
+https://github.com/tensorflow/tensorflow/issues/59576,Fixed,1
+https://github.com/tensorflow/tensorflow/issues/60526,Fixed,1
+https://github.com/tensorflow/tensorflow/issues/61158,Fixed,1
+https://github.com/tensorflow/tensorflow/issues/61246,Fixed,1
+https://github.com/tensorflow/tensorflow/issues/62072,Fixed,2
+https://github.com/tensorflow/tensorflow/issues/63052,Fixed,1
+https://github.com/tensorflow/tensorflow/issues/61249,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/61826,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/61916,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/62393,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/63643,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/63823,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/63852,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/64081,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/74893,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/77863,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/77864,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/78298,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/62603,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/63685,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/63575,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/74932,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/75400,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/62504,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/62114,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/61827,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/61907,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/61907#issuecomment-1725016921,Previously Unknown,1
+https://github.com/tensorflow/tensorflow/issues/64256,Previously Unknown,2
+https://colab.research.google.com/drive/1-IIdPFCd5gBME71XPiME_2BdDuGV1KEm?usp=sharing,Known Bug,1
+https://colab.research.google.com/drive/1WyY6hsNHdPjw6s15mpylNmTdtvOGVIj7?usp=sharing,Known Bug,1
+https://github.com/tensorflow/tensorflow/issues/62969,Already Fixed,1
+https://colab.research.google.com/drive/1egmhkg7NN8GEfy0rqEwmQWtzdH-1NMaY?usp=sharing,Known Bug,1
+https://colab.research.google.com/drive/1h0YY9nnPMQ0ak1tew5g8nUSWq1rF2Sp-?usp=sharing,Known Bug,1
+https://github.com/tensorflow/tensorflow/issues/61800#issuecomment-1997696389,Known Bug,1
+Total Bug,,37

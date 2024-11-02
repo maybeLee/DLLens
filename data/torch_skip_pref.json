@@ -1,0 +1,12 @@
+[
+  "torch.ao",
+  "torch.autograd",
+  "torch.cuda",
+  "torch.jit",
+  "torch.optim",
+  "torch.distributed",
+  "torch.future",
+  "torch.fx",
+  "torch.hub",
+  "torch.utils"
+]
