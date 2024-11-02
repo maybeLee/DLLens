@@ -6,7 +6,7 @@ This is the artifact of our submission, "Enhancing Differential Testing With LLM
 
 ```
 ./
-├── codes  --  partial implementation of our tool
+├── codes  --  code of our tool
 ├── data  --  Associated experiment data
 ├── figures  -- Associated figures
 ├── pytorch_confirmed_bugs.csv  -- confirmed 22 pytorch bugs
