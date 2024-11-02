@@ -54,9 +54,9 @@ You can reproduce the Table 6, 7 and Figure 5 by running the notebook `RQ2Constr
 
 In RQ3, we compare DLLens with existing approaches on 200 randomly sampled APIs, the signatures of these APIs are stored in `./data/working_dir/rq3/tf_100.txt` and `./data/working_dir/rq3/torch_100.txt`.
 
-We record the branch coverage among these 200 APIs collected by each tool under the directory `./data/working/rq3/coverage`.
+We record the number of branches in these 200 APIs covered by each tool under the directory `./data/working/rq3/coverage`.
 
-We list unique bugs among these 200 APIs detected by each tool under the directory `./data/working/rq3/bugs`. (Note that false positives are manually filtered out)
+Among these 200 APIs, we list unique bugs detected by each tool under the directory `./data/working/rq3/bugs`. (Note that false positives are manually filtered out)
 
 You can reproduce the coverage result by running the notebook `RQ3Coverage.ipynb`.
 
@@ -64,9 +64,9 @@ You can reproduce the coverage result by running the notebook `RQ3Coverage.ipynb
 
 In RQ4, we claimed that DLLens has detected **71** bugs in TensorFlow and PyTorch, with **59** confirmed, including **13** already known bugs and **46** new ones (i.e., bugs confirmed by developers as previously unknown bugs).
 
-We list all confirmed bugs (including known bugs and new bugs) in `./tensorflow_confirmed_bugs.csv` and `./pytorch_confirmed_bugs.csv`
+We list all confirmed bugs (including known bugs and previously unknown (i.e., new) bugs) in `./tensorflow_confirmed_bugs.csv` and `./pytorch_confirmed_bugs.csv`
 
-- **Note that some entries (\ie, rows) of our provided CSV discuss multiple bugs, thus the total number of entries in our CSV file are smaller than the total number of bugs detected.** Please refer to each entry's 'Bug Count' column for the total number of bugs detected.
+- **Note that some entries (i.e., rows) of our provided CSV discuss multiple bugs, thus the total number of entries in our CSV file are smaller than the total number of bugs detected.** Please refer to each entry's '**Bug Count**' column for the total number of bugs detected.
 
 - For each bug detected by DLLens, we first check if it is fixed in the latest/nightly version of DL libraries and if it is reported by other users.
 If a bug is already fixed or already confirmed by developers in issues created by other users, we consider it as a known bug. Otherwise, we will create new issues to report bugs.
@@ -88,7 +88,7 @@ We extracted path constraints using the following command line:
 ```angular2html
 python scripts/extract_constraint.py
 ```
-- We manually craft nine rules to reduce nine tensor operations, which can be found in the line 145-153 of `./codes/constraints/constraint_parser.py`.
+- We manually craft nine rules to reduce nine tensor operations, which can be found in the line 142-150 of `./codes/constraints/constraint_parser.py`.
 - We use the prompt in `codes/prompt_text/condition_solver_template.py` for input constraint inference during the path constraint extraction.
 
 We generate test inputs using the following command line:
