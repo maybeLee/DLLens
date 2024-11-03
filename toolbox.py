@@ -191,6 +191,24 @@ def rq2_analyze_path_constraint(target_dir, name: str):
     
     evaluate(llm_api_num_valid_cons, llm_api_path, llm_conds_per_path)
 
+def load_docter_constraint(lib_name: str):
+    docter_dir = {
+        "tensorflow": Path("data/working_dir/rq2/docter/constraints_extracted/tensorflow"),
+        "pytorch": Path("data/working_dir/rq2/docter/constraints_extracted/pytorch"),
+    }[lib_name]
+    cons_dict = {}
+    for yaml_file in os.listdir(docter_dir):
+        if not yaml_file.endswith(".yaml"):
+            continue
+        yaml_data = load_yaml(docter_dir/yaml_file)
+        api_name = yaml_file.split(".yaml")[0]
+        cons_dict[api_name] = yaml_data
+        if 'aliases' in yaml_data:
+            aliases = yaml_data['aliases']
+            for alias in aliases:
+                cons_dict[alias] = yaml_data
+    return cons_dict
+
 def rq2_evaluate_docter_constraint():
     num_cons_list = []
     dtype_constraint = {}
@@ -206,16 +224,16 @@ def rq2_evaluate_docter_constraint():
             "tensorflow": Path("./data/working_dir/rq2/with-icf/tensorflow"),
             "pytorch": Path("./data/working_dir/rq2/with-icf/pytorch")
         }[lib_name]
+        docter_cons = load_docter_constraint(lib_name)
         api_list = os.listdir(target_dir)
+        lib_cons_list = []
         for api_name in api_list:
-            docter_cons_yaml = docter_dir / f"{api_name}.yaml"
-            if os.path.exists(docter_cons_yaml):
+            if api_name in docter_cons:
                 dtype_constraint[api_name] = 0
                 structure_constraint[api_name] = 0
                 shape_constraint[api_name] = 0
                 value_constraint[api_name] = 0
-                yaml_data = load_yaml(docter_cons_yaml)
-                api_cons = yaml_data['constraints']
+                api_cons = docter_cons[api_name]['constraints']
                 for param in api_cons:
                     if param == "name":
                         continue
@@ -232,8 +250,9 @@ def rq2_evaluate_docter_constraint():
                 num_cons = dtype_constraint[api_name] + shape_constraint[api_name] + value_constraint[api_name] + \
                         structure_constraint[
                             api_name]
-                num_cons_list.append(num_cons)
-        print(f"Overall, DocTer can find constraints for {len(num_cons_list)} {lib_name} APIs")
+                lib_cons_list.append(num_cons)
+        print(f"Overall, DocTer can find constraints for {len(lib_cons_list)} {lib_name} APIs")
+        num_cons_list += lib_cons_list
     return dtype_constraint, shape_constraint, value_constraint, structure_constraint, num_cons_list
 
 def rq2_evaluate_dllens_constraint():
@@ -254,9 +273,9 @@ def rq2_evaluate_dllens_constraint():
         sig_fetcher = {"tensorflow": tf_api_to_signature, 
                     "pytorch": torch_api_to_signature}
         api_list = os.listdir(target_dir)
+        docter_cons = load_docter_constraint(lib_name)
         for api_name in api_list:
-            docter_cons_yaml = docter_dir / f"{api_name}.yaml"
-            if not os.path.exists(docter_cons_yaml):
+            if api_name not in docter_cons:
                 continue
             api_sig = sig_fetcher[lib_name](api_name)
             args_list = get_args_list(api_sig)

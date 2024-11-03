@@ -21,5 +21,6 @@
   - Note that besides excluding APIs based on `*_skip_pref.txt`, 
   - we also exclude APIs that can be called without given input arguments.
   - Finally, 1862 TensorFlow APIs and 1121 PyTorch APIs are included in our experiment.
-- `./working_dir/rq1/counterpart` contains the counterparts synthesized by DLLens in RQ1. 
-- `./working_dir/rq2/constraints` contains the constraints collected by DLLens in RQ2.
+- `./working_dir/rq1/` contains the associated data for RQ1. 
+- `./working_dir/rq2/` contains the associated data for RQ2.
+- `./working_dir/rq3/` contains the associated data for RQ3.
