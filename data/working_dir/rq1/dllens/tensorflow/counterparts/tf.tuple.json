@@ -1,0 +1,31 @@
+{
+  "function_name": "tf.tuple(tensors,control_inputs=None,name=None)",
+  "inputs": [
+    "tensors",
+    "control_inputs"
+  ],
+  "sample_inputs": [
+    "tensors = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\ncontrol_inputs = tf.constant([7, 8])",
+    "tensors = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\ncontrol_inputs = tf.constant([7, 8, 9])",
+    "tensors = [tf.constant(1), tf.constant(2), tf.constant(3)]\ncontrol_inputs = tf.constant(4)",
+    "tensors = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\ncontrol_inputs = tf.constant(np.random.randint(-50, 50, (2)), dtype='int64')",
+    "tensors = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\ncontrol_inputs = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "tensors = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\ncontrol_inputs = tf.constant(np.random.randint(-50, 50, (2,1,1,1,1)), dtype='int32')",
+    "tensors = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\ncontrol_inputs = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int32')",
+    "tensors = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\ncontrol_inputs = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "tensors = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\ncontrol_inputs = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "tensors = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\ncontrol_inputs = tf.constant(np.random.randint(-50, 50, (2,1,1,1)), dtype='int32')",
+    "tensors = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\ncontrol_inputs = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "tensors = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\ncontrol_inputs = tf.constant(np.random.randint(-50, 50, (2,1,1)), dtype='int32')",
+    "tensors = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\ncontrol_inputs = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(tensors,control_inputs=None):\n  return tf.tuple(tensors,control_inputs)",
+    "pytorch": "def pytorch_call(tensors, control_inputs=None):\n    if control_inputs is not None and control_inputs.dim() == 1:\n        return tensors\n    return tensors"
+  },
+  "llm_inputs": [
+    "tensors = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\ncontrol_inputs = tf.constant([7, 8])",
+    "tensors = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\ncontrol_inputs = tf.constant([7, 8, 9])",
+    "tensors = [tf.constant(1), tf.constant(2), tf.constant(3)]\ncontrol_inputs = tf.constant(4)"
+  ]
+}

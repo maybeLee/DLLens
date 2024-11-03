@@ -1,0 +1,26 @@
+{
+  "function_name": "torch.mm(input, mat2, *, out=None)",
+  "inputs": [
+    "input",
+    "mat2"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nmat2 = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nmat2 = torch.tensor([[5, 6], [7, 8]])",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nmat2 = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "mat2 = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "mat2 = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "mat2 = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nmat2 = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nmat2 = torch.tensor(np.random.randn(2,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,mat2):\n  return torch.mm(input,mat2)",
+    "tensorflow": "def tensorflow_call(input, mat2):\n    return tf.linalg.matmul(input, mat2)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nmat2 = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nmat2 = torch.tensor([[5, 6], [7, 8]])",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nmat2 = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)"
+  ]
+}

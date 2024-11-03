@@ -1,0 +1,33 @@
+{
+  "function_name": "torch.Tensor.heaviside(input, values)",
+  "inputs": [
+    "input",
+    "values"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([0.1, -0.2, 0.0, 0.5, -0.5])\nvalues = torch.tensor([1.0])",
+    "input = torch.tensor([0.5, -0.5, 1.0, -1.0, 0.0])\nvalues = torch.tensor([1.0])",
+    "input = torch.tensor([0.1, -0.2, 0.0, 0.5, -0.5])\nvalues = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "values = torch.tensor([1.0])\ninput = torch.tensor(np.random.randn(5,1,1,1), dtype=torch.float32)",
+    "values = torch.tensor([1.0])\ninput = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([0.1, -0.2, 0.0, 0.5, -0.5])\nvalues = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "values = torch.tensor([1.0])\ninput = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "input = torch.tensor([0.1, -0.2, 0.0, 0.5, -0.5])\nvalues = torch.tensor(np.random.randn(1,1), dtype=torch.float32)",
+    "input = torch.tensor([0.1, -0.2, 0.0, 0.5, -0.5])\nvalues = torch.tensor(np.random.randn(1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([0.1, -0.2, 0.0, 0.5, -0.5])\nvalues = torch.tensor(np.random.randn(1,1,1,1,1), dtype=torch.float32)",
+    "values = torch.tensor([1.0])\ninput = torch.tensor(np.random.randn(5,1), dtype=torch.float32)",
+    "values = torch.tensor([1.0])\ninput = torch.tensor(np.random.randn(5,1,1), dtype=torch.float32)",
+    "input = torch.tensor([0.1, -0.2, 0.0, 0.5, -0.5])\nvalues = torch.tensor(np.random.randn(1,1,1,1), dtype=torch.float32)",
+    "values = torch.tensor([1.0])\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "values = torch.tensor([1.0])\ninput = torch.tensor(np.random.randn(5,1,1,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,values):\n  return torch.Tensor.heaviside(input,values)",
+    "tensorflow": "def tensorflow_call(input, values):\n    return tf.where(input < 0, tf.zeros_like(input), tf.where(input > 0, tf.ones_like(input), values))"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([0.1, -0.2, 0.0, 0.5, -0.5])\nvalues = torch.tensor([1.0])",
+    "input = torch.tensor([0.1, -0.2, 0.0, 0.5, -0.5])\nvalues = torch.tensor([1.0])",
+    "input = torch.tensor([0.5, -0.5, 1.0, -1.0, 0.0])\nvalues = torch.tensor([1.0])"
+  ]
+}

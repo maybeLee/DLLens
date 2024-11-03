@@ -1,0 +1,23 @@
+{
+  "function_name": "tf.scatter_nd(indices,updates,shape,name=None)",
+  "inputs": [
+    "indices",
+    "updates",
+    "shape"
+  ],
+  "sample_inputs": [
+    "indices = tf.constant([[0], [1], [2]], dtype=tf.int32)\nupdates = tf.constant([10, 20, 30], dtype=tf.int32)\nshape = tf.constant([5], dtype=tf.int32)",
+    "indices = tf.constant([[0], [1], [2]], dtype=tf.int32)\nupdates = tf.constant([10, 20, 30], dtype=tf.float32)\nshape = tf.constant([5], dtype=tf.int32)",
+    "indices = tf.constant([[0], [1], [2]], dtype=tf.int32)\nshape = tf.constant([5], dtype=tf.int32)\nupdates = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "indices = tf.constant([[0], [1], [2]], dtype=tf.int32)\nshape = tf.constant([5], dtype=tf.int32)\nupdates = tf.constant(np.random.randint(-50, 50, (3)), dtype='int64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(indices,updates,shape):\n  return tf.scatter_nd(indices,updates,shape)",
+    "pytorch": "def pytorch_call(indices, updates, shape):\n    indices = indices.to(torch.int64)\n    output = torch.zeros(shape.tolist(), dtype=updates.dtype)\n    output.scatter_(0, indices.squeeze(), updates)\n    return output"
+  },
+  "llm_inputs": [
+    "indices = tf.constant([[0], [1], [2]], dtype=tf.int32)\nupdates = tf.constant([10, 20, 30], dtype=tf.int32)\nshape = tf.constant([5], dtype=tf.int32)",
+    "indices = tf.constant([[0], [1], [2]], dtype=tf.int32)\nupdates = tf.constant([10, 20, 30], dtype=tf.int32)\nshape = tf.constant([5], dtype=tf.int32)",
+    "indices = tf.constant([[0], [1], [2]], dtype=tf.int32)\nupdates = tf.constant([10, 20, 30], dtype=tf.float32)\nshape = tf.constant([5], dtype=tf.int32)"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "function_name": "tf.keras.utils.pack_x_y_sample_weight(x,y=None,sample_weight=None)",
+  "inputs": [
+    "x",
+    "y",
+    "sample_weight"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\ny = tf.constant([1, 0], dtype=tf.int32)\nsample_weight = tf.constant([0.5, 1.0], dtype=tf.float32)",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([1, 0])\nsample_weight = tf.constant(np.random.randn(5), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([1, 0])\nsample_weight = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([1, 0])\nsample_weight = tf.constant(np.random.randn(2,1,1,1,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nsample_weight = tf.constant([0.5, 1.0])\ny = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "y = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])\nx = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "y = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])\nx = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nsample_weight = tf.constant([0.5, 1.0])\ny = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "y = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])\nx = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([1, 0])\nsample_weight = tf.constant(np.random.randn(2,1,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nsample_weight = tf.constant([0.5, 1.0])\ny = tf.constant(np.random.randint(-50, 50, (2)), dtype='int64')",
+    "y = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])\nx = tf.constant(np.random.randn(2), dtype='float32')",
+    "y = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])\nx = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nsample_weight = tf.constant([0.5, 1.0])\ny = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([1, 0])\nsample_weight = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([1, 0])\nsample_weight = tf.constant(np.random.randn(2), dtype='half')",
+    "y = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])\nx = tf.constant(np.random.randn(), dtype='float32')",
+    "y = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])\nx = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([1, 0])\nsample_weight = tf.constant(np.random.randn(2), dtype='float64')",
+    "y = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])\nx = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nsample_weight = tf.constant([0.5, 1.0])\ny = tf.constant(np.random.randint(-50, 50, (2,1,1,1)), dtype='int32')",
+    "y = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])\nx = tf.constant(np.random.randn(2,2), dtype='half')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nsample_weight = tf.constant([0.5, 1.0])\ny = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([1, 0])\nsample_weight = tf.constant(np.random.randn(2,1,1,1), dtype='float32')",
+    "y = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])\nx = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nsample_weight = tf.constant([0.5, 1.0])\ny = tf.constant(np.random.randint(-50, 50, (2,1,1)), dtype='int32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([1, 0])\nsample_weight = tf.constant(np.random.randn(3), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([1, 0])\nsample_weight = tf.constant(np.random.randn(2), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([1, 0])\nsample_weight = tf.constant(np.random.randn(2), dtype='float16')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nsample_weight = tf.constant([0.5, 1.0])\ny = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "y = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])\nx = tf.constant(np.random.randn(2,4), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([1, 0])\nsample_weight = tf.constant(np.random.randn(), dtype='float32')",
+    "y = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])\nx = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nsample_weight = tf.constant([0.5, 1.0])\ny = tf.constant(np.random.randint(-50, 50, (2,1,1,1,1)), dtype='int32')",
+    "y = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])\nx = tf.constant(np.random.randn(2,2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,y=None,sample_weight=None):\n  return tf.keras.utils.pack_x_y_sample_weight(x,y,sample_weight)",
+    "pytorch": "def pytorch_call(x, y=None, sample_weight=None):\n    return (x, y, sample_weight)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([1, 0])\nsample_weight = tf.constant([0.5, 1.0])",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\ny = tf.constant([1, 0], dtype=tf.int32)\nsample_weight = tf.constant([0.5, 1.0], dtype=tf.float32)"
+  ]
+}

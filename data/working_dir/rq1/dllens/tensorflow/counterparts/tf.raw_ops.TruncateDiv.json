@@ -1,0 +1,36 @@
+{
+  "function_name": "tf.raw_ops.TruncateDiv(x,y,name=None)",
+  "inputs": [
+    "x",
+    "y"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[4]], dtype=tf.int32)\ny = tf.constant([[2]], dtype=tf.int32)",
+    "x = tf.constant([[10, 20], [30, 40]], dtype=tf.int32)\ny = tf.constant([[2, 4], [5, 10]], dtype=tf.int32)",
+    "x = tf.constant([4], dtype=tf.int32)\ny = tf.constant([2], dtype=tf.int32)",
+    "x = tf.constant([[4]], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1,1,1)), dtype='int32')",
+    "y = tf.constant([[2]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "y = tf.constant([[2]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (5,1)), dtype='int32')",
+    "x = tf.constant([[4]], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1,1,1,1)), dtype='int32')",
+    "x = tf.constant([[4]], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "x = tf.constant([[4]], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (5,1)), dtype='int32')",
+    "y = tf.constant([[2]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "x = tf.constant([[4]], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1,1,1,1,1)), dtype='int32')",
+    "y = tf.constant([[2]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1,1)), dtype='int32')",
+    "x = tf.constant([[4]], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "x = tf.constant([[4]], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1,1)), dtype='int32')",
+    "y = tf.constant([[2]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1,5)), dtype='int32')",
+    "y = tf.constant([[2]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1,1,1,1)), dtype='int32')",
+    "y = tf.constant([[2]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1,1,1)), dtype='int32')",
+    "y = tf.constant([[2]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1,1,1,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,y):\n  return tf.raw_ops.TruncateDiv(x=x,y=y)",
+    "pytorch": "def pytorch_call(x, y):\n    result = x // y\n    condition = (x % y != 0) & ((x < 0) ^ (y < 0))\n    result[condition] = result[condition] + 1\n    return result"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[4]], dtype=tf.int32)\ny = tf.constant([[2]], dtype=tf.int32)",
+    "x = tf.constant([[10, 20], [30, 40]], dtype=tf.int32)\ny = tf.constant([[2, 4], [5, 10]], dtype=tf.int32)",
+    "x = tf.constant([4], dtype=tf.int32)\ny = tf.constant([2], dtype=tf.int32)"
+  ]
+}

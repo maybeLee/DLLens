@@ -1,0 +1,41 @@
+{
+  "function_name": "tf.metrics.msle(y_true,y_pred)",
+  "inputs": [
+    "y_true",
+    "y_pred"
+  ],
+  "sample_inputs": [
+    "y_true = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\ny_pred = tf.constant([0.1, 0.2, 0.25, 0.35, 0.45], dtype=tf.float32)",
+    "y_true = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0], dtype=tf.float32)\ny_pred = tf.constant([1.1, 1.9, 3.2, 4.1, 5.0], dtype=tf.float32)",
+    "y_true = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0], dtype=tf.float32)\ny_pred = tf.constant([1.1, 1.9, 3.2, 3.8, 5.1], dtype=tf.float32)",
+    "y_true = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5), dtype='float16')",
+    "y_true = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5), dtype='float32')",
+    "y_pred = tf.constant([0.1, 0.2, 0.25, 0.35, 0.45], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(), dtype='float32')",
+    "y_pred = tf.constant([0.1, 0.2, 0.25, 0.35, 0.45], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(1), dtype='float32')",
+    "y_pred = tf.constant([0.1, 0.2, 0.25, 0.35, 0.45], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5), dtype='float64')",
+    "y_pred = tf.constant([0.1, 0.2, 0.25, 0.35, 0.45], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5,1,1,1), dtype='float32')",
+    "y_true = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5), dtype='half')",
+    "y_pred = tf.constant([0.1, 0.2, 0.25, 0.35, 0.45], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "y_true = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "y_pred = tf.constant([0.1, 0.2, 0.25, 0.35, 0.45], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "y_true = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(), dtype='float32')",
+    "y_pred = tf.constant([0.1, 0.2, 0.25, 0.35, 0.45], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5), dtype='half')",
+    "y_true = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "y_true = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(1), dtype='float32')",
+    "y_pred = tf.constant([0.1, 0.2, 0.25, 0.35, 0.45], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "y_pred = tf.constant([0.1, 0.2, 0.25, 0.35, 0.45], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5), dtype='float16')",
+    "y_true = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "y_true = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5), dtype='float64')",
+    "y_pred = tf.constant([0.1, 0.2, 0.25, 0.35, 0.45], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5), dtype='float32')",
+    "y_true = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5,1,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(y_true,y_pred):\n  return tf.metrics.msle(y_true,y_pred)",
+    "pytorch": "def pytorch_call(y_true, y_pred):\n    y_true = torch.clamp(y_true, min=0)\n    y_pred = torch.clamp(y_pred, min=0)\n    log_true = torch.log1p(y_true)\n    log_pred = torch.log1p(y_pred)\n    squared_diff = (log_true - log_pred) ** 2\n    msle = torch.mean(squared_diff, dim=-1, keepdim=True)\n    return msle.unsqueeze(0).unsqueeze(0).unsqueeze(0).unsqueeze(0)"
+  },
+  "llm_inputs": [
+    "y_true = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\ny_pred = tf.constant([0.1, 0.2, 0.25, 0.35, 0.45], dtype=tf.float32)",
+    "y_true = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0], dtype=tf.float32)\ny_pred = tf.constant([1.1, 1.9, 3.2, 4.1, 5.0], dtype=tf.float32)",
+    "y_true = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0], dtype=tf.float32)\ny_pred = tf.constant([1.1, 1.9, 3.2, 3.8, 5.1], dtype=tf.float32)"
+  ]
+}

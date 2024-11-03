@@ -1,0 +1,25 @@
+{
+  "function_name": "torch.Tensor.lu_solve(input, LU_data, LU_pivots)",
+  "inputs": [
+    "input",
+    "LU_data",
+    "LU_pivots"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0], [2.0]], dtype=torch.float32)\nLU_data = torch.tensor([[1.0, 0.0], [2.0, 1.0]], dtype=torch.float32)\nLU_pivots = torch.tensor([1, 2], dtype=torch.int32)",
+    "input = torch.tensor([[1.0], [2.0]], dtype=torch.float32)\nLU_data = torch.tensor([[2.0, 1.0], [0.0, 1.0]], dtype=torch.float32)\nLU_pivots = torch.tensor([1, 2], dtype=torch.int32)",
+    "LU_data = torch.tensor([[1.0, 0.0], [2.0, 1.0]], dtype=torch.float32)\nLU_pivots = torch.tensor([1, 2], dtype=torch.int32)\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "LU_data = torch.tensor([[1.0, 0.0], [2.0, 1.0]], dtype=torch.float32)\nLU_pivots = torch.tensor([1, 2], dtype=torch.int32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0], [2.0]], dtype=torch.float32)\nLU_pivots = torch.tensor([1, 2], dtype=torch.int32)\nLU_data = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "LU_data = torch.tensor([[1.0, 0.0], [2.0, 1.0]], dtype=torch.float32)\nLU_pivots = torch.tensor([1, 2], dtype=torch.int32)\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,LU_data,LU_pivots):\n  return torch.Tensor.lu_solve(input,LU_data,LU_pivots)",
+    "tensorflow": "def tensorflow_call(input, LU_data, LU_pivots):\n    LU_pivots = LU_pivots - 1\n    return tf.linalg.lu_solve(LU_data, LU_pivots, input)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0], [2.0]], dtype=torch.float32)\nLU_data = torch.tensor([[1.0, 0.0], [2.0, 1.0]], dtype=torch.float32)\nLU_pivots = torch.tensor([1, 2], dtype=torch.int32)",
+    "input = torch.tensor([[1.0], [2.0]], dtype=torch.float32)\nLU_data = torch.tensor([[2.0, 1.0], [0.0, 1.0]], dtype=torch.float32)\nLU_pivots = torch.tensor([1, 2], dtype=torch.int32)",
+    "input = torch.tensor([[1.0], [2.0]], dtype=torch.float32)\nLU_data = torch.tensor([[2.0, 1.0], [0.0, 1.0]], dtype=torch.float32)\nLU_pivots = torch.tensor([1, 2], dtype=torch.int32)"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "function_name": "tf.nn.crelu(features,axis=-1,name=None)",
+  "inputs": [
+    "features",
+    "axis"
+  ],
+  "sample_inputs": [
+    "features = tf.constant([[1.0, -1.0, 2.0], [3.0, -2.0, 0.0]], dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)",
+    "features = tf.constant([[1.0, -1.0], [2.0, -2.0]], dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)",
+    "features = tf.constant([[1.0, -2.0, 3.0], [4.0, -5.0, 6.0]], dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)",
+    "axis = tf.constant(-1, dtype=tf.int32)\nfeatures = tf.constant(np.random.randn(4,3), dtype='float32')",
+    "axis = tf.constant(-1, dtype=tf.int32)\nfeatures = tf.constant(np.random.randn(2,3), dtype='float64')",
+    "axis = tf.constant(-1, dtype=tf.int32)\nfeatures = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "axis = tf.constant(-1, dtype=tf.int32)\nfeatures = tf.constant(np.random.randn(2,3,1,1), dtype='float32')",
+    "axis = tf.constant(-1, dtype=tf.int32)\nfeatures = tf.constant(np.random.randn(5,3), dtype='float32')",
+    "axis = tf.constant(-1, dtype=tf.int32)\nfeatures = tf.constant(np.random.randn(2,3), dtype='float16')",
+    "axis = tf.constant(-1, dtype=tf.int32)\nfeatures = tf.constant(np.random.randn(2), dtype='float32')",
+    "axis = tf.constant(-1, dtype=tf.int32)\nfeatures = tf.constant(np.random.randn(2,3), dtype='half')",
+    "axis = tf.constant(-1, dtype=tf.int32)\nfeatures = tf.constant(np.random.randn(2,3,1), dtype='float32')",
+    "axis = tf.constant(-1, dtype=tf.int32)\nfeatures = tf.constant(np.random.randn(1,3), dtype='float32')",
+    "axis = tf.constant(-1, dtype=tf.int32)\nfeatures = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "axis = tf.constant(-1, dtype=tf.int32)\nfeatures = tf.constant(np.random.randn(2,3,1,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(features,axis=-1):\n  return tf.nn.crelu(features,axis)",
+    "pytorch": "def pytorch_call(features, axis=-1):\n    positive_part = torch.relu(features)\n    negative_part = torch.relu(-features)\n    return torch.cat((positive_part, negative_part), dim=axis)"
+  },
+  "llm_inputs": [
+    "features = tf.constant([[1.0, -1.0, 2.0], [3.0, -2.0, 0.0]], dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)",
+    "features = tf.constant([[1.0, -1.0], [2.0, -2.0]], dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)",
+    "features = tf.constant([[1.0, -2.0, 3.0], [4.0, -5.0, 6.0]], dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)"
+  ]
+}

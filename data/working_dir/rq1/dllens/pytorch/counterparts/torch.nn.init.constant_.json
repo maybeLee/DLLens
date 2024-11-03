@@ -1,0 +1,37 @@
+{
+  "function_name": "torch.nn.init.constant_(tensor, val)",
+  "inputs": [
+    "tensor",
+    "val"
+  ],
+  "sample_inputs": [
+    "tensor = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nval = 5.0",
+    "val = 5.0\ntensor = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "val = 5.0\ntensor = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "val = 5.0\ntensor = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "val = 5.0\ntensor = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "val = 5.0\ntensor = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "tensor = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nval = -54.55",
+    "tensor = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nval = 83.61",
+    "val = 5.0\ntensor = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "tensor = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nval = -69.65",
+    "val = 5.0\ntensor = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "tensor = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nval = 6.22",
+    "val = 5.0\ntensor = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "val = 5.0\ntensor = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "val = 5.0\ntensor = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "val = 5.0\ntensor = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "tensor = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nval = -20.54",
+    "val = 5.0\ntensor = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "val = 5.0\ntensor = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(tensor,val):\n  return torch.nn.init.constant_(tensor,val)",
+    "tensorflow": "def tensorflow_call(tensor, val):\n    return tf.fill(tf.shape(tensor), val)"
+  },
+  "llm_inputs": [
+    "tensor = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nval = 5.0",
+    "tensor = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nval = 5.0",
+    "tensor = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nval = 5.0"
+  ]
+}

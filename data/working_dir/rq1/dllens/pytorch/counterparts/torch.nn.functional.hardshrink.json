@@ -1,0 +1,39 @@
+{
+  "function_name": "torch.nn.functional.hardshrink(input, lambd=0.5)",
+  "inputs": [
+    "input",
+    "lambd"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\nlambd = torch.tensor(0.5)",
+    "input = torch.tensor([[0.1, -0.2, 0.3], [-0.4, 0.5, -0.6]])\nlambd = torch.tensor(0.5)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nlambd = torch.tensor(0.5)",
+    "lambd = torch.tensor(0.5)\ninput = torch.tensor(np.random.randn(2,3,1), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\nlambd = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\nlambd = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\nlambd = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "lambd = torch.tensor(0.5)\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "lambd = torch.tensor(0.5)\ninput = torch.tensor(np.random.randn(3,3), dtype=torch.float32)",
+    "lambd = torch.tensor(0.5)\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float16)",
+    "lambd = torch.tensor(0.5)\ninput = torch.tensor(np.random.randn(1,3), dtype=torch.float32)",
+    "lambd = torch.tensor(0.5)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "lambd = torch.tensor(0.5)\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float64)",
+    "lambd = torch.tensor(0.5)\ninput = torch.tensor(np.random.randn(2,3,1,1), dtype=torch.float32)",
+    "lambd = torch.tensor(0.5)\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "lambd = torch.tensor(0.5)\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "lambd = torch.tensor(0.5)\ninput = torch.tensor(np.random.randn(2,3,1,1,1), dtype=torch.float32)",
+    "lambd = torch.tensor(0.5)\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.half)",
+    "lambd = torch.tensor(0.5)\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\nlambd = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "lambd = torch.tensor(0.5)\ninput = torch.tensor(np.random.randn(5,3), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,lambd=0.5):\n  return torch.nn.functional.hardshrink(input,lambd)",
+    "tensorflow": "def tensorflow_call(input, lambd=0.5):\n    lambd = tf.cast(lambd, input.dtype)\n    return tf.where(tf.abs(input) <= lambd, tf.zeros_like(input), input)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\nlambd = torch.tensor(0.5)",
+    "input = torch.tensor([[0.1, -0.2, 0.3], [-0.4, 0.5, -0.6]])\nlambd = torch.tensor(0.5)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nlambd = torch.tensor(0.5)"
+  ]
+}

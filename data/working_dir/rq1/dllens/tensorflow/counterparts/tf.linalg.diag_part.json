@@ -1,0 +1,50 @@
+{
+  "function_name": "tf.linalg.diag_part(input,name='diag_part',k=0,padding_value=0,align='RIGHT_LEFT')",
+  "inputs": [
+    "input",
+    "name",
+    "k",
+    "padding_value",
+    "align"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 0\npadding_value = 0\nalign = 'RIGHT_LEFT'",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 1\npadding_value = 0\nalign = 'RIGHT_LEFT'",
+    "name = 'diag_part'\nk = 0\npadding_value = 0\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(3,5), dtype='float32')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\npadding_value = 0\nalign = 'RIGHT_LEFT'\nk = 1",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 0\nalign = 'RIGHT_LEFT'\npadding_value = 0",
+    "name = 'diag_part'\nk = 0\npadding_value = 0\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(3,3), dtype='half')",
+    "name = 'diag_part'\nk = 0\npadding_value = 0\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(5,3), dtype='float32')",
+    "name = 'diag_part'\nk = 0\npadding_value = 0\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(3,3,1,1,1), dtype='float32')",
+    "name = 'diag_part'\nk = 0\npadding_value = 0\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(3,3,1), dtype='float32')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\npadding_value = 0\nalign = 'RIGHT_LEFT'\nk = -1",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\npadding_value = 0\nalign = 'RIGHT_LEFT'\nk = -2",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 0\nalign = 'RIGHT_LEFT'\npadding_value = -1",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\npadding_value = 0\nalign = 'RIGHT_LEFT'\nk = 0",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 0\nalign = 'RIGHT_LEFT'\npadding_value = -4",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 0\nalign = 'RIGHT_LEFT'\npadding_value = 4",
+    "name = 'diag_part'\nk = 0\npadding_value = 0\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(3,3), dtype='float64')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 0\nalign = 'RIGHT_LEFT'\npadding_value = -3",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 0\nalign = 'RIGHT_LEFT'\npadding_value = -2",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 0\nalign = 'RIGHT_LEFT'\npadding_value = 3",
+    "name = 'diag_part'\nk = 0\npadding_value = 0\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(3,3,1,1), dtype='float32')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\npadding_value = 0\nalign = 'RIGHT_LEFT'\nk = 2",
+    "name = 'diag_part'\nk = 0\npadding_value = 0\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "name = 'diag_part'\nk = 0\npadding_value = 0\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(3,3), dtype='float16')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 0\nalign = 'RIGHT_LEFT'\npadding_value = -5",
+    "name = 'diag_part'\nk = 0\npadding_value = 0\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(1,3), dtype='float32')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 0\nalign = 'RIGHT_LEFT'\npadding_value = 1",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 0\nalign = 'RIGHT_LEFT'\npadding_value = 5",
+    "name = 'diag_part'\nk = 0\npadding_value = 0\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(3,3), dtype='float32')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 0\nalign = 'RIGHT_LEFT'\npadding_value = 2"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,name='diag_part',k=0,padding_value=0,align='RIGHT_LEFT'):\n  return tf.linalg.diag_part(input,name,k,padding_value,align)",
+    "pytorch": "def pytorch_call(input, name='diag_part', k=0, padding_value=0, align='RIGHT_LEFT'):\n    diag = torch.diagonal(input, offset=k, dim1=-2, dim2=-1)\n    return diag.unsqueeze(-1)"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 0\npadding_value = 0\nalign = 'RIGHT_LEFT'",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 0\npadding_value = 0\nalign = 'RIGHT_LEFT'",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nname = 'diag_part'\nk = 1\npadding_value = 0\nalign = 'RIGHT_LEFT'"
+  ]
+}

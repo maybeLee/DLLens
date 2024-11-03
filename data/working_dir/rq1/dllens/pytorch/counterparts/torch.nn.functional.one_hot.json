@@ -1,0 +1,22 @@
+{
+  "function_name": "torch.nn.functional.one_hot(tensor, num_classes=-1)",
+  "inputs": [
+    "tensor",
+    "num_classes"
+  ],
+  "sample_inputs": [
+    "tensor = torch.tensor([0, 1, 2, 3, 4])\nnum_classes = 5",
+    "tensor = torch.tensor([0, 1, 2, 3])\nnum_classes = 4",
+    "tensor = torch.tensor([0, 1, 2, 3])\nnum_classes = 5",
+    "tensor = torch.tensor([0, 1, 2, 3, 4])\nnum_classes = -1"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(tensor,num_classes=-1):\n  return torch.nn.functional.one_hot(tensor,num_classes)",
+    "tensorflow": "def tensorflow_call(tensor, num_classes=-1):\n    if num_classes == -1:\n        num_classes = tf.reduce_max(tensor) + 1\n    return tf.one_hot(tensor, num_classes)"
+  },
+  "llm_inputs": [
+    "tensor = torch.tensor([0, 1, 2, 3, 4])\nnum_classes = 5",
+    "tensor = torch.tensor([0, 1, 2, 3])\nnum_classes = 4",
+    "tensor = torch.tensor([0, 1, 2, 3])\nnum_classes = 5"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "function_name": "tf.raw_ops.BroadcastArgs(s0,s1,name=None)",
+  "inputs": [
+    "s0",
+    "s1"
+  ],
+  "sample_inputs": [
+    "s0 = tf.constant([2, 3])\ns1 = tf.constant([1])",
+    "s1 = tf.constant([1])\ns0 = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "s1 = tf.constant([1])\ns0 = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "s1 = tf.constant([1])\ns0 = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "s1 = tf.constant([1])\ns0 = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(s0,s1):\n  return tf.raw_ops.BroadcastArgs(s0=s0,s1=s1)",
+    "pytorch": "def pytorch_call(s0, s1):\n    return s0.unsqueeze(0).expand(s1.size(0), -1)"
+  },
+  "llm_inputs": [
+    "s0 = tf.constant([2, 3])\ns1 = tf.constant([1])"
+  ]
+}

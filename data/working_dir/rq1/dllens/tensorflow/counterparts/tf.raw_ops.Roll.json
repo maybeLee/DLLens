@@ -1,0 +1,29 @@
+{
+  "function_name": "tf.raw_ops.Roll(input,shift,axis,name=None)",
+  "inputs": [
+    "input",
+    "shift",
+    "axis"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1]], dtype=tf.int32)\nshift = tf.constant(1, dtype=tf.int32)\naxis = tf.constant(0, dtype=tf.int32)",
+    "input = tf.constant([[1, 2]], dtype=tf.int32)\nshift = tf.constant(1, dtype=tf.int32)\naxis = tf.constant(0, dtype=tf.int32)",
+    "input = tf.constant([[1]], dtype=tf.int32)\naxis = tf.constant(0, dtype=tf.int32)\nshift = tf.constant(np.random.randint(-50, 50, ()), dtype='int64')",
+    "shift = tf.constant(1, dtype=tf.int32)\naxis = tf.constant(0, dtype=tf.int32)\ninput = tf.constant(np.random.randint(-50, 50, (1,1)), dtype='int32')",
+    "shift = tf.constant(1, dtype=tf.int32)\naxis = tf.constant(0, dtype=tf.int32)\ninput = tf.constant(np.random.randint(-50, 50, (1,1)), dtype='int64')",
+    "shift = tf.constant(1, dtype=tf.int32)\naxis = tf.constant(0, dtype=tf.int32)\ninput = tf.constant(np.random.randint(-50, 50, (1,1,1,1)), dtype='int32')",
+    "shift = tf.constant(1, dtype=tf.int32)\naxis = tf.constant(0, dtype=tf.int32)\ninput = tf.constant(np.random.randint(-50, 50, (1,1,1)), dtype='int32')",
+    "input = tf.constant([[1]], dtype=tf.int32)\naxis = tf.constant(0, dtype=tf.int32)\nshift = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "shift = tf.constant(1, dtype=tf.int32)\naxis = tf.constant(0, dtype=tf.int32)\ninput = tf.constant(np.random.randint(-50, 50, (1,1,1,1,1)), dtype='int32')",
+    "shift = tf.constant(1, dtype=tf.int32)\naxis = tf.constant(0, dtype=tf.int32)\ninput = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,shift,axis):\n  return tf.raw_ops.Roll(input=input,shift=shift,axis=axis)",
+    "pytorch": "def pytorch_call(input, shift, axis):\n    return torch.roll(input, shifts=shift.item(), dims=axis.item())"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1]], dtype=tf.int32)\nshift = tf.constant(1, dtype=tf.int32)\naxis = tf.constant(0, dtype=tf.int32)",
+    "input = tf.constant([[1]], dtype=tf.int32)\nshift = tf.constant(1, dtype=tf.int32)\naxis = tf.constant(0, dtype=tf.int32)",
+    "input = tf.constant([[1, 2]], dtype=tf.int32)\nshift = tf.constant(1, dtype=tf.int32)\naxis = tf.constant(0, dtype=tf.int32)"
+  ]
+}

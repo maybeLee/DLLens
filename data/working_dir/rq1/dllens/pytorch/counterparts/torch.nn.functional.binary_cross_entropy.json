@@ -1,0 +1,31 @@
+{
+  "function_name": "torch.nn.functional.binary_cross_entropy(input, target, weight=None, size_average=None, reduce=None, reduction='mean')",
+  "inputs": [
+    "input",
+    "target",
+    "weight",
+    "size_average",
+    "reduce",
+    "reduction"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0, 0.0, 1.0, 1.0, 1.0], dtype=torch.float32)\nweight = torch.tensor([1.0, 1.0, 1.0, 1.0, 1.0], dtype=torch.float32)\nsize_average = None\nreduce = None\nreduction = 'mean'",
+    "input = torch.tensor([0.1, 0.5, 0.9])\ntarget = torch.tensor([0.0, 1.0, 1.0])\nweight = torch.tensor([1.0, 1.0, 1.0])\nsize_average = None\nreduce = None\nreduction = 'mean'",
+    "input = torch.tensor([0.1, 0.9, 0.3, 0.7], dtype=torch.float32)\ntarget = torch.tensor([0.0, 1.0, 0.0, 1.0], dtype=torch.float32)\nweight = torch.tensor([1.0, 1.0, 1.0, 1.0], dtype=torch.float32)\nsize_average = None\nreduce = None\nreduction = 'mean'",
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0, 0.0, 1.0, 1.0, 1.0], dtype=torch.float32)\nsize_average = None\nreduce = None\nreduction = 'mean'\nweight = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0, 0.0, 1.0, 1.0, 1.0], dtype=torch.float32)\nsize_average = None\nreduce = None\nreduction = 'mean'\nweight = torch.tensor(np.random.randn(5), dtype=torch.float64)",
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0, 0.0, 1.0, 1.0, 1.0], dtype=torch.float32)\nsize_average = None\nreduce = None\nreduction = 'mean'\nweight = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0, 0.0, 1.0, 1.0, 1.0], dtype=torch.float32)\nsize_average = None\nreduce = None\nreduction = 'mean'\nweight = torch.tensor(np.random.randn(5), dtype=torch.float16)",
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0, 0.0, 1.0, 1.0, 1.0], dtype=torch.float32)\nsize_average = None\nreduce = None\nreduction = 'mean'\nweight = torch.tensor(np.random.randn(5), dtype=torch.half)",
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0, 0.0, 1.0, 1.0, 1.0], dtype=torch.float32)\nsize_average = None\nreduce = None\nreduction = 'mean'\nweight = torch.tensor(np.random.randn(5), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,target,weight=None,size_average=None,reduce=None,reduction='mean'):\n  return torch.nn.functional.binary_cross_entropy(input,target,weight,size_average,reduce,reduction)",
+    "tensorflow": "def tensorflow_call(input, target, weight=None, size_average=None, reduce=None, reduction='mean'):\n    logits = tf.math.log(input / (1 - input + 1e-08) + 1e-08)\n    target = tf.cast(target, tf.float32)\n    if weight is not None:\n        weight = tf.cast(weight, tf.float32)\n    bce = tf.nn.sigmoid_cross_entropy_with_logits(labels=target, logits=logits)\n    if weight is not None:\n        bce *= weight\n    if reduction == 'mean':\n        return tf.reduce_mean(bce)\n    elif reduction == 'sum':\n        return tf.reduce_sum(bce)\n    else:\n        return bce"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0, 0.0, 1.0, 1.0, 1.0], dtype=torch.float32)\nweight = torch.tensor([1.0, 1.0, 1.0, 1.0, 1.0], dtype=torch.float32)\nsize_average = None\nreduce = None\nreduction = 'mean'",
+    "input = torch.tensor([0.1, 0.5, 0.9])\ntarget = torch.tensor([0.0, 1.0, 1.0])\nweight = torch.tensor([1.0, 1.0, 1.0])\nsize_average = None\nreduce = None\nreduction = 'mean'",
+    "input = torch.tensor([0.1, 0.9, 0.3, 0.7], dtype=torch.float32)\ntarget = torch.tensor([0.0, 1.0, 0.0, 1.0], dtype=torch.float32)\nweight = torch.tensor([1.0, 1.0, 1.0, 1.0], dtype=torch.float32)\nsize_average = None\nreduce = None\nreduction = 'mean'"
+  ]
+}

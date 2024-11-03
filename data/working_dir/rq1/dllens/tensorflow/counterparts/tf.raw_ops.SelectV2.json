@@ -1,0 +1,34 @@
+{
+  "function_name": "tf.raw_ops.SelectV2(condition,t,e,name=None)",
+  "inputs": [
+    "condition",
+    "t",
+    "e"
+  ],
+  "sample_inputs": [
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\nt = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ne = tf.constant([10, 20, 30, 40, 50], dtype=tf.int32)",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\ne = tf.constant([10, 20, 30, 40, 50], dtype=tf.int32)\nt = tf.constant(np.random.randint(-50, 50, (5,1)), dtype='int32')",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\ne = tf.constant([10, 20, 30, 40, 50], dtype=tf.int32)\nt = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\ne = tf.constant([10, 20, 30, 40, 50], dtype=tf.int32)\nt = tf.constant(np.random.randint(-50, 50, (5,1,1)), dtype='int32')",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\nt = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ne = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\nt = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ne = tf.constant(np.random.randint(-50, 50, (5,1,1)), dtype='int32')",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\nt = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ne = tf.constant(np.random.randint(-50, 50, (5,1)), dtype='int32')",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\nt = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ne = tf.constant(np.random.randint(-50, 50, (5,1,1,1,1)), dtype='int32')",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\nt = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ne = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\ne = tf.constant([10, 20, 30, 40, 50], dtype=tf.int32)\nt = tf.constant(np.random.randint(-50, 50, (5,1,1,1)), dtype='int32')",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\ne = tf.constant([10, 20, 30, 40, 50], dtype=tf.int32)\nt = tf.constant(np.random.randint(-50, 50, (5,1,1,1,1)), dtype='int32')",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\ne = tf.constant([10, 20, 30, 40, 50], dtype=tf.int32)\nt = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\nt = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ne = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\ne = tf.constant([10, 20, 30, 40, 50], dtype=tf.int32)\nt = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\nt = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ne = tf.constant(np.random.randint(-50, 50, (5,1,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(condition,t,e):\n  return tf.raw_ops.SelectV2(condition=condition,t=t,e=e)",
+    "pytorch": "def pytorch_call(condition, t, e):\n    return torch.where(condition, t, e)"
+  },
+  "llm_inputs": [
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\nt = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ne = tf.constant([10, 20, 30, 40, 50], dtype=tf.int32)",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\nt = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ne = tf.constant([10, 20, 30, 40, 50], dtype=tf.int32)",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\nt = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ne = tf.constant([10, 20, 30, 40, 50], dtype=tf.int32)"
+  ]
+}

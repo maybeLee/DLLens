@@ -1,0 +1,28 @@
+{
+  "function_name": "torch.Tensor.matrix_power(input, n)",
+  "inputs": [
+    "input",
+    "n"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\nn = 2",
+    "n = 2\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nn = 4",
+    "n = 2\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)",
+    "n = 2\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nn = 0",
+    "input = torch.tensor([[1, 2], [3, 4]])\nn = 3",
+    "input = torch.tensor([[1, 2], [3, 4]])\nn = 5",
+    "n = 2\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nn = 1"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,n):\n  return torch.Tensor.matrix_power(input,n)",
+    "tensorflow": "def tensorflow_call(input, n):\n    if n == 0:\n        return tf.eye(tf.shape(input)[0], dtype=input.dtype)\n    elif n == 1:\n        return tf.identity(input)\n    else:\n        result = input\n        for _ in range(n - 1):\n            result = tf.linalg.matmul(result, input)\n        return result"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\nn = 2",
+    "input = torch.tensor([[1, 2], [3, 4]])\nn = 2",
+    "input = torch.tensor([[1, 2], [3, 4]])\nn = 2"
+  ]
+}

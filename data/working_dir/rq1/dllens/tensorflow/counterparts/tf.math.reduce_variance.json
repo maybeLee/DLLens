@@ -1,0 +1,37 @@
+{
+  "function_name": "tf.math.reduce_variance(input_tensor,axis=None,keepdims=False,name=None)",
+  "inputs": [
+    "input_tensor",
+    "axis",
+    "keepdims"
+  ],
+  "sample_inputs": [
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = 0\nkeepdims = True",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = 0\nkeepdims = False",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nkeepdims = True\naxis = -1",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nkeepdims = True\naxis = 1",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2), dtype='float32')",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nkeepdims = True\naxis = 0",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,2), dtype='half')",
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nkeepdims = True\naxis = -2"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input_tensor,axis=None,keepdims=False):\n  return tf.math.reduce_variance(input_tensor,axis,keepdims)",
+    "pytorch": "def pytorch_call(input_tensor, axis=None, keepdims=False):\n    variance = input_tensor.var(dim=axis, keepdim=keepdims, unbiased=False)\n    return variance"
+  },
+  "llm_inputs": [
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = 0\nkeepdims = True",
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = 0\nkeepdims = True",
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = 0\nkeepdims = True"
+  ]
+}

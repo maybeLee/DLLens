@@ -1,0 +1,32 @@
+{
+  "function_name": "tf.raw_ops.Unpack(value,num,axis=0,name=None)",
+  "inputs": [
+    "value",
+    "num",
+    "axis"
+  ],
+  "sample_inputs": [
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nnum = 2\naxis = 0",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)\nnum = 2\naxis = 0",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2,3)), dtype='int64')",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\naxis = 0\nnum = 2",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\naxis = 0\nnum = 0",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2,3,1)), dtype='int32')",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2,3,1,1)), dtype='int32')",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2,3)), dtype='int32')",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int32')",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2,5)), dtype='int32')",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2,3,1,1,1)), dtype='int32')",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nnum = 2\naxis = -2"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(value,num,axis=0):\n  return tf.raw_ops.Unpack(value=value,num=num,axis=axis)",
+    "pytorch": "def pytorch_call(value, num, axis=0):\n    if num == 0:\n        return []\n    return torch.unbind(value, dim=axis)"
+  },
+  "llm_inputs": [
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nnum = 2\naxis = 0",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nnum = 2\naxis = 0",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)\nnum = 2\naxis = 0"
+  ]
+}

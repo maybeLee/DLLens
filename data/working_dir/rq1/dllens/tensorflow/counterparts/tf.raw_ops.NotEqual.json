@@ -1,0 +1,38 @@
+{
+  "function_name": "tf.raw_ops.NotEqual(x,y,incompatible_shape_error=True,name=None)",
+  "inputs": [
+    "x",
+    "y",
+    "incompatible_shape_error"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\ny = tf.constant([[1, 2], [5, 6]], dtype=tf.int32)\nincompatible_shape_error = True",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\ny = tf.constant([[1, 0], [0, 4]], dtype=tf.int32)\nincompatible_shape_error = True",
+    "y = tf.constant([[1, 2], [5, 6]], dtype=tf.int32)\nincompatible_shape_error = True\nx = tf.constant(np.random.randint(-50, 50, (1,2)), dtype='int32')",
+    "y = tf.constant([[1, 2], [5, 6]], dtype=tf.int32)\nincompatible_shape_error = True\nx = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int32')",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nincompatible_shape_error = True\ny = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int32')",
+    "y = tf.constant([[1, 2], [5, 6]], dtype=tf.int32)\nincompatible_shape_error = True\nx = tf.constant(np.random.randint(-50, 50, (2,2,1)), dtype='int32')",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nincompatible_shape_error = True\ny = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "y = tf.constant([[1, 2], [5, 6]], dtype=tf.int32)\nincompatible_shape_error = True\nx = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nincompatible_shape_error = True\ny = tf.constant(np.random.randint(-50, 50, (1,2)), dtype='int32')",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nincompatible_shape_error = True\ny = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int32')",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\ny = tf.constant([[1, 2], [5, 6]], dtype=tf.int32)\nincompatible_shape_error = False",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nincompatible_shape_error = True\ny = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "y = tf.constant([[1, 2], [5, 6]], dtype=tf.int32)\nincompatible_shape_error = True\nx = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "y = tf.constant([[1, 2], [5, 6]], dtype=tf.int32)\nincompatible_shape_error = True\nx = tf.constant(np.random.randint(-50, 50, (2,2,1,1)), dtype='int32')",
+    "y = tf.constant([[1, 2], [5, 6]], dtype=tf.int32)\nincompatible_shape_error = True\nx = tf.constant(np.random.randint(-50, 50, (2,2,1,1,1)), dtype='int32')",
+    "y = tf.constant([[1, 2], [5, 6]], dtype=tf.int32)\nincompatible_shape_error = True\nx = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int32')",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nincompatible_shape_error = True\ny = tf.constant(np.random.randint(-50, 50, (2,2,1,1,1)), dtype='int32')",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nincompatible_shape_error = True\ny = tf.constant(np.random.randint(-50, 50, (2,2,1,1)), dtype='int32')",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nincompatible_shape_error = True\ny = tf.constant(np.random.randint(-50, 50, (2,2,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,y,incompatible_shape_error=True):\n  return tf.raw_ops.NotEqual(x=x,y=y,incompatible_shape_error=incompatible_shape_error)",
+    "pytorch": "def pytorch_call(x, y, incompatible_shape_error=True):\n    if incompatible_shape_error and x.shape != y.shape:\n        try:\n            torch.broadcast_shapes(x.shape, y.shape)\n        except RuntimeError:\n            raise ValueError('Incompatible shapes: {} and {}'.format(x.shape, y.shape))\n    return torch.ne(x, y)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\ny = tf.constant([[1, 2], [5, 6]], dtype=tf.int32)\nincompatible_shape_error = True",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\ny = tf.constant([[1, 0], [0, 4]], dtype=tf.int32)\nincompatible_shape_error = True",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\ny = tf.constant([[1, 0], [0, 4]], dtype=tf.int32)\nincompatible_shape_error = True"
+  ]
+}

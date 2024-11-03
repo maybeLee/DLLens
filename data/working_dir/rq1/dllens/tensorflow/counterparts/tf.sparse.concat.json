@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.sparse.concat(axis,sp_inputs,expand_nonconcat_dims=False,name=None)",
+  "inputs": [
+    "axis",
+    "sp_inputs",
+    "expand_nonconcat_dims"
+  ],
+  "sample_inputs": [
+    "axis = 0\nsp_inputs = [tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[1, 2], dense_shape=[2, 2]), tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[3, 4], dense_shape=[2, 2])]\nexpand_nonconcat_dims = False",
+    "axis = 0\nsp_inputs = [tf.sparse.SparseTensor(indices=[[0, 0], [1, 0]], values=[1.0, 2.0], dense_shape=[2, 1]), tf.sparse.SparseTensor(indices=[[0, 0], [1, 0]], values=[3.0, 4.0], dense_shape=[2, 1])]\nexpand_nonconcat_dims = False",
+    "axis = 0\nsp_inputs = [tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[1.0, 2.0], dense_shape=[2, 2]), tf.sparse.SparseTensor(indices=[[0, 0]], values=[3.0], dense_shape=[1, 2])]\nexpand_nonconcat_dims = False",
+    "sp_inputs = [tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[1, 2], dense_shape=[2, 2]), tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[3, 4], dense_shape=[2, 2])]\nexpand_nonconcat_dims = False\naxis = -1",
+    "sp_inputs = [tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[1, 2], dense_shape=[2, 2]), tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[3, 4], dense_shape=[2, 2])]\nexpand_nonconcat_dims = False\naxis = 1",
+    "sp_inputs = [tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[1, 2], dense_shape=[2, 2]), tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[3, 4], dense_shape=[2, 2])]\nexpand_nonconcat_dims = False\naxis = 0",
+    "sp_inputs = [tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[1, 2], dense_shape=[2, 2]), tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[3, 4], dense_shape=[2, 2])]\nexpand_nonconcat_dims = False\naxis = -2",
+    "axis = 0\nsp_inputs = [tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[1, 2], dense_shape=[2, 2]), tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[3, 4], dense_shape=[2, 2])]\nexpand_nonconcat_dims = True"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(axis,sp_inputs,expand_nonconcat_dims=False):\n  return tf.sparse.concat(axis,sp_inputs,expand_nonconcat_dims)",
+    "pytorch": "def pytorch_call(axis, sp_inputs, expand_nonconcat_dims=False):\n    sparse_tensors = []\n    for input in sp_inputs:\n        indices = torch.tensor(input.indices.numpy(), dtype=torch.long).t()\n        values = torch.tensor(input.values.numpy(), dtype=torch.float32)\n        dense_shape = input.dense_shape.numpy()\n        sparse_tensor = torch.sparse.FloatTensor(indices, values, torch.Size(dense_shape))\n        sparse_tensors.append(sparse_tensor)\n    concatenated_tensor = torch.cat(sparse_tensors, dim=axis)\n    return concatenated_tensor"
+  },
+  "llm_inputs": [
+    "axis = 0\nsp_inputs = [tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[1, 2], dense_shape=[2, 2]), tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[3, 4], dense_shape=[2, 2])]\nexpand_nonconcat_dims = False",
+    "axis = 0\nsp_inputs = [tf.sparse.SparseTensor(indices=[[0, 0], [1, 0]], values=[1.0, 2.0], dense_shape=[2, 1]), tf.sparse.SparseTensor(indices=[[0, 0], [1, 0]], values=[3.0, 4.0], dense_shape=[2, 1])]\nexpand_nonconcat_dims = False",
+    "axis = 0\nsp_inputs = [tf.sparse.SparseTensor(indices=[[0, 0], [1, 1]], values=[1.0, 2.0], dense_shape=[2, 2]), tf.sparse.SparseTensor(indices=[[0, 0]], values=[3.0], dense_shape=[1, 2])]\nexpand_nonconcat_dims = False"
+  ]
+}

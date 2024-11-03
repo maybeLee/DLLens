@@ -1,0 +1,14 @@
+tf.losses.msle
+tf.metrics.sparse_top_k_categorical_accuracy
+tf.keras.losses.hinge
+tf.keras.losses.mean_absolute_percentage_error
+tf.keras.metrics.categorical_accuracy
+tf.keras.metrics.mape
+tf.image.extract_patches
+tf.image.image_gradients
+tf.sparse.retain
+tf.sparse.bincount
+tf.raw_ops.BesselY0
+tf.raw_ops.CumulativeLogsumexp
+tf.raw_ops.FresnelSin
+tf.raw_ops.GatherNd

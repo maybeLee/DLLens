@@ -1,0 +1,28 @@
+{
+  "function_name": "tf.image.image_gradients(image)",
+  "inputs": [
+    "image"
+  ],
+  "sample_inputs": [
+    "image = tf.constant([[[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]]], dtype=tf.float32)",
+    "image = tf.constant([[[[1]], [[2]], [[3]]], [[[4]], [[5]], [[6]]], [[[7]], [[8]], [[9]]]], dtype=tf.float32)",
+    "image = tf.constant(np.random.randn(1,2,2,5), dtype='float32')",
+    "image = tf.constant(np.random.randn(1,2,2,3), dtype='float64')",
+    "image = tf.constant(np.random.randn(1,2,2,3), dtype='half')",
+    "image = tf.constant(np.random.randn(1,2,2,4), dtype='float32')",
+    "image = tf.constant(np.random.randn(1,2,5,3), dtype='float32')",
+    "image = tf.constant(np.random.randn(1,2,2,3), dtype='float16')",
+    "image = tf.constant(np.random.randn(1,3,2,3), dtype='float32')",
+    "image = tf.constant(np.random.randn(5,2,2,3), dtype='float32')",
+    "image = tf.constant(np.random.randn(1,2,2,3), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(image):\n  return tf.image.image_gradients(image)",
+    "pytorch": "def pytorch_call(image):\n    image.requires_grad_(True)\n    grad_x = torch.zeros_like(image)\n    grad_y = torch.zeros_like(image)\n    grad_y[:, :-1, :, :] = image[:, 1:, :, :] - image[:, :-1, :, :]\n    grad_x[:, :, :-1, :] = image[:, :, 1:, :] - image[:, :, :-1, :]\n    return (grad_y, grad_x)"
+  },
+  "llm_inputs": [
+    "image = tf.constant([[[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]]], dtype=tf.float32)",
+    "image = tf.constant([[[[1]], [[2]], [[3]]], [[[4]], [[5]], [[6]]], [[[7]], [[8]], [[9]]]], dtype=tf.float32)",
+    "image = tf.constant([[[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]]], dtype=tf.float32)"
+  ]
+}

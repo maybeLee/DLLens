@@ -1,0 +1,31 @@
+{
+  "function_name": "torch.Tensor.repeat_interleave(input, repeats, dim=None, *, output_size=None)",
+  "inputs": [
+    "input",
+    "repeats",
+    "dim"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3])\nrepeats = torch.tensor(2)\ndim = None",
+    "input = torch.tensor([1, 2, 3])\nrepeats = torch.tensor([2])\ndim = None",
+    "input = torch.tensor([[1, 2], [3, 4]])\nrepeats = torch.tensor([2, 3])\ndim = 0",
+    "repeats = torch.tensor(2)\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (3,1,1,1,1)), dtype=torch.int64)",
+    "repeats = torch.tensor(2)\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (3,1,1,1)), dtype=torch.int64)",
+    "repeats = torch.tensor(2)\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "repeats = torch.tensor(2)\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (3)), dtype=torch.int32)",
+    "repeats = torch.tensor(2)\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (3,1,1)), dtype=torch.int64)",
+    "repeats = torch.tensor(2)\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (3)), dtype=torch.int64)",
+    "repeats = torch.tensor(2)\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (3,1)), dtype=torch.int64)",
+    "repeats = torch.tensor(2)\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int64)",
+    "repeats = torch.tensor(2)\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,repeats,dim=None):\n  return torch.Tensor.repeat_interleave(input,repeats,dim)",
+    "tensorflow": "def tensorflow_call(input, repeats, dim=None):\n    if dim is None:\n        input_flat = tf.reshape(input, [-1])\n        return tf.repeat(input_flat, repeats)\n    else:\n        return tf.repeat(input, repeats, axis=dim)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3])\nrepeats = torch.tensor(2)\ndim = None",
+    "input = torch.tensor([1, 2, 3])\nrepeats = torch.tensor([2])\ndim = None",
+    "input = torch.tensor([[1, 2], [3, 4]])\nrepeats = torch.tensor([2, 3])\ndim = 0"
+  ]
+}

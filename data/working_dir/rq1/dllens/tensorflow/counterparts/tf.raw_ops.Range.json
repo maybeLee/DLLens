@@ -1,0 +1,23 @@
+{
+  "function_name": "tf.raw_ops.Range(start,limit,delta,name=None)",
+  "inputs": [
+    "start",
+    "limit",
+    "delta"
+  ],
+  "sample_inputs": [
+    "start = tf.constant(0)\nlimit = tf.constant(5)\ndelta = tf.constant(1)",
+    "start = tf.constant(0)\nlimit = tf.constant(10)\ndelta = tf.constant(1)",
+    "limit = tf.constant(5)\ndelta = tf.constant(1)\nstart = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "limit = tf.constant(5)\ndelta = tf.constant(1)\nstart = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(start,limit,delta):\n  return tf.raw_ops.Range(start=start,limit=limit,delta=delta)",
+    "pytorch": "def pytorch_call(start, limit, delta):\n    return torch.arange(start.item(), limit.item(), delta.item())"
+  },
+  "llm_inputs": [
+    "start = tf.constant(0)\nlimit = tf.constant(5)\ndelta = tf.constant(1)",
+    "start = tf.constant(0)\nlimit = tf.constant(10)\ndelta = tf.constant(1)",
+    "start = tf.constant(0)\nlimit = tf.constant(10)\ndelta = tf.constant(1)"
+  ]
+}

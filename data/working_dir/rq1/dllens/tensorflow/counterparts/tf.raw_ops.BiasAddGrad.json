@@ -1,0 +1,32 @@
+{
+  "function_name": "tf.raw_ops.BiasAddGrad(out_backprop,data_format='NHWC',name=None)",
+  "inputs": [
+    "out_backprop",
+    "data_format"
+  ],
+  "sample_inputs": [
+    "out_backprop = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\ndata_format = 'NHWC'",
+    "out_backprop = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ndata_format = 'NHWC'",
+    "data_format = 'NHWC'\nout_backprop = tf.constant(np.random.randn(4,2), dtype='float32')",
+    "data_format = 'NHWC'\nout_backprop = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "data_format = 'NHWC'\nout_backprop = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "data_format = 'NHWC'\nout_backprop = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "data_format = 'NHWC'\nout_backprop = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "data_format = 'NHWC'\nout_backprop = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "data_format = 'NHWC'\nout_backprop = tf.constant(np.random.randn(2,2), dtype='half')",
+    "data_format = 'NHWC'\nout_backprop = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "data_format = 'NHWC'\nout_backprop = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "data_format = 'NHWC'\nout_backprop = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "data_format = 'NHWC'\nout_backprop = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "data_format = 'NHWC'\nout_backprop = tf.constant(np.random.randn(2,2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(out_backprop,data_format='NHWC'):\n  return tf.raw_ops.BiasAddGrad(out_backprop=out_backprop,data_format=data_format)",
+    "pytorch": "def pytorch_call(out_backprop, data_format='NHWC'):\n    if data_format == 'NHWC':\n        if out_backprop.dim() == 2:\n            out_backprop = out_backprop.unsqueeze(0)\n    bias_grad = out_backprop.sum(dim=(0, 1))\n    return bias_grad"
+  },
+  "llm_inputs": [
+    "out_backprop = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\ndata_format = 'NHWC'",
+    "out_backprop = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\ndata_format = 'NHWC'",
+    "out_backprop = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ndata_format = 'NHWC'"
+  ]
+}

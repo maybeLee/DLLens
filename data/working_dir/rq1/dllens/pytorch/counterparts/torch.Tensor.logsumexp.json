@@ -1,0 +1,38 @@
+{
+  "function_name": "torch.Tensor.logsumexp(input, dim, keepdim=False)",
+  "inputs": [
+    "input",
+    "dim",
+    "keepdim"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ndim = 1\nkeepdim = True",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ndim = 1\nkeepdim = False",
+    "input = torch.tensor([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])\ndim = 1\nkeepdim = True",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nkeepdim = True\ndim = 0",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nkeepdim = True\ndim = 1",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(3,2), dtype=torch.float32)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nkeepdim = True\ndim = -1",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nkeepdim = True\ndim = -2",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(2,4), dtype=torch.float32)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim,keepdim=False):\n  return torch.Tensor.logsumexp(input,dim,keepdim)",
+    "tensorflow": "def tensorflow_call(input, dim, keepdim=False):\n    return tf.reduce_logsumexp(input, axis=dim, keepdims=keepdim)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ndim = 1\nkeepdim = True",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ndim = 1\nkeepdim = False",
+    "input = torch.tensor([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])\ndim = 1\nkeepdim = True"
+  ]
+}

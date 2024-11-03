@@ -1,0 +1,29 @@
+{
+  "function_name": "tf.raw_ops.BatchToSpaceND(input,block_shape,crops,name=None)",
+  "inputs": [
+    "input",
+    "block_shape",
+    "crops"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nblock_shape = tf.constant([2], dtype=tf.int32)\ncrops = tf.constant([[0, 0]], dtype=tf.int32)",
+    "block_shape = tf.constant([2], dtype=tf.int32)\ncrops = tf.constant([[0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "block_shape = tf.constant([2], dtype=tf.int32)\ncrops = tf.constant([[0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "block_shape = tf.constant([2], dtype=tf.int32)\ncrops = tf.constant([[0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "block_shape = tf.constant([2], dtype=tf.int32)\ncrops = tf.constant([[0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "block_shape = tf.constant([2], dtype=tf.int32)\ncrops = tf.constant([[0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "block_shape = tf.constant([2], dtype=tf.int32)\ncrops = tf.constant([[0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "block_shape = tf.constant([2], dtype=tf.int32)\ncrops = tf.constant([[0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "block_shape = tf.constant([2], dtype=tf.int32)\ncrops = tf.constant([[0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,2), dtype='half')",
+    "block_shape = tf.constant([2], dtype=tf.int32)\ncrops = tf.constant([[0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,2), dtype='float64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,block_shape,crops):\n  return tf.raw_ops.BatchToSpaceND(input=input,block_shape=block_shape,crops=crops)",
+    "pytorch": "def pytorch_call(input, block_shape, crops):\n    input_shape = input.shape\n    batch_size = input_shape[0]\n    block_shape = block_shape.tolist()\n    crops = crops.tolist()[0]\n    new_shape = [batch_size // block_shape[0]] + [block_shape[0]] + list(input_shape[1:])\n    reshaped_input = input.view(new_shape)\n    permuted_input = reshaped_input.permute(0, *range(2, reshaped_input.dim()), 1)\n    cropped_input = permuted_input[:, crops[0]:permuted_input.shape[1] - crops[0], crops[1]:permuted_input.shape[2] - crops[1]]\n    return cropped_input"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nblock_shape = tf.constant([2], dtype=tf.int32)\ncrops = tf.constant([[0, 0]], dtype=tf.int32)",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nblock_shape = tf.constant([2], dtype=tf.int32)\ncrops = tf.constant([[0, 0]], dtype=tf.int32)",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nblock_shape = tf.constant([2], dtype=tf.int32)\ncrops = tf.constant([[0, 0]], dtype=tf.int32)"
+  ]
+}

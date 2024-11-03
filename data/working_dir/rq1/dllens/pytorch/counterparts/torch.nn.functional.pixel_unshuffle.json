@@ -1,0 +1,23 @@
+{
+  "function_name": "torch.nn.functional.pixel_unshuffle(input, downscale_factor)",
+  "inputs": [
+    "input",
+    "downscale_factor"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[[1, 2], [3, 4]]], dtype=torch.float32)\ndownscale_factor = torch.tensor(2)",
+    "downscale_factor = torch.tensor(2)\ninput = torch.tensor(np.random.randn(1,2,2), dtype=torch.float64)",
+    "downscale_factor = torch.tensor(2)\ninput = torch.tensor(np.random.randn(1,2,2), dtype=torch.float16)",
+    "downscale_factor = torch.tensor(2)\ninput = torch.tensor(np.random.randn(1,2,2), dtype=torch.half)",
+    "downscale_factor = torch.tensor(2)\ninput = torch.tensor(np.random.randn(1,2,2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,downscale_factor):\n  return torch.nn.functional.pixel_unshuffle(input,downscale_factor)",
+    "tensorflow": "def tensorflow_call(input, downscale_factor):\n    input = tf.expand_dims(input, axis=-1) if tf.rank(input) == 3 else input\n    (batch_size, height, width, channels) = (tf.shape(input)[0], tf.shape(input)[1], tf.shape(input)[2], tf.shape(input)[3])\n    new_height = height // downscale_factor\n    new_width = width // downscale_factor\n    reshaped = tf.reshape(input, (batch_size, new_height, downscale_factor, new_width, downscale_factor, channels))\n    downscaled = tf.transpose(reshaped, perm=[0, 1, 3, 2, 4, 5])\n    return tf.reshape(downscaled, (batch_size, new_height, new_width, channels * downscale_factor * downscale_factor))"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[[1, 2], [3, 4]]], dtype=torch.float32)\ndownscale_factor = torch.tensor(2)",
+    "input = torch.tensor([[[1, 2], [3, 4]]], dtype=torch.float32)\ndownscale_factor = torch.tensor(2)",
+    "input = torch.tensor([[[1, 2], [3, 4]]], dtype=torch.float32)\ndownscale_factor = torch.tensor(2)"
+  ]
+}

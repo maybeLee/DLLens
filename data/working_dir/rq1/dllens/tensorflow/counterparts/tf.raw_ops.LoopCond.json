@@ -1,0 +1,18 @@
+{
+  "function_name": "tf.raw_ops.LoopCond(input,name=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([True, False])"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input):\n  return tf.raw_ops.LoopCond(input=input)",
+    "pytorch": "def pytorch_call(input):\n    return torch.where(input, torch.tensor(True), torch.tensor(False))"
+  },
+  "llm_inputs": [
+    "input = tf.constant([True, False])",
+    "input = tf.constant([True, False])",
+    "input = tf.constant([True, False])"
+  ]
+}

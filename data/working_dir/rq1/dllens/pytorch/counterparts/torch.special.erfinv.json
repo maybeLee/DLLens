@@ -1,0 +1,31 @@
+{
+  "function_name": "torch.special.erfinv(input, *, out=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9])",
+    "input_values = [0.0, 0.5, -0.5, 0.1, -0.1, 0.9, -0.9]\ninput = torch.tensor(input_values[:9])",
+    "input = torch.tensor([0.0, 0.5, -0.5, 0.9, -0.9])",
+    "input = torch.tensor(np.random.randn(10), dtype=torch.float16)",
+    "input = torch.tensor(np.random.randn(10,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(10,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(10), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(10,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(10), dtype=torch.float64)",
+    "input = torch.tensor(np.random.randn(10), dtype=torch.half)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(10,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.special.erfinv(input)",
+    "tensorflow": "def tensorflow_call(input):\n    input = tf.cast(input, tf.float32)\n    output = tf.math.erfinv(input)\n    output = tf.where(tf.logical_or(tf.less(input, -1.0), tf.greater(input, 1.0)), tf.fill(tf.shape(input), tf.constant(float('nan'))), output)\n    return output"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9])",
+    "input_values = [0.0, 0.5, -0.5, 0.1, -0.1, 0.9, -0.9]\ninput = torch.tensor(input_values[:9])",
+    "input = torch.tensor([0.0, 0.5, -0.5, 0.9, -0.9])"
+  ]
+}

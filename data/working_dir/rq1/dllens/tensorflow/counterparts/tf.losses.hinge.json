@@ -1,0 +1,41 @@
+{
+  "function_name": "tf.losses.hinge(y_true,y_pred)",
+  "inputs": [
+    "y_true",
+    "y_pred"
+  ],
+  "sample_inputs": [
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant([0.8, -0.5, 0.3, -0.2, 0.9], dtype=tf.float32)",
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant([0.8, -0.5, 0.6, -0.2, 0.9], dtype=tf.float32)",
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant([0.5, -0.5, 0.8, -0.2, 0.3], dtype=tf.float32)",
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5), dtype='half')",
+    "y_pred = tf.constant([0.8, -0.5, 0.3, -0.2, 0.9], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(1), dtype='float32')",
+    "y_pred = tf.constant([0.8, -0.5, 0.3, -0.2, 0.9], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(1), dtype='float32')",
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "y_pred = tf.constant([0.8, -0.5, 0.3, -0.2, 0.9], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5), dtype='float64')",
+    "y_pred = tf.constant([0.8, -0.5, 0.3, -0.2, 0.9], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "y_pred = tf.constant([0.8, -0.5, 0.3, -0.2, 0.9], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5,1,1,1), dtype='float32')",
+    "y_pred = tf.constant([0.8, -0.5, 0.3, -0.2, 0.9], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5), dtype='float16')",
+    "y_pred = tf.constant([0.8, -0.5, 0.3, -0.2, 0.9], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5), dtype='half')",
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5), dtype='float32')",
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5), dtype='float16')",
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5,1,1,1), dtype='float32')",
+    "y_pred = tf.constant([0.8, -0.5, 0.3, -0.2, 0.9], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "y_pred = tf.constant([0.8, -0.5, 0.3, -0.2, 0.9], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(), dtype='float32')",
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5), dtype='float64')",
+    "y_pred = tf.constant([0.8, -0.5, 0.3, -0.2, 0.9], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5), dtype='float32')",
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(y_true,y_pred):\n  return tf.losses.hinge(y_true,y_pred)",
+    "pytorch": "def pytorch_call(y_true, y_pred):\n    loss = torch.clamp(1 - y_true * y_pred, min=0)\n    return loss.mean(dim=-1, keepdim=True)"
+  },
+  "llm_inputs": [
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant([0.8, -0.5, 0.3, -0.2, 0.9], dtype=tf.float32)",
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant([0.8, -0.5, 0.6, -0.2, 0.9], dtype=tf.float32)",
+    "y_true = tf.constant([1, -1, 1, -1, 1], dtype=tf.float32)\ny_pred = tf.constant([0.5, -0.5, 0.8, -0.2, 0.3], dtype=tf.float32)"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "function_name": "tf.raw_ops.BitwiseXor(x,y,name=None)",
+  "inputs": [
+    "x",
+    "y"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([1, 0, 1, 0], dtype=tf.int32)\ny = tf.constant([0, 1, 0, 1], dtype=tf.int32)",
+    "x = tf.constant([[1, 0], [0, 1]], dtype=tf.int32)\ny = tf.constant([[1, 1], [1, 0]], dtype=tf.int32)",
+    "y = tf.constant([0, 1, 0, 1], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (4,1)), dtype='int32')",
+    "x = tf.constant([1, 0, 1, 0], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (4,1,1,1,1)), dtype='int32')",
+    "y = tf.constant([0, 1, 0, 1], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (4,1,1,1,1)), dtype='int32')",
+    "x = tf.constant([1, 0, 1, 0], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (4,1)), dtype='int32')",
+    "x = tf.constant([1, 0, 1, 0], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (4,1,1,1)), dtype='int32')",
+    "x = tf.constant([1, 0, 1, 0], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "y = tf.constant([0, 1, 0, 1], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "y = tf.constant([0, 1, 0, 1], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (4,1,1)), dtype='int32')",
+    "x = tf.constant([1, 0, 1, 0], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "x = tf.constant([1, 0, 1, 0], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (4)), dtype='int32')",
+    "x = tf.constant([1, 0, 1, 0], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (4,1,1)), dtype='int32')",
+    "y = tf.constant([0, 1, 0, 1], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (4,1,1,1)), dtype='int32')",
+    "y = tf.constant([0, 1, 0, 1], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "y = tf.constant([0, 1, 0, 1], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (4)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,y):\n  return tf.raw_ops.BitwiseXor(x=x,y=y)",
+    "pytorch": "def pytorch_call(x, y):\n    return torch.bitwise_xor(x, y)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([1, 0, 1, 0], dtype=tf.int32)\ny = tf.constant([0, 1, 0, 1], dtype=tf.int32)",
+    "x = tf.constant([[1, 0], [0, 1]], dtype=tf.int32)\ny = tf.constant([[1, 1], [1, 0]], dtype=tf.int32)",
+    "x = tf.constant([1, 0, 1, 0], dtype=tf.int32)\ny = tf.constant([0, 1, 0, 1], dtype=tf.int32)"
+  ]
+}

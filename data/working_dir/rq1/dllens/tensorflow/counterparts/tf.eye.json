@@ -1,0 +1,23 @@
+{
+  "function_name": "tf.eye(num_rows,num_columns=None,batch_shape=None,dtype=tf.dtypes.float32,name=None)",
+  "inputs": [
+    "num_rows",
+    "num_columns",
+    "batch_shape",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "num_rows = tf.constant(3)\nnum_columns = tf.constant(3)\nbatch_shape = tf.constant([1])\ndtype = tf.dtypes.float32",
+    "num_rows = tf.constant(3)\nnum_columns = tf.constant(3)\nbatch_shape = tf.constant([2])\ndtype = tf.dtypes.float32",
+    "num_rows = tf.constant(3, dtype=tf.int32)\nnum_columns = tf.constant(3, dtype=tf.int32)\nbatch_shape = tf.constant([2], dtype=tf.int32)\ndtype = tf.dtypes.float32"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(num_rows,num_columns=None,batch_shape=None,dtype=tf.dtypes.float32):\n  return tf.eye(num_rows,num_columns,batch_shape,dtype)",
+    "pytorch": "def pytorch_call(num_rows, num_columns=None, batch_shape=None, dtype=torch.float32):\n    if num_columns is None:\n        num_columns = num_rows\n    if batch_shape is None:\n        batch_shape = torch.tensor([1])\n    identity_matrix = torch.eye(num_rows.item(), num_columns.item(), dtype=dtype)\n    if batch_shape.item() > 1:\n        identity_matrix = identity_matrix.unsqueeze(0).expand(batch_shape.item(), -1, -1)\n    return identity_matrix"
+  },
+  "llm_inputs": [
+    "num_rows = tf.constant(3)\nnum_columns = tf.constant(3)\nbatch_shape = tf.constant([1])\ndtype = tf.dtypes.float32",
+    "num_rows = tf.constant(3)\nnum_columns = tf.constant(3)\nbatch_shape = tf.constant([2])\ndtype = tf.dtypes.float32",
+    "num_rows = tf.constant(3, dtype=tf.int32)\nnum_columns = tf.constant(3, dtype=tf.int32)\nbatch_shape = tf.constant([2], dtype=tf.int32)\ndtype = tf.dtypes.float32"
+  ]
+}

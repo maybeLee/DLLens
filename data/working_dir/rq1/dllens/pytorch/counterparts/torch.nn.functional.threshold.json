@@ -1,0 +1,46 @@
+{
+  "function_name": "torch.nn.functional.threshold(input, threshold, value, inplace=False)",
+  "inputs": [
+    "input",
+    "threshold",
+    "value",
+    "inplace"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[0.1, 0.5], [0.8, 1.2]])\nthreshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False",
+    "input = torch.tensor([[0.5, -0.2, 0.3], [0.1, -0.4, 0.6]], dtype=torch.float32)\nthreshold = torch.tensor(0.0, dtype=torch.float32)\nvalue = torch.tensor(1.0, dtype=torch.float32)\ninplace = False",
+    "input = torch.tensor([[0.5, -0.2, 0.0], [1.0, -1.5, 0.3]])\nthreshold = torch.tensor(0.1)\nvalue = torch.tensor(0.0)\ninplace = False",
+    "threshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "threshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False\ninput = torch.tensor(np.random.randn(4,2), dtype=torch.float32)",
+    "threshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "threshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "threshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "threshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "threshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "threshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.5], [0.8, 1.2]])\nthreshold = torch.tensor(0.3)\ninplace = False\nvalue = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "input = torch.tensor([[0.1, 0.5], [0.8, 1.2]])\nvalue = torch.tensor(0.0)\ninplace = False\nthreshold = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "threshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "threshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "input = torch.tensor([[0.1, 0.5], [0.8, 1.2]])\nthreshold = torch.tensor(0.3)\ninplace = False\nvalue = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "input = torch.tensor([[0.1, 0.5], [0.8, 1.2]])\nthreshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = True",
+    "input = torch.tensor([[0.1, 0.5], [0.8, 1.2]])\nvalue = torch.tensor(0.0)\ninplace = False\nthreshold = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "input = torch.tensor([[0.1, 0.5], [0.8, 1.2]])\nvalue = torch.tensor(0.0)\ninplace = False\nthreshold = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "threshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False\ninput = torch.tensor(np.random.randn(3,2), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.5], [0.8, 1.2]])\nthreshold = torch.tensor(0.3)\ninplace = False\nvalue = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.5], [0.8, 1.2]])\nvalue = torch.tensor(0.0)\ninplace = False\nthreshold = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "threshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.5], [0.8, 1.2]])\nthreshold = torch.tensor(0.3)\ninplace = False\nvalue = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "threshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "threshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,threshold,value,inplace=False):\n  return torch.nn.functional.threshold(input,threshold,value,inplace)",
+    "tensorflow": "def tensorflow_call(input, threshold, value, inplace=False):\n    if inplace:\n        input = tf.cast(input, tf.float32)\n        threshold = tf.cast(threshold, tf.float32)\n        value = tf.cast(value, tf.float32)\n        mask = input > threshold\n        return tf.where(mask, input, value)\n    else:\n        input = tf.cast(input, tf.float32)\n        threshold = tf.cast(threshold, tf.float32)\n        value = tf.cast(value, tf.float32)\n        mask = input > threshold\n        return tf.where(mask, input, value)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[0.1, 0.5], [0.8, 1.2]])\nthreshold = torch.tensor(0.3)\nvalue = torch.tensor(0.0)\ninplace = False",
+    "input = torch.tensor([[0.5, -0.2, 0.3], [0.1, -0.4, 0.6]], dtype=torch.float32)\nthreshold = torch.tensor(0.0, dtype=torch.float32)\nvalue = torch.tensor(1.0, dtype=torch.float32)\ninplace = False",
+    "input = torch.tensor([[0.5, -0.2, 0.0], [1.0, -1.5, 0.3]])\nthreshold = torch.tensor(0.1)\nvalue = torch.tensor(0.0)\ninplace = False"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "function_name": "tf.raw_ops.MirrorPadGrad(input,paddings,mode,name=None)",
+  "inputs": [
+    "input",
+    "paddings",
+    "mode"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\npaddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\nmode = 'REFLECT'",
+    "paddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\nmode = 'REFLECT'\ninput = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "paddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\nmode = 'REFLECT'\ninput = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "paddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\nmode = 'REFLECT'\ninput = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "paddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\nmode = 'REFLECT'\ninput = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "paddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\nmode = 'REFLECT'\ninput = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "paddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\nmode = 'REFLECT'\ninput = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "paddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\nmode = 'REFLECT'\ninput = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "paddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\nmode = 'REFLECT'\ninput = tf.constant(np.random.randn(2,2), dtype='half')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,paddings,mode):\n  return tf.raw_ops.MirrorPadGrad(input=input,paddings=paddings,mode=mode)",
+    "pytorch": "def pytorch_call(input, paddings, mode):\n    if mode == 'REFLECT':\n        pad_left = paddings[0, 0].item()\n        pad_right = paddings[0, 1].item()\n        pad_top = paddings[1, 0].item()\n        pad_bottom = paddings[1, 1].item()\n        if pad_left == 0 and pad_right == 0 and (pad_top == 0) and (pad_bottom == 0):\n            return input\n        padded_input = torch.nn.functional.pad(input, (pad_left, pad_right, pad_top, pad_bottom), mode='reflect')\n        return padded_input\n    else:\n        raise ValueError(\"Unsupported mode. Only 'REFLECT' is implemented.\")"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\npaddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\nmode = 'REFLECT'"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "function_name": "torch.swapdims(input, dim0, dim1)",
+  "inputs": [
+    "input",
+    "dim0",
+    "dim1"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim0 = 0\ndim1 = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim1 = 1\ndim0 = 0",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,3)), dtype=torch.int64)",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (1,3)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim1 = 1\ndim0 = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim1 = 1\ndim0 = -2",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,5)), dtype=torch.int64)",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (5,3)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim0 = 0\ndim1 = -1",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,3,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim0 = 0\ndim1 = 0",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,3,1,1)), dtype=torch.int64)",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,3)), dtype=torch.int32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim0 = 0\ndim1 = -2",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim1 = 1\ndim0 = -1",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,3,1,1,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim0,dim1):\n  return torch.swapdims(input,dim0,dim1)",
+    "tensorflow": "def tensorflow_call(input, dim0, dim1):\n    perm = list(range(len(input.shape)))\n    (perm[dim0], perm[dim1]) = (perm[dim1], perm[dim0])\n    return tf.transpose(input, perm)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim0 = 0\ndim1 = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim0 = 0\ndim1 = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim0 = 0\ndim1 = 1"
+  ]
+}

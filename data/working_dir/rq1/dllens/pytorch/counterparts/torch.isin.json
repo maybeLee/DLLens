@@ -1,0 +1,38 @@
+{
+  "function_name": "torch.isin(elements, test_elements, *, assume_unique=False, invert=False)",
+  "inputs": [
+    "elements",
+    "test_elements"
+  ],
+  "sample_inputs": [
+    "elements = torch.tensor([1, 2, 3, 4, 5])\ntest_elements = torch.tensor([3, 6])",
+    "elements = torch.tensor([1, 2, 3, 4, 5], dtype=torch.int32)\ntest_elements = torch.tensor([3, 6], dtype=torch.int32)",
+    "test_elements = torch.tensor([3, 6])\nelements = torch.tensor(np.random.randint(-50, 50, (5,1,1,1,1)), dtype=torch.int64)",
+    "test_elements = torch.tensor([3, 6])\nelements = torch.tensor(np.random.randint(-50, 50, (5,1,1,1)), dtype=torch.int64)",
+    "elements = torch.tensor([1, 2, 3, 4, 5])\ntest_elements = torch.tensor(np.random.randint(-50, 50, (2,1,1)), dtype=torch.int64)",
+    "elements = torch.tensor([1, 2, 3, 4, 5])\ntest_elements = torch.tensor(np.random.randint(-50, 50, (3)), dtype=torch.int64)",
+    "test_elements = torch.tensor([3, 6])\nelements = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int32)",
+    "elements = torch.tensor([1, 2, 3, 4, 5])\ntest_elements = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)",
+    "test_elements = torch.tensor([3, 6])\nelements = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "elements = torch.tensor([1, 2, 3, 4, 5])\ntest_elements = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int32)",
+    "elements = torch.tensor([1, 2, 3, 4, 5])\ntest_elements = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "test_elements = torch.tensor([3, 6])\nelements = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int64)",
+    "elements = torch.tensor([1, 2, 3, 4, 5])\ntest_elements = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "elements = torch.tensor([1, 2, 3, 4, 5])\ntest_elements = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "test_elements = torch.tensor([3, 6])\nelements = torch.tensor(np.random.randint(-50, 50, (5,1)), dtype=torch.int64)",
+    "elements = torch.tensor([1, 2, 3, 4, 5])\ntest_elements = torch.tensor(np.random.randint(-50, 50, (2,1,1,1,1)), dtype=torch.int64)",
+    "elements = torch.tensor([1, 2, 3, 4, 5])\ntest_elements = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int64)",
+    "test_elements = torch.tensor([3, 6])\nelements = torch.tensor(np.random.randint(-50, 50, (5,1,1)), dtype=torch.int64)",
+    "test_elements = torch.tensor([3, 6])\nelements = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)",
+    "elements = torch.tensor([1, 2, 3, 4, 5])\ntest_elements = torch.tensor(np.random.randint(-50, 50, (2,1,1,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(elements,test_elements):\n  return torch.isin(elements,test_elements)",
+    "tensorflow": "def tensorflow_call(elements, test_elements):\n    elements = tf.cast(elements, test_elements.dtype)\n    test_elements = tf.reshape(test_elements, [-1])\n    return tf.reduce_any(tf.equal(tf.expand_dims(elements, axis=-1), test_elements), axis=-1)"
+  },
+  "llm_inputs": [
+    "elements = torch.tensor([1, 2, 3, 4, 5])\ntest_elements = torch.tensor([3, 6])",
+    "elements = torch.tensor([1, 2, 3, 4, 5])\ntest_elements = torch.tensor([3, 6])",
+    "elements = torch.tensor([1, 2, 3, 4, 5], dtype=torch.int32)\ntest_elements = torch.tensor([3, 6], dtype=torch.int32)"
+  ]
+}

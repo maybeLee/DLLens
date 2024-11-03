@@ -1,0 +1,31 @@
+{
+  "function_name": "torch.tile(input, dims)",
+  "inputs": [
+    "input",
+    "dims"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\ndims = (2, 3)",
+    "dims = (2, 3)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "dims = (2, 3)\ninput = torch.tensor(np.random.randint(-50, 50, (2,5)), dtype=torch.int64)",
+    "dims = (2, 3)\ninput = torch.tensor(np.random.randint(-50, 50, (5,2)), dtype=torch.int64)",
+    "dims = (2, 3)\ninput = torch.tensor(np.random.randint(-50, 50, (4,2)), dtype=torch.int64)",
+    "dims = (2, 3)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1)), dtype=torch.int64)",
+    "dims = (2, 3)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "dims = (2, 3)\ninput = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "dims = (2, 3)\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "dims = (2, 3)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)",
+    "dims = (2, 3)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)",
+    "dims = (2, 3)\ninput = torch.tensor(np.random.randint(-50, 50, (1,2)), dtype=torch.int64)",
+    "dims = (2, 3)\ninput = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dims):\n  return torch.tile(input,dims)",
+    "tensorflow": "def tensorflow_call(input, dims):\n    if tf.rank(input) == 0:\n        input = tf.reshape(input, (1, 1))\n    elif tf.rank(input) == 1:\n        input = tf.reshape(input, (1, tf.shape(input)[0]))\n    multiples = tf.concat([tf.ones(tf.rank(input) - tf.shape(dims)[0], dtype=tf.int32), tf.constant(dims, dtype=tf.int32)], axis=0)\n    return tf.tile(input, multiples)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\ndims = (2, 3)",
+    "input = torch.tensor([[1, 2], [3, 4]])\ndims = (2, 3)",
+    "input = torch.tensor([[1, 2], [3, 4]])\ndims = (2, 3)"
+  ]
+}

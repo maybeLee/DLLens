@@ -1,0 +1,28 @@
+{
+  "function_name": "tf.raw_ops.ConjugateTranspose(x,perm,name=None)",
+  "inputs": [
+    "x",
+    "perm"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nperm = tf.constant([1, 0], dtype=tf.int32)",
+    "perm = tf.constant([1, 0], dtype=tf.int32)\nx = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "perm = tf.constant([1, 0], dtype=tf.int32)\nx = tf.constant(np.random.randn(2,2), dtype='half')",
+    "perm = tf.constant([1, 0], dtype=tf.int32)\nx = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "perm = tf.constant([1, 0], dtype=tf.int32)\nx = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "perm = tf.constant([1, 0], dtype=tf.int32)\nx = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "perm = tf.constant([1, 0], dtype=tf.int32)\nx = tf.constant(np.random.randn(3,2), dtype='float32')",
+    "perm = tf.constant([1, 0], dtype=tf.int32)\nx = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "perm = tf.constant([1, 0], dtype=tf.int32)\nx = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "perm = tf.constant([1, 0], dtype=tf.int32)\nx = tf.constant(np.random.randn(2,4), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,perm):\n  return tf.raw_ops.ConjugateTranspose(x=x,perm=perm)",
+    "pytorch": "def pytorch_call(x, perm):\n    return x.transpose(0, 1)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nperm = tf.constant([1, 0], dtype=tf.int32)",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nperm = tf.constant([1, 0], dtype=tf.int32)",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nperm = tf.constant([1, 0], dtype=tf.int32)"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "function_name": "torch.broadcast_to(input, shape)",
+  "inputs": [
+    "input",
+    "shape"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\nshape = (2, 2, 2)",
+    "shape = (2, 2, 2)\ninput = torch.tensor(np.random.randint(-50, 50, (1,2)), dtype=torch.int64)",
+    "shape = (2, 2, 2)\ninput = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "shape = (2, 2, 2)\ninput = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "shape = (2, 2, 2)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "shape = (2, 2, 2)\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "shape = (2, 2, 2)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "shape = (2, 2, 2)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,shape):\n  return torch.broadcast_to(input,shape)",
+    "tensorflow": "def tensorflow_call(input, shape):\n    return tf.broadcast_to(input, shape)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\nshape = (2, 2, 2)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nshape = (2, 2, 2)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nshape = (2, 2, 2)"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "function_name": "tf.keras.activations.relu(x,alpha=0.0,max_value=None,threshold=0.0)",
+  "inputs": [
+    "x",
+    "alpha",
+    "max_value",
+    "threshold"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nalpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)",
+    "x = tf.constant([[1.0, -1.0, 0.0], [2.0, -2.0, 3.0]], dtype=tf.float32)\nalpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(5.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)",
+    "x = tf.constant([[1.0, -1.0, 0.0], [2.0, -2.0, 0.5]], dtype=tf.float32)\nalpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(5.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)",
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nalpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nalpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "alpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nalpha = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nalpha = tf.constant(0.1, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nmax_value = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nalpha = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nalpha = tf.constant(0.1, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nmax_value = tf.constant(np.random.randn(1), dtype='float32')",
+    "alpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nalpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(np.random.randn(1), dtype='float32')",
+    "alpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "alpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(5,3), dtype='float32')",
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nalpha = tf.constant(0.1, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nmax_value = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nalpha = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "alpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2), dtype='float32')",
+    "alpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nalpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "alpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,3,1), dtype='float32')",
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nalpha = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nalpha = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "alpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nalpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "alpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,3,1,1,1), dtype='float32')",
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nalpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(np.random.randn(), dtype='float32')",
+    "alpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,3,1,1), dtype='float32')",
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nalpha = tf.constant(np.random.randn(), dtype='float32')",
+    "alpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(1,3), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,alpha=0.0,max_value=None,threshold=0.0):\n  return tf.keras.activations.relu(x,alpha,max_value,threshold)",
+    "pytorch": "def pytorch_call(x, alpha=0.0, max_value=None, threshold=0.0):\n    relu_output = torch.where(x < threshold, alpha * (x - threshold), x)\n    if max_value is not None:\n        relu_output = torch.clamp(relu_output, max=max_value)\n    return relu_output"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nalpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(6.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)",
+    "x = tf.constant([[1.0, -1.0, 0.0], [2.0, -2.0, 3.0]], dtype=tf.float32)\nalpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(5.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)",
+    "x = tf.constant([[1.0, -1.0, 0.0], [2.0, -2.0, 0.5]], dtype=tf.float32)\nalpha = tf.constant(0.1, dtype=tf.float32)\nmax_value = tf.constant(5.0, dtype=tf.float32)\nthreshold = tf.constant(0.0, dtype=tf.float32)"
+  ]
+}

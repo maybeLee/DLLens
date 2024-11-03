@@ -1,0 +1,43 @@
+{
+  "function_name": "torch.true_divide(dividend, divisor, *, out)",
+  "inputs": [
+    "dividend",
+    "divisor"
+  ],
+  "sample_inputs": [
+    "dividend = torch.tensor([[4.0], [8.0], [10.0]])\ndivisor = torch.tensor([[2.0], [4.0], [5.0]])",
+    "dividend = torch.tensor([8.0])\ndivisor = torch.tensor([2.0])",
+    "divisor = torch.tensor([[2.0], [4.0], [5.0]])\ndividend = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "dividend = torch.tensor([[4.0], [8.0], [10.0]])\ndivisor = torch.tensor(np.random.randn(1,1), dtype=torch.float32)",
+    "divisor = torch.tensor([[2.0], [4.0], [5.0]])\ndividend = torch.tensor(np.random.randn(3,5), dtype=torch.float32)",
+    "dividend = torch.tensor([[4.0], [8.0], [10.0]])\ndivisor = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "divisor = torch.tensor([[2.0], [4.0], [5.0]])\ndividend = torch.tensor(np.random.randn(3,1), dtype=torch.half)",
+    "divisor = torch.tensor([[2.0], [4.0], [5.0]])\ndividend = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "dividend = torch.tensor([[4.0], [8.0], [10.0]])\ndivisor = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "divisor = torch.tensor([[2.0], [4.0], [5.0]])\ndividend = torch.tensor(np.random.randn(1,1), dtype=torch.float32)",
+    "dividend = torch.tensor([[4.0], [8.0], [10.0]])\ndivisor = torch.tensor(np.random.randn(3,5), dtype=torch.float32)",
+    "dividend = torch.tensor([[4.0], [8.0], [10.0]])\ndivisor = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "divisor = torch.tensor([[2.0], [4.0], [5.0]])\ndividend = torch.tensor(np.random.randn(3,1), dtype=torch.float16)",
+    "dividend = torch.tensor([[4.0], [8.0], [10.0]])\ndivisor = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "dividend = torch.tensor([[4.0], [8.0], [10.0]])\ndivisor = torch.tensor(np.random.randn(3,1), dtype=torch.float64)",
+    "divisor = torch.tensor([[2.0], [4.0], [5.0]])\ndividend = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "divisor = torch.tensor([[2.0], [4.0], [5.0]])\ndividend = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "divisor = torch.tensor([[2.0], [4.0], [5.0]])\ndividend = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "divisor = torch.tensor([[2.0], [4.0], [5.0]])\ndividend = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "dividend = torch.tensor([[4.0], [8.0], [10.0]])\ndivisor = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "dividend = torch.tensor([[4.0], [8.0], [10.0]])\ndivisor = torch.tensor(np.random.randn(3,1), dtype=torch.float16)",
+    "divisor = torch.tensor([[2.0], [4.0], [5.0]])\ndividend = torch.tensor(np.random.randn(3,4), dtype=torch.float32)",
+    "dividend = torch.tensor([[4.0], [8.0], [10.0]])\ndivisor = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "divisor = torch.tensor([[2.0], [4.0], [5.0]])\ndividend = torch.tensor(np.random.randn(3,1), dtype=torch.float64)",
+    "dividend = torch.tensor([[4.0], [8.0], [10.0]])\ndivisor = torch.tensor(np.random.randn(3,1), dtype=torch.half)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(dividend,divisor):\n  return torch.true_divide(dividend,divisor)",
+    "tensorflow": "def tensorflow_call(dividend, divisor):\n    divisor = tf.cast(divisor, dividend.dtype)\n    return tf.divide(dividend, divisor)"
+  },
+  "llm_inputs": [
+    "dividend = torch.tensor([[4.0], [8.0], [10.0]])\ndivisor = torch.tensor([[2.0], [4.0], [5.0]])",
+    "dividend = torch.tensor([8.0])\ndivisor = torch.tensor([2.0])",
+    "dividend = torch.tensor([8.0])\ndivisor = torch.tensor([2.0])"
+  ]
+}

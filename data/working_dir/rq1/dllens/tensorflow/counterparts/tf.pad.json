@@ -1,0 +1,39 @@
+{
+  "function_name": "tf.pad(tensor,paddings,mode='CONSTANT',constant_values=0,name=None)",
+  "inputs": [
+    "tensor",
+    "paddings",
+    "mode",
+    "constant_values"
+  ],
+  "sample_inputs": [
+    "tensor = tf.constant([[1, 2], [3, 4]])\npaddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = 0",
+    "tensor = tf.constant([[1, 2], [3, 4]])\npaddings = tf.constant([[1, 1], [1, 1]])\nmode = 'CONSTANT'\nconstant_values = 0",
+    "paddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = 0\ntensor = tf.constant(np.random.randint(-50, 50, (3,2)), dtype='int32')",
+    "tensor = tf.constant([[1, 2], [3, 4]])\npaddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = -5",
+    "tensor = tf.constant([[1, 2], [3, 4]])\npaddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = -3",
+    "tensor = tf.constant([[1, 2], [3, 4]])\npaddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = -2",
+    "tensor = tf.constant([[1, 2], [3, 4]])\npaddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = 4",
+    "paddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = 0\ntensor = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int32')",
+    "tensor = tf.constant([[1, 2], [3, 4]])\npaddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = 1",
+    "tensor = tf.constant([[1, 2], [3, 4]])\npaddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = 5",
+    "tensor = tf.constant([[1, 2], [3, 4]])\npaddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = -1",
+    "paddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = 0\ntensor = tf.constant(np.random.randint(-50, 50, (5,2)), dtype='int32')",
+    "paddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = 0\ntensor = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int32')",
+    "tensor = tf.constant([[1, 2], [3, 4]])\npaddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = 3",
+    "paddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = 0\ntensor = tf.constant(np.random.randint(-50, 50, (4,2)), dtype='int32')",
+    "tensor = tf.constant([[1, 2], [3, 4]])\npaddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = -4",
+    "paddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = 0\ntensor = tf.constant(np.random.randint(-50, 50, (1,2)), dtype='int32')",
+    "paddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = 0\ntensor = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int64')",
+    "tensor = tf.constant([[1, 2], [3, 4]])\npaddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = 2"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(tensor,paddings,mode='CONSTANT',constant_values=0):\n  return tf.pad(tensor,paddings,mode,constant_values)",
+    "pytorch": "def pytorch_call(tensor, paddings, mode='CONSTANT', constant_values=0):\n    pad = paddings.flatten().tolist()\n    return F.pad(tensor, pad[::-1], mode='constant', value=constant_values)"
+  },
+  "llm_inputs": [
+    "tensor = tf.constant([[1, 2], [3, 4]])\npaddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = 0",
+    "tensor = tf.constant([[1, 2], [3, 4]])\npaddings = tf.constant([[1, 1], [1, 1]])\nmode = 'CONSTANT'\nconstant_values = 0",
+    "tensor = tf.constant([[1, 2], [3, 4]])\npaddings = tf.constant([[1, 1], [2, 2]])\nmode = 'CONSTANT'\nconstant_values = 0"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "function_name": "torch.linalg.qr(A, mode='reduced', *, out=None)",
+  "inputs": [
+    "A",
+    "mode"
+  ],
+  "sample_inputs": [
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nmode = 'reduced'",
+    "mode = 'reduced'\nA = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "mode = 'reduced'\nA = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "mode = 'reduced'\nA = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "mode = 'reduced'\nA = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "mode = 'reduced'\nA = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "mode = 'reduced'\nA = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "mode = 'reduced'\nA = torch.tensor(np.random.randn(2,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(A,mode='reduced'):\n  return torch.linalg.qr(A,mode)",
+    "tensorflow": "def tensorflow_call(A, mode='reduced'):\n    full_matrices = mode == 'full'\n    (q, r) = tf.linalg.qr(A, full_matrices=full_matrices)\n    return (q, r)"
+  },
+  "llm_inputs": [
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nmode = 'reduced'",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nmode = 'reduced'",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nmode = 'reduced'"
+  ]
+}

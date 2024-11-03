@@ -1,0 +1,41 @@
+{
+  "function_name": "torch.nn.functional.pad(input, pad, mode='constant', value=0)",
+  "inputs": [
+    "input",
+    "pad",
+    "mode",
+    "value"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\npad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 5",
+    "input = torch.tensor([[1, 2], [3, 4]])\npad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 0",
+    "input = torch.tensor([[1, 2], [3, 4]])\npad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = -1",
+    "input = torch.tensor([[1, 2], [3, 4]])\npad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 1",
+    "pad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 5\ninput = torch.tensor(np.random.randint(-50, 50, (1,2)), dtype=torch.int64)",
+    "pad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 5\ninput = torch.tensor(np.random.randint(-50, 50, (4,2)), dtype=torch.int64)",
+    "pad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 5\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)",
+    "pad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 5\ninput = torch.tensor(np.random.randint(-50, 50, (5,2)), dtype=torch.int64)",
+    "pad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 5\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\npad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = -4",
+    "input = torch.tensor([[1, 2], [3, 4]])\npad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 4",
+    "input = torch.tensor([[1, 2], [3, 4]])\npad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = -5",
+    "pad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 5\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1)), dtype=torch.int64)",
+    "pad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 5\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "input = torch.tensor([[1, 2], [3, 4]])\npad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 3",
+    "pad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 5\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\npad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 2",
+    "pad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 5\ninput = torch.tensor(np.random.randint(-50, 50, (2,5)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\npad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = -2",
+    "input = torch.tensor([[1, 2], [3, 4]])\npad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = -3",
+    "pad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 5\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,pad,mode='constant',value=0):\n  return torch.nn.functional.pad(input,pad,mode,value)",
+    "tensorflow": "def tensorflow_call(input, pad, mode='constant', value=0):\n    input_rank = tf.rank(input)\n    paddings = tf.constant([[pad[0], pad[2]], [pad[1], pad[3]]], dtype=tf.int64)\n    while tf.shape(paddings)[0] < input_rank:\n        paddings = tf.concat([[[0, 0]], paddings], axis=0)\n    if mode == 'constant':\n        return tf.pad(input, paddings, constant_values=value)\n    else:\n        raise ValueError('Unsupported mode: {}'.format(mode))"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\npad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 5",
+    "input = torch.tensor([[1, 2], [3, 4]])\npad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 0",
+    "input = torch.tensor([[1, 2], [3, 4]])\npad = (1, 1, 1, 1)\nmode = 'constant'\nvalue = 0"
+  ]
+}

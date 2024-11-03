@@ -1,0 +1,20 @@
+{
+  "function_name": "tf.raw_ops.ApproximateEqual(x,y,tolerance=1e-05,name=None)",
+  "inputs": [
+    "x",
+    "y",
+    "tolerance"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([1.0, 2.0, 3.0])\ny = tf.constant([1.0, 2.1, 3.0])\ntolerance = 1e-05\nresult = tf.raw_ops.ApproximateEqual(x=x, y=y, tolerance=tolerance)"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,y,tolerance=1e-05):\n  return tf.raw_ops.ApproximateEqual(x=x,y=y,tolerance=tolerance)",
+    "pytorch": "def pytorch_call(x, y, tolerance=1e-05):\n    return torch.isclose(x, y, atol=tolerance)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([1.0, 2.0, 3.0])\ny = tf.constant([1.0, 2.1, 3.0])\ntolerance = 1e-05\nresult = tf.raw_ops.ApproximateEqual(x=x, y=y, tolerance=tolerance)",
+    "x = tf.constant([1.0, 2.0, 3.0])\ny = tf.constant([1.0, 2.1, 3.0])\ntolerance = 1e-05\nresult = tf.raw_ops.ApproximateEqual(x=x, y=y, tolerance=tolerance)",
+    "x = tf.constant([1.0, 2.0, 3.0])\ny = tf.constant([1.0, 2.1, 3.0])\ntolerance = 1e-05\nresult = tf.raw_ops.ApproximateEqual(x=x, y=y, tolerance=tolerance)"
+  ]
+}

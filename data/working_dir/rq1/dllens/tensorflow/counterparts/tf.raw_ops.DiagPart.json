@@ -1,0 +1,23 @@
+{
+  "function_name": "tf.raw_ops.DiagPart(input,name=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 0, 0], [0, 2, 0], [0, 0, 3]], dtype=tf.float32)",
+    "input = tf.constant(np.random.randn(3,3), dtype='float64')",
+    "input = tf.constant(np.random.randn(3,3), dtype='half')",
+    "input = tf.constant(np.random.randn(3,3), dtype='float32')",
+    "input = tf.constant(np.random.randn(), dtype='float32')",
+    "input = tf.constant(np.random.randn(3,3), dtype='float16')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input):\n  return tf.raw_ops.DiagPart(input=input)",
+    "pytorch": "def pytorch_call(input):\n    if input.dim() == 0:\n        return input\n    return input.diagonal()"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 0, 0], [0, 2, 0], [0, 0, 3]], dtype=tf.float32)",
+    "input = tf.constant([[1, 0, 0], [0, 2, 0], [0, 0, 3]], dtype=tf.float32)",
+    "input = tf.constant([[1, 0, 0], [0, 2, 0], [0, 0, 3]], dtype=tf.float32)"
+  ]
+}

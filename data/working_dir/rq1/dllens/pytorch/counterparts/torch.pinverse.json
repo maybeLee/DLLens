@@ -1,0 +1,33 @@
+{
+  "function_name": "torch.pinverse(input, rcond=1e-15)",
+  "inputs": [
+    "input",
+    "rcond"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrcond = torch.tensor(1e-15)",
+    "rcond = torch.tensor(1e-15)\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "rcond = torch.tensor(1e-15)\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "rcond = torch.tensor(1e-15)\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrcond = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "rcond = torch.tensor(1e-15)\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrcond = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "rcond = torch.tensor(1e-15)\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "rcond = torch.tensor(1e-15)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "rcond = torch.tensor(1e-15)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrcond = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "rcond = torch.tensor(1e-15)\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrcond = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "rcond = torch.tensor(1e-15)\ninput = torch.tensor(np.random.randn(4,2), dtype=torch.float32)",
+    "rcond = torch.tensor(1e-15)\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,rcond=1e-15):\n  return torch.pinverse(input,rcond)",
+    "tensorflow": "def tensorflow_call(input, rcond=1e-15):\n    rcond = tf.cast(rcond, input.dtype)\n    return tf.linalg.pinv(input, rcond=rcond)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrcond = torch.tensor(1e-15)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrcond = torch.tensor(1e-15)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrcond = torch.tensor(1e-15)"
+  ]
+}

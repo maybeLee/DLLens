@@ -1,0 +1,39 @@
+{
+  "function_name": "torch.Tensor.rot90(input, k, dims)",
+  "inputs": [
+    "input",
+    "k",
+    "dims"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nk = 1\ndims = (0, 1)",
+    "k = 1\ndims = (0, 1)\ninput = torch.tensor(np.random.randint(-50, 50, (3,3)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndims = (0, 1)\nk = 1",
+    "k = 1\ndims = (0, 1)\ninput = torch.tensor(np.random.randint(-50, 50, (3,3,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndims = (0, 1)\nk = -2",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndims = (0, 1)\nk = 5",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndims = (0, 1)\nk = 3",
+    "k = 1\ndims = (0, 1)\ninput = torch.tensor(np.random.randint(-50, 50, (3,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndims = (0, 1)\nk = 2",
+    "k = 1\ndims = (0, 1)\ninput = torch.tensor(np.random.randint(-50, 50, (3,3,1,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndims = (0, 1)\nk = -1",
+    "k = 1\ndims = (0, 1)\ninput = torch.tensor(np.random.randint(-50, 50, (3,3,1,1,1)), dtype=torch.int64)",
+    "k = 1\ndims = (0, 1)\ninput = torch.tensor(np.random.randint(-50, 50, (1,3)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndims = (0, 1)\nk = 4",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndims = (0, 1)\nk = 0",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndims = (0, 1)\nk = -3",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndims = (0, 1)\nk = -4",
+    "k = 1\ndims = (0, 1)\ninput = torch.tensor(np.random.randint(-50, 50, (3,3)), dtype=torch.int32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndims = (0, 1)\nk = -5",
+    "k = 1\ndims = (0, 1)\ninput = torch.tensor(np.random.randint(-50, 50, (3,5)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,k,dims):\n  return torch.Tensor.rot90(input,k,dims)",
+    "tensorflow": "def tensorflow_call(input, k, dims):\n    if len(input.shape) < 2:\n        raise ValueError('Input must be at least 2-dimensional.')\n    k = k % 4\n    if dims == (0, 1):\n        if k == 1:\n            rotated = tf.transpose(input, perm=[1, 0] + list(range(2, len(input.shape))))\n            rotated = tf.reverse(rotated, axis=[0])\n        elif k == 2:\n            rotated = tf.reverse(input, axis=[0, 1])\n        elif k == 3:\n            rotated = tf.reverse(tf.transpose(input, perm=[1, 0] + list(range(2, len(input.shape)))), axis=[1])\n        else:\n            rotated = input\n    else:\n        raise ValueError('Only (0, 1) dimensions are supported for rotation.')\n    return rotated"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nk = 1\ndims = (0, 1)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nk = 1\ndims = (0, 1)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nk = 1\ndims = (0, 1)"
+  ]
+}

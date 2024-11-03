@@ -1,0 +1,21 @@
+{
+  "function_name": "tf.zeros(shape,dtype=tf.dtypes.float32,name=None)",
+  "inputs": [
+    "shape",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "shape = (3, 3)\ndtype = tf.dtypes.float32",
+    "shape = tf.constant([3, 3])\ndtype = tf.dtypes.float32",
+    "shape = tf.constant([2, 3])\ndtype = tf.dtypes.float32"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(shape,dtype=tf.dtypes.float32):\n  return tf.zeros(shape,dtype)",
+    "pytorch": "def pytorch_call(shape, dtype=torch.float32):\n    if isinstance(shape, torch.Tensor):\n        shape = shape.tolist()\n    return torch.zeros(shape, dtype=dtype)"
+  },
+  "llm_inputs": [
+    "shape = (3, 3)\ndtype = tf.dtypes.float32",
+    "shape = tf.constant([3, 3])\ndtype = tf.dtypes.float32",
+    "shape = tf.constant([2, 3])\ndtype = tf.dtypes.float32"
+  ]
+}

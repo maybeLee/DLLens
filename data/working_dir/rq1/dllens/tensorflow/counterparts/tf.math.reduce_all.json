@@ -1,0 +1,26 @@
+{
+  "function_name": "tf.math.reduce_all(input_tensor,axis=None,keepdims=False,name=None)",
+  "inputs": [
+    "input_tensor",
+    "axis",
+    "keepdims"
+  ],
+  "sample_inputs": [
+    "input_tensor = tf.constant([[True, False, True], [False, True, True]], dtype=tf.bool)\naxis = 1\nkeepdims = True",
+    "input_tensor = tf.constant([[True, False, True], [False, True, True]])\naxis = 1\nkeepdims = True",
+    "input_tensor = tf.constant([[True, False, True], [False, True, True]], dtype=tf.bool)\nkeepdims = True\naxis = -1",
+    "input_tensor = tf.constant([[True, False, True], [False, True, True]], dtype=tf.bool)\nkeepdims = True\naxis = 0",
+    "input_tensor = tf.constant([[True, False, True], [False, True, True]], dtype=tf.bool)\nkeepdims = True\naxis = -2",
+    "input_tensor = tf.constant([[True, False, True], [False, True, True]], dtype=tf.bool)\naxis = 1\nkeepdims = False",
+    "input_tensor = tf.constant([[True, False, True], [False, True, True]], dtype=tf.bool)\nkeepdims = True\naxis = 1"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input_tensor,axis=None,keepdims=False):\n  return tf.math.reduce_all(input_tensor,axis,keepdims)",
+    "pytorch": "def pytorch_call(input_tensor, axis=None, keepdims=False):\n    if axis is not None:\n        result = input_tensor.all(dim=axis)\n    else:\n        result = input_tensor.all()\n    if keepdims:\n        result = result.unsqueeze(axis) if axis is not None else result.unsqueeze(0)\n    return result"
+  },
+  "llm_inputs": [
+    "input_tensor = tf.constant([[True, False, True], [False, True, True]], dtype=tf.bool)\naxis = 1\nkeepdims = True",
+    "input_tensor = tf.constant([[True, False, True], [False, True, True]], dtype=tf.bool)\naxis = 1\nkeepdims = True",
+    "input_tensor = tf.constant([[True, False, True], [False, True, True]])\naxis = 1\nkeepdims = True"
+  ]
+}

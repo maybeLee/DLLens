@@ -1,0 +1,21 @@
+{
+  "function_name": "tf.math.sobol_sample(dim,num_results,skip=0,dtype=tf.dtypes.float32,name=None)",
+  "inputs": [
+    "dim",
+    "num_results",
+    "skip",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "dim = tf.constant(3)\nnum_results = tf.constant(5)\nskip = tf.constant(0)\ndtype = tf.dtypes.float32"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(dim,num_results,skip=0,dtype=tf.dtypes.float32):\n  return tf.math.sobol_sample(dim,num_results,skip,dtype)",
+    "pytorch": "def pytorch_call(dim, num_results, skip=0, dtype=torch.float32):\n    sobol_samples = torch.quasirandom.SobolEngine(dim.item()).draw(num_results.item() + skip + 1, dtype=dtype)\n    return sobol_samples[1 + skip:]"
+  },
+  "llm_inputs": [
+    "dim = tf.constant(3)\nnum_results = tf.constant(5)\nskip = tf.constant(0)\ndtype = tf.dtypes.float32",
+    "dim = tf.constant(3)\nnum_results = tf.constant(5)\nskip = tf.constant(0)\ndtype = tf.dtypes.float32",
+    "dim = tf.constant(3)\nnum_results = tf.constant(5)\nskip = tf.constant(0)\ndtype = tf.dtypes.float32"
+  ]
+}

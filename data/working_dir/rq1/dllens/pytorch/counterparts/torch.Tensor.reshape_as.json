@@ -1,0 +1,27 @@
+{
+  "function_name": "torch.Tensor.reshape_as(input, other)",
+  "inputs": [
+    "input",
+    "other"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor([[5, 6], [7, 8]])",
+    "other = torch.tensor([[5, 6], [7, 8]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor(np.random.randint(-50, 50, (2,2,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)",
+    "other = torch.tensor([[5, 6], [7, 8]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)",
+    "other = torch.tensor([[5, 6], [7, 8]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)",
+    "other = torch.tensor([[5, 6], [7, 8]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "other = torch.tensor([[5, 6], [7, 8]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,other):\n  return torch.Tensor.reshape_as(input,other)",
+    "tensorflow": "def tensorflow_call(input, other):\n    return tf.reshape(input, tf.shape(other))"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor([[5, 6], [7, 8]])"
+  ]
+}

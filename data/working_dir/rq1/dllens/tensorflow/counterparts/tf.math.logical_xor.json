@@ -1,0 +1,20 @@
+{
+  "function_name": "tf.math.logical_xor(x,y,name='LogicalXor')",
+  "inputs": [
+    "x",
+    "y"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([True, False, True, False], dtype=tf.bool)\ny = tf.constant([False, True, False, True], dtype=tf.bool)",
+    "x = tf.constant([[True, False], [False, True]], dtype=tf.bool)\ny = tf.constant([[False, True], [True, False]], dtype=tf.bool)"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,y):\n  return tf.math.logical_xor(x,y)",
+    "pytorch": "def pytorch_call(x, y):\n    return torch.logical_xor(x, y)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([True, False, True, False], dtype=tf.bool)\ny = tf.constant([False, True, False, True], dtype=tf.bool)",
+    "x = tf.constant([[True, False], [False, True]], dtype=tf.bool)\ny = tf.constant([[False, True], [True, False]], dtype=tf.bool)",
+    "x = tf.constant([[True, False], [False, True]], dtype=tf.bool)\ny = tf.constant([[False, True], [True, False]], dtype=tf.bool)"
+  ]
+}

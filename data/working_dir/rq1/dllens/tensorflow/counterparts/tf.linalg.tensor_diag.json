@@ -1,0 +1,28 @@
+{
+  "function_name": "tf.linalg.tensor_diag(diagonal,name=None)",
+  "inputs": [
+    "diagonal"
+  ],
+  "sample_inputs": [
+    "diagonal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)",
+    "diagonal = tf.constant([1, 2, 3, 4, 5, 6, 7, 8, 9])",
+    "diagonal = tf.constant(np.random.randn(5,1,1,1), dtype='float32')",
+    "diagonal = tf.constant(np.random.randn(5), dtype='float64')",
+    "diagonal = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "diagonal = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "diagonal = tf.constant(np.random.randn(5), dtype='float16')",
+    "diagonal = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "diagonal = tf.constant(np.random.randn(5), dtype='half')",
+    "diagonal = tf.constant(np.random.randn(1), dtype='float32')",
+    "diagonal = tf.constant(np.random.randn(5), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(diagonal):\n  return tf.linalg.tensor_diag(diagonal)",
+    "pytorch": "def pytorch_call(diagonal):\n    num_dims = diagonal.dim()\n    if num_dims == 2:\n        diagonal = diagonal.view(-1)\n    elif num_dims > 2:\n        diagonal = diagonal.view(-1)\n    output_shape = (diagonal.size(0),) + (1,) * (num_dims - 1) + (diagonal.size(0),)\n    diag_tensor = torch.zeros(output_shape, dtype=diagonal.dtype)\n    for i in range(diagonal.size(0)):\n        diag_tensor[i, ..., i] = diagonal[i]\n    return diag_tensor"
+  },
+  "llm_inputs": [
+    "diagonal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)",
+    "diagonal = tf.constant([1, 2, 3, 4, 5, 6, 7, 8, 9])",
+    "diagonal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)"
+  ]
+}

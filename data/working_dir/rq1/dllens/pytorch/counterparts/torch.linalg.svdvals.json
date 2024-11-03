@@ -1,0 +1,29 @@
+{
+  "function_name": "torch.linalg.svdvals(A, *, out=None)",
+  "inputs": [
+    "A"
+  ],
+  "sample_inputs": [
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])",
+    "A = torch.tensor([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]])",
+    "A = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "A = torch.tensor(np.random.randn(2,4), dtype=torch.float32)",
+    "A = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "A = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "A = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "A = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "A = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "A = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "A = torch.tensor(np.random.randn(2,3), dtype=torch.float32)",
+    "A = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(A):\n  return torch.linalg.svdvals(A)",
+    "tensorflow": "def tensorflow_call(A):\n    (s, _, _) = tf.linalg.svd(A)\n    return s"
+  },
+  "llm_inputs": [
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])",
+    "A = torch.tensor([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0], [7.0, 8.0, 9.0]])",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])"
+  ]
+}

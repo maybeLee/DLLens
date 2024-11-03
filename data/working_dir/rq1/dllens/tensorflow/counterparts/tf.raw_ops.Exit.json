@@ -1,0 +1,26 @@
+{
+  "function_name": "tf.raw_ops.Exit(data,name=None)",
+  "inputs": [
+    "data"
+  ],
+  "sample_inputs": [
+    "data = tf.constant([1, 2, 3], dtype=tf.int32)",
+    "data = tf.constant(np.random.randint(-50, 50, (3,1)), dtype='int32')",
+    "data = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "data = tf.constant(np.random.randint(-50, 50, (3,1,1)), dtype='int32')",
+    "data = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "data = tf.constant(np.random.randint(-50, 50, (3)), dtype='int64')",
+    "data = tf.constant(np.random.randint(-50, 50, (3,1,1,1,1)), dtype='int32')",
+    "data = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "data = tf.constant(np.random.randint(-50, 50, (3,1,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(data):\n  return tf.raw_ops.Exit(data=data)",
+    "pytorch": "def pytorch_call(data):\n    return data"
+  },
+  "llm_inputs": [
+    "data = tf.constant([1, 2, 3], dtype=tf.int32)",
+    "data = tf.constant([1, 2, 3], dtype=tf.int32)",
+    "data = tf.constant([1, 2, 3], dtype=tf.int32)"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "function_name": "tf.image.convert_image_dtype(image,dtype,saturate=False,name=None)",
+  "inputs": [
+    "image",
+    "dtype",
+    "saturate"
+  ],
+  "sample_inputs": [
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ndtype = tf.float32\nsaturate = False",
+    "image = tf.constant([[0.1, 0.5], [0.3, 0.7]], dtype=tf.float32)\ndtype = tf.float32\nsaturate = False",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ndtype = tf.float32\nsaturate = True",
+    "dtype = tf.float32\nsaturate = False\nimage = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "dtype = tf.float32\nsaturate = False\nimage = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "dtype = tf.float32\nsaturate = False\nimage = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "dtype = tf.float32\nsaturate = False\nimage = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "dtype = tf.float32\nsaturate = False\nimage = tf.constant(np.random.randn(2), dtype='float32')",
+    "dtype = tf.float32\nsaturate = False\nimage = tf.constant(np.random.randn(4,2), dtype='float32')",
+    "dtype = tf.float32\nsaturate = False\nimage = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "dtype = tf.float32\nsaturate = False\nimage = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "dtype = tf.float32\nsaturate = False\nimage = tf.constant(np.random.randn(), dtype='float32')",
+    "dtype = tf.float32\nsaturate = False\nimage = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "dtype = tf.float32\nsaturate = False\nimage = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "dtype = tf.float32\nsaturate = False\nimage = tf.constant(np.random.randn(2,2), dtype='half')",
+    "dtype = tf.float32\nsaturate = False\nimage = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "dtype = tf.float32\nsaturate = False\nimage = tf.constant(np.random.randn(2,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(image,dtype,saturate=False):\n  return tf.image.convert_image_dtype(image,dtype,saturate)",
+    "pytorch": "def pytorch_call(image, dtype, saturate=False):\n    if saturate:\n        image = torch.clamp(image, 0.0, 1.0)\n    return image.to(dtype)"
+  },
+  "llm_inputs": [
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ndtype = tf.float32\nsaturate = False",
+    "image = tf.constant([[0.1, 0.5], [0.3, 0.7]], dtype=tf.float32)\ndtype = tf.float32\nsaturate = False",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ndtype = tf.float32\nsaturate = True"
+  ]
+}

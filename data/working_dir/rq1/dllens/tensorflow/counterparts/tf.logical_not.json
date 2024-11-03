@@ -1,0 +1,20 @@
+{
+  "function_name": "tf.logical_not(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[True, False], [False, True]])",
+    "x = tf.constant([[True, False, True], [False, True, False]], dtype=tf.bool)",
+    "x = tf.constant([[True, False], [False, True]], dtype=tf.bool)"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.logical_not(x)",
+    "pytorch": "def pytorch_call(x):\n    return torch.logical_not(x)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[True, False], [False, True]])",
+    "x = tf.constant([[True, False, True], [False, True, False]], dtype=tf.bool)",
+    "x = tf.constant([[True, False], [False, True]], dtype=tf.bool)"
+  ]
+}

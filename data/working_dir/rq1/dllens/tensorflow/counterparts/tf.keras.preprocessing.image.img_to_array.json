@@ -1,0 +1,28 @@
+{
+  "function_name": "tf.keras.preprocessing.image.img_to_array(img,data_format=None,dtype=None)",
+  "inputs": [
+    "img",
+    "data_format",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "img = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ndata_format = 'channels_last'\ndtype = 'float32'",
+    "data_format = 'channels_last'\ndtype = 'float32'\nimg = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "data_format = 'channels_last'\ndtype = 'float32'\nimg = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "data_format = 'channels_last'\ndtype = 'float32'\nimg = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "data_format = 'channels_last'\ndtype = 'float32'\nimg = tf.constant(np.random.randn(2,2), dtype='half')",
+    "data_format = 'channels_last'\ndtype = 'float32'\nimg = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "data_format = 'channels_last'\ndtype = 'float32'\nimg = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "data_format = 'channels_last'\ndtype = 'float32'\nimg = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "data_format = 'channels_last'\ndtype = 'float32'\nimg = tf.constant(np.random.randn(2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(img,data_format=None,dtype=None):\n  return tf.keras.preprocessing.image.img_to_array(img,data_format,dtype)",
+    "pytorch": "def pytorch_call(img, data_format=None, dtype=None):\n    if dtype is not None:\n        img = img.to(dtype)\n    if data_format == 'channels_last':\n        if img.ndim == 2:\n            img = img.unsqueeze(0)\n        elif img.ndim == 3:\n            img = img.permute(2, 0, 1)\n    return img"
+  },
+  "llm_inputs": [
+    "img = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ndata_format = 'channels_last'\ndtype = 'float32'",
+    "img = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ndata_format = 'channels_last'\ndtype = 'float32'",
+    "img = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ndata_format = 'channels_last'\ndtype = 'float32'"
+  ]
+}

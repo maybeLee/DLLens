@@ -1,0 +1,36 @@
+{
+  "function_name": "tf.reduce_prod(input_tensor,axis=None,keepdims=False,name=None)",
+  "inputs": [
+    "input_tensor",
+    "axis",
+    "keepdims"
+  ],
+  "sample_inputs": [
+    "input_tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\naxis = 0\nkeepdims = True",
+    "input_tensor = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)\naxis = 0\nkeepdims = True",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randint(-50, 50, (5,2)), dtype='int32')",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int32')",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randint(-50, 50, (2,5)), dtype='int32')",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randint(-50, 50, (2,2,1,1)), dtype='int32')",
+    "input_tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nkeepdims = True\naxis = -2",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randint(-50, 50, (2,2,1)), dtype='int32')",
+    "input_tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nkeepdims = True\naxis = 0",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randint(-50, 50, (1,2)), dtype='int32')",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int32')",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int64')",
+    "input_tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nkeepdims = True\naxis = -1",
+    "input_tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\naxis = 0\nkeepdims = False",
+    "axis = 0\nkeepdims = True\ninput_tensor = tf.constant(np.random.randint(-50, 50, (2,2,1,1,1)), dtype='int32')",
+    "input_tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nkeepdims = True\naxis = 1"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input_tensor,axis=None,keepdims=False):\n  return tf.reduce_prod(input_tensor,axis,keepdims)",
+    "pytorch": "def pytorch_call(input_tensor, axis=None, keepdims=False):\n    return torch.prod(input_tensor, dim=axis, keepdim=keepdims)"
+  },
+  "llm_inputs": [
+    "input_tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\naxis = 0\nkeepdims = True",
+    "input_tensor = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)\naxis = 0\nkeepdims = True",
+    "input_tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\naxis = 0\nkeepdims = True"
+  ]
+}

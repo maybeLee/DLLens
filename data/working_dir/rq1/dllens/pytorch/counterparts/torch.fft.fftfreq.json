@@ -1,0 +1,31 @@
+{
+  "function_name": "torch.fft.fftfreq(n, d=1.0, *, out=None, dtype=None, layout=torch.strided, device=None, requires_grad=False)",
+  "inputs": [
+    "n",
+    "d"
+  ],
+  "sample_inputs": [
+    "n = 5\nd = 1.0",
+    "n = torch.tensor(5)\nd = torch.tensor(1.0)",
+    "d = 1.0\nn = 2",
+    "n = 5\nd = -21.28",
+    "d = 1.0\nn = 1",
+    "n = 5\nd = -77.79",
+    "d = 1.0\nn = 4",
+    "d = 1.0\nn = 0",
+    "d = 1.0\nn = 5",
+    "n = 5\nd = 64.51",
+    "n = 5\nd = 45.88",
+    "d = 1.0\nn = 3",
+    "n = 5\nd = 56.89"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(n,d=1.0):\n  return torch.fft.fftfreq(n,d)",
+    "tensorflow": "def tensorflow_call(n, d=1.0):\n    n = tf.convert_to_tensor(n, dtype=tf.int32)\n    d = tf.convert_to_tensor(d, dtype=tf.float32)\n    k = tf.range(n, dtype=tf.float32)\n    freq = k / (tf.cast(n, tf.float32) * d)\n    if n % 2 == 0:\n        freq = tf.concat([freq[:n // 2], freq[n // 2:] - 1 / d], axis=0)\n    else:\n        freq = tf.concat([freq[:n // 2 + 1], freq[n // 2 + 1:] - 1 / d], axis=0)\n    return freq"
+  },
+  "llm_inputs": [
+    "n = 5\nd = 1.0",
+    "n = torch.tensor(5)\nd = torch.tensor(1.0)",
+    "n = torch.tensor(5)\nd = torch.tensor(1.0)"
+  ]
+}

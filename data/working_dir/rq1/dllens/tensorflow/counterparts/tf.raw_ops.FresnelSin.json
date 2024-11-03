@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.raw_ops.FresnelSin(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5])",
+    "x = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)",
+    "x = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='float64')",
+    "x = tf.constant(np.random.randn(5,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.raw_ops.FresnelSin(x=x)",
+    "pytorch": "def pytorch_call(x):\n    return x * torch.sin(x ** 2) / 2"
+  },
+  "llm_inputs": [
+    "x = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5])",
+    "x = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5])",
+    "x = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)"
+  ]
+}

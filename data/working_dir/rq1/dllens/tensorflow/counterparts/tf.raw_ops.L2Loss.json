@@ -1,0 +1,33 @@
+{
+  "function_name": "tf.raw_ops.L2Loss(t,name=None)",
+  "inputs": [
+    "t"
+  ],
+  "sample_inputs": [
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]])",
+    "t = tf.constant([[1.0], [2.0], [3.0]], dtype=tf.float32)",
+    "t = tf.constant(np.random.randn(), dtype='float32')",
+    "t = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "t = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "t = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "t = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "t = tf.constant(np.random.randn(2), dtype='float32')",
+    "t = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "t = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "t = tf.constant(np.random.randn(2,2), dtype='half')",
+    "t = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "t = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "t = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "t = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "t = tf.constant(np.random.randn(2,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(t):\n  return tf.raw_ops.L2Loss(t=t)",
+    "pytorch": "def pytorch_call(t):\n    return (t ** 2).sum() / 2"
+  },
+  "llm_inputs": [
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]])",
+    "t = tf.constant([[1.0], [2.0], [3.0]], dtype=tf.float32)",
+    "t = tf.constant([[1.0], [2.0], [3.0]], dtype=tf.float32)"
+  ]
+}

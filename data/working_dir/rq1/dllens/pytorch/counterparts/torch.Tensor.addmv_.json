@@ -1,0 +1,24 @@
+{
+  "function_name": "torch.Tensor.addmv_(input, mat, vec, *, beta=1, alpha=1)",
+  "inputs": [
+    "input",
+    "mat",
+    "vec"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1.0, 2.0, 3.0])\nmat = torch.tensor([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])\nvec = torch.tensor([1.0, 2.0])",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nmat = torch.tensor([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])\nvec = torch.tensor([0.5, 1.5])",
+    "mat = torch.tensor([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])\nvec = torch.tensor([1.0, 2.0])\ninput = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nmat = torch.tensor([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])\nvec = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nvec = torch.tensor([1.0, 2.0])\nmat = torch.tensor(np.random.randn(3,2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,mat,vec):\n  return torch.Tensor.addmv_(input,mat,vec)",
+    "tensorflow": "def tensorflow_call(input, mat, vec):\n    mat_vec_product = tf.linalg.matmul(mat, tf.expand_dims(vec, axis=-1))\n    return tf.squeeze(mat_vec_product) + input"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1.0, 2.0, 3.0])\nmat = torch.tensor([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])\nvec = torch.tensor([1.0, 2.0])",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nmat = torch.tensor([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])\nvec = torch.tensor([1.0, 2.0])",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nmat = torch.tensor([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])\nvec = torch.tensor([0.5, 1.5])"
+  ]
+}

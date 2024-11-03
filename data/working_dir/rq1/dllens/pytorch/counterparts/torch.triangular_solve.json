@@ -1,0 +1,28 @@
+{
+  "function_name": "torch.triangular_solve(b, A, upper=True, transpose=False, unitriangular=False)",
+  "inputs": [
+    "b",
+    "A",
+    "upper",
+    "transpose",
+    "unitriangular"
+  ],
+  "sample_inputs": [
+    "b = torch.tensor([[1.0], [2.0], [3.0]])\nA = torch.tensor([[1.0, 2.0, 3.0], [0.0, 1.0, 4.0], [0.0, 0.0, 1.0]])\nupper = True\ntranspose = False\nunitriangular = False",
+    "A = torch.tensor([[1.0, 2.0, 3.0], [0.0, 1.0, 4.0], [0.0, 0.0, 1.0]])\nupper = True\ntranspose = False\nunitriangular = False\nb = torch.tensor(np.random.randn(3,5), dtype=torch.float32)",
+    "b = torch.tensor([[1.0], [2.0], [3.0]])\nA = torch.tensor([[1.0, 2.0, 3.0], [0.0, 1.0, 4.0], [0.0, 0.0, 1.0]])\nupper = True\nunitriangular = False\ntranspose = True",
+    "b = torch.tensor([[1.0], [2.0], [3.0]])\nA = torch.tensor([[1.0, 2.0, 3.0], [0.0, 1.0, 4.0], [0.0, 0.0, 1.0]])\ntranspose = False\nunitriangular = False\nupper = False",
+    "b = torch.tensor([[1.0], [2.0], [3.0]])\nupper = True\ntranspose = False\nunitriangular = False\nA = torch.tensor(np.random.randn(3,3), dtype=torch.float32)",
+    "b = torch.tensor([[1.0], [2.0], [3.0]])\nA = torch.tensor([[1.0, 2.0, 3.0], [0.0, 1.0, 4.0], [0.0, 0.0, 1.0]])\nupper = True\ntranspose = False\nunitriangular = True",
+    "A = torch.tensor([[1.0, 2.0, 3.0], [0.0, 1.0, 4.0], [0.0, 0.0, 1.0]])\nupper = True\ntranspose = False\nunitriangular = False\nb = torch.tensor(np.random.randn(3,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(b,A,upper=True,transpose=False,unitriangular=False):\n  return torch.triangular_solve(b,A,upper,transpose,unitriangular)",
+    "tensorflow": "def tensorflow_call(b, A, upper=True, transpose=False, unitriangular=False):\n    if upper:\n        lower = False\n    else:\n        lower = True\n    if transpose:\n        adjoint = True\n    else:\n        adjoint = False\n    solution = tf.linalg.triangular_solve(A, b, lower=lower, adjoint=adjoint)\n    cloned_coefficient = tf.identity(A)\n    return (solution, cloned_coefficient)"
+  },
+  "llm_inputs": [
+    "b = torch.tensor([[1.0], [2.0], [3.0]])\nA = torch.tensor([[1.0, 2.0, 3.0], [0.0, 1.0, 4.0], [0.0, 0.0, 1.0]])\nupper = True\ntranspose = False\nunitriangular = False",
+    "b = torch.tensor([[1.0], [2.0], [3.0]])\nA = torch.tensor([[1.0, 2.0, 3.0], [0.0, 1.0, 4.0], [0.0, 0.0, 1.0]])\nupper = True\ntranspose = False\nunitriangular = False",
+    "b = torch.tensor([[1.0], [2.0], [3.0]])\nA = torch.tensor([[1.0, 2.0, 3.0], [0.0, 1.0, 4.0], [0.0, 0.0, 1.0]])\nupper = True\ntranspose = False\nunitriangular = False"
+  ]
+}

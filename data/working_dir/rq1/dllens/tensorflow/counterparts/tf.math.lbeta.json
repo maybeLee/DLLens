@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.math.lbeta(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([0.5, 0.5], dtype=tf.float32)",
+    "x = tf.constant([0.5, 1.0, 1.5, 2.0, 2.5], dtype=tf.float32)",
+    "x = tf.constant([0.5, 1.0, 1.5], dtype=tf.float32)",
+    "x = tf.constant(np.random.randn(2), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='float32')",
+    "x = tf.constant(np.random.randn(2), dtype='float64')",
+    "x = tf.constant(np.random.randn(2,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,1,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2), dtype='half')",
+    "x = tf.constant(np.random.randn(2), dtype='float16')",
+    "x = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,1,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.math.lbeta(x)",
+    "pytorch": "def pytorch_call(x):\n    return torch.lgamma(x).sum(dim=-1) - torch.lgamma(x.sum(dim=-1))"
+  },
+  "llm_inputs": [
+    "x = tf.constant([0.5, 0.5], dtype=tf.float32)",
+    "x = tf.constant([0.5, 1.0, 1.5, 2.0, 2.5], dtype=tf.float32)",
+    "x = tf.constant([0.5, 1.0, 1.5], dtype=tf.float32)"
+  ]
+}

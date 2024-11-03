@@ -1,0 +1,35 @@
+{
+  "function_name": "torch.Tensor.index_select(input, dim, index)",
+  "inputs": [
+    "input",
+    "dim",
+    "index"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndim = 0\nindex = torch.tensor([0, 2])",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndim = 1\nindex = torch.tensor([0, 2])",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindex = torch.tensor([0, 2])\ndim = -1",
+    "dim = 0\nindex = torch.tensor([0, 2])\ninput = torch.tensor(np.random.randint(-50, 50, (3,3)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindex = torch.tensor([0, 2])\ndim = -2",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindex = torch.tensor([0, 2])\ndim = 0",
+    "dim = 0\nindex = torch.tensor([0, 2])\ninput = torch.tensor(np.random.randint(-50, 50, (3,3,1,1,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindex = torch.tensor([0, 2])\ndim = 1",
+    "dim = 0\nindex = torch.tensor([0, 2])\ninput = torch.tensor(np.random.randint(-50, 50, (3,3,1)), dtype=torch.int64)",
+    "dim = 0\nindex = torch.tensor([0, 2])\ninput = torch.tensor(np.random.randint(-50, 50, (3,1)), dtype=torch.int64)",
+    "dim = 0\nindex = torch.tensor([0, 2])\ninput = torch.tensor(np.random.randint(-50, 50, (3,3)), dtype=torch.int32)",
+    "dim = 0\nindex = torch.tensor([0, 2])\ninput = torch.tensor(np.random.randint(-50, 50, (3)), dtype=torch.int64)",
+    "dim = 0\nindex = torch.tensor([0, 2])\ninput = torch.tensor(np.random.randint(-50, 50, (3,3,1,1)), dtype=torch.int64)",
+    "dim = 0\nindex = torch.tensor([0, 2])\ninput = torch.tensor(np.random.randint(-50, 50, (5,3)), dtype=torch.int64)",
+    "dim = 0\nindex = torch.tensor([0, 2])\ninput = torch.tensor(np.random.randint(-50, 50, (4,3)), dtype=torch.int64)",
+    "dim = 0\nindex = torch.tensor([0, 2])\ninput = torch.tensor(np.random.randint(-50, 50, (3,5)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim,index):\n  return torch.Tensor.index_select(input,dim,index)",
+    "tensorflow": "def tensorflow_call(input, dim, index):\n    if dim < 0:\n        dim = tf.rank(input) + dim\n    return tf.gather(input, index, axis=dim)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndim = 0\nindex = torch.tensor([0, 2])",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndim = 1\nindex = torch.tensor([0, 2])",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndim = 1\nindex = torch.tensor([0, 2])"
+  ]
+}

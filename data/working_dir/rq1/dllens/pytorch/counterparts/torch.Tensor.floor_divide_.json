@@ -1,0 +1,37 @@
+{
+  "function_name": "torch.Tensor.floor_divide_(input, value)",
+  "inputs": [
+    "input",
+    "value"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[8, 6], [4, 2]])\nvalue = torch.tensor(2)",
+    "input = torch.tensor([[5, 10], [15, 20]], dtype=torch.int32)[:2, :2]\nvalue = torch.tensor(3, dtype=torch.int32)",
+    "input = torch.tensor([8, 6, 4, 2])\nvalue = torch.tensor(2)",
+    "value = torch.tensor(2)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1)), dtype=torch.int64)",
+    "value = torch.tensor(2)\ninput = torch.tensor(np.random.randint(-50, 50, (2,3)), dtype=torch.int64)",
+    "value = torch.tensor(2)\ninput = torch.tensor(np.random.randint(-50, 50, (5,2)), dtype=torch.int64)",
+    "value = torch.tensor(2)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "value = torch.tensor(2)\ninput = torch.tensor(np.random.randint(-50, 50, (2,5)), dtype=torch.int64)",
+    "value = torch.tensor(2)\ninput = torch.tensor(np.random.randint(-50, 50, (4,2)), dtype=torch.int64)",
+    "value = torch.tensor(2)\ninput = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "value = torch.tensor(2)\ninput = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "input = torch.tensor([[8, 6], [4, 2]])\nvalue = torch.tensor(np.random.randint(-50, 50, (1,1)), dtype=torch.int64)",
+    "input = torch.tensor([[8, 6], [4, 2]])\nvalue = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int32)",
+    "value = torch.tensor(2)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)",
+    "value = torch.tensor(2)\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "input = torch.tensor([[8, 6], [4, 2]])\nvalue = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)",
+    "input = torch.tensor([[8, 6], [4, 2]])\nvalue = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "value = torch.tensor(2)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)",
+    "value = torch.tensor(2)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,value):\n  return torch.Tensor.floor_divide_(input,value)",
+    "tensorflow": "def tensorflow_call(input, value):\n    value = tf.cast(value, input.dtype)\n    return tf.math.floordiv(input, value)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[8, 6], [4, 2]])\nvalue = torch.tensor(2)",
+    "input = torch.tensor([[5, 10], [15, 20]], dtype=torch.int32)[:2, :2]\nvalue = torch.tensor(3, dtype=torch.int32)",
+    "input = torch.tensor([8, 6, 4, 2])\nvalue = torch.tensor(2)"
+  ]
+}

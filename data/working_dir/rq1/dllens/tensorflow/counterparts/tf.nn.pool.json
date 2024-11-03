@@ -1,0 +1,35 @@
+{
+  "function_name": "tf.nn.pool(input,window_shape,pooling_type,strides=None,padding='VALID',data_format=None,dilations=None,name=None)",
+  "inputs": [
+    "input",
+    "window_shape",
+    "pooling_type",
+    "strides",
+    "padding",
+    "data_format",
+    "dilations"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[[[1.0]], [[2.0]], [[3.0]], [[4.0]]], [[[5.0]], [[6.0]], [[7.0]], [[8.0]]], [[[9.0]], [[10.0]], [[11.0]], [[12.0]]]], dtype=tf.float32)\nwindow_shape = tf.constant([2, 2])\npooling_type = 'AVG'\nstrides = tf.constant([1, 1])\npadding = 'VALID'\ndata_format = 'NHWC'\ndilations = tf.constant([1, 1])",
+    "input = tf.constant([[[[1]], [[2]], [[3]]], [[[4]], [[5]], [[6]]], [[[7]], [[8]], [[9]]]], dtype=tf.float32)\nwindow_shape = tf.constant([2, 2], dtype=tf.int32)\npooling_type = 'AVG'\nstrides = tf.constant([1, 1], dtype=tf.int32)\npadding = 'VALID'\ndata_format = 'NHWC'\ndilations = None",
+    "input = tf.constant([[[[1]], [[2]], [[3]]], [[[4]], [[5]], [[6]]], [[[7]], [[8]], [[9]]]], dtype=tf.float32)\nwindow_shape = tf.constant([2, 2], dtype=tf.int32)\npooling_type = 'MAX'\nstrides = tf.constant([1, 1], dtype=tf.int32)\npadding = 'VALID'\ndata_format = 'NHWC'\ndilations = tf.constant([1, 1], dtype=tf.int32)",
+    "window_shape = tf.constant([2, 2])\npooling_type = 'AVG'\nstrides = tf.constant([1, 1])\npadding = 'VALID'\ndata_format = 'NHWC'\ndilations = tf.constant([1, 1])\ninput = tf.constant(np.random.randn(5,4,1,1), dtype='float32')",
+    "window_shape = tf.constant([2, 2])\npooling_type = 'AVG'\nstrides = tf.constant([1, 1])\npadding = 'VALID'\ndata_format = 'NHWC'\ndilations = tf.constant([1, 1])\ninput = tf.constant(np.random.randn(3,4,1,1), dtype='float64')",
+    "window_shape = tf.constant([2, 2])\npooling_type = 'AVG'\nstrides = tf.constant([1, 1])\npadding = 'VALID'\ndata_format = 'NHWC'\ndilations = tf.constant([1, 1])\ninput = tf.constant(np.random.randn(3,4,1,1), dtype='half')",
+    "window_shape = tf.constant([2, 2])\npooling_type = 'AVG'\nstrides = tf.constant([1, 1])\npadding = 'VALID'\ndata_format = 'NHWC'\ndilations = tf.constant([1, 1])\ninput = tf.constant(np.random.randn(3,4,1,5), dtype='float32')",
+    "window_shape = tf.constant([2, 2])\npooling_type = 'AVG'\nstrides = tf.constant([1, 1])\npadding = 'VALID'\ndata_format = 'NHWC'\ndilations = tf.constant([1, 1])\ninput = tf.constant(np.random.randn(3,4,1,1), dtype='float16')",
+    "window_shape = tf.constant([2, 2])\npooling_type = 'AVG'\nstrides = tf.constant([1, 1])\npadding = 'VALID'\ndata_format = 'NHWC'\ndilations = tf.constant([1, 1])\ninput = tf.constant(np.random.randn(3,4,1,1), dtype='float32')",
+    "window_shape = tf.constant([2, 2])\npooling_type = 'AVG'\nstrides = tf.constant([1, 1])\npadding = 'VALID'\ndata_format = 'NHWC'\ndilations = tf.constant([1, 1])\ninput = tf.constant(np.random.randn(3,1,1,1), dtype='float32')",
+    "window_shape = tf.constant([2, 2])\npooling_type = 'AVG'\nstrides = tf.constant([1, 1])\npadding = 'VALID'\ndata_format = 'NHWC'\ndilations = tf.constant([1, 1])\ninput = tf.constant(np.random.randn(1,4,1,1), dtype='float32')",
+    "window_shape = tf.constant([2, 2])\npooling_type = 'AVG'\nstrides = tf.constant([1, 1])\npadding = 'VALID'\ndata_format = 'NHWC'\ndilations = tf.constant([1, 1])\ninput = tf.constant(np.random.randn(3,5,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,window_shape,pooling_type,strides=None,padding='VALID',data_format=None,dilations=None):\n  return tf.nn.pool(input,window_shape,pooling_type,strides,padding,data_format,dilations)",
+    "pytorch": "def pytorch_call(input, window_shape, pooling_type, strides=None, padding='VALID', data_format=None, dilations=None):\n    kernel_size = window_shape.tolist()\n    stride = strides.tolist() if strides is not None else kernel_size\n    if padding == 'VALID':\n        padding = (0, 0)\n    elif padding == 'SAME':\n        padding = [(k - 1) // 2 for k in kernel_size]\n    else:\n        raise ValueError(\"Unsupported padding type. Use 'VALID' or 'SAME'.\")\n    if data_format == 'NHWC':\n        input = input.permute(0, 2, 3, 1).contiguous()\n    output_height = (input.shape[1] + 2 * padding[0] - kernel_size[0]) // stride[0] + 1\n    output_width = (input.shape[2] + 2 * padding[1] - kernel_size[1]) // stride[1] + 1\n    if output_height <= 0 or output_width <= 0:\n        return torch.empty((input.shape[0], 0, 0, input.shape[3]), dtype=input.dtype)\n    if pooling_type == 'AVG':\n        output = F.avg_pool2d(input, kernel_size=kernel_size, stride=stride, padding=padding)\n    elif pooling_type == 'MAX':\n        output = F.max_pool2d(input, kernel_size=kernel_size, stride=stride, padding=padding)\n    else:\n        raise ValueError(\"Unsupported pooling type. Use 'AVG' or 'MAX'.\")\n    if data_format == 'NHWC':\n        output = output.permute(0, 3, 1, 2)\n    return output"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[[[1.0]], [[2.0]], [[3.0]], [[4.0]]], [[[5.0]], [[6.0]], [[7.0]], [[8.0]]], [[[9.0]], [[10.0]], [[11.0]], [[12.0]]]], dtype=tf.float32)\nwindow_shape = tf.constant([2, 2])\npooling_type = 'AVG'\nstrides = tf.constant([1, 1])\npadding = 'VALID'\ndata_format = 'NHWC'\ndilations = tf.constant([1, 1])",
+    "input = tf.constant([[[[1]], [[2]], [[3]]], [[[4]], [[5]], [[6]]], [[[7]], [[8]], [[9]]]], dtype=tf.float32)\nwindow_shape = tf.constant([2, 2], dtype=tf.int32)\npooling_type = 'AVG'\nstrides = tf.constant([1, 1], dtype=tf.int32)\npadding = 'VALID'\ndata_format = 'NHWC'\ndilations = None",
+    "input = tf.constant([[[[1]], [[2]], [[3]]], [[[4]], [[5]], [[6]]], [[[7]], [[8]], [[9]]]], dtype=tf.float32)\nwindow_shape = tf.constant([2, 2], dtype=tf.int32)\npooling_type = 'MAX'\nstrides = tf.constant([1, 1], dtype=tf.int32)\npadding = 'VALID'\ndata_format = 'NHWC'\ndilations = tf.constant([1, 1], dtype=tf.int32)"
+  ]
+}

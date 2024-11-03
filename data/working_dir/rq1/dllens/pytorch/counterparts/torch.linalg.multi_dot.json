@@ -1,0 +1,20 @@
+{
+  "function_name": "torch.linalg.multi_dot(tensors, *, out=None)",
+  "inputs": [
+    "tensors"
+  ],
+  "sample_inputs": [
+    "tensors = [torch.tensor([[1, 2], [3, 4]]), torch.tensor([[5, 6], [7, 8]]), torch.tensor([[9, 10], [11, 12]])]",
+    "tensors = [torch.tensor([[1, 2], [3, 4]]), torch.tensor([[5, 6], [7, 8]])]",
+    "tensors = [torch.tensor([[1, 2], [3, 4]]), torch.tensor([[5], [6]])]"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(tensors):\n  return torch.linalg.multi_dot(tensors)",
+    "tensorflow": "def tensorflow_call(tensors):\n    result = tensors[0]\n    for tensor in tensors[1:]:\n        result = tf.linalg.matmul(result, tensor)\n    return result"
+  },
+  "llm_inputs": [
+    "tensors = [torch.tensor([[1, 2], [3, 4]]), torch.tensor([[5, 6], [7, 8]]), torch.tensor([[9, 10], [11, 12]])]",
+    "tensors = [torch.tensor([[1, 2], [3, 4]]), torch.tensor([[5, 6], [7, 8]])]",
+    "tensors = [torch.tensor([[1, 2], [3, 4]]), torch.tensor([[5], [6]])]"
+  ]
+}

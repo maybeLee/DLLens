@@ -1,0 +1,18 @@
+{
+  "function_name": "tf.math.add_n(inputs,name=None)",
+  "inputs": [
+    "inputs"
+  ],
+  "sample_inputs": [
+    "inputs = [tf.constant(1), tf.constant(2), tf.constant(3)]"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(inputs):\n  return tf.math.add_n(inputs)",
+    "pytorch": "def pytorch_call(inputs):\n    return torch.sum(torch.stack(inputs))"
+  },
+  "llm_inputs": [
+    "inputs = [tf.constant(1), tf.constant(2), tf.constant(3)]",
+    "inputs = [tf.constant(1), tf.constant(2), tf.constant(3)]",
+    "inputs = [tf.constant(1), tf.constant(2), tf.constant(3)]"
+  ]
+}

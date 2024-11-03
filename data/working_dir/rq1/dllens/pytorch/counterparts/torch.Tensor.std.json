@@ -1,0 +1,41 @@
+{
+  "function_name": "torch.Tensor.std(input, dim, unbiased=True, keepdim=False)",
+  "inputs": [
+    "input",
+    "dim",
+    "unbiased",
+    "keepdim"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ndim = 0\nunbiased = True\nkeepdim = False",
+    "dim = 0\nunbiased = True\nkeepdim = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "dim = 0\nunbiased = True\nkeepdim = False\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ndim = 0\nkeepdim = False\nunbiased = False",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nunbiased = True\nkeepdim = False\ndim = -1",
+    "dim = 0\nunbiased = True\nkeepdim = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "dim = 0\nunbiased = True\nkeepdim = False\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "dim = 0\nunbiased = True\nkeepdim = False\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "dim = 0\nunbiased = True\nkeepdim = False\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "dim = 0\nunbiased = True\nkeepdim = False\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nunbiased = True\nkeepdim = False\ndim = 1",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ndim = 0\nunbiased = True\nkeepdim = True",
+    "dim = 0\nunbiased = True\nkeepdim = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "dim = 0\nunbiased = True\nkeepdim = False\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "dim = 0\nunbiased = True\nkeepdim = False\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nunbiased = True\nkeepdim = False\ndim = -2",
+    "dim = 0\nunbiased = True\nkeepdim = False\ninput = torch.tensor(np.random.randn(3,2), dtype=torch.float32)",
+    "dim = 0\nunbiased = True\nkeepdim = False\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "dim = 0\nunbiased = True\nkeepdim = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nunbiased = True\nkeepdim = False\ndim = 0",
+    "dim = 0\nunbiased = True\nkeepdim = False\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim,unbiased=True,keepdim=False):\n  return torch.Tensor.std(input,dim,unbiased,keepdim)",
+    "tensorflow": "def tensorflow_call(input, dim, unbiased=True, keepdim=False):\n    if tf.rank(input) == 0:\n        return tf.constant(float('nan'), dtype=input.dtype)\n    stddev = tf.math.reduce_std(input, axis=dim, keepdims=keepdim)\n    if unbiased:\n        n = tf.cast(tf.shape(input)[dim], dtype=input.dtype)\n        stddev = stddev * tf.sqrt(n / (n - 1))\n    return stddev"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ndim = 0\nunbiased = True\nkeepdim = False",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ndim = 0\nunbiased = True\nkeepdim = False",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ndim = 0\nunbiased = True\nkeepdim = False"
+  ]
+}

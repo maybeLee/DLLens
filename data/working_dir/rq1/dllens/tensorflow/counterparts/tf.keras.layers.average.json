@@ -1,0 +1,19 @@
+{
+  "function_name": "tf.keras.layers.average(inputs,**kwargs)",
+  "inputs": [
+    "inputs"
+  ],
+  "sample_inputs": [
+    "inputs = [tf.constant([[1.0, 2.0]]), tf.constant([[3.0, 4.0]])]",
+    "inputs = [tf.constant([[1.0, 2.0], [3.0, 4.0]])]"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(inputs):\n  return tf.keras.layers.average(inputs)",
+    "pytorch": "def pytorch_call(inputs):\n    return torch.mean(torch.stack(inputs), dim=0)"
+  },
+  "llm_inputs": [
+    "inputs = [tf.constant([[1.0, 2.0]]), tf.constant([[3.0, 4.0]])]",
+    "inputs = [tf.constant([[1.0, 2.0], [3.0, 4.0]])]",
+    "inputs = [tf.constant([[1.0, 2.0]]), tf.constant([[3.0, 4.0]])]"
+  ]
+}

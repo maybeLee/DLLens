@@ -1,0 +1,22 @@
+{
+  "function_name": "tf.linalg.lstsq(matrix,rhs,l2_regularizer=0.0,fast=True,name=None)",
+  "inputs": [
+    "matrix",
+    "rhs",
+    "l2_regularizer",
+    "fast"
+  ],
+  "sample_inputs": [
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nrhs = tf.constant([[1.0], [2.0]], dtype=tf.float32)\nl2_regularizer = 0.1\nfast = True\nresult = tf.linalg.lstsq(matrix, rhs, l2_regularizer, fast)",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nrhs = tf.constant([[5.0], [11.0]], dtype=tf.float32)\nl2_regularizer = 0.1\nfast = True"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(matrix,rhs,l2_regularizer=0.0,fast=True):\n  return tf.linalg.lstsq(matrix,rhs,l2_regularizer,fast)",
+    "pytorch": "def pytorch_call(matrix, rhs, l2_regularizer=0.0, fast=True):\n    if l2_regularizer > 0:\n        regularized_matrix = matrix.t() @ matrix + l2_regularizer * torch.eye(matrix.size(1), dtype=matrix.dtype, device=matrix.device)\n    else:\n        regularized_matrix = matrix.t() @ matrix\n    rhs_adjusted = matrix.t() @ rhs\n    solution = torch.linalg.solve(regularized_matrix, rhs_adjusted)\n    return solution"
+  },
+  "llm_inputs": [
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nrhs = tf.constant([[1.0], [2.0]], dtype=tf.float32)\nl2_regularizer = 0.1\nfast = True\nresult = tf.linalg.lstsq(matrix, rhs, l2_regularizer, fast)",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nrhs = tf.constant([[5.0], [11.0]], dtype=tf.float32)\nl2_regularizer = 0.1\nfast = True",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nrhs = tf.constant([[1.0], [2.0]], dtype=tf.float32)\nl2_regularizer = 0.1\nfast = True\nresult = tf.linalg.lstsq(matrix, rhs, l2_regularizer, fast)"
+  ]
+}

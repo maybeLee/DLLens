@@ -1,0 +1,22 @@
+{
+  "function_name": "tf.signal.hamming_window(window_length,periodic=True,dtype=tf.dtypes.float32,name=None)",
+  "inputs": [
+    "window_length",
+    "periodic",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "window_length = tf.constant(5)\nperiodic = True\ndtype = tf.dtypes.float32",
+    "window_length = tf.constant(5)\nperiodic = tf.constant(True)\ndtype = tf.dtypes.float32",
+    "window_length = tf.constant(5)\ndtype = tf.dtypes.float32\nperiodic = False"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(window_length,periodic=True,dtype=tf.dtypes.float32):\n  return tf.signal.hamming_window(window_length,periodic,dtype)",
+    "pytorch": "def pytorch_call(window_length, periodic=True, dtype=torch.float32):\n    N = window_length.item()\n    n = torch.arange(N, dtype=dtype)\n    hamming_window = 0.54 - 0.46 * torch.cos(2 * torch.pi * n / (N - 1))\n    if not periodic:\n        return hamming_window\n    else:\n        return hamming_window"
+  },
+  "llm_inputs": [
+    "window_length = tf.constant(5)\nperiodic = True\ndtype = tf.dtypes.float32",
+    "window_length = tf.constant(5)\nperiodic = tf.constant(True)\ndtype = tf.dtypes.float32",
+    "window_length = tf.constant(5)\nperiodic = tf.constant(True)\ndtype = tf.dtypes.float32"
+  ]
+}

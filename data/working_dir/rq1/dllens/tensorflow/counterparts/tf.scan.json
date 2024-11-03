@@ -1,0 +1,44 @@
+{
+  "function_name": "tf.scan(fn,elems,initializer=None,parallel_iterations=10,back_prop=True,swap_memory=False,infer_shape=True,reverse=False,name=None)",
+  "inputs": [
+    "fn",
+    "elems",
+    "initializer",
+    "parallel_iterations",
+    "back_prop",
+    "swap_memory",
+    "infer_shape",
+    "reverse"
+  ],
+  "sample_inputs": [
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\nresult = tf.scan(fn, elems, initializer, parallel_iterations, back_prop, swap_memory, infer_shape, reverse)",
+    "fn = lambda x, y: x + y\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\nelems = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = True",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\ninitializer = tf.constant(np.random.randint(-50, 50, (1,1,1)), dtype='int32')",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\ninitializer = tf.constant(np.random.randint(-50, 50, (1,1,1,1,1)), dtype='int32')",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\ninitializer = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nswap_memory = False\ninfer_shape = True\nreverse = False\nback_prop = False",
+    "fn = lambda x, y: x + y\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\nelems = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\nparallel_iterations = 1",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\ninitializer = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "fn = lambda x, y: x + y\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\nelems = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\ninitializer = tf.constant(np.random.randint(-50, 50, (1,1)), dtype='int32')",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\ninfer_shape = True\nreverse = False\nswap_memory = True",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\nparallel_iterations = 5",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\nparallel_iterations = 4",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\ninitializer = tf.constant(np.random.randint(-50, 50, (1,1,1,1)), dtype='int32')",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\nparallel_iterations = 3",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\nreverse = False\ninfer_shape = False",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\nparallel_iterations = 2"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(fn,elems,initializer=None,parallel_iterations=10,back_prop=True,swap_memory=False,infer_shape=True,reverse=False):\n  return tf.scan(fn,elems,initializer,parallel_iterations,back_prop,swap_memory,infer_shape,reverse)",
+    "pytorch": "def pytorch_call(fn, elems, initializer=None, parallel_iterations=10, back_prop=True, swap_memory=False, infer_shape=True, reverse=False):\n    if initializer is None:\n        result = elems[0]\n    else:\n        result = initializer\n    if reverse:\n        elems = elems.flip(dims=[0])\n    results = []\n    for elem in elems:\n        result = fn(result, elem)\n        results.append(result)\n    if reverse:\n        results = results[::-1]\n    return torch.tensor(results, dtype=elems.dtype)"
+  },
+  "llm_inputs": [
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\nresult = tf.scan(fn, elems, initializer, parallel_iterations, back_prop, swap_memory, infer_shape, reverse)",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninfer_shape = True\nreverse = False\nresult = tf.scan(fn, elems, initializer, parallel_iterations, back_prop, swap_memory, infer_shape, reverse)"
+  ]
+}

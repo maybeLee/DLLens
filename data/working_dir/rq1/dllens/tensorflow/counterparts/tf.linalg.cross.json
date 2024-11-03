@@ -1,0 +1,23 @@
+{
+  "function_name": "tf.linalg.cross(a,b,name=None)",
+  "inputs": [
+    "a",
+    "b"
+  ],
+  "sample_inputs": [
+    "a = tf.constant([1.0, 2.0, 3.0])\nb = tf.constant([4.0, 5.0, 6.0])",
+    "a = tf.constant([1.0, 0.0, 0.0])\nb = tf.constant([0.0, 1.0, 0.0])",
+    "a = tf.constant([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]], dtype=tf.float32)\nb = tf.constant([[7.0, 8.0, 9.0], [10.0, 11.0, 12.0]], dtype=tf.float32)",
+    "b = tf.constant([4.0, 5.0, 6.0])\na = tf.constant(np.random.randn(3), dtype='float32')",
+    "a = tf.constant([1.0, 2.0, 3.0])\nb = tf.constant(np.random.randn(3), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(a,b):\n  return tf.linalg.cross(a,b)",
+    "pytorch": "def pytorch_call(a, b):\n    return torch.cross(a, b)"
+  },
+  "llm_inputs": [
+    "a = tf.constant([1.0, 2.0, 3.0])\nb = tf.constant([4.0, 5.0, 6.0])",
+    "a = tf.constant([1.0, 0.0, 0.0])\nb = tf.constant([0.0, 1.0, 0.0])",
+    "a = tf.constant([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]], dtype=tf.float32)\nb = tf.constant([[7.0, 8.0, 9.0], [10.0, 11.0, 12.0]], dtype=tf.float32)"
+  ]
+}

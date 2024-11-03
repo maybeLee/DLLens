@@ -1,0 +1,25 @@
+{
+  "function_name": "torch.is_nonzero(input)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor(1)",
+    "input = torch.tensor(np.random.randint(-50, 50, (1,1,1,1)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int32)",
+    "input = torch.tensor(np.random.randint(-50, 50, (1,1)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (1,1,1,1,1)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (1,1,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.is_nonzero(input)",
+    "tensorflow": "def tensorflow_call(input):\n    return tf.not_equal(input, 0)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor(1)",
+    "input = torch.tensor(1)",
+    "input = torch.tensor(1)"
+  ]
+}

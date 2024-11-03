@@ -1,0 +1,29 @@
+{
+  "function_name": "torch.Tensor.matmul(input, tensor2)",
+  "inputs": [
+    "input",
+    "tensor2"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\ntensor2 = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]])\ntensor2 = torch.tensor([[5, 6], [7, 8]])",
+    "tensor2 = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\ntensor2 = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "tensor2 = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "tensor2 = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "tensor2 = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\ntensor2 = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\ntensor2 = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\ntensor2 = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\ntensor2 = torch.tensor(np.random.randn(2,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,tensor2):\n  return torch.Tensor.matmul(input,tensor2)",
+    "tensorflow": "def tensorflow_call(input, tensor2):\n    input = tf.expand_dims(input, axis=0) if input.ndim == 1 else input\n    tensor2 = tf.expand_dims(tensor2, axis=-1) if tensor2.ndim == 1 else tensor2\n    return tf.matmul(input, tensor2)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\ntensor2 = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]])\ntensor2 = torch.tensor([[5, 6], [7, 8]])",
+    "input = torch.tensor([[1, 2], [3, 4]])\ntensor2 = torch.tensor([[5, 6], [7, 8]])"
+  ]
+}

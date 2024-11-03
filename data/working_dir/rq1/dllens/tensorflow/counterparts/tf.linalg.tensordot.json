@@ -1,0 +1,33 @@
+{
+  "function_name": "tf.linalg.tensordot(a,b,axes,name=None)",
+  "inputs": [
+    "a",
+    "b",
+    "axes"
+  ],
+  "sample_inputs": [
+    "a = tf.constant([[1, 2], [3, 4]])\nb = tf.constant([[5, 6], [7, 8]])\naxes = 1",
+    "b = tf.constant([[5, 6], [7, 8]])\naxes = 1\na = tf.constant(np.random.randint(-50, 50, (5,2)), dtype='int32')",
+    "a = tf.constant([[1, 2], [3, 4]])\nb = tf.constant([[5, 6], [7, 8]])\naxes = 2",
+    "a = tf.constant([[1, 2], [3, 4]])\naxes = 1\nb = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int32')",
+    "a = tf.constant([[1, 2], [3, 4]])\naxes = 1\nb = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int32')",
+    "b = tf.constant([[5, 6], [7, 8]])\naxes = 1\na = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int32')",
+    "a = tf.constant([[1, 2], [3, 4]])\naxes = 1\nb = tf.constant(np.random.randint(-50, 50, (2,2,1,1)), dtype='int32')",
+    "a = tf.constant([[1, 2], [3, 4]])\naxes = 1\nb = tf.constant(np.random.randint(-50, 50, (2,5)), dtype='int32')",
+    "a = tf.constant([[1, 2], [3, 4]])\nb = tf.constant([[5, 6], [7, 8]])\naxes = 0",
+    "b = tf.constant([[5, 6], [7, 8]])\naxes = 1\na = tf.constant(np.random.randint(-50, 50, (1,2)), dtype='int32')",
+    "a = tf.constant([[1, 2], [3, 4]])\naxes = 1\nb = tf.constant(np.random.randint(-50, 50, (2,2,1)), dtype='int32')",
+    "a = tf.constant([[1, 2], [3, 4]])\naxes = 1\nb = tf.constant(np.random.randint(-50, 50, (2,2,1,1,1)), dtype='int32')",
+    "a = tf.constant([[1, 2], [3, 4]])\naxes = 1\nb = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "b = tf.constant([[5, 6], [7, 8]])\naxes = 1\na = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(a,b,axes):\n  return tf.linalg.tensordot(a,b,axes)",
+    "pytorch": "def pytorch_call(a, b, axes):\n    if a.dtype != b.dtype:\n        b = b.to(a.dtype)\n    return torch.tensordot(a, b, dims=axes)"
+  },
+  "llm_inputs": [
+    "a = tf.constant([[1, 2], [3, 4]])\nb = tf.constant([[5, 6], [7, 8]])\naxes = 1",
+    "a = tf.constant([[1, 2], [3, 4]])\nb = tf.constant([[5, 6], [7, 8]])\naxes = 1",
+    "a = tf.constant([[1, 2], [3, 4]])\nb = tf.constant([[5, 6], [7, 8]])\naxes = 1"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "function_name": "tf.raw_ops.UnravelIndex(indices,dims,name=None)",
+  "inputs": [
+    "indices",
+    "dims"
+  ],
+  "sample_inputs": [
+    "indices = tf.constant([1, 2, 3], dtype=tf.int32)\ndims = tf.constant([2, 2], dtype=tf.int32)",
+    "indices = tf.constant([0, 1, 2, 3], dtype=tf.int32)\ndims = tf.constant([2, 2], dtype=tf.int32)",
+    "indices = tf.constant([1, 2, 3], dtype=tf.int32)\ndims = tf.constant([3, 4], dtype=tf.int32)",
+    "dims = tf.constant([2, 2], dtype=tf.int32)\nindices = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "dims = tf.constant([2, 2], dtype=tf.int32)\nindices = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(indices,dims):\n  return tf.raw_ops.UnravelIndex(indices=indices,dims=dims)",
+    "pytorch": "def pytorch_call(indices, dims):\n    if indices.dim() == 0:\n        indices = indices.unsqueeze(0)\n    num_dims = dims.numel()\n    output_shape = (num_dims, indices.size(0))\n    output = torch.full(output_shape, -1, dtype=torch.int32)\n    valid_indices = (indices >= 0) & (indices < torch.prod(dims).item())\n    for i in range(num_dims):\n        stride = torch.prod(dims[i + 1:]) if i + 1 < num_dims else 1\n        if valid_indices.any():\n            output[i, valid_indices] = indices[valid_indices] // stride % dims[i]\n            indices[valid_indices] = indices[valid_indices] % stride\n    return output"
+  },
+  "llm_inputs": [
+    "indices = tf.constant([1, 2, 3], dtype=tf.int32)\ndims = tf.constant([2, 2], dtype=tf.int32)",
+    "indices = tf.constant([0, 1, 2, 3], dtype=tf.int32)\ndims = tf.constant([2, 2], dtype=tf.int32)",
+    "indices = tf.constant([1, 2, 3], dtype=tf.int32)\ndims = tf.constant([3, 4], dtype=tf.int32)"
+  ]
+}

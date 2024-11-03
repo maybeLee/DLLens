@@ -1,0 +1,25 @@
+{
+  "function_name": "torch.linalg.eigvalsh(A, UPLO='L', *, out=None)",
+  "inputs": [
+    "A",
+    "UPLO"
+  ],
+  "sample_inputs": [
+    "A = torch.tensor([[2.0, 1.0, 0.0], [1.0, 2.0, 1.0], [0.0, 1.0, 2.0]])\nUPLO = 'L'",
+    "A = torch.tensor([[2.0, 1.0], [1.0, 3.0]])\nUPLO = 'L'",
+    "A = torch.tensor([[4.0, 1.0, 2.0], [1.0, 3.0, 0.0], [2.0, 0.0, 5.0]])\nUPLO = 'L'",
+    "UPLO = 'L'\nA = torch.tensor(np.random.randn(3,3), dtype=torch.float32)",
+    "UPLO = 'L'\nA = torch.tensor(np.random.randn(3,3), dtype=torch.float64)",
+    "UPLO = 'L'\nA = torch.tensor(np.random.randn(3,3,1,1,1), dtype=torch.float32)",
+    "UPLO = 'L'\nA = torch.tensor(np.random.randn(3,3,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(A,UPLO='L'):\n  return torch.linalg.eigvalsh(A,UPLO)",
+    "tensorflow": "def tensorflow_call(A, UPLO='L'):\n    if UPLO == 'L':\n        return tf.linalg.eigvalsh(A)\n    elif UPLO == 'U':\n        A = tf.linalg.adjoint(A)\n        return tf.linalg.eigvalsh(A)\n    else:\n        raise ValueError(\"UPLO must be either 'L' or 'U'\")"
+  },
+  "llm_inputs": [
+    "A = torch.tensor([[2.0, 1.0, 0.0], [1.0, 2.0, 1.0], [0.0, 1.0, 2.0]])\nUPLO = 'L'",
+    "A = torch.tensor([[2.0, 1.0], [1.0, 3.0]])\nUPLO = 'L'",
+    "A = torch.tensor([[4.0, 1.0, 2.0], [1.0, 3.0, 0.0], [2.0, 0.0, 5.0]])\nUPLO = 'L'"
+  ]
+}

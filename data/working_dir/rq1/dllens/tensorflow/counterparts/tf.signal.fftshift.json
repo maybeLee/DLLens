@@ -1,0 +1,28 @@
+{
+  "function_name": "tf.signal.fftshift(x,axes=None,name=None)",
+  "inputs": [
+    "x",
+    "axes"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([1, 2, 3], dtype=tf.float32)\naxes = tf.constant([0], dtype=tf.int32)",
+    "x = tf.constant([1, 2], dtype=tf.float32)\naxes = tf.constant([0], dtype=tf.int32)",
+    "axes = tf.constant([0], dtype=tf.int32)\nx = tf.constant(np.random.randn(3,1,1,1), dtype='float32')",
+    "axes = tf.constant([0], dtype=tf.int32)\nx = tf.constant(np.random.randn(3), dtype='float16')",
+    "axes = tf.constant([0], dtype=tf.int32)\nx = tf.constant(np.random.randn(3,1,1), dtype='float32')",
+    "axes = tf.constant([0], dtype=tf.int32)\nx = tf.constant(np.random.randn(1), dtype='float32')",
+    "axes = tf.constant([0], dtype=tf.int32)\nx = tf.constant(np.random.randn(3,1,1,1,1), dtype='float32')",
+    "axes = tf.constant([0], dtype=tf.int32)\nx = tf.constant(np.random.randn(3), dtype='half')",
+    "axes = tf.constant([0], dtype=tf.int32)\nx = tf.constant(np.random.randn(3), dtype='float32')",
+    "axes = tf.constant([0], dtype=tf.int32)\nx = tf.constant(np.random.randn(3,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,axes=None):\n  return tf.signal.fftshift(x,axes)",
+    "pytorch": "def pytorch_call(x, axes=None):\n    if axes is None:\n        axes = list(range(x.dim()))\n    else:\n        axes = axes.tolist()\n    shifts = [size // 2 for size in x.size()]\n    result = x.clone()\n    for (axis, shift) in zip(axes, shifts):\n        result = torch.roll(result, shifts=shift, dims=axis)\n    return result"
+  },
+  "llm_inputs": [
+    "x = tf.constant([1, 2, 3], dtype=tf.float32)\naxes = tf.constant([0], dtype=tf.int32)",
+    "x = tf.constant([1, 2, 3], dtype=tf.float32)\naxes = tf.constant([0], dtype=tf.int32)",
+    "x = tf.constant([1, 2], dtype=tf.float32)\naxes = tf.constant([0], dtype=tf.int32)"
+  ]
+}

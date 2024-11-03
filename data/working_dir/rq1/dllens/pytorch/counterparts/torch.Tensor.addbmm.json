@@ -1,0 +1,27 @@
+{
+  "function_name": "torch.Tensor.addbmm(input, batch1, batch2, *, beta=1, alpha=1)",
+  "inputs": [
+    "input",
+    "batch1",
+    "batch2"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nbatch1 = torch.tensor([[[1.0, 2.0], [3.0, 4.0]], [[5.0, 6.0], [7.0, 8.0]]])\nbatch2 = torch.tensor([[[1.0, 0.0], [0.0, 1.0]], [[1.0, 1.0], [1.0, 1.0]]])",
+    "batch1 = torch.tensor([[[1.0, 2.0], [3.0, 4.0]], [[5.0, 6.0], [7.0, 8.0]]])\nbatch2 = torch.tensor([[[1.0, 0.0], [0.0, 1.0]], [[1.0, 1.0], [1.0, 1.0]]])\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "batch1 = torch.tensor([[[1.0, 2.0], [3.0, 4.0]], [[5.0, 6.0], [7.0, 8.0]]])\nbatch2 = torch.tensor([[[1.0, 0.0], [0.0, 1.0]], [[1.0, 1.0], [1.0, 1.0]]])\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "batch1 = torch.tensor([[[1.0, 2.0], [3.0, 4.0]], [[5.0, 6.0], [7.0, 8.0]]])\nbatch2 = torch.tensor([[[1.0, 0.0], [0.0, 1.0]], [[1.0, 1.0], [1.0, 1.0]]])\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nbatch2 = torch.tensor([[[1.0, 0.0], [0.0, 1.0]], [[1.0, 1.0], [1.0, 1.0]]])\nbatch1 = torch.tensor(np.random.randn(2,2,2), dtype=torch.float32)",
+    "batch1 = torch.tensor([[[1.0, 2.0], [3.0, 4.0]], [[5.0, 6.0], [7.0, 8.0]]])\nbatch2 = torch.tensor([[[1.0, 0.0], [0.0, 1.0]], [[1.0, 1.0], [1.0, 1.0]]])\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "batch1 = torch.tensor([[[1.0, 2.0], [3.0, 4.0]], [[5.0, 6.0], [7.0, 8.0]]])\nbatch2 = torch.tensor([[[1.0, 0.0], [0.0, 1.0]], [[1.0, 1.0], [1.0, 1.0]]])\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nbatch1 = torch.tensor([[[1.0, 2.0], [3.0, 4.0]], [[5.0, 6.0], [7.0, 8.0]]])\nbatch2 = torch.tensor(np.random.randn(2,2,2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,batch1,batch2):\n  return torch.Tensor.addbmm(input,batch1,batch2)",
+    "tensorflow": "def tensorflow_call(input, batch1, batch2):\n    batch_result = tf.matmul(batch1, batch2)\n    return input + tf.reduce_sum(batch_result, axis=0, keepdims=True)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nbatch1 = torch.tensor([[[1.0, 2.0], [3.0, 4.0]], [[5.0, 6.0], [7.0, 8.0]]])\nbatch2 = torch.tensor([[[1.0, 0.0], [0.0, 1.0]], [[1.0, 1.0], [1.0, 1.0]]])",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nbatch1 = torch.tensor([[[1.0, 2.0], [3.0, 4.0]], [[5.0, 6.0], [7.0, 8.0]]])\nbatch2 = torch.tensor([[[1.0, 0.0], [0.0, 1.0]], [[1.0, 1.0], [1.0, 1.0]]])",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nbatch1 = torch.tensor([[[1.0, 2.0], [3.0, 4.0]], [[5.0, 6.0], [7.0, 8.0]]])\nbatch2 = torch.tensor([[[1.0, 0.0], [0.0, 1.0]], [[1.0, 1.0], [1.0, 1.0]]])"
+  ]
+}

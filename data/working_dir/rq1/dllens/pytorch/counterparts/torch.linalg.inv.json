@@ -1,0 +1,23 @@
+{
+  "function_name": "torch.linalg.inv(A, *, out=None)",
+  "inputs": [
+    "A"
+  ],
+  "sample_inputs": [
+    "A = torch.tensor([[1.0, 0.0], [0.0, 1.0]])",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])",
+    "A = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "A = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "A = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "A = torch.tensor(np.random.randn(2,2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(A):\n  return torch.linalg.inv(A)",
+    "tensorflow": "def tensorflow_call(A):\n    return tf.linalg.inv(A)"
+  },
+  "llm_inputs": [
+    "A = torch.tensor([[1.0, 0.0], [0.0, 1.0]])",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])",
+    "A = torch.tensor([[1.0, 0.0], [0.0, 1.0]])"
+  ]
+}

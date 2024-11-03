@@ -1,0 +1,34 @@
+{
+  "function_name": "tf.raw_ops.Sqrt(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[4.0], [9.0]], dtype=tf.float32)",
+    "x = tf.constant([1.0, 4.0, 9.0], dtype=tf.float32)",
+    "x = tf.constant([[1.0], [4.0], [9.0]], dtype=tf.float32)",
+    "x = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,1,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "x = tf.constant(np.random.randn(4,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,1), dtype='float64')",
+    "x = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,1), dtype='float16')",
+    "x = tf.constant(np.random.randn(2), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,1), dtype='half')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.raw_ops.Sqrt(x=x)",
+    "pytorch": "def pytorch_call(x):\n    return torch.sqrt(x)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[4.0], [9.0]], dtype=tf.float32)",
+    "x = tf.constant([1.0, 4.0, 9.0], dtype=tf.float32)",
+    "x = tf.constant([[1.0], [4.0], [9.0]], dtype=tf.float32)"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "function_name": "tf.linalg.solve(matrix,rhs,adjoint=False,name=None)",
+  "inputs": [
+    "matrix",
+    "rhs",
+    "adjoint"
+  ],
+  "sample_inputs": [
+    "matrix = tf.constant([[3.0, 2.0], [1.0, 2.0]])\nrhs = tf.constant([[5.0], [4.0]])\nadjoint = False",
+    "matrix = tf.constant([[2.0, 1.0], [5.0, 7.0]])\nrhs = tf.constant([[11.0], [13.0]])\nadjoint = False",
+    "matrix = tf.constant([[2.0, 1.0], [1.0, 3.0]])\nrhs = tf.constant([[1.0], [2.0]])\nadjoint = False",
+    "matrix = tf.constant([[3.0, 2.0], [1.0, 2.0]])\nadjoint = False\nrhs = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "matrix = tf.constant([[3.0, 2.0], [1.0, 2.0]])\nrhs = tf.constant([[5.0], [4.0]])\nadjoint = True",
+    "rhs = tf.constant([[5.0], [4.0]])\nadjoint = False\nmatrix = tf.constant(np.random.randn(2,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(matrix,rhs,adjoint=False):\n  return tf.linalg.solve(matrix,rhs,adjoint)",
+    "pytorch": "def pytorch_call(matrix, rhs, adjoint=False):\n    if adjoint:\n        matrix = matrix.transpose(0, 1)\n    return torch.linalg.solve(matrix, rhs)"
+  },
+  "llm_inputs": [
+    "matrix = tf.constant([[3.0, 2.0], [1.0, 2.0]])\nrhs = tf.constant([[5.0], [4.0]])\nadjoint = False",
+    "matrix = tf.constant([[2.0, 1.0], [5.0, 7.0]])\nrhs = tf.constant([[11.0], [13.0]])\nadjoint = False",
+    "matrix = tf.constant([[2.0, 1.0], [1.0, 3.0]])\nrhs = tf.constant([[1.0], [2.0]])\nadjoint = False"
+  ]
+}

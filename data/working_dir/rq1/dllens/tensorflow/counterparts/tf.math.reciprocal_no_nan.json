@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.math.reciprocal_no_nan(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0], dtype=tf.float32)",
+    "x = tf.constant([1.0, 2.0, 0.5, 4.0, 0.25], dtype=tf.float32)",
+    "x = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='float64')",
+    "x = tf.constant(np.random.randn(4), dtype='float32')",
+    "x = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='float16')",
+    "x = tf.constant(np.random.randn(5), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='half')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.math.reciprocal_no_nan(x)",
+    "pytorch": "def pytorch_call(x):\n    safe_x = torch.where(x.abs() < 1e-08, torch.tensor(1e-08, dtype=x.dtype, device=x.device), x)\n    return 1 / safe_x"
+  },
+  "llm_inputs": [
+    "x = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0], dtype=tf.float32)",
+    "x = tf.constant([1.0, 2.0, 0.5, 4.0, 0.25], dtype=tf.float32)",
+    "x = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0], dtype=tf.float32)"
+  ]
+}

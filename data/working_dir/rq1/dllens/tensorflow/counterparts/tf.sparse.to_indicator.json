@@ -1,0 +1,17 @@
+{
+  "function_name": "tf.sparse.to_indicator(sp_input,vocab_size,name=None)",
+  "inputs": [
+    "sp_input",
+    "vocab_size"
+  ],
+  "sample_inputs": [
+    "sp_input = tf.sparse.SparseTensor(indices=[[0, 0], [1, 0], [2, 0]], values=[1, 1, 1], dense_shape=[3, 1])\nvocab_size = tf.constant(5, dtype=tf.int32)"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(sp_input,vocab_size):\n  return tf.sparse.to_indicator(sp_input,vocab_size)",
+    "pytorch": "def pytorch_call(sp_input, vocab_size):\n    indices = sp_input.indices.numpy()\n    values = sp_input.values.numpy()\n    dense_shape = (sp_input.dense_shape[0], vocab_size.item())\n    indicator_tensor = torch.zeros(dense_shape, dtype=torch.bool)\n    for idx in range(indices.shape[0]):\n        row = indices[idx, 0]\n        indicator_tensor[row, 1] = True\n    return indicator_tensor"
+  },
+  "llm_inputs": [
+    "sp_input = tf.sparse.SparseTensor(indices=[[0, 0], [1, 0], [2, 0]], values=[1, 1, 1], dense_shape=[3, 1])\nvocab_size = tf.constant(5, dtype=tf.int32)"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "function_name": "torch.nn.functional.poisson_nll_loss(input, target, log_input=True, full=False, size_average=None, eps=1e-08, reduce=None, reduction='mean')",
+  "inputs": [
+    "input",
+    "target",
+    "log_input",
+    "full",
+    "size_average",
+    "eps",
+    "reduce",
+    "reduction"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\ntarget = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'",
+    "input = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)\ntarget = torch.tensor([0.1, 0.2, 0.4], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\ntarget = torch.tensor([1.0, 0.0, 2.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "target = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "target = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\ntarget = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\nfull = True",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\ntarget = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\nreduce = None\nreduction = 'mean'\neps = 22.96",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "target = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(3), dtype=torch.float64)",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\ntarget = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\nlog_input = False",
+    "target = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(3), dtype=torch.float16)",
+    "target = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(3), dtype=torch.float16)",
+    "target = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\ntarget = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\nreduce = None\nreduction = 'mean'\neps = 12.45",
+    "target = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(3), dtype=torch.float64)",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(3), dtype=torch.half)",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "target = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(3), dtype=torch.half)",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\ntarget = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\nreduce = None\nreduction = 'mean'\neps = -48.72",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "target = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "target = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\ntarget = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\nreduce = None\nreduction = 'mean'\neps = 74.83",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\ntarget = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\nreduce = None\nreduction = 'mean'\neps = -0.1"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,target,log_input=True,full=False,size_average=None,eps=1e-08,reduce=None,reduction='mean'):\n  return torch.nn.functional.poisson_nll_loss(input,target,log_input,full,size_average,eps,reduce,reduction)",
+    "tensorflow": "def tensorflow_call(input, target, log_input=True, full=False, size_average=None, eps=1e-08, reduce=None, reduction='mean'):\n    target = tf.cast(target, input.dtype)\n    if log_input:\n        loss = tf.exp(input) - target * input\n    else:\n        loss = target * (input - tf.math.log(target + eps))\n    if reduction == 'mean':\n        return tf.reduce_mean(loss)\n    elif reduction == 'sum':\n        return tf.reduce_sum(loss)\n    else:\n        return loss"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\ntarget = torch.tensor([1.0, 1.0, 1.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'",
+    "input = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)\ntarget = torch.tensor([0.1, 0.2, 0.4], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\ntarget = torch.tensor([1.0, 0.0, 2.0], dtype=torch.float32)\nlog_input = True\nfull = False\nsize_average = None\neps = 1e-08\nreduce = None\nreduction = 'mean'"
+  ]
+}

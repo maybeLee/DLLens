@@ -1,0 +1,47 @@
+{
+  "function_name": "tf.gather(params,indices,validate_indices=None,axis=None,batch_dims=0,name=None)",
+  "inputs": [
+    "params",
+    "indices",
+    "validate_indices",
+    "axis",
+    "batch_dims"
+  ],
+  "sample_inputs": [
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 0",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.int32)\nindices = tf.constant([0, 2], dtype=tf.int32)\nvalidate_indices = None\naxis = 0\nbatch_dims = 0",
+    "indices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 0\nparams = tf.constant(np.random.randint(-50, 50, (4,3)), dtype='int32')",
+    "indices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 0\nparams = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "indices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 0\nparams = tf.constant(np.random.randint(-50, 50, (3,3)), dtype='int32')",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = -4",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = -2",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 1",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 3",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\nbatch_dims = 0\naxis = 0",
+    "indices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 0\nparams = tf.constant(np.random.randint(-50, 50, (3,1)), dtype='int32')",
+    "indices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 0\nparams = tf.constant(np.random.randint(-50, 50, (3,3,1,1)), dtype='int32')",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 2",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\nbatch_dims = 0\naxis = -1",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\nbatch_dims = 0\naxis = -2",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = -3",
+    "indices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 0\nparams = tf.constant(np.random.randint(-50, 50, (3,5)), dtype='int32')",
+    "indices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 0\nparams = tf.constant(np.random.randint(-50, 50, (5,3)), dtype='int32')",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = -1",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\nbatch_dims = 0\naxis = 1",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 4",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = -5",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 5",
+    "indices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 0\nparams = tf.constant(np.random.randint(-50, 50, (3,3,1)), dtype='int32')",
+    "indices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 0\nparams = tf.constant(np.random.randint(-50, 50, (3,3)), dtype='int64')",
+    "indices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 0\nparams = tf.constant(np.random.randint(-50, 50, (3,3,1,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(params,indices,validate_indices=None,axis=None,batch_dims=0):\n  return tf.gather(params,indices,validate_indices,axis,batch_dims)",
+    "pytorch": "def pytorch_call(params, indices, validate_indices=None, axis=0, batch_dims=0):\n    if axis < 0:\n        axis += params.dim()\n    result = params.index_select(axis, indices)\n    return result"
+  },
+  "llm_inputs": [
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 0",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.int32)\nindices = tf.constant([0, 2], dtype=tf.int32)\nvalidate_indices = None\naxis = 0\nbatch_dims = 0",
+    "params = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([0, 2])\nvalidate_indices = None\naxis = 0\nbatch_dims = 0"
+  ]
+}

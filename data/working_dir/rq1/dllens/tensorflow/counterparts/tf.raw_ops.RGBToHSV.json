@@ -1,0 +1,29 @@
+{
+  "function_name": "tf.raw_ops.RGBToHSV(images,name=None)",
+  "inputs": [
+    "images"
+  ],
+  "sample_inputs": [
+    "images = tf.constant([[[255, 0, 0], [0, 255, 0]], [[0, 0, 255], [255, 255, 0]]], dtype=tf.float32)",
+    "images = tf.constant([[[0.5, 0.5, 0.5]]], dtype=tf.float32)",
+    "images = tf.constant([[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], [[0.7, 0.8, 0.9], [1.0, 0.0, 0.1]]], dtype=tf.float32)",
+    "images = tf.constant(np.random.randn(2,1,3), dtype='float32')",
+    "images = tf.constant(np.random.randn(2,2,3), dtype='float16')",
+    "images = tf.constant(np.random.randn(5,2,3), dtype='float32')",
+    "images = tf.constant(np.random.randn(2,2,3), dtype='half')",
+    "images = tf.constant(np.random.randn(2,2,3), dtype='float64')",
+    "images = tf.constant(np.random.randn(2,4,3), dtype='float32')",
+    "images = tf.constant(np.random.randn(2,2,3), dtype='float32')",
+    "images = tf.constant(np.random.randn(2,5,3), dtype='float32')",
+    "images = tf.constant(np.random.randn(1,2,3), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(images):\n  return tf.raw_ops.RGBToHSV(images=images)",
+    "pytorch": "def pytorch_call(images):\n    (r, g, b) = (images[..., 0], images[..., 1], images[..., 2])\n    maxc = torch.max(images, dim=-1)[0]\n    minc = torch.min(images, dim=-1)[0]\n    delta = maxc - minc\n    h = torch.zeros_like(maxc)\n    s = torch.zeros_like(maxc)\n    mask_r = (delta != 0) & (maxc == r)\n    mask_g = (delta != 0) & (maxc == g)\n    mask_b = (delta != 0) & (maxc == b)\n    h[mask_r] = (g[mask_r] - b[mask_r]) / delta[mask_r] % 6\n    h[mask_g] = (b[mask_g] - r[mask_g]) / delta[mask_g] + 2\n    h[mask_b] = (r[mask_b] - g[mask_b]) / delta[mask_b] + 4\n    h = h / 6\n    s[maxc != 0] = delta[maxc != 0] / maxc[maxc != 0]\n    v = maxc\n    hsv = torch.stack((h, s, v), dim=-1)\n    return hsv"
+  },
+  "llm_inputs": [
+    "images = tf.constant([[[255, 0, 0], [0, 255, 0]], [[0, 0, 255], [255, 255, 0]]], dtype=tf.float32)",
+    "images = tf.constant([[[0.5, 0.5, 0.5]]], dtype=tf.float32)",
+    "images = tf.constant([[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], [[0.7, 0.8, 0.9], [1.0, 0.0, 0.1]]], dtype=tf.float32)"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.nn.scale_regularization_loss(regularization_loss)",
+  "inputs": [
+    "regularization_loss"
+  ],
+  "sample_inputs": [
+    "regularization_loss = tf.constant(0.5)",
+    "regularization_loss = tf.constant(np.random.randn(), dtype='float16')",
+    "regularization_loss = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "regularization_loss = tf.constant(np.random.randn(1), dtype='float32')",
+    "regularization_loss = tf.constant(np.random.randn(), dtype='half')",
+    "regularization_loss = tf.constant(np.random.randn(), dtype='float32')",
+    "regularization_loss = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "regularization_loss = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "regularization_loss = tf.constant(np.random.randn(), dtype='float64')",
+    "regularization_loss = tf.constant(np.random.randn(1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(regularization_loss):\n  return tf.nn.scale_regularization_loss(regularization_loss)",
+    "pytorch": "def pytorch_call(regularization_loss):\n    return regularization_loss"
+  },
+  "llm_inputs": [
+    "regularization_loss = tf.constant(0.5)",
+    "regularization_loss = tf.constant(0.5)",
+    "regularization_loss = tf.constant(0.5)"
+  ]
+}

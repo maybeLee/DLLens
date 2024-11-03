@@ -1,0 +1,24 @@
+{
+  "function_name": "tf.reshape(tensor,shape,name=None)",
+  "inputs": [
+    "tensor",
+    "shape"
+  ],
+  "sample_inputs": [
+    "tensor = tf.constant([[1, 2], [3, 4]])\nshape = (4,)",
+    "shape = (4,)\ntensor = tf.constant(np.random.randint(-50, 50, (2,2,1,1,1)), dtype='int32')",
+    "shape = (4,)\ntensor = tf.constant(np.random.randint(-50, 50, (2,2,1,1)), dtype='int32')",
+    "shape = (4,)\ntensor = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int64')",
+    "shape = (4,)\ntensor = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int32')",
+    "shape = (4,)\ntensor = tf.constant(np.random.randint(-50, 50, (2,2,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(tensor,shape):\n  return tf.reshape(tensor,shape)",
+    "pytorch": "def pytorch_call(tensor, shape):\n    return tensor.view(shape)"
+  },
+  "llm_inputs": [
+    "tensor = tf.constant([[1, 2], [3, 4]])\nshape = (4,)",
+    "tensor = tf.constant([[1, 2], [3, 4]])\nshape = (4,)",
+    "tensor = tf.constant([[1, 2], [3, 4]])\nshape = (4,)"
+  ]
+}

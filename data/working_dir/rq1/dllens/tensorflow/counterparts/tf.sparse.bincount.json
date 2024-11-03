@@ -1,0 +1,47 @@
+{
+  "function_name": "tf.sparse.bincount(values,weights=None,axis=0,minlength=None,maxlength=None,binary_output=False,name=None)",
+  "inputs": [
+    "values",
+    "weights",
+    "axis",
+    "minlength",
+    "maxlength",
+    "binary_output"
+  ],
+  "sample_inputs": [
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nminlength = 0\nmaxlength = 5\nbinary_output = False",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nminlength = 5\nmaxlength = 10\nbinary_output = False",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nminlength = 6\nmaxlength = 10\nbinary_output = False",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nminlength = 0\nbinary_output = False\nmaxlength = 0",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nminlength = 0\nbinary_output = False\nmaxlength = 1",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\naxis = 0\nminlength = 0\nmaxlength = 5\nbinary_output = False\nweights = tf.constant(np.random.randn(5), dtype='float32')",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nminlength = 0\nbinary_output = False\nmaxlength = 2",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nmaxlength = 5\nbinary_output = False\nminlength = 4",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nmaxlength = 5\nbinary_output = False\nminlength = 3",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\nminlength = 0\nmaxlength = 5\nbinary_output = False\naxis = 0",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\naxis = 0\nminlength = 0\nmaxlength = 5\nbinary_output = False\nweights = tf.constant(np.random.randn(5), dtype='float64')",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nmaxlength = 5\nbinary_output = False\nminlength = 1",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nmaxlength = 5\nbinary_output = False\nminlength = -1",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\naxis = 0\nminlength = 0\nmaxlength = 5\nbinary_output = False\nweights = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nminlength = 0\nbinary_output = False\nmaxlength = -1",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nmaxlength = 5\nbinary_output = False\nminlength = 2",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nmaxlength = 5\nbinary_output = False\nminlength = 0",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\naxis = 0\nminlength = 0\nmaxlength = 5\nbinary_output = False\nweights = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nmaxlength = 5\nbinary_output = False\nminlength = 5",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\naxis = 0\nminlength = 0\nmaxlength = 5\nbinary_output = False\nweights = tf.constant(np.random.randn(5,1,1,1), dtype='float32')",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nminlength = 0\nbinary_output = False\nmaxlength = 3",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nminlength = 0\nbinary_output = False\nmaxlength = 5",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nminlength = 0\nbinary_output = False\nmaxlength = 4",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\naxis = 0\nminlength = 0\nmaxlength = 5\nbinary_output = False\nweights = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\nminlength = 0\nmaxlength = 5\nbinary_output = False\naxis = -1"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(values,weights=None,axis=0,minlength=None,maxlength=None,binary_output=False):\n  return tf.sparse.bincount(values,weights,axis,minlength,maxlength,binary_output)",
+    "pytorch": "def pytorch_call(values, weights=None, axis=0, minlength=None, maxlength=None, binary_output=False):\n    if values.dtype != torch.int64:\n        values = values.to(torch.int64)\n    if weights is not None:\n        weights = weights.view(-1)\n    if minlength is None or minlength < 0:\n        minlength = 0\n    bincount = torch.bincount(values, weights=weights, minlength=minlength)\n    if maxlength is not None and maxlength >= 0:\n        if maxlength > bincount.numel():\n            bincount = torch.cat([bincount, torch.zeros(maxlength - bincount.numel(), dtype=bincount.dtype)])\n        bincount = bincount[:maxlength]\n    if binary_output:\n        bincount = (bincount > 0).to(torch.int)\n    indices = torch.nonzero(bincount, as_tuple=False)\n    values = bincount[indices.squeeze()]\n    sparse_tensor = torch.sparse.FloatTensor(indices.t(), values, torch.Size([max(minlength, bincount.numel())]))\n    return sparse_tensor"
+  },
+  "llm_inputs": [
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nminlength = 0\nmaxlength = 5\nbinary_output = False",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nminlength = 5\nmaxlength = 10\nbinary_output = False",
+    "values = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\naxis = 0\nminlength = 6\nmaxlength = 10\nbinary_output = False"
+  ]
+}

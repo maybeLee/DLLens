@@ -1,0 +1,42 @@
+{
+  "function_name": "torch.Tensor.float_power(input, exponent)",
+  "inputs": [
+    "input",
+    "exponent"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nexponent = torch.tensor(2, dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nexponent = torch.tensor(2)",
+    "exponent = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nexponent = torch.tensor(np.random.randn(1,1,1,1,1), dtype=torch.float32)",
+    "exponent = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "exponent = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nexponent = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nexponent = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nexponent = torch.tensor(np.random.randn(1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nexponent = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "exponent = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "exponent = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nexponent = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "exponent = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "exponent = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "exponent = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "exponent = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "exponent = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nexponent = torch.tensor(np.random.randn(1,1,1), dtype=torch.float32)",
+    "exponent = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "exponent = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "exponent = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nexponent = torch.tensor(np.random.randn(1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nexponent = torch.tensor(np.random.randn(1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,exponent):\n  return torch.Tensor.float_power(input,exponent)",
+    "tensorflow": "def tensorflow_call(input, exponent):\n    exponent = tf.cast(exponent, input.dtype)\n    return tf.pow(input, exponent)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nexponent = torch.tensor(2, dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nexponent = torch.tensor(2)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nexponent = torch.tensor(2)"
+  ]
+}

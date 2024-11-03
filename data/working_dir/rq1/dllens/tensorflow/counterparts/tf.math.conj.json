@@ -1,0 +1,31 @@
+{
+  "function_name": "tf.math.conj(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.complex64)",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)",
+    "x = tf.constant(np.random.randn(), dtype='complex64')",
+    "x = tf.constant(np.random.randn(2,2,1,1,1), dtype='complex64')",
+    "x = tf.constant(np.random.randn(2,1), dtype='complex64')",
+    "x = tf.constant(np.random.randn(2,2), dtype='complex128')",
+    "x = tf.constant(np.random.randn(2,2), dtype='complex64')",
+    "x = tf.constant(np.random.randn(2,5), dtype='complex64')",
+    "x = tf.constant(np.random.randn(2), dtype='complex64')",
+    "x = tf.constant(np.random.randn(3,2), dtype='complex64')",
+    "x = tf.constant(np.random.randn(5,2), dtype='complex64')",
+    "x = tf.constant(np.random.randn(2,2,1), dtype='complex64')",
+    "x = tf.constant(np.random.randn(1,2), dtype='complex64')",
+    "x = tf.constant(np.random.randn(2,2,1,1), dtype='complex64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.math.conj(x)",
+    "pytorch": "def pytorch_call(x):\n    return torch.real(torch.conj(x)) + 0j"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.complex64)",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.complex64)",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)"
+  ]
+}

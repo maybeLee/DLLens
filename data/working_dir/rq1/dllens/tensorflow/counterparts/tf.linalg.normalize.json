@@ -1,0 +1,33 @@
+{
+  "function_name": "tf.linalg.normalize(tensor,ord='euclidean',axis=None,name=None)",
+  "inputs": [
+    "tensor",
+    "ord",
+    "axis"
+  ],
+  "sample_inputs": [
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nord = 'euclidean'\naxis = None",
+    "ord = 'euclidean'\naxis = None\ntensor = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\ntensor = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\ntensor = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\ntensor = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "ord = 'euclidean'\naxis = None\ntensor = tf.constant(np.random.randn(2), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\ntensor = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\ntensor = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\ntensor = tf.constant(np.random.randn(), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\ntensor = tf.constant(np.random.randn(2,2), dtype='half')",
+    "ord = 'euclidean'\naxis = None\ntensor = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\ntensor = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "ord = 'euclidean'\naxis = None\ntensor = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\ntensor = tf.constant(np.random.randn(2,2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(tensor,ord='euclidean',axis=None):\n  return tf.linalg.normalize(tensor,ord,axis)",
+    "pytorch": "def pytorch_call(tensor, ord='euclidean', axis=None):\n    if axis is None:\n        norm = torch.norm(tensor, p='fro', keepdim=True)\n        normalized_tensor = tensor / norm\n        return (normalized_tensor, norm)\n    else:\n        norm = torch.norm(tensor, p=ord, dim=axis, keepdim=True)\n        normalized_tensor = tensor / norm\n        return (normalized_tensor, norm)"
+  },
+  "llm_inputs": [
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nord = 'euclidean'\naxis = None",
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nord = 'euclidean'\naxis = None",
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nord = 'euclidean'\naxis = None"
+  ]
+}

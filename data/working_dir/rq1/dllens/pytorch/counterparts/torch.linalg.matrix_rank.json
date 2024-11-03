@@ -1,0 +1,36 @@
+{
+  "function_name": "torch.linalg.matrix_rank(A, tol=None, hermitian=False, *, out=None)",
+  "inputs": [
+    "A",
+    "tol",
+    "hermitian"
+  ],
+  "sample_inputs": [
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ntol = 0.1\nhermitian = False",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ntol = 1e-05\nhermitian = False",
+    "tol = 0.1\nhermitian = False\nA = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "tol = 0.1\nhermitian = False\nA = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "tol = 0.1\nhermitian = False\nA = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nhermitian = False\ntol = -45.58",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nhermitian = False\ntol = 16.12",
+    "tol = 0.1\nhermitian = False\nA = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "tol = 0.1\nhermitian = False\nA = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ntol = 0.1\nhermitian = True",
+    "tol = 0.1\nhermitian = False\nA = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nhermitian = False\ntol = 17.69",
+    "tol = 0.1\nhermitian = False\nA = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nhermitian = False\ntol = -74.89",
+    "tol = 0.1\nhermitian = False\nA = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "tol = 0.1\nhermitian = False\nA = torch.tensor(np.random.randn(3,2), dtype=torch.float32)",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nhermitian = False\ntol = 51.75"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(A,tol=None,hermitian=False):\n  return torch.linalg.matrix_rank(A,tol,hermitian)",
+    "tensorflow": "def tensorflow_call(A, tol=None, hermitian=False):\n    if A.shape.ndims > 2 and hermitian:\n        raise ValueError('Hermitian option is only valid for 2D matrices.')\n    return tf.linalg.matrix_rank(A, tol=tol)"
+  },
+  "llm_inputs": [
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ntol = 0.1\nhermitian = False",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ntol = 1e-05\nhermitian = False",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\ntol = 0.1\nhermitian = False"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "function_name": "torch.Tensor.norm(input, p='fro', dim=None, keepdim=False, dtype=None)",
+  "inputs": [
+    "input",
+    "p",
+    "dim",
+    "keepdim",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 'fro'\ndim = None\nkeepdim = False\ndtype = None",
+    "p = 'fro'\ndim = None\nkeepdim = False\ndtype = None\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "p = 'fro'\ndim = None\nkeepdim = False\ndtype = None\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "p = 'fro'\ndim = None\nkeepdim = False\ndtype = None\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "p = 'fro'\ndim = None\nkeepdim = False\ndtype = None\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "p = 'fro'\ndim = None\nkeepdim = False\ndtype = None\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "p = 'fro'\ndim = None\nkeepdim = False\ndtype = None\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "p = 'fro'\ndim = None\nkeepdim = False\ndtype = None\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "p = 'fro'\ndim = None\nkeepdim = False\ndtype = None\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "p = 'fro'\ndim = None\nkeepdim = False\ndtype = None\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "p = 'fro'\ndim = None\nkeepdim = False\ndtype = None\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "p = 'fro'\ndim = None\nkeepdim = False\ndtype = None\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 'fro'\ndim = None\ndtype = None\nkeepdim = True"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,p='fro',dim=None,keepdim=False,dtype=None):\n  return torch.Tensor.norm(input,p,dim,keepdim,dtype)",
+    "tensorflow": "def tensorflow_call(input, p='fro', dim=None, keepdim=False, dtype=None):\n    if p == 'fro':\n        norm_value = tf.norm(input, ord='euclidean', axis=dim, keepdims=keepdim)\n    else:\n        norm_value = tf.norm(input, ord=p, axis=dim, keepdims=keepdim)\n    if dtype is not None:\n        norm_value = tf.cast(norm_value, dtype)\n    return norm_value"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 'fro'\ndim = None\nkeepdim = False\ndtype = None",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 'fro'\ndim = None\nkeepdim = False\ndtype = None",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 'fro'\ndim = None\nkeepdim = False\ndtype = None"
+  ]
+}

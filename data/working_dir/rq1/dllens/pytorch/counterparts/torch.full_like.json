@@ -1,0 +1,38 @@
+{
+  "function_name": "torch.full_like(input, fill_value, *, dtype=None, layout=torch.strided, device=None, requires_grad=False, memory_format=torch.preserve_format)",
+  "inputs": [
+    "input",
+    "fill_value"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nfill_value = torch.tensor(5, dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nfill_value = 5",
+    "fill_value = torch.tensor(5, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "fill_value = torch.tensor(5, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nfill_value = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "fill_value = torch.tensor(5, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "fill_value = torch.tensor(5, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "fill_value = torch.tensor(5, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "fill_value = torch.tensor(5, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float32)",
+    "fill_value = torch.tensor(5, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "fill_value = torch.tensor(5, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "fill_value = torch.tensor(5, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nfill_value = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "fill_value = torch.tensor(5, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nfill_value = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "fill_value = torch.tensor(5, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "fill_value = torch.tensor(5, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "fill_value = torch.tensor(5, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nfill_value = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "fill_value = torch.tensor(5, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,fill_value):\n  return torch.full_like(input,fill_value)",
+    "tensorflow": "def tensorflow_call(input, fill_value):\n    return tf.fill(tf.shape(input), fill_value)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nfill_value = torch.tensor(5, dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nfill_value = 5",
+    "input = torch.tensor([[1, 2], [3, 4]])\nfill_value = 5"
+  ]
+}

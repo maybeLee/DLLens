@@ -1,0 +1,35 @@
+{
+  "function_name": "torch.tensor_split(input, indices_or_sections, dim=0)",
+  "inputs": [
+    "input",
+    "indices_or_sections",
+    "dim"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3, 4, 5, 6, 7, 8, 9])\nindices_or_sections = 3\ndim = 0",
+    "input = torch.tensor([1, 2, 3, 4, 5, 6, 7, 8, 9])\ndim = 0\nindices_or_sections = 4",
+    "indices_or_sections = 3\ndim = 0\ninput = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "indices_or_sections = 3\ndim = 0\ninput = torch.tensor(np.random.randint(-50, 50, (9,1,1,1,1)), dtype=torch.int64)",
+    "indices_or_sections = 3\ndim = 0\ninput = torch.tensor(np.random.randint(-50, 50, (9,1)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 4, 5, 6, 7, 8, 9])\ndim = 0\nindices_or_sections = 5",
+    "indices_or_sections = 3\ndim = 0\ninput = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int64)",
+    "indices_or_sections = 3\ndim = 0\ninput = torch.tensor(np.random.randint(-50, 50, (9,1,1)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 4, 5, 6, 7, 8, 9])\ndim = 0\nindices_or_sections = 3",
+    "indices_or_sections = 3\ndim = 0\ninput = torch.tensor(np.random.randint(-50, 50, (9)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 4, 5, 6, 7, 8, 9])\ndim = 0\nindices_or_sections = 2",
+    "indices_or_sections = 3\ndim = 0\ninput = torch.tensor(np.random.randint(-50, 50, (9,1,1,1)), dtype=torch.int64)",
+    "indices_or_sections = 3\ndim = 0\ninput = torch.tensor(np.random.randint(-50, 50, (9)), dtype=torch.int32)",
+    "indices_or_sections = 3\ndim = 0\ninput = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 4, 5, 6, 7, 8, 9])\nindices_or_sections = 3\ndim = -1",
+    "input = torch.tensor([1, 2, 3, 4, 5, 6, 7, 8, 9])\ndim = 0\nindices_or_sections = 1"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,indices_or_sections,dim=0):\n  return torch.tensor_split(input,indices_or_sections,dim)",
+    "tensorflow": "def tensorflow_call(input, indices_or_sections, dim=0):\n    input_shape = tf.shape(input)\n    size = input_shape[dim]\n    if isinstance(indices_or_sections, int):\n        split_size = size // indices_or_sections\n        remainder = size % indices_or_sections\n        split_sizes = [split_size + 1 if i < remainder else split_size for i in range(indices_or_sections)]\n    else:\n        split_sizes = indices_or_sections\n    return tf.split(input, num_or_size_splits=split_sizes, axis=dim)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3, 4, 5, 6, 7, 8, 9])\nindices_or_sections = 3\ndim = 0",
+    "input = torch.tensor([1, 2, 3, 4, 5, 6, 7, 8, 9])\nindices_or_sections = 3\ndim = 0",
+    "input = torch.tensor([1, 2, 3, 4, 5, 6, 7, 8, 9])\nindices_or_sections = 3\ndim = 0"
+  ]
+}

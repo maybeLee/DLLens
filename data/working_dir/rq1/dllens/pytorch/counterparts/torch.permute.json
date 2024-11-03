@@ -1,0 +1,27 @@
+{
+  "function_name": "torch.permute(input, dims)",
+  "inputs": [
+    "input",
+    "dims"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndims = (1, 0)",
+    "input = torch.tensor([[1, 2], [3, 4]])\ndims = (1, 0)",
+    "dims = (1, 0)\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "dims = (1, 0)\ninput = torch.tensor(np.random.randint(-50, 50, (2,3)), dtype=torch.int64)",
+    "dims = (1, 0)\ninput = torch.tensor(np.random.randint(-50, 50, (2,3)), dtype=torch.int32)",
+    "dims = (1, 0)\ninput = torch.tensor(np.random.randint(-50, 50, (5,3)), dtype=torch.int64)",
+    "dims = (1, 0)\ninput = torch.tensor(np.random.randint(-50, 50, (3,3)), dtype=torch.int64)",
+    "dims = (1, 0)\ninput = torch.tensor(np.random.randint(-50, 50, (2,5)), dtype=torch.int64)",
+    "dims = (1, 0)\ninput = torch.tensor(np.random.randint(-50, 50, (1,3)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dims):\n  return torch.permute(input,dims)",
+    "tensorflow": "def tensorflow_call(input, dims):\n    return tf.transpose(input, perm=dims)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndims = (1, 0)",
+    "input = torch.tensor([[1, 2], [3, 4]])\ndims = (1, 0)",
+    "input = torch.tensor([[1, 2], [3, 4]])\ndims = (1, 0)"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "function_name": "tf.raw_ops.Where(condition,name=None)",
+  "inputs": [
+    "condition"
+  ],
+  "sample_inputs": [
+    "condition = tf.constant([[True, False, True], [False, True, False]])",
+    "condition = tf.constant([[True, False], [False, True]], dtype=tf.bool)",
+    "condition = tf.constant([[True, False, True], [False, True, False]], dtype=tf.bool)"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(condition):\n  return tf.raw_ops.Where(condition=condition)",
+    "pytorch": "def pytorch_call(condition):\n    return torch.nonzero(condition, as_tuple=False)"
+  },
+  "llm_inputs": [
+    "condition = tf.constant([[True, False, True], [False, True, False]])",
+    "condition = tf.constant([[True, False], [False, True]], dtype=tf.bool)",
+    "condition = tf.constant([[True, False, True], [False, True, False]], dtype=tf.bool)"
+  ]
+}

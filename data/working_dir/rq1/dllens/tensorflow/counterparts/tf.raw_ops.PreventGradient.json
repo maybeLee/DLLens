@@ -1,0 +1,34 @@
+{
+  "function_name": "tf.raw_ops.PreventGradient(input,message='',name=None)",
+  "inputs": [
+    "input",
+    "message"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nmessage = 'This is a test message'",
+    "input = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nmessage = 'This is a test message.'",
+    "input = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nmessage = 'This is a test message'",
+    "message = 'This is a test message'\ninput = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "message = 'This is a test message'\ninput = tf.constant(np.random.randn(2), dtype='float32')",
+    "message = 'This is a test message'\ninput = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "message = 'This is a test message'\ninput = tf.constant(np.random.randn(2,2), dtype='half')",
+    "message = 'This is a test message'\ninput = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "message = 'This is a test message'\ninput = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "message = 'This is a test message'\ninput = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "message = 'This is a test message'\ninput = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "message = 'This is a test message'\ninput = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "message = 'This is a test message'\ninput = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "message = 'This is a test message'\ninput = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "message = 'This is a test message'\ninput = tf.constant(np.random.randn(), dtype='float32')",
+    "message = 'This is a test message'\ninput = tf.constant(np.random.randn(2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,message=''):\n  return tf.raw_ops.PreventGradient(input=input,message=message)",
+    "pytorch": "def pytorch_call(input, message=''):\n    return input.detach()"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nmessage = 'This is a test message'",
+    "input = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nmessage = 'This is a test message.'",
+    "input = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nmessage = 'This is a test message'"
+  ]
+}

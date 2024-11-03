@@ -1,0 +1,41 @@
+{
+  "function_name": "torch.lerp(input, end, weight, *, out=None)",
+  "inputs": [
+    "input",
+    "end",
+    "weight"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1.0, 2.0, 3.0])\nend = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor([0.5, 0.5, 0.5])",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nweight = torch.tensor([0.5, 0.5, 0.5])\nend = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nend = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "end = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor([0.5, 0.5, 0.5])\ninput = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "end = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor([0.5, 0.5, 0.5])\ninput = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nend = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nweight = torch.tensor([0.5, 0.5, 0.5])\nend = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nweight = torch.tensor([0.5, 0.5, 0.5])\nend = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "end = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor([0.5, 0.5, 0.5])\ninput = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nweight = torch.tensor([0.5, 0.5, 0.5])\nend = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nweight = torch.tensor([0.5, 0.5, 0.5])\nend = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "end = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor([0.5, 0.5, 0.5])\ninput = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nend = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nweight = torch.tensor([0.5, 0.5, 0.5])\nend = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nend = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "end = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor([0.5, 0.5, 0.5])\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nend = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "end = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor([0.5, 0.5, 0.5])\ninput = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "end = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor([0.5, 0.5, 0.5])\ninput = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nend = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nweight = torch.tensor([0.5, 0.5, 0.5])\nend = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nend = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,end,weight):\n  return torch.lerp(input,end,weight)",
+    "tensorflow": "def tensorflow_call(input, end, weight):\n    return input + (end - input) * weight"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1.0, 2.0, 3.0])\nend = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor([0.5, 0.5, 0.5])",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nend = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor([0.5, 0.5, 0.5])",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nend = torch.tensor([4.0, 5.0, 6.0])\nweight = torch.tensor([0.5, 0.5, 0.5])"
+  ]
+}

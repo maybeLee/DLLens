@@ -1,0 +1,20 @@
+{
+  "function_name": "torch.logical_and(input, other, *, out=None)",
+  "inputs": [
+    "input",
+    "other"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[True, False, True], [False, True, False]], dtype=torch.bool)\nother = torch.tensor([[True, True, False], [False, False, True]], dtype=torch.bool)",
+    "input = torch.tensor([[True, False, True], [False, True, False]])\nother = torch.tensor([[True, True, False], [False, False, True]])"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,other):\n  return torch.logical_and(input,other)",
+    "tensorflow": "def tensorflow_call(input, other):\n    return tf.logical_and(input, other)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[True, False, True], [False, True, False]], dtype=torch.bool)\nother = torch.tensor([[True, True, False], [False, False, True]], dtype=torch.bool)",
+    "input = torch.tensor([[True, False, True], [False, True, False]])\nother = torch.tensor([[True, True, False], [False, False, True]])",
+    "input = torch.tensor([[True, False, True], [False, True, False]])\nother = torch.tensor([[True, True, False], [False, False, True]])"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "function_name": "torch.Tensor.deg2rad(input)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([0.0, 30.0, 45.0, 60.0, 90.0])",
+    "input_values = [0, 30, 45, 60, 90]\ninput = torch.tensor(input_values)",
+    "input = torch.tensor(np.random.randn(5,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.half)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.float64)",
+    "input = torch.tensor(np.random.randn(5,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.float16)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.Tensor.deg2rad(input)",
+    "tensorflow": "def tensorflow_call(input):\n    return tf.multiply(tf.cast(input, tf.float32), tf.constant(np.pi / 180, dtype=tf.float32))"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([0.0, 30.0, 45.0, 60.0, 90.0])",
+    "input = torch.tensor([0.0, 30.0, 45.0, 60.0, 90.0])",
+    "input_values = [0, 30, 45, 60, 90]\ninput = torch.tensor(input_values)"
+  ]
+}

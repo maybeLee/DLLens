@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.raw_ops.Imag(input,Tout=tf.dtypes.float32,name=None)",
+  "inputs": [
+    "input",
+    "Tout"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1 + 2j, 3 + 4j], [5 + 6j, 7 + 8j]], dtype=tf.complex64)\nTout = tf.dtypes.float32",
+    "input = tf.constant([[1 + 2j, 2 + 3j], [3 + 4j, 4 + 5j]], dtype=tf.complex64)\nTout = tf.dtypes.float32",
+    "Tout = tf.dtypes.float32\ninput = tf.constant(np.random.randn(2,2,1,1,1), dtype='complex64')",
+    "Tout = tf.dtypes.float32\ninput = tf.constant(np.random.randn(2,2,1,1), dtype='complex64')",
+    "Tout = tf.dtypes.float32\ninput = tf.constant(np.random.randn(5,2), dtype='complex64')",
+    "Tout = tf.dtypes.float32\ninput = tf.constant(np.random.randn(1,2), dtype='complex64')",
+    "Tout = tf.dtypes.float32\ninput = tf.constant(np.random.randn(2), dtype='complex64')",
+    "Tout = tf.dtypes.float32\ninput = tf.constant(np.random.randn(2,1), dtype='complex64')",
+    "Tout = tf.dtypes.float32\ninput = tf.constant(np.random.randn(2,5), dtype='complex64')",
+    "Tout = tf.dtypes.float32\ninput = tf.constant(np.random.randn(2,2,1), dtype='complex64')",
+    "Tout = tf.dtypes.float32\ninput = tf.constant(np.random.randn(2,2), dtype='complex64')",
+    "Tout = tf.dtypes.float32\ninput = tf.constant(np.random.randn(), dtype='complex64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,Tout=tf.dtypes.float32):\n  return tf.raw_ops.Imag(input=input,Tout=Tout)",
+    "pytorch": "def pytorch_call(input, Tout=torch.float32):\n    return input.imag.to(Tout)"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1 + 2j, 3 + 4j], [5 + 6j, 7 + 8j]], dtype=tf.complex64)\nTout = tf.dtypes.float32",
+    "input = tf.constant([[1 + 2j, 2 + 3j], [3 + 4j, 4 + 5j]], dtype=tf.complex64)\nTout = tf.dtypes.float32",
+    "input = tf.constant([[1 + 2j, 2 + 3j], [3 + 4j, 4 + 5j]], dtype=tf.complex64)\nTout = tf.dtypes.float32"
+  ]
+}

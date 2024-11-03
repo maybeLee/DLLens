@@ -1,0 +1,33 @@
+{
+  "function_name": "tf.gather_nd(params,indices,batch_dims=0,name=None)",
+  "inputs": [
+    "params",
+    "indices",
+    "batch_dims"
+  ],
+  "sample_inputs": [
+    "params = tf.constant([[1, 2], [3, 4], [5, 6], [7, 8]], dtype=tf.float32)\nindices = tf.constant([[0], [2]], dtype=tf.int32)\nbatch_dims = 0",
+    "params = tf.constant([[1, 2], [3, 4], [5, 6], [7, 8]], dtype=tf.int32)\nindices = tf.constant([[0], [2], [1]], dtype=tf.int32)\nbatch_dims = 0",
+    "params = tf.constant([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]])\nindices = tf.constant([[0], [2], [4]])\nbatch_dims = 0",
+    "indices = tf.constant([[0], [2]], dtype=tf.int32)\nbatch_dims = 0\nparams = tf.constant(np.random.randn(4,2,1,1), dtype='float32')",
+    "indices = tf.constant([[0], [2]], dtype=tf.int32)\nbatch_dims = 0\nparams = tf.constant(np.random.randn(4,2), dtype='half')",
+    "indices = tf.constant([[0], [2]], dtype=tf.int32)\nbatch_dims = 0\nparams = tf.constant(np.random.randn(4,2), dtype='float64')",
+    "indices = tf.constant([[0], [2]], dtype=tf.int32)\nbatch_dims = 0\nparams = tf.constant(np.random.randn(4,2), dtype='float16')",
+    "indices = tf.constant([[0], [2]], dtype=tf.int32)\nbatch_dims = 0\nparams = tf.constant(np.random.randn(4,2,1), dtype='float32')",
+    "indices = tf.constant([[0], [2]], dtype=tf.int32)\nbatch_dims = 0\nparams = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "indices = tf.constant([[0], [2]], dtype=tf.int32)\nbatch_dims = 0\nparams = tf.constant(np.random.randn(4), dtype='float32')",
+    "indices = tf.constant([[0], [2]], dtype=tf.int32)\nbatch_dims = 0\nparams = tf.constant(np.random.randn(4,2), dtype='float32')",
+    "indices = tf.constant([[0], [2]], dtype=tf.int32)\nbatch_dims = 0\nparams = tf.constant(np.random.randn(4,2,1,1,1), dtype='float32')",
+    "indices = tf.constant([[0], [2]], dtype=tf.int32)\nbatch_dims = 0\nparams = tf.constant(np.random.randn(4,1), dtype='float32')",
+    "indices = tf.constant([[0], [2]], dtype=tf.int32)\nbatch_dims = 0\nparams = tf.constant(np.random.randn(4,5), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(params,indices,batch_dims=0):\n  return tf.gather_nd(params,indices,batch_dims)",
+    "pytorch": "def pytorch_call(params, indices, batch_dims=0):\n    if batch_dims == 0:\n        indices = indices.view(-1)\n        return params[indices]\n    else:\n        raise NotImplementedError('Batch dimensions greater than 0 are not implemented.')"
+  },
+  "llm_inputs": [
+    "params = tf.constant([[1, 2], [3, 4], [5, 6], [7, 8]], dtype=tf.float32)\nindices = tf.constant([[0], [2]], dtype=tf.int32)\nbatch_dims = 0",
+    "params = tf.constant([[1, 2], [3, 4], [5, 6], [7, 8]], dtype=tf.int32)\nindices = tf.constant([[0], [2], [1]], dtype=tf.int32)\nbatch_dims = 0",
+    "params = tf.constant([[1, 2], [3, 4], [5, 6], [7, 8], [9, 10]])\nindices = tf.constant([[0], [2], [4]])\nbatch_dims = 0"
+  ]
+}

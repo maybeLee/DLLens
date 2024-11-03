@@ -1,0 +1,39 @@
+{
+  "function_name": "torch.Tensor.divide_(input, value, *, rounding_mode=None)",
+  "inputs": [
+    "input",
+    "value"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nvalue = torch.tensor(2.0)",
+    "input = torch.tensor([[4.0, 8.0], [10.0, 12.0]])\nvalue = torch.tensor(2.0)",
+    "value = torch.tensor(2.0)\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "value = torch.tensor(2.0)\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nvalue = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nvalue = torch.tensor(np.random.randn(1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nvalue = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "value = torch.tensor(2.0)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "value = torch.tensor(2.0)\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "value = torch.tensor(2.0)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nvalue = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "value = torch.tensor(2.0)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "value = torch.tensor(2.0)\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "value = torch.tensor(2.0)\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "value = torch.tensor(2.0)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "value = torch.tensor(2.0)\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "value = torch.tensor(2.0)\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nvalue = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nvalue = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "value = torch.tensor(2.0)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "value = torch.tensor(2.0)\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,value):\n  return torch.Tensor.divide_(input,value)",
+    "tensorflow": "def tensorflow_call(input, value):\n    value = tf.cast(value, input.dtype)\n    return tf.divide(input, value)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nvalue = torch.tensor(2.0)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nvalue = torch.tensor(2.0)",
+    "input = torch.tensor([[4.0, 8.0], [10.0, 12.0]])\nvalue = torch.tensor(2.0)"
+  ]
+}

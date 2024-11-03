@@ -1,0 +1,44 @@
+{
+  "function_name": "torch.nn.functional.softplus(input, beta=1, threshold=20)",
+  "inputs": [
+    "input",
+    "beta",
+    "threshold"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nbeta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nbeta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]], dtype=torch.float32)\nbeta = torch.tensor(1.0, dtype=torch.float32)\nthreshold = torch.tensor(20.0, dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nthreshold = torch.tensor(20.0)\nbeta = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "beta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "beta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nthreshold = torch.tensor(20.0)\nbeta = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "beta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "beta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nthreshold = torch.tensor(20.0)\nbeta = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nbeta = torch.tensor(1.0)\nthreshold = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "beta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nbeta = torch.tensor(1.0)\nthreshold = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "beta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "beta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)\ninput = torch.tensor(np.random.randn(3,2), dtype=torch.float32)",
+    "beta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nbeta = torch.tensor(1.0)\nthreshold = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nbeta = torch.tensor(1.0)\nthreshold = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "beta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "beta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nthreshold = torch.tensor(20.0)\nbeta = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "beta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "beta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "beta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)\ninput = torch.tensor(np.random.randn(4,2), dtype=torch.float32)",
+    "beta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,beta=1,threshold=20):\n  return torch.nn.functional.softplus(input,beta,threshold)",
+    "tensorflow": "def tensorflow_call(input, beta=1.0, threshold=20.0):\n    input_dtype = input.dtype\n    beta = tf.cast(beta, input_dtype)\n    softplus_value = 1 / beta * tf.math.log(1 + tf.exp(beta * input))\n    return softplus_value"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nbeta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nbeta = torch.tensor(1.0)\nthreshold = torch.tensor(20.0)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]], dtype=torch.float32)\nbeta = torch.tensor(1.0, dtype=torch.float32)\nthreshold = torch.tensor(20.0, dtype=torch.float32)"
+  ]
+}

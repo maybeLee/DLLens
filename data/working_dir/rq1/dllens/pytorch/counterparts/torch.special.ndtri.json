@@ -1,0 +1,30 @@
+{
+  "function_name": "torch.special.ndtri(input, *, out=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([0.1, 0.5, 0.9])",
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5])",
+    "input = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(3), dtype=torch.float64)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(4), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.special.ndtri(input)",
+    "tensorflow": "def tensorflow_call(input):\n    input = tf.cast(input, tf.float32)\n    input_clipped = tf.clip_by_value(input, 0.0, 1.0)\n    output = tf.math.sqrt(2.0) * tf.math.erfinv(2.0 * input_clipped - 1.0)\n    mask = tf.logical_or(input < 0.0, input > 1.0)\n    output = tf.where(mask, tf.constant(float('nan'), dtype=tf.float32), output)\n    return tf.reshape(output, tf.shape(input))"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([0.1, 0.5, 0.9])",
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5])",
+    "input = torch.tensor([0.1, 0.5, 0.9])"
+  ]
+}

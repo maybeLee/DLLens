@@ -1,0 +1,28 @@
+{
+  "function_name": "tf.nn.max_pool3d(input,ksize,strides,padding,data_format='NDHWC',name=None)",
+  "inputs": [
+    "input",
+    "ksize",
+    "strides",
+    "padding",
+    "data_format"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[[[[1.0, 2.0], [3.0, 4.0]], [[5.0, 6.0], [7.0, 8.0]]]]], dtype=tf.float32)\nksize = tf.constant([1, 1, 2, 2, 1])\nstrides = tf.constant([1, 1, 1, 1, 1])\npadding = 'VALID'\ndata_format = 'NDHWC'",
+    "input = tf.constant([[[[[1, 2], [3, 4]], [[5, 6], [7, 8]]]]], dtype=tf.float32)\nksize = tf.constant([1, 1, 2, 2, 1], dtype=tf.int32)\nstrides = tf.constant([1, 1, 1, 1, 1], dtype=tf.int32)\npadding = 'VALID'\ndata_format = 'NDHWC'",
+    "ksize = tf.constant([1, 1, 2, 2, 1])\nstrides = tf.constant([1, 1, 1, 1, 1])\npadding = 'VALID'\ndata_format = 'NDHWC'\ninput = tf.constant(np.random.randn(1,1,2,2,2), dtype='float32')",
+    "ksize = tf.constant([1, 1, 2, 2, 1])\nstrides = tf.constant([1, 1, 1, 1, 1])\npadding = 'VALID'\ndata_format = 'NDHWC'\ninput = tf.constant(np.random.randn(1,1,5,2,2), dtype='float32')",
+    "ksize = tf.constant([1, 1, 2, 2, 1])\nstrides = tf.constant([1, 1, 1, 1, 1])\npadding = 'VALID'\ndata_format = 'NDHWC'\ninput = tf.constant(np.random.randn(1,1,2,2,1), dtype='float32')",
+    "ksize = tf.constant([1, 1, 2, 2, 1])\nstrides = tf.constant([1, 1, 1, 1, 1])\npadding = 'VALID'\ndata_format = 'NDHWC'\ninput = tf.constant(np.random.randn(1,5,2,2,2), dtype='float32')",
+    "ksize = tf.constant([1, 1, 2, 2, 1])\nstrides = tf.constant([1, 1, 1, 1, 1])\npadding = 'VALID'\ndata_format = 'NDHWC'\ninput = tf.constant(np.random.randn(2,1,2,2,2), dtype='float32')",
+    "ksize = tf.constant([1, 1, 2, 2, 1])\nstrides = tf.constant([1, 1, 1, 1, 1])\npadding = 'VALID'\ndata_format = 'NDHWC'\ninput = tf.constant(np.random.randn(1,1,2,2,4), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,ksize,strides,padding,data_format='NDHWC'):\n  return tf.nn.max_pool3d(input,ksize,strides,padding,data_format)",
+    "pytorch": "def pytorch_call(input, ksize, strides, padding, data_format='NDHWC'):\n    kernel_size = ksize[2:5].tolist()\n    stride = strides[2:5].tolist()\n    if padding == 'VALID':\n        padding = (0, 0, 0)\n    elif padding == 'SAME':\n        padding = (1, 1, 1)\n    output = F.max_pool3d(input, kernel_size=kernel_size, stride=stride, padding=padding)\n    return output"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[[[[1.0, 2.0], [3.0, 4.0]], [[5.0, 6.0], [7.0, 8.0]]]]], dtype=tf.float32)\nksize = tf.constant([1, 1, 2, 2, 1])\nstrides = tf.constant([1, 1, 1, 1, 1])\npadding = 'VALID'\ndata_format = 'NDHWC'",
+    "input = tf.constant([[[[[1, 2], [3, 4]], [[5, 6], [7, 8]]]]], dtype=tf.float32)\nksize = tf.constant([1, 1, 2, 2, 1], dtype=tf.int32)\nstrides = tf.constant([1, 1, 1, 1, 1], dtype=tf.int32)\npadding = 'VALID'\ndata_format = 'NDHWC'"
+  ]
+}

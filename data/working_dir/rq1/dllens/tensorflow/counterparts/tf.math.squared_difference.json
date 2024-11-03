@@ -1,0 +1,37 @@
+{
+  "function_name": "tf.math.squared_difference(x,y,name=None)",
+  "inputs": [
+    "x",
+    "y"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([[1.0, 1.0], [1.0, 1.0]])",
+    "x = tf.constant([[1.0], [2.0], [3.0]], dtype=tf.float32)\ny = tf.constant([[1.5], [2.5], [3.5]], dtype=tf.float32)",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([[4.0, 3.0], [2.0, 1.0]])",
+    "y = tf.constant([[1.0, 1.0], [1.0, 1.0]])\nx = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "y = tf.constant([[1.0, 1.0], [1.0, 1.0]])\nx = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "y = tf.constant([[1.0, 1.0], [1.0, 1.0]])\nx = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "y = tf.constant([[1.0, 1.0], [1.0, 1.0]])\nx = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "y = tf.constant([[1.0, 1.0], [1.0, 1.0]])\nx = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(2), dtype='float32')",
+    "y = tf.constant([[1.0, 1.0], [1.0, 1.0]])\nx = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "y = tf.constant([[1.0, 1.0], [1.0, 1.0]])\nx = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "y = tf.constant([[1.0, 1.0], [1.0, 1.0]])\nx = tf.constant(np.random.randn(2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,y):\n  return tf.math.squared_difference(x,y)",
+    "pytorch": "def pytorch_call(x, y):\n    return torch.square(x - y)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([[1.0, 1.0], [1.0, 1.0]])",
+    "x = tf.constant([[1.0], [2.0], [3.0]], dtype=tf.float32)\ny = tf.constant([[1.5], [2.5], [3.5]], dtype=tf.float32)",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([[4.0, 3.0], [2.0, 1.0]])"
+  ]
+}

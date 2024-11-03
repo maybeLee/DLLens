@@ -1,0 +1,35 @@
+{
+  "function_name": "tf.nn.moments(x,axes,shift=None,keepdims=False,name=None)",
+  "inputs": [
+    "x",
+    "axes",
+    "shift",
+    "keepdims"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\naxes = [0]\nshift = None\nkeepdims = False",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxes = [0]\nshift = None\nkeepdims = False",
+    "axes = [0]\nshift = None\nkeepdims = False\nx = tf.constant(np.random.randn(2), dtype='float32')",
+    "axes = [0]\nshift = None\nkeepdims = False\nx = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\naxes = [0]\nshift = None\nkeepdims = True",
+    "axes = [0]\nshift = None\nkeepdims = False\nx = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "axes = [0]\nshift = None\nkeepdims = False\nx = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "axes = [0]\nshift = None\nkeepdims = False\nx = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "axes = [0]\nshift = None\nkeepdims = False\nx = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "axes = [0]\nshift = None\nkeepdims = False\nx = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "axes = [0]\nshift = None\nkeepdims = False\nx = tf.constant(np.random.randn(2,2), dtype='half')",
+    "axes = [0]\nshift = None\nkeepdims = False\nx = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "axes = [0]\nshift = None\nkeepdims = False\nx = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "axes = [0]\nshift = None\nkeepdims = False\nx = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "axes = [0]\nshift = None\nkeepdims = False\nx = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,axes,shift=None,keepdims=False):\n  return tf.nn.moments(x,axes,shift,keepdims)",
+    "pytorch": "def pytorch_call(x, axes, shift=None, keepdims=False):\n    mean = torch.mean(x, dim=axes, keepdim=keepdims)\n    var = torch.var(x, dim=axes, keepdim=keepdims, unbiased=False)\n    return (mean, var)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\naxes = [0]\nshift = None\nkeepdims = False",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxes = [0]\nshift = None\nkeepdims = False",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\naxes = [0]\nshift = None\nkeepdims = False"
+  ]
+}

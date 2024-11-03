@@ -1,0 +1,34 @@
+{
+  "function_name": "torch.Tensor.copy_(input, src, non_blocking=False)",
+  "inputs": [
+    "input",
+    "src",
+    "non_blocking"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nsrc = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)\nnon_blocking = False",
+    "input = torch.tensor([[1, 2], [3, 4]])\nsrc = torch.tensor([[5, 6], [7, 8]])\nnon_blocking = False",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nnon_blocking = False\nsrc = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "src = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)\nnon_blocking = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nnon_blocking = False\nsrc = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nnon_blocking = False\nsrc = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "src = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)\nnon_blocking = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nnon_blocking = False\nsrc = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nnon_blocking = False\nsrc = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nnon_blocking = False\nsrc = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nnon_blocking = False\nsrc = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "src = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)\nnon_blocking = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nsrc = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)\nnon_blocking = True",
+    "src = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)\nnon_blocking = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nnon_blocking = False\nsrc = torch.tensor(np.random.randn(), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,src,non_blocking=False):\n  return torch.Tensor.copy_(input,src,non_blocking)",
+    "tensorflow": "def tensorflow_call(input, src, non_blocking=False):\n    input_shape = tf.shape(input)\n    src_shape = tf.shape(src)\n    if tf.reduce_prod(input_shape) != tf.reduce_prod(src_shape):\n        src = tf.broadcast_to(src, input_shape)\n    return tf.identity(src)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nsrc = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)\nnon_blocking = False",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nsrc = torch.tensor([[5, 6], [7, 8]], dtype=torch.float32)\nnon_blocking = False",
+    "input = torch.tensor([[1, 2], [3, 4]])\nsrc = torch.tensor([[5, 6], [7, 8]])\nnon_blocking = False"
+  ]
+}

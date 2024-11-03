@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.raw_ops.Ceil(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1.2, 2.5], [3.7, 4.1]], dtype=tf.float32)",
+    "x = tf.constant([[1.2, 2.5], [3.8, 4.1]], dtype=tf.float32)",
+    "x = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "x = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "x = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2), dtype='half')",
+    "x = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "x = tf.constant(np.random.randn(2), dtype='float32')",
+    "x = tf.constant(np.random.randn(), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.raw_ops.Ceil(x=x)",
+    "pytorch": "def pytorch_call(x):\n    return torch.ceil(x)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1.2, 2.5], [3.7, 4.1]], dtype=tf.float32)",
+    "x = tf.constant([[1.2, 2.5], [3.7, 4.1]], dtype=tf.float32)",
+    "x = tf.constant([[1.2, 2.5], [3.8, 4.1]], dtype=tf.float32)"
+  ]
+}

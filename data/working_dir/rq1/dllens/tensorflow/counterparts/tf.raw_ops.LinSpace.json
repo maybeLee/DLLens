@@ -1,0 +1,23 @@
+{
+  "function_name": "tf.raw_ops.LinSpace(start,stop,num,name=None)",
+  "inputs": [
+    "start",
+    "stop",
+    "num"
+  ],
+  "sample_inputs": [
+    "start = tf.constant(0, dtype=tf.float32)\nstop = tf.constant(1, dtype=tf.float32)\nnum = tf.constant(5, dtype=tf.int32)",
+    "start = tf.constant(0.0)\nstop = tf.constant(1.0)\nnum = tf.constant(5)",
+    "stop = tf.constant(1, dtype=tf.float32)\nnum = tf.constant(5, dtype=tf.int32)\nstart = tf.constant(np.random.randn(), dtype='float32')",
+    "start = tf.constant(0, dtype=tf.float32)\nnum = tf.constant(5, dtype=tf.int32)\nstop = tf.constant(np.random.randn(), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(start,stop,num):\n  return tf.raw_ops.LinSpace(start=start,stop=stop,num=num)",
+    "pytorch": "def pytorch_call(start, stop, num):\n    return torch.linspace(start, stop, steps=num.item())"
+  },
+  "llm_inputs": [
+    "start = tf.constant(0, dtype=tf.float32)\nstop = tf.constant(1, dtype=tf.float32)\nnum = tf.constant(5, dtype=tf.int32)",
+    "start = tf.constant(0.0)\nstop = tf.constant(1.0)\nnum = tf.constant(5)",
+    "start = tf.constant(0.0)\nstop = tf.constant(1.0)\nnum = tf.constant(5)"
+  ]
+}

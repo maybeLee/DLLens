@@ -1,0 +1,18 @@
+{
+  "function_name": "torch.overrides.is_tensor_method_or_property(func)",
+  "inputs": [
+    "func"
+  ],
+  "sample_inputs": [
+    "func = lambda x: x + 1"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(func):\n  return torch.overrides.is_tensor_method_or_property(func)",
+    "tensorflow": "def tensorflow_call(func):\n    return isinstance(func, tf.Tensor)"
+  },
+  "llm_inputs": [
+    "func = lambda x: x + 1",
+    "func = lambda x: x + 1",
+    "func = lambda x: x + 1"
+  ]
+}

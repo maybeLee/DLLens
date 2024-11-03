@@ -1,0 +1,33 @@
+{
+  "function_name": "torch.Tensor.to_sparse(input, sparseDims)",
+  "inputs": [
+    "input",
+    "sparseDims"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 0, 0], [0, 2, 0], [0, 0, 3]], dtype=torch.float32)\nsparseDims = 2",
+    "input = torch.tensor([[1, 0, 0], [0, 2, 0], [0, 0, 3]])\nsparseDims = 2",
+    "sparseDims = 2\ninput = torch.tensor(np.random.randn(3,3,1,1), dtype=torch.float32)",
+    "sparseDims = 2\ninput = torch.tensor(np.random.randn(3,3,1), dtype=torch.float32)",
+    "sparseDims = 2\ninput = torch.tensor(np.random.randn(3,3), dtype=torch.float16)",
+    "sparseDims = 2\ninput = torch.tensor(np.random.randn(3,3), dtype=torch.float64)",
+    "sparseDims = 2\ninput = torch.tensor(np.random.randn(3,3,1,1,1), dtype=torch.float32)",
+    "sparseDims = 2\ninput = torch.tensor(np.random.randn(3,5), dtype=torch.float32)",
+    "sparseDims = 2\ninput = torch.tensor(np.random.randn(3,3), dtype=torch.float32)",
+    "sparseDims = 2\ninput = torch.tensor(np.random.randn(5,3), dtype=torch.float32)",
+    "sparseDims = 2\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float32)",
+    "sparseDims = 2\ninput = torch.tensor(np.random.randn(3,3), dtype=torch.half)",
+    "input = torch.tensor([[1, 0, 0], [0, 2, 0], [0, 0, 3]], dtype=torch.float32)\nsparseDims = 1",
+    "sparseDims = 2\ninput = torch.tensor(np.random.randn(1,3), dtype=torch.float32)",
+    "sparseDims = 2\ninput = torch.tensor(np.random.randn(3,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,sparseDims):\n  return torch.Tensor.to_sparse(input,sparseDims)",
+    "tensorflow": "def tensorflow_call(input, sparseDims):\n    return tf.sparse.from_dense(input)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 0, 0], [0, 2, 0], [0, 0, 3]], dtype=torch.float32)\nsparseDims = 2",
+    "input = torch.tensor([[1, 0, 0], [0, 2, 0], [0, 0, 3]], dtype=torch.float32)\nsparseDims = 2",
+    "input = torch.tensor([[1, 0, 0], [0, 2, 0], [0, 0, 3]])\nsparseDims = 2"
+  ]
+}

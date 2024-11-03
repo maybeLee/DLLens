@@ -1,0 +1,20 @@
+{
+  "function_name": "tf.raw_ops.DeviceIndex(device_names,name=None)",
+  "inputs": [
+    "device_names"
+  ],
+  "sample_inputs": [
+    "device_names = ['CPU:0', 'GPU:0', 'GPU:1']",
+    "device_names = ['CPU:0', 'GPU:0']",
+    "device_names = ['device:CPU:0', 'device:GPU:0', 'device:CPU:1']"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(device_names):\n  return tf.raw_ops.DeviceIndex(device_names=device_names)",
+    "pytorch": "def pytorch_call(device_names):\n    unique_devices = set()\n    for name in device_names:\n        if name.startswith('device:'):\n            name = name[len('device:'):]\n        if 'GPU' in name:\n            name = name.replace('GPU', 'cuda')\n        elif 'CPU' in name:\n            name = name.replace('CPU', 'cpu')\n        unique_devices.add(name)\n    return len(unique_devices)"
+  },
+  "llm_inputs": [
+    "device_names = ['CPU:0', 'GPU:0', 'GPU:1']",
+    "device_names = ['CPU:0', 'GPU:0']",
+    "device_names = ['device:CPU:0', 'device:GPU:0', 'device:CPU:1']"
+  ]
+}

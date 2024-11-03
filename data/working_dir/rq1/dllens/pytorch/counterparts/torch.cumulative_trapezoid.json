@@ -1,0 +1,31 @@
+{
+  "function_name": "torch.cumulative_trapezoid(y, x=None, *, dx=None, dim=-1)",
+  "inputs": [
+    "y",
+    "x"
+  ],
+  "sample_inputs": [
+    "y = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])\nx = torch.tensor([0.0, 1.0, 2.0, 3.0, 4.0])",
+    "y = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])\nx = torch.tensor(np.random.randn(5,1,1,1,1), dtype=torch.float32)",
+    "y = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])\nx = torch.tensor(np.random.randn(5), dtype=torch.half)",
+    "y = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])\nx = torch.tensor(np.random.randn(5,1,1), dtype=torch.float32)",
+    "y = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])\nx = torch.tensor(np.random.randn(5,1,1,1), dtype=torch.float32)",
+    "x = torch.tensor([0.0, 1.0, 2.0, 3.0, 4.0])\ny = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "x = torch.tensor([0.0, 1.0, 2.0, 3.0, 4.0])\ny = torch.tensor(np.random.randn(5), dtype=torch.half)",
+    "y = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])\nx = torch.tensor(np.random.randn(5), dtype=torch.float64)",
+    "y = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])\nx = torch.tensor(np.random.randn(5,1), dtype=torch.float32)",
+    "y = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])\nx = torch.tensor(np.random.randn(5), dtype=torch.float16)",
+    "y = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])\nx = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "x = torch.tensor([0.0, 1.0, 2.0, 3.0, 4.0])\ny = torch.tensor(np.random.randn(5), dtype=torch.float64)",
+    "x = torch.tensor([0.0, 1.0, 2.0, 3.0, 4.0])\ny = torch.tensor(np.random.randn(5), dtype=torch.float16)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(y,x=None):\n  return torch.cumulative_trapezoid(y,x)",
+    "tensorflow": "def tensorflow_call(y, x=None):\n    if x is None:\n        x = tf.range(tf.shape(y)[0], dtype=y.dtype)\n    dx = tf.concat([[x[0]], x[1:] - x[:-1]], axis=0)\n    if y.dtype != dx.dtype:\n        dx = tf.cast(dx, y.dtype)\n    area = (y[:-1] + y[1:]) * dx[1:] / 2\n    return tf.cumsum(area)"
+  },
+  "llm_inputs": [
+    "y = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])\nx = torch.tensor([0.0, 1.0, 2.0, 3.0, 4.0])",
+    "y = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])\nx = torch.tensor([0.0, 1.0, 2.0, 3.0, 4.0])",
+    "y = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])\nx = torch.tensor([0.0, 1.0, 2.0, 3.0, 4.0])"
+  ]
+}

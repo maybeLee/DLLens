@@ -1,0 +1,35 @@
+{
+  "function_name": "torch.Tensor.outer(input, vec2)",
+  "inputs": [
+    "input",
+    "vec2"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nvec2 = torch.tensor([4, 5, 6], dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3])\nvec2 = torch.tensor([4, 5])",
+    "vec2 = torch.tensor([4, 5, 6], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3), dtype=torch.half)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nvec2 = torch.tensor(np.random.randn(4), dtype=torch.float32)",
+    "vec2 = torch.tensor([4, 5, 6], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nvec2 = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nvec2 = torch.tensor(np.random.randn(3), dtype=torch.half)",
+    "vec2 = torch.tensor([4, 5, 6], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3), dtype=torch.float64)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nvec2 = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "vec2 = torch.tensor([4, 5, 6], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "vec2 = torch.tensor([4, 5, 6], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(4), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nvec2 = torch.tensor(np.random.randn(3), dtype=torch.float16)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nvec2 = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "vec2 = torch.tensor([4, 5, 6], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nvec2 = torch.tensor(np.random.randn(3), dtype=torch.float64)",
+    "vec2 = torch.tensor([4, 5, 6], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "vec2 = torch.tensor([4, 5, 6], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3), dtype=torch.float16)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,vec2):\n  return torch.Tensor.outer(input,vec2)",
+    "tensorflow": "def tensorflow_call(input, vec2):\n    input = tf.cast(input, dtype=tf.float32)\n    vec2 = tf.cast(vec2, dtype=tf.float32)\n    return tf.linalg.matmul(tf.expand_dims(input, axis=1), tf.expand_dims(vec2, axis=0))"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nvec2 = torch.tensor([4, 5, 6], dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3])\nvec2 = torch.tensor([4, 5])",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nvec2 = torch.tensor([4, 5, 6], dtype=torch.float32)"
+  ]
+}

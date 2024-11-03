@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.image.rgb_to_yiq(images)",
+  "inputs": [
+    "images"
+  ],
+  "sample_inputs": [
+    "images = tf.constant([[[0.5, 0.2, 0.1], [0.3, 0.4, 0.6]], [[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]]])",
+    "images = tf.constant([[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], [[0.7, 0.8, 0.9], [1.0, 1.1, 1.2]]], dtype=tf.float32)",
+    "images = tf.constant([[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], [[0.7, 0.8, 0.9], [1.0, 1.1, 1.2]]])",
+    "images = tf.constant(np.random.randn(1,2,3), dtype='float32')",
+    "images = tf.constant(np.random.randn(2,5,3), dtype='float32')",
+    "images = tf.constant(np.random.randn(2,2,3), dtype='half')",
+    "images = tf.constant(np.random.randn(2,2,3), dtype='float32')",
+    "images = tf.constant(np.random.randn(2,2,3), dtype='float16')",
+    "images = tf.constant(np.random.randn(4,2,3), dtype='float32')",
+    "images = tf.constant(np.random.randn(2,2,3), dtype='float64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(images):\n  return tf.image.rgb_to_yiq(images)",
+    "pytorch": "def pytorch_call(images):\n    if images.dim() != 3:\n        raise ValueError('Input tensor must have 3 dimensions (batch_size, height, channels).')\n    images = images.to(torch.float32)\n    transformation_matrix = torch.tensor([[0.299, 0.587, 0.114], [0.5959, -0.2746, -0.3213], [0.211, -0.5227, 0.3116]], dtype=images.dtype)\n    yiq_images = torch.matmul(images, transformation_matrix.T)\n    return yiq_images"
+  },
+  "llm_inputs": [
+    "images = tf.constant([[[0.5, 0.2, 0.1], [0.3, 0.4, 0.6]], [[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]]])",
+    "images = tf.constant([[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], [[0.7, 0.8, 0.9], [1.0, 1.1, 1.2]]], dtype=tf.float32)",
+    "images = tf.constant([[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], [[0.7, 0.8, 0.9], [1.0, 1.1, 1.2]]])"
+  ]
+}

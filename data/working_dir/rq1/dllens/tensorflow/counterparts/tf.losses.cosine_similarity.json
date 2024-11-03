@@ -1,0 +1,33 @@
+{
+  "function_name": "tf.losses.cosine_similarity(y_true,y_pred,axis=-1)",
+  "inputs": [
+    "y_true",
+    "y_pred",
+    "axis"
+  ],
+  "sample_inputs": [
+    "y_true = tf.constant([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], dtype=tf.float32)\ny_pred = tf.constant([[0.9, 0.1, 0.0], [0.0, 0.8, 0.2]], dtype=tf.float32)\naxis = -1",
+    "y_pred = tf.constant([[0.9, 0.1, 0.0], [0.0, 0.8, 0.2]], dtype=tf.float32)\naxis = -1\ny_true = tf.constant(np.random.randn(2,3,1,1,1), dtype='float32')",
+    "y_pred = tf.constant([[0.9, 0.1, 0.0], [0.0, 0.8, 0.2]], dtype=tf.float32)\naxis = -1\ny_true = tf.constant(np.random.randn(1,3), dtype='float32')",
+    "y_pred = tf.constant([[0.9, 0.1, 0.0], [0.0, 0.8, 0.2]], dtype=tf.float32)\naxis = -1\ny_true = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "y_true = tf.constant([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], dtype=tf.float32)\naxis = -1\ny_pred = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "y_pred = tf.constant([[0.9, 0.1, 0.0], [0.0, 0.8, 0.2]], dtype=tf.float32)\naxis = -1\ny_true = tf.constant(np.random.randn(2,3,1,1), dtype='float32')",
+    "y_true = tf.constant([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], dtype=tf.float32)\naxis = -1\ny_pred = tf.constant(np.random.randn(1,3), dtype='float32')",
+    "y_true = tf.constant([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], dtype=tf.float32)\naxis = -1\ny_pred = tf.constant(np.random.randn(2,3,1,1,1), dtype='float32')",
+    "y_true = tf.constant([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], dtype=tf.float32)\ny_pred = tf.constant([[0.9, 0.1, 0.0], [0.0, 0.8, 0.2]], dtype=tf.float32)\naxis = 0",
+    "y_pred = tf.constant([[0.9, 0.1, 0.0], [0.0, 0.8, 0.2]], dtype=tf.float32)\naxis = -1\ny_true = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "y_true = tf.constant([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], dtype=tf.float32)\naxis = -1\ny_pred = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "y_true = tf.constant([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], dtype=tf.float32)\ny_pred = tf.constant([[0.9, 0.1, 0.0], [0.0, 0.8, 0.2]], dtype=tf.float32)\naxis = 1",
+    "y_true = tf.constant([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], dtype=tf.float32)\ny_pred = tf.constant([[0.9, 0.1, 0.0], [0.0, 0.8, 0.2]], dtype=tf.float32)\naxis = -2",
+    "y_true = tf.constant([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], dtype=tf.float32)\naxis = -1\ny_pred = tf.constant(np.random.randn(2,3,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(y_true,y_pred,axis=-1):\n  return tf.losses.cosine_similarity(y_true,y_pred,axis)",
+    "pytorch": "def pytorch_call(y_true, y_pred, axis=-1):\n    cosine_sim = torch.nn.functional.cosine_similarity(y_true, y_pred, dim=axis)\n    return -cosine_sim.unsqueeze(-1).unsqueeze(-1)"
+  },
+  "llm_inputs": [
+    "y_true = tf.constant([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], dtype=tf.float32)\ny_pred = tf.constant([[0.9, 0.1, 0.0], [0.0, 0.8, 0.2]], dtype=tf.float32)\naxis = -1",
+    "y_true = tf.constant([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], dtype=tf.float32)\ny_pred = tf.constant([[0.9, 0.1, 0.0], [0.0, 0.8, 0.2]], dtype=tf.float32)\naxis = -1",
+    "y_true = tf.constant([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0]], dtype=tf.float32)\ny_pred = tf.constant([[0.9, 0.1, 0.0], [0.0, 0.8, 0.2]], dtype=tf.float32)\naxis = -1"
+  ]
+}

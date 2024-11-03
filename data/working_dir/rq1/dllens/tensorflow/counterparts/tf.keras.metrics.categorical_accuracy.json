@@ -1,0 +1,41 @@
+{
+  "function_name": "tf.keras.metrics.categorical_accuracy(y_true,y_pred)",
+  "inputs": [
+    "y_true",
+    "y_pred"
+  ],
+  "sample_inputs": [
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\ny_pred = tf.constant([[0.9, 0.1, 0.0], [0.2, 0.7, 0.1]], dtype=tf.float32)",
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0], [0, 0, 1]])\ny_pred = tf.constant([[0.9, 0.1, 0], [0.1, 0.8, 0.1], [0.2, 0.3, 0.5]])",
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\ny_pred = tf.constant([[0.9, 0.1, 0], [0.2, 0.7, 0.1]], dtype=tf.float32)",
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(2,4), dtype='float32')",
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(2,3,1,1,1), dtype='float32')",
+    "y_pred = tf.constant([[0.9, 0.1, 0.0], [0.2, 0.7, 0.1]], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(2,3,1,1,1), dtype='float32')",
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(2,3,1,1), dtype='float32')",
+    "y_pred = tf.constant([[0.9, 0.1, 0.0], [0.2, 0.7, 0.1]], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(1,3), dtype='float32')",
+    "y_pred = tf.constant([[0.9, 0.1, 0.0], [0.2, 0.7, 0.1]], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(2,3), dtype='half')",
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(2,3), dtype='float64')",
+    "y_pred = tf.constant([[0.9, 0.1, 0.0], [0.2, 0.7, 0.1]], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(2,3), dtype='float64')",
+    "y_pred = tf.constant([[0.9, 0.1, 0.0], [0.2, 0.7, 0.1]], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(2,3), dtype='float16')",
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "y_pred = tf.constant([[0.9, 0.1, 0.0], [0.2, 0.7, 0.1]], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(1,3), dtype='float32')",
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "y_pred = tf.constant([[0.9, 0.1, 0.0], [0.2, 0.7, 0.1]], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(2), dtype='float32')",
+    "y_pred = tf.constant([[0.9, 0.1, 0.0], [0.2, 0.7, 0.1]], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(2,3), dtype='half')",
+    "y_pred = tf.constant([[0.9, 0.1, 0.0], [0.2, 0.7, 0.1]], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(2,3,1,1), dtype='float32')",
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(2,3), dtype='float16')",
+    "y_pred = tf.constant([[0.9, 0.1, 0.0], [0.2, 0.7, 0.1]], dtype=tf.float32)\ny_true = tf.constant(np.random.randn(2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(y_true,y_pred):\n  return tf.keras.metrics.categorical_accuracy(y_true,y_pred)",
+    "pytorch": "def pytorch_call(y_true, y_pred):\n    y_pred_classes = torch.argmax(y_pred, dim=-1)\n    if y_true.dim() > 1:\n        y_true_classes = torch.argmax(y_true, dim=-1)\n    else:\n        y_true_classes = y_true.long()\n    correct_predictions = (y_pred_classes == y_true_classes).float()\n    correct_predictions = correct_predictions.unsqueeze(-1).unsqueeze(-1)\n    return correct_predictions"
+  },
+  "llm_inputs": [
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\ny_pred = tf.constant([[0.9, 0.1, 0.0], [0.2, 0.7, 0.1]], dtype=tf.float32)",
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0], [0, 0, 1]])\ny_pred = tf.constant([[0.9, 0.1, 0], [0.1, 0.8, 0.1], [0.2, 0.3, 0.5]])",
+    "y_true = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\ny_pred = tf.constant([[0.9, 0.1, 0], [0.2, 0.7, 0.1]], dtype=tf.float32)"
+  ]
+}

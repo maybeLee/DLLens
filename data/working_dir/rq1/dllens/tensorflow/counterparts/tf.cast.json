@@ -1,0 +1,28 @@
+{
+  "function_name": "tf.cast(x,dtype,name=None)",
+  "inputs": [
+    "x",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([1, 2, 3], dtype=tf.int32)\ndtype = tf.float32",
+    "dtype = tf.float32\nx = tf.constant(np.random.randint(-50, 50, (3,1)), dtype='int32')",
+    "dtype = tf.float32\nx = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "dtype = tf.float32\nx = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "dtype = tf.float32\nx = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "dtype = tf.float32\nx = tf.constant(np.random.randint(-50, 50, (3,1,1,1)), dtype='int32')",
+    "dtype = tf.float32\nx = tf.constant(np.random.randint(-50, 50, (3,1,1,1,1)), dtype='int32')",
+    "dtype = tf.float32\nx = tf.constant(np.random.randint(-50, 50, (3,1,1)), dtype='int32')",
+    "dtype = tf.float32\nx = tf.constant(np.random.randint(-50, 50, (3)), dtype='int64')",
+    "dtype = tf.float32\nx = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,dtype):\n  return tf.cast(x,dtype)",
+    "pytorch": "def pytorch_call(x, dtype):\n    return x.to(dtype)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([1, 2, 3], dtype=tf.int32)\ndtype = tf.float32",
+    "x = tf.constant([1, 2, 3], dtype=tf.int32)\ndtype = tf.float32",
+    "x = tf.constant([1, 2, 3], dtype=tf.int32)\ndtype = tf.float32"
+  ]
+}

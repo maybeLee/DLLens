@@ -1,0 +1,22 @@
+{
+  "function_name": "tf.raw_ops.Relu6Grad(gradients,features,name=None)",
+  "inputs": [
+    "gradients",
+    "features"
+  ],
+  "sample_inputs": [
+    "gradients = tf.constant([[1.0], [2.0], [3.0]], dtype=tf.float32)\nfeatures = tf.constant([[0.5], [1.5], [2.5]], dtype=tf.float32)",
+    "gradients = tf.constant([[0.1], [0.2], [0.3]], dtype=tf.float32)\nfeatures = tf.constant([[1.0], [2.0], [3.0]], dtype=tf.float32)",
+    "gradients = tf.constant([[1.0], [2.0], [3.0]], dtype=tf.float32)\nfeatures = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "features = tf.constant([[0.5], [1.5], [2.5]], dtype=tf.float32)\ngradients = tf.constant(np.random.randn(3,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(gradients,features):\n  return tf.raw_ops.Relu6Grad(gradients=gradients,features=features)",
+    "pytorch": "def pytorch_call(gradients, features):\n    relu6_output = torch.clamp(features, min=0, max=6)\n    relu6_grad = (features > 0) & (features < 6)\n    return gradients * relu6_grad.float()"
+  },
+  "llm_inputs": [
+    "gradients = tf.constant([[1.0], [2.0], [3.0]], dtype=tf.float32)\nfeatures = tf.constant([[0.5], [1.5], [2.5]], dtype=tf.float32)",
+    "gradients = tf.constant([[0.1], [0.2], [0.3]], dtype=tf.float32)\nfeatures = tf.constant([[1.0], [2.0], [3.0]], dtype=tf.float32)",
+    "gradients = tf.constant([[0.1], [0.2], [0.3]], dtype=tf.float32)\nfeatures = tf.constant([[1.0], [2.0], [3.0]], dtype=tf.float32)"
+  ]
+}

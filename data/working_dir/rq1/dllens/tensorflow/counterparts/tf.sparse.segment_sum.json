@@ -1,0 +1,32 @@
+{
+  "function_name": "tf.sparse.segment_sum(data,indices,segment_ids,num_segments=None,name=None)",
+  "inputs": [
+    "data",
+    "indices",
+    "segment_ids",
+    "num_segments"
+  ],
+  "sample_inputs": [
+    "data = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0], dtype=tf.float32)\nindices = tf.constant([0, 1, 1, 2], dtype=tf.int32)\nsegment_ids = tf.constant([0, 0, 1, 1], dtype=tf.int32)\nnum_segments = tf.constant(2, dtype=tf.int32)",
+    "data = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0], dtype=tf.float32)\nindices = tf.constant([0, 1, 0, 2, 1], dtype=tf.int32)\nsegment_ids = tf.constant([0, 0, 1, 1, 1], dtype=tf.int32)\nnum_segments = 2",
+    "data = tf.constant([1, 2, 3, 4], dtype=tf.float32)\nindices = tf.constant([0, 1, 1, 0], dtype=tf.int32)\nsegment_ids = tf.constant([0, 0, 1, 1], dtype=tf.int32)\nnum_segments = tf.constant(2, dtype=tf.int32)",
+    "indices = tf.constant([0, 1, 1, 2], dtype=tf.int32)\nsegment_ids = tf.constant([0, 0, 1, 1], dtype=tf.int32)\nnum_segments = tf.constant(2, dtype=tf.int32)\ndata = tf.constant(np.random.randn(4), dtype='float32')",
+    "indices = tf.constant([0, 1, 1, 2], dtype=tf.int32)\nsegment_ids = tf.constant([0, 0, 1, 1], dtype=tf.int32)\nnum_segments = tf.constant(2, dtype=tf.int32)\ndata = tf.constant(np.random.randn(5), dtype='float16')",
+    "indices = tf.constant([0, 1, 1, 2], dtype=tf.int32)\nsegment_ids = tf.constant([0, 0, 1, 1], dtype=tf.int32)\nnum_segments = tf.constant(2, dtype=tf.int32)\ndata = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "indices = tf.constant([0, 1, 1, 2], dtype=tf.int32)\nsegment_ids = tf.constant([0, 0, 1, 1], dtype=tf.int32)\nnum_segments = tf.constant(2, dtype=tf.int32)\ndata = tf.constant(np.random.randn(5), dtype='float32')",
+    "indices = tf.constant([0, 1, 1, 2], dtype=tf.int32)\nsegment_ids = tf.constant([0, 0, 1, 1], dtype=tf.int32)\nnum_segments = tf.constant(2, dtype=tf.int32)\ndata = tf.constant(np.random.randn(5), dtype='float64')",
+    "indices = tf.constant([0, 1, 1, 2], dtype=tf.int32)\nsegment_ids = tf.constant([0, 0, 1, 1], dtype=tf.int32)\nnum_segments = tf.constant(2, dtype=tf.int32)\ndata = tf.constant(np.random.randn(5), dtype='half')",
+    "indices = tf.constant([0, 1, 1, 2], dtype=tf.int32)\nsegment_ids = tf.constant([0, 0, 1, 1], dtype=tf.int32)\nnum_segments = tf.constant(2, dtype=tf.int32)\ndata = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "indices = tf.constant([0, 1, 1, 2], dtype=tf.int32)\nsegment_ids = tf.constant([0, 0, 1, 1], dtype=tf.int32)\nnum_segments = tf.constant(2, dtype=tf.int32)\ndata = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "indices = tf.constant([0, 1, 1, 2], dtype=tf.int32)\nsegment_ids = tf.constant([0, 0, 1, 1], dtype=tf.int32)\nnum_segments = tf.constant(2, dtype=tf.int32)\ndata = tf.constant(np.random.randn(5,1,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(data,indices,segment_ids,num_segments=None):\n  return tf.sparse.segment_sum(data,indices,segment_ids,num_segments)",
+    "pytorch": "def pytorch_call(data, indices, segment_ids, num_segments=None):\n    if num_segments is None:\n        num_segments = segment_ids.max() + 1\n    segment_sum = torch.zeros(num_segments, dtype=data.dtype, device=data.device)\n    for i in range(len(segment_ids)):\n        segment_sum[segment_ids[i]] += data[indices[i]].squeeze()\n    return segment_sum"
+  },
+  "llm_inputs": [
+    "data = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0], dtype=tf.float32)\nindices = tf.constant([0, 1, 1, 2], dtype=tf.int32)\nsegment_ids = tf.constant([0, 0, 1, 1], dtype=tf.int32)\nnum_segments = tf.constant(2, dtype=tf.int32)",
+    "data = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0], dtype=tf.float32)\nindices = tf.constant([0, 1, 0, 2, 1], dtype=tf.int32)\nsegment_ids = tf.constant([0, 0, 1, 1, 1], dtype=tf.int32)\nnum_segments = 2",
+    "data = tf.constant([1, 2, 3, 4], dtype=tf.float32)\nindices = tf.constant([0, 1, 1, 0], dtype=tf.int32)\nsegment_ids = tf.constant([0, 0, 1, 1], dtype=tf.int32)\nnum_segments = tf.constant(2, dtype=tf.int32)"
+  ]
+}

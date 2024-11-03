@@ -1,0 +1,38 @@
+{
+  "function_name": "torch.Tensor.nanmean(input, dim=None, keepdim=False, *, dtype=None)",
+  "inputs": [
+    "input",
+    "dim",
+    "keepdim"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, float('nan')], [5.0, 6.0]])\ndim = 1\nkeepdim = True",
+    "input = torch.tensor([[1.0, 2.0, float('nan')], [4.0, float('nan'), 6.0]])\ndim = 1\nkeepdim = True",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(3,2,1,1), dtype=torch.float32)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, float('nan')], [5.0, 6.0]])\nkeepdim = True\ndim = 1",
+    "input = torch.tensor([[1.0, 2.0], [3.0, float('nan')], [5.0, 6.0]])\nkeepdim = True\ndim = -1",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(3,2,1,1,1), dtype=torch.float32)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(3,2), dtype=torch.float16)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(3,2), dtype=torch.half)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, float('nan')], [5.0, 6.0]])\nkeepdim = True\ndim = -2",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, float('nan')], [5.0, 6.0]])\nkeepdim = True\ndim = 0",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(3,3), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, float('nan')], [5.0, 6.0]])\ndim = 1\nkeepdim = False",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(3,2), dtype=torch.float32)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(3,4), dtype=torch.float32)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(3,2,1), dtype=torch.float32)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randn(3,2), dtype=torch.float64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim=None,keepdim=False):\n  return torch.Tensor.nanmean(input,dim,keepdim)",
+    "tensorflow": "def tensorflow_call(input, dim=None, keepdim=False):\n    input_no_nan = tf.where(tf.math.is_nan(input), tf.zeros_like(input), input)\n    count_no_nan = tf.reduce_sum(tf.where(tf.math.is_nan(input), tf.zeros_like(input), tf.ones_like(input)), axis=dim, keepdims=True)\n    mean = tf.reduce_sum(input_no_nan, axis=dim, keepdims=True) / count_no_nan\n    mean = tf.where(count_no_nan > 0, mean, tf.zeros_like(mean))\n    if not keepdim:\n        mean = tf.squeeze(mean, axis=dim)\n    return mean"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, float('nan')], [5.0, 6.0]])\ndim = 1\nkeepdim = True",
+    "input = torch.tensor([[1.0, 2.0, float('nan')], [4.0, float('nan'), 6.0]])\ndim = 1\nkeepdim = True",
+    "input = torch.tensor([[1.0, 2.0, float('nan')], [4.0, float('nan'), 6.0]])\ndim = 1\nkeepdim = True"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "function_name": "tf.keras.utils.unpack_x_y_sample_weight(data)",
+  "inputs": [
+    "data"
+  ],
+  "sample_inputs": [
+    "data = [(tf.constant([1.0]), tf.constant([2.0]), tf.constant([1.0])), (tf.constant([3.0]), tf.constant([4.0]), tf.constant([1.0])), (tf.constant([5.0]), tf.constant([6.0]), tf.constant([1.0]))]",
+    "data = (tf.constant([[1.0], [2.0], [3.0]], dtype=tf.float32), tf.constant([1, 0, 1], dtype=tf.int32), tf.constant([0.5, 0.5, 1.0], dtype=tf.float32))",
+    "x = [[1.0, 2.0], [3.0, 4.0]]\ny = [0, 1]\nsample_weight = [1.0, 1.0]\ndata = (tf.constant(x), tf.constant(y), tf.constant(sample_weight))"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(data):\n  return tf.keras.utils.unpack_x_y_sample_weight(data)",
+    "pytorch": "def pytorch_call(data):\n    if isinstance(data, list):\n        return tuple(data)\n    elif isinstance(data, tuple):\n        return data\n    else:\n        raise ValueError('Unsupported data format')"
+  },
+  "llm_inputs": [
+    "data = [(tf.constant([1.0]), tf.constant([2.0]), tf.constant([1.0])), (tf.constant([3.0]), tf.constant([4.0]), tf.constant([1.0])), (tf.constant([5.0]), tf.constant([6.0]), tf.constant([1.0]))]",
+    "data = (tf.constant([[1.0], [2.0], [3.0]], dtype=tf.float32), tf.constant([1, 0, 1], dtype=tf.int32), tf.constant([0.5, 0.5, 1.0], dtype=tf.float32))",
+    "x = [[1.0, 2.0], [3.0, 4.0]]\ny = [0, 1]\nsample_weight = [1.0, 1.0]\ndata = (tf.constant(x), tf.constant(y), tf.constant(sample_weight))"
+  ]
+}

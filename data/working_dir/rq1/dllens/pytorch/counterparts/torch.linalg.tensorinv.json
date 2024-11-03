@@ -1,0 +1,24 @@
+{
+  "function_name": "torch.linalg.tensorinv(A, ind=2, *, out=None)",
+  "inputs": [
+    "A",
+    "ind"
+  ],
+  "sample_inputs": [
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nind = 1",
+    "ind = 1\nA = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "ind = 1\nA = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "ind = 1\nA = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "ind = 1\nA = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "ind = 1\nA = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(A,ind=2):\n  return torch.linalg.tensorinv(A,ind)",
+    "tensorflow": "def tensorflow_call(A, ind=2):\n    shape = tf.shape(A)\n    if shape[ind] == 1:\n        A_squeezed = tf.squeeze(A, axis=ind)\n        return tf.linalg.inv(A_squeezed)\n    A_reshaped = tf.reshape(A, [-1, shape[ind], shape[ind]])\n    A_inv = tf.linalg.inv(A_reshaped)\n    output_shape = tf.concat([shape[:ind], [shape[ind]], shape[ind + 1:]], axis=0)\n    return tf.reshape(A_inv, output_shape)"
+  },
+  "llm_inputs": [
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nind = 1",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nind = 1",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nind = 1"
+  ]
+}

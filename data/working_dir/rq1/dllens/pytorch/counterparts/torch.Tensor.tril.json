@@ -1,0 +1,33 @@
+{
+  "function_name": "torch.Tensor.tril(input, diagonal=0)",
+  "inputs": [
+    "input",
+    "diagonal"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1]])\ndiagonal = 0",
+    "input = torch.tensor([[1]])\ndiagonal = -1",
+    "input = torch.tensor([[1]])\ndiagonal = -2",
+    "diagonal = 0\ninput = torch.tensor(np.random.randint(-50, 50, (1,1,1,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1]])\ndiagonal = -3",
+    "input = torch.tensor([[1]])\ndiagonal = 1",
+    "input = torch.tensor([[1]])\ndiagonal = 3",
+    "input = torch.tensor([[1]])\ndiagonal = 4",
+    "diagonal = 0\ninput = torch.tensor(np.random.randint(-50, 50, (1,5)), dtype=torch.int64)",
+    "diagonal = 0\ninput = torch.tensor(np.random.randint(-50, 50, (1,1)), dtype=torch.int32)",
+    "input = torch.tensor([[1]])\ndiagonal = -4",
+    "diagonal = 0\ninput = torch.tensor(np.random.randint(-50, 50, (1,1,1,1,1)), dtype=torch.int64)",
+    "diagonal = 0\ninput = torch.tensor(np.random.randint(-50, 50, (1,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1]])\ndiagonal = -5",
+    "input = torch.tensor([[1]])\ndiagonal = 2",
+    "input = torch.tensor([[1]])\ndiagonal = 5",
+    "diagonal = 0\ninput = torch.tensor(np.random.randint(-50, 50, (1,1,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,diagonal=0):\n  return torch.Tensor.tril(input,diagonal)",
+    "tensorflow": "def tensorflow_call(input, diagonal=0):\n    (num_rows, num_cols) = (tf.shape(input)[0], tf.shape(input)[1])\n    if diagonal >= num_cols:\n        return input\n    result = tf.linalg.band_part(input, 0, diagonal)\n    if diagonal < 0:\n        result = tf.where(tf.range(num_cols) < -diagonal, tf.zeros_like(result), result)\n    return result"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1]])\ndiagonal = 0"
+  ]
+}

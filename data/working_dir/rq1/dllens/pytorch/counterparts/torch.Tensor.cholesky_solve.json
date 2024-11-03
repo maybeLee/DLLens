@@ -1,0 +1,24 @@
+{
+  "function_name": "torch.Tensor.cholesky_solve(input, input2, upper=False)",
+  "inputs": [
+    "input",
+    "input2",
+    "upper"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[4.0, 2.0], [2.0, 2.0]])\ninput2 = torch.tensor([[1.0, 0.0], [0.0, 1.0]])\nupper = False",
+    "input2 = torch.tensor([[1.0, 0.0], [0.0, 1.0]])\nupper = False\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "input = torch.tensor([[4.0, 2.0], [2.0, 2.0]])\ninput2 = torch.tensor([[1.0, 0.0], [0.0, 1.0]])\nupper = True",
+    "input2 = torch.tensor([[1.0, 0.0], [0.0, 1.0]])\nupper = False\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "input2 = torch.tensor([[1.0, 0.0], [0.0, 1.0]])\nupper = False\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "input = torch.tensor([[4.0, 2.0], [2.0, 2.0]])\nupper = False\ninput2 = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input2 = torch.tensor([[1.0, 0.0], [0.0, 1.0]])\nupper = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,input2,upper=False):\n  return torch.Tensor.cholesky_solve(input,input2,upper)",
+    "tensorflow": "def tensorflow_call(input, input2, upper=False):\n    return tf.linalg.cholesky_solve(input2, input)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[4.0, 2.0], [2.0, 2.0]])\ninput2 = torch.tensor([[1.0, 0.0], [0.0, 1.0]])\nupper = False"
+  ]
+}

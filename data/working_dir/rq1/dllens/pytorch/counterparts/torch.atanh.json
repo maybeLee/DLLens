@@ -1,0 +1,30 @@
+{
+  "function_name": "torch.atanh(input, *, out=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)",
+    "input = torch.tensor([0.1, 0.5, 0.9])",
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5])",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.float64)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.float16)",
+    "input = torch.tensor(np.random.randn(5,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.half)",
+    "input = torch.tensor(np.random.randn(5,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.atanh(input)",
+    "tensorflow": "def tensorflow_call(input):\n    return tf.atanh(input)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)",
+    "input = torch.tensor([0.1, 0.5, 0.9])",
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5])"
+  ]
+}

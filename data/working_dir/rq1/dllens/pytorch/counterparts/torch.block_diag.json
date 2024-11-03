@@ -1,0 +1,20 @@
+{
+  "function_name": "torch.block_diag(*tensors)",
+  "inputs": [
+    "*tensors"
+  ],
+  "sample_inputs": [
+    "tensor1 = torch.tensor([[1, 2], [3, 4]])\ntensor2 = torch.tensor([[5, 6], [7, 8]])\ntensor3 = torch.tensor([[9]])",
+    "tensors = (torch.tensor([[1, 2], [3, 4]]), torch.tensor([[5, 6]]), torch.tensor([[7], [8], [9]]))",
+    "tensor1 = torch.tensor([[1, 2], [3, 4]])\ntensor2 = torch.tensor([[5, 6]])\ntensor3 = torch.tensor([[7]])"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(*tensors):\n  return torch.block_diag(*tensors)",
+    "tensorflow": "def tensorflow_call(*tensors):\n    tensors = [t for t in tensors if t.shape[0] > 0 and t.shape[1] > 0]\n    if not tensors:\n        return tf.constant([])\n    block_diag_operator = tf.linalg.LinearOperatorBlockDiag(tensors)\n    block_diag_matrix = block_diag_operator.to_dense()\n    return block_diag_matrix"
+  },
+  "llm_inputs": [
+    "tensor1 = torch.tensor([[1, 2], [3, 4]])\ntensor2 = torch.tensor([[5, 6], [7, 8]])\ntensor3 = torch.tensor([[9]])",
+    "tensors = (torch.tensor([[1, 2], [3, 4]]), torch.tensor([[5, 6]]), torch.tensor([[7], [8], [9]]))",
+    "tensor1 = torch.tensor([[1, 2], [3, 4]])\ntensor2 = torch.tensor([[5, 6]])\ntensor3 = torch.tensor([[7]])"
+  ]
+}

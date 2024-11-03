@@ -1,0 +1,31 @@
+{
+  "function_name": "tf.raw_ops.Pack(values,axis=0,name=None)",
+  "inputs": [
+    "values",
+    "axis"
+  ],
+  "sample_inputs": [
+    "values = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\naxis = 0",
+    "axis = 0\nvalues = tf.constant(np.random.randint(-50, 50, (1,2)), dtype='int32')",
+    "axis = 0\nvalues = tf.constant(np.random.randint(-50, 50, (2,2,1,1)), dtype='int32')",
+    "values = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\naxis = -1",
+    "axis = 0\nvalues = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int32')",
+    "axis = 0\nvalues = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int64')",
+    "axis = 0\nvalues = tf.constant(np.random.randint(-50, 50, (2,2,1)), dtype='int32')",
+    "axis = 0\nvalues = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int32')",
+    "values = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\naxis = -2",
+    "axis = 0\nvalues = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "axis = 0\nvalues = tf.constant(np.random.randint(-50, 50, (5,2)), dtype='int32')",
+    "values = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\naxis = 1",
+    "axis = 0\nvalues = tf.constant(np.random.randint(-50, 50, (2,2,1,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(values,axis=0):\n  return tf.raw_ops.Pack(values=values,axis=axis)",
+    "pytorch": "def pytorch_call(values, axis=0):\n    if values.dim() == 0:\n        raise ValueError('Input tensor must have at least one dimension.')\n    if axis < 0:\n        axis += values.dim()\n    return values.transpose(0, axis)"
+  },
+  "llm_inputs": [
+    "values = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\naxis = 0",
+    "values = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\naxis = 0",
+    "values = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\naxis = 0"
+  ]
+}

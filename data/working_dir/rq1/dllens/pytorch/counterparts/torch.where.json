@@ -1,0 +1,42 @@
+{
+  "function_name": "torch.where(condition, x, y)",
+  "inputs": [
+    "condition",
+    "x",
+    "y"
+  ],
+  "sample_inputs": [
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\nx = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\ny = torch.tensor([10, 20, 30, 40, 50], dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\nx = torch.tensor([1, 2, 3, 4, 5])\ny = torch.tensor([10, 20, 30, 40, 50])",
+    "condition = torch.tensor([[True, False, True], [False, True, False]])\nx = torch.tensor([[1, 2, 3], [4, 5, 6]])\ny = torch.tensor([[7, 8, 9], [10, 11, 12]])",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\ny = torch.tensor([10, 20, 30, 40, 50], dtype=torch.float32)\nx = torch.tensor(np.random.randn(5,1), dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\ny = torch.tensor([10, 20, 30, 40, 50], dtype=torch.float32)\nx = torch.tensor(np.random.randn(5), dtype=torch.float64)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\nx = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\ny = torch.tensor(np.random.randn(5,1,1,1,1), dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\ny = torch.tensor([10, 20, 30, 40, 50], dtype=torch.float32)\nx = torch.tensor(np.random.randn(5,1,1), dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\nx = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\ny = torch.tensor(np.random.randn(5,1,1,1), dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\ny = torch.tensor([10, 20, 30, 40, 50], dtype=torch.float32)\nx = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\ny = torch.tensor([10, 20, 30, 40, 50], dtype=torch.float32)\nx = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\nx = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\ny = torch.tensor(np.random.randn(5,1), dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\nx = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\ny = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\nx = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\ny = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\nx = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\ny = torch.tensor(np.random.randn(5), dtype=torch.float64)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\nx = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\ny = torch.tensor(np.random.randn(5,1,1), dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\nx = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\ny = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\ny = torch.tensor([10, 20, 30, 40, 50], dtype=torch.float32)\nx = torch.tensor(np.random.randn(5,1,1,1), dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\nx = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\ny = torch.tensor(np.random.randn(5), dtype=torch.float16)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\ny = torch.tensor([10, 20, 30, 40, 50], dtype=torch.float32)\nx = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\nx = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\ny = torch.tensor(np.random.randn(5), dtype=torch.half)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\ny = torch.tensor([10, 20, 30, 40, 50], dtype=torch.float32)\nx = torch.tensor(np.random.randn(5), dtype=torch.float16)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\ny = torch.tensor([10, 20, 30, 40, 50], dtype=torch.float32)\nx = torch.tensor(np.random.randn(5,1,1,1,1), dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\ny = torch.tensor([10, 20, 30, 40, 50], dtype=torch.float32)\nx = torch.tensor(np.random.randn(5), dtype=torch.half)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(condition,x,y):\n  return torch.where(condition,x,y)",
+    "tensorflow": "def tensorflow_call(condition, x, y):\n    x = tf.cast(x, y.dtype)\n    return tf.where(condition, x, y)"
+  },
+  "llm_inputs": [
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\nx = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\ny = torch.tensor([10, 20, 30, 40, 50], dtype=torch.float32)",
+    "condition = torch.tensor([True, False, True, False, True], dtype=torch.bool)\nx = torch.tensor([1, 2, 3, 4, 5])\ny = torch.tensor([10, 20, 30, 40, 50])",
+    "condition = torch.tensor([[True, False, True], [False, True, False]])\nx = torch.tensor([[1, 2, 3], [4, 5, 6]])\ny = torch.tensor([[7, 8, 9], [10, 11, 12]])"
+  ]
+}

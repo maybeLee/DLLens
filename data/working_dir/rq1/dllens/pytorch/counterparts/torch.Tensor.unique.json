@@ -1,0 +1,38 @@
+{
+  "function_name": "torch.Tensor.unique(input, sorted=True, return_inverse=False, return_counts=False, dim=None)",
+  "inputs": [
+    "input",
+    "sorted",
+    "return_inverse",
+    "return_counts",
+    "dim"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3, 1, 2, 4])\nsorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None",
+    "input = torch.tensor([1, 2, 2, 3, 4, 4, 4, 5])\nsorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None",
+    "input = torch.tensor([1, 2, 2, 3, 4, 4, 5])\nsorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None",
+    "sorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (6,1,1,1,1)), dtype=torch.int64)",
+    "sorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (6)), dtype=torch.int64)",
+    "sorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (6,1,1,1)), dtype=torch.int64)",
+    "sorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (3)), dtype=torch.int64)",
+    "sorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (6,1,1)), dtype=torch.int64)",
+    "sorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int64)",
+    "sorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)",
+    "sorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "sorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (6)), dtype=torch.int32)",
+    "sorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 1, 2, 4])\nreturn_inverse = False\nreturn_counts = False\ndim = None\nsorted = False",
+    "input = torch.tensor([1, 2, 3, 1, 2, 4])\nsorted = True\nreturn_inverse = False\ndim = None\nreturn_counts = True",
+    "sorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None\ninput = torch.tensor(np.random.randint(-50, 50, (6,1)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 1, 2, 4])\nsorted = True\nreturn_counts = False\ndim = None\nreturn_inverse = True"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,sorted=True,return_inverse=False,return_counts=False,dim=None):\n  return torch.Tensor.unique(input,sorted,return_inverse,return_counts,dim)",
+    "tensorflow": "def tensorflow_call(input, sorted=True, return_inverse=False, return_counts=False, dim=None):\n    input_flat = tf.reshape(input, [-1])\n    (unique_values, idx) = tf.unique(input_flat)\n    if sorted:\n        unique_values = tf.sort(unique_values)\n    else:\n        unique_values = tf.reverse(unique_values, axis=[0])\n    if return_counts:\n        counts = tf.math.bincount(idx, minlength=tf.shape(unique_values)[0])\n        return (unique_values, counts)\n    if return_inverse:\n        return (unique_values, idx)\n    return unique_values"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3, 1, 2, 4])\nsorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None",
+    "input = torch.tensor([1, 2, 2, 3, 4, 4, 4, 5])\nsorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None",
+    "input = torch.tensor([1, 2, 2, 3, 4, 4, 5])\nsorted = True\nreturn_inverse = False\nreturn_counts = False\ndim = None"
+  ]
+}

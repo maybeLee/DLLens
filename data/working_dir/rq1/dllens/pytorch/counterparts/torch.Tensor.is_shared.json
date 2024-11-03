@@ -1,0 +1,27 @@
+{
+  "function_name": "torch.Tensor.is_shared(input, )",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])",
+    "input = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (2,2,1)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (5,2)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "input = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.Tensor.is_shared(input)",
+    "tensorflow": "def tensorflow_call(input):\n    return False"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])",
+    "input = torch.tensor([[1, 2], [3, 4]])",
+    "input = torch.tensor([[1, 2], [3, 4]])"
+  ]
+}

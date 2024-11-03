@@ -1,0 +1,31 @@
+{
+  "function_name": "tf.linalg.matvec(a,b,transpose_a=False,adjoint_a=False,a_is_sparse=False,b_is_sparse=False,name=None)",
+  "inputs": [
+    "a",
+    "b",
+    "transpose_a",
+    "adjoint_a",
+    "a_is_sparse",
+    "b_is_sparse"
+  ],
+  "sample_inputs": [
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nb = tf.constant([5, 6], dtype=tf.float32)\ntranspose_a = False\nadjoint_a = False\na_is_sparse = False\nb_is_sparse = False",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nb = tf.constant([1, 2], dtype=tf.float32)\ntranspose_a = False\nadjoint_a = False\na_is_sparse = False\nb_is_sparse = False",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nb = tf.constant([5, 6], dtype=tf.float32)\ntranspose_a = False\na_is_sparse = False\nb_is_sparse = False\nadjoint_a = True",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ntranspose_a = False\nadjoint_a = False\na_is_sparse = False\nb_is_sparse = False\nb = tf.constant(np.random.randn(2), dtype='float32')",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nb = tf.constant([5, 6], dtype=tf.float32)\nadjoint_a = False\na_is_sparse = False\nb_is_sparse = False\ntranspose_a = True",
+    "b = tf.constant([5, 6], dtype=tf.float32)\ntranspose_a = False\nadjoint_a = False\na_is_sparse = False\nb_is_sparse = False\na = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "b = tf.constant([5, 6], dtype=tf.float32)\ntranspose_a = False\nadjoint_a = False\na_is_sparse = False\nb_is_sparse = False\na = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "b = tf.constant([5, 6], dtype=tf.float32)\ntranspose_a = False\nadjoint_a = False\na_is_sparse = False\nb_is_sparse = False\na = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "b = tf.constant([5, 6], dtype=tf.float32)\ntranspose_a = False\nadjoint_a = False\na_is_sparse = False\nb_is_sparse = False\na = tf.constant(np.random.randn(3,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(a,b,transpose_a=False,adjoint_a=False,a_is_sparse=False,b_is_sparse=False):\n  return tf.linalg.matvec(a,b,transpose_a,adjoint_a,a_is_sparse,b_is_sparse)",
+    "pytorch": "def pytorch_call(a, b, transpose_a=False, adjoint_a=False, a_is_sparse=False, b_is_sparse=False):\n    if a_is_sparse:\n        a = a.to_dense()\n    if b_is_sparse:\n        b = b.to_dense()\n    if transpose_a:\n        a = a.t()\n    if adjoint_a:\n        a = a.conj().t()\n    return torch.mv(a, b)"
+  },
+  "llm_inputs": [
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nb = tf.constant([5, 6], dtype=tf.float32)\ntranspose_a = False\nadjoint_a = False\na_is_sparse = False\nb_is_sparse = False",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nb = tf.constant([5, 6], dtype=tf.float32)\ntranspose_a = False\nadjoint_a = False\na_is_sparse = False\nb_is_sparse = False",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nb = tf.constant([1, 2], dtype=tf.float32)\ntranspose_a = False\nadjoint_a = False\na_is_sparse = False\nb_is_sparse = False"
+  ]
+}

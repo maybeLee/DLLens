@@ -1,0 +1,31 @@
+{
+  "function_name": "torch.nn.functional.glu(input, dim=-1)",
+  "inputs": [
+    "input",
+    "dim"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0], [5.0, 6.0, 7.0, 8.0]], dtype=torch.float32)\ndim = -1",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0], [5.0, 6.0, 7.0, 8.0]])\ndim = -1",
+    "dim = -1\ninput = torch.tensor(np.random.randn(1,4), dtype=torch.float32)",
+    "dim = -1\ninput = torch.tensor(np.random.randn(2,4), dtype=torch.float16)",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0], [5.0, 6.0, 7.0, 8.0]], dtype=torch.float32)\ndim = 0",
+    "dim = -1\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "dim = -1\ninput = torch.tensor(np.random.randn(5,4), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0], [5.0, 6.0, 7.0, 8.0]], dtype=torch.float32)\ndim = -2",
+    "dim = -1\ninput = torch.tensor(np.random.randn(2,4), dtype=torch.float32)",
+    "dim = -1\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "dim = -1\ninput = torch.tensor(np.random.randn(2,4), dtype=torch.half)",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0], [5.0, 6.0, 7.0, 8.0]], dtype=torch.float32)\ndim = 1",
+    "dim = -1\ninput = torch.tensor(np.random.randn(2,4), dtype=torch.float64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim=-1):\n  return torch.nn.functional.glu(input,dim)",
+    "tensorflow": "def tensorflow_call(input, dim=-1):\n    input_shape = tf.shape(input)\n    split_size = input_shape[dim] // 2\n    (input_a, input_b) = tf.split(input, num_or_size_splits=2, axis=dim)\n    input_b = tf.sigmoid(input_b)\n    return input_a * input_b"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0], [5.0, 6.0, 7.0, 8.0]], dtype=torch.float32)\ndim = -1",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0], [5.0, 6.0, 7.0, 8.0]])\ndim = -1",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0], [5.0, 6.0, 7.0, 8.0]], dtype=torch.float32)\ndim = -1"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "function_name": "torch.diag(input, diagonal=0, *, out=None)",
+  "inputs": [
+    "input",
+    "diagonal"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3, 4, 5])\ndiagonal = 1",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ndiagonal = torch.tensor(1)",
+    "diagonal = 1\ninput = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int32)",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ndiagonal = -2",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ndiagonal = 2",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ndiagonal = 4",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ndiagonal = -4",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ndiagonal = 0",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ndiagonal = -3",
+    "diagonal = 1\ninput = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ndiagonal = -1",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ndiagonal = -5",
+    "diagonal = 1\ninput = torch.tensor(np.random.randint(-50, 50, (5,1)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ndiagonal = 3",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ndiagonal = 5",
+    "diagonal = 1\ninput = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,diagonal=0):\n  return torch.diag(input,diagonal)",
+    "tensorflow": "def tensorflow_call(input, diagonal=0):\n    if input.ndim == 2 and input.shape[1] == 1 and (diagonal != 0):\n        return tf.constant([], dtype=input.dtype)\n    return tf.linalg.diag(input, k=diagonal)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3, 4, 5])\ndiagonal = 1",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ndiagonal = torch.tensor(1)",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ndiagonal = torch.tensor(1)"
+  ]
+}

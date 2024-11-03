@@ -1,0 +1,12 @@
+torch.Tensor.unique_consecutive
+torch.linalg.tensorinv
+torch.linalg.tensorsolve
+torch.matrix_power
+torch.nn.functional.pixel_unshuffle
+torch.imag
+torch.scatter
+torch.Tensor.bitwise_left_shift
+torch.Tensor.addbmm
+torch.Tensor.msort
+torch.Tensor.neg
+torch.Tensor.index_add_

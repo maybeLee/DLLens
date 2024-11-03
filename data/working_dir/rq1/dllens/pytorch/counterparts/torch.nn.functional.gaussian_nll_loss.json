@@ -1,0 +1,52 @@
+{
+  "function_name": "torch.nn.functional.gaussian_nll_loss(input, target, var, full=False, eps=1e-06, reduction='mean')",
+  "inputs": [
+    "input",
+    "target",
+    "var",
+    "full",
+    "eps",
+    "reduction"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'",
+    "input = torch.tensor([0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\nvar = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\nreduction = 'mean'\neps = -28.25",
+    "input = torch.tensor([0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\nvar = torch.tensor(np.random.randn(1), dtype=torch.half)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\nreduction = 'mean'\neps = -1.35",
+    "input = torch.tensor([0.5], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\nvar = torch.tensor(np.random.randn(1), dtype=torch.float16)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(1), dtype=torch.half)",
+    "target = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(1,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(1), dtype=torch.float64)",
+    "target = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(1,1), dtype=torch.float32)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\nvar = torch.tensor(np.random.randn(1), dtype=torch.float64)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(1,1), dtype=torch.float32)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\neps = 1e-06\nreduction = 'mean'\nfull = True",
+    "input = torch.tensor([0.5], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\nreduction = 'mean'\neps = 8.28",
+    "target = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(1), dtype=torch.float16)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\nreduction = 'mean'\neps = -93.26",
+    "target = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(1), dtype=torch.half)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(1,1,1,1), dtype=torch.float32)",
+    "target = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(1), dtype=torch.float64)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(1), dtype=torch.float16)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ntarget = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\nreduction = 'mean'\neps = 88.61",
+    "target = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'\nvar = torch.tensor(np.random.randn(), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,target,var,full=False,eps=1e-06,reduction='mean'):\n  return torch.nn.functional.gaussian_nll_loss(input,target,var,full,eps,reduction)",
+    "tensorflow": "def tensorflow_call(input, target, var, full=False, eps=1e-06, reduction='mean'):\n    input = tf.cast(input, tf.float32)\n    target = tf.cast(target, tf.float32)\n    var = tf.cast(var, tf.float32)\n    var = tf.maximum(var, eps)\n    loss = 0.5 * (tf.math.log(var) + tf.square(input - target) / var)\n    if full:\n        loss += 0.5 * tf.math.log(2 * np.pi)\n    if reduction == 'mean':\n        return tf.reduce_mean(loss)\n    elif reduction == 'sum':\n        return tf.reduce_sum(loss)\n    else:\n        return loss"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'",
+    "input = torch.tensor([0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'",
+    "input = torch.tensor([0.5], dtype=torch.float32)\ntarget = torch.tensor([0.0], dtype=torch.float32)\nvar = torch.tensor([0.1], dtype=torch.float32)\nfull = False\neps = 1e-06\nreduction = 'mean'"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "function_name": "tf.math.cumprod(x,axis=0,exclusive=False,reverse=False,name=None)",
+  "inputs": [
+    "x",
+    "axis",
+    "exclusive",
+    "reverse"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)\naxis = 0\nexclusive = False\nreverse = False",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.float32)\naxis = 0\nexclusive = False\nreverse = False",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (4,1,1)), dtype='int32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (4)), dtype='int32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (4,1,1,1,1)), dtype='int32')",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)\naxis = 0\nreverse = False\nexclusive = True",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)\nexclusive = False\nreverse = False\naxis = 0",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (4)), dtype='int64')",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)\naxis = 0\nexclusive = False\nreverse = True",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (4,1)), dtype='int32')",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)\nexclusive = False\nreverse = False\naxis = -1",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (4,1,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,axis=0,exclusive=False,reverse=False):\n  return tf.math.cumprod(x,axis,exclusive,reverse)",
+    "pytorch": "def pytorch_call(x, axis=0, exclusive=False, reverse=False):\n    if exclusive:\n        if reverse:\n            x = x.flip(dims=[axis])\n        cumprod = torch.cumprod(x, dim=axis)\n        ones_shape = list(x.shape)\n        ones_shape[axis] = 1\n        ones_tensor = torch.ones(ones_shape, dtype=x.dtype, device=x.device)\n        cumprod = torch.cat((ones_tensor, cumprod[:-1]), dim=axis)\n        if reverse:\n            cumprod = cumprod.flip(dims=[axis])\n        return cumprod\n    else:\n        if reverse:\n            x = x.flip(dims=[axis])\n        cumprod = torch.cumprod(x, dim=axis)\n        if reverse:\n            cumprod = cumprod.flip(dims=[axis])\n        return cumprod"
+  },
+  "llm_inputs": [
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)\naxis = 0\nexclusive = False\nreverse = False",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.float32)\naxis = 0\nexclusive = False\nreverse = False",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)\naxis = 0\nexclusive = False\nreverse = False"
+  ]
+}

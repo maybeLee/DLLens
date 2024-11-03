@@ -1,0 +1,32 @@
+{
+  "function_name": "tf.raw_ops.BatchMatMulV3(x,y,Tout,adj_x=False,adj_y=False,name=None)",
+  "inputs": [
+    "x",
+    "y",
+    "Tout",
+    "adj_x",
+    "adj_y"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ny = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\nTout = tf.float32\nadj_x = False\nadj_y = False",
+    "y = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\nTout = tf.float32\nadj_x = False\nadj_y = False\nx = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nTout = tf.float32\nadj_x = False\nadj_y = False\ny = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nTout = tf.float32\nadj_x = False\nadj_y = False\ny = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ny = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\nTout = tf.float32\nadj_y = False\nadj_x = True",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ny = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\nTout = tf.float32\nadj_x = False\nadj_y = True",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nTout = tf.float32\nadj_x = False\nadj_y = False\ny = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "y = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\nTout = tf.float32\nadj_x = False\nadj_y = False\nx = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nTout = tf.float32\nadj_x = False\nadj_y = False\ny = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "y = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\nTout = tf.float32\nadj_x = False\nadj_y = False\nx = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "y = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\nTout = tf.float32\nadj_x = False\nadj_y = False\nx = tf.constant(np.random.randn(4,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,y,Tout,adj_x=False,adj_y=False):\n  return tf.raw_ops.BatchMatMulV3(x=x,y=y,Tout=Tout,adj_x=adj_x,adj_y=adj_y)",
+    "pytorch": "def pytorch_call(x, y, Tout, adj_x=False, adj_y=False):\n    if adj_x:\n        x = x.t()\n    if adj_y:\n        y = y.t()\n    result = torch.matmul(x, y)\n    return result.to(Tout)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ny = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\nTout = tf.float32\nadj_x = False\nadj_y = False",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ny = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\nTout = tf.float32\nadj_x = False\nadj_y = False",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ny = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\nTout = tf.float32\nadj_x = False\nadj_y = False"
+  ]
+}

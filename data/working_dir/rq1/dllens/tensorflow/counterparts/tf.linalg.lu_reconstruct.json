@@ -1,0 +1,26 @@
+{
+  "function_name": "tf.linalg.lu_reconstruct(lower_upper,perm,validate_args=False,name=None)",
+  "inputs": [
+    "lower_upper",
+    "perm",
+    "validate_args"
+  ],
+  "sample_inputs": [
+    "lower_upper = tf.constant([[1.0, 2.0], [0.0, 3.0]])\nperm = tf.constant([1, 0])",
+    "lower_upper = tf.constant([[1.0, 2.0], [0.0, 3.0]], dtype=tf.float32)\nperm = tf.constant([0, 1], dtype=tf.int32)",
+    "perm = tf.constant([1, 0])\nlower_upper = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "lower_upper = tf.constant([[1.0, 2.0], [0.0, 3.0]])\nperm = tf.constant([1, 0])\nvalidate_args = True",
+    "perm = tf.constant([1, 0])\nlower_upper = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "perm = tf.constant([1, 0])\nlower_upper = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "perm = tf.constant([1, 0])\nlower_upper = tf.constant(np.random.randn(2,2), dtype='half')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(lower_upper,perm,validate_args=False):\n  return tf.linalg.lu_reconstruct(lower_upper,perm,validate_args)",
+    "pytorch": "def pytorch_call(lower_upper, perm, validate_args=False):\n    n = lower_upper.size(0)\n    L = torch.zeros_like(lower_upper)\n    U = torch.zeros_like(lower_upper)\n    for i in range(n):\n        for j in range(n):\n            if i <= j:\n                U[i, j] = lower_upper[i, j]\n            else:\n                L[i, j] = lower_upper[i, j]\n    L += torch.eye(n, dtype=L.dtype, device=L.device)\n    L_permuted = L[perm].to(torch.float32)\n    U = U.to(torch.float32)\n    return torch.mm(L_permuted, U)"
+  },
+  "llm_inputs": [
+    "lower_upper = tf.constant([[1.0, 2.0], [0.0, 3.0]])\nperm = tf.constant([1, 0])",
+    "lower_upper = tf.constant([[1.0, 2.0], [0.0, 3.0]])\nperm = tf.constant([1, 0])",
+    "lower_upper = tf.constant([[1.0, 2.0], [0.0, 3.0]], dtype=tf.float32)\nperm = tf.constant([0, 1], dtype=tf.int32)"
+  ]
+}

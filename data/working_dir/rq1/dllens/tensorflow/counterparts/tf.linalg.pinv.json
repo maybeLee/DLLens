@@ -1,0 +1,32 @@
+{
+  "function_name": "tf.linalg.pinv(a,rcond=None,validate_args=False,name=None)",
+  "inputs": [
+    "a",
+    "rcond",
+    "validate_args"
+  ],
+  "sample_inputs": [
+    "a = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nrcond = tf.constant(1e-15)\nvalidate_args = tf.constant(False)",
+    "a = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nrcond = tf.constant(1e-15, dtype=tf.float32)\nvalidate_args = tf.constant(False, dtype=tf.bool)",
+    "a = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nrcond = tf.constant(1e-15, dtype=tf.float32)\nvalidate_args = tf.constant(False)",
+    "rcond = tf.constant(1e-15)\nvalidate_args = tf.constant(False)\na = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "rcond = tf.constant(1e-15)\nvalidate_args = tf.constant(False)\na = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "rcond = tf.constant(1e-15)\nvalidate_args = tf.constant(False)\na = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "a = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nvalidate_args = tf.constant(False)\nrcond = tf.constant(np.random.randn(), dtype='float32')",
+    "rcond = tf.constant(1e-15)\nvalidate_args = tf.constant(False)\na = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "rcond = tf.constant(1e-15)\nvalidate_args = tf.constant(False)\na = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "rcond = tf.constant(1e-15)\nvalidate_args = tf.constant(False)\na = tf.constant(np.random.randn(2,4), dtype='float32')",
+    "rcond = tf.constant(1e-15)\nvalidate_args = tf.constant(False)\na = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "rcond = tf.constant(1e-15)\nvalidate_args = tf.constant(False)\na = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "rcond = tf.constant(1e-15)\nvalidate_args = tf.constant(False)\na = tf.constant(np.random.randn(2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(a,rcond=None,validate_args=False):\n  return tf.linalg.pinv(a,rcond,validate_args)",
+    "pytorch": "def pytorch_call(a, rcond=None, validate_args=False):\n    if validate_args:\n        if not isinstance(a, torch.Tensor):\n            raise ValueError(\"Input 'a' must be a torch.Tensor.\")\n        if rcond is not None and (not isinstance(rcond, torch.Tensor)):\n            raise ValueError(\"Input 'rcond' must be a torch.Tensor or None.\")\n    return torch.pinverse(a, rcond=rcond)"
+  },
+  "llm_inputs": [
+    "a = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nrcond = tf.constant(1e-15)\nvalidate_args = tf.constant(False)",
+    "a = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nrcond = tf.constant(1e-15, dtype=tf.float32)\nvalidate_args = tf.constant(False, dtype=tf.bool)",
+    "a = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nrcond = tf.constant(1e-15, dtype=tf.float32)\nvalidate_args = tf.constant(False)"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "function_name": "torch.set_flush_denormal(mode)",
+  "inputs": [
+    "mode"
+  ],
+  "sample_inputs": [
+    "mode = False",
+    "mode = True"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(mode):\n  return torch.set_flush_denormal(mode)",
+    "tensorflow": "def tensorflow_call(mode):\n    gpus = tf.config.list_physical_devices('GPU')\n    if gpus:\n        tf.config.experimental.set_memory_growth(gpus[0], mode)\n    return True"
+  },
+  "llm_inputs": [
+    "mode = False",
+    "mode = True",
+    "mode = True"
+  ]
+}

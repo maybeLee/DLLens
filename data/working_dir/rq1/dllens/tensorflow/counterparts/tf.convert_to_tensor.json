@@ -1,0 +1,22 @@
+{
+  "function_name": "tf.convert_to_tensor(value,dtype=None,dtype_hint=None,name=None)",
+  "inputs": [
+    "value",
+    "dtype",
+    "dtype_hint"
+  ],
+  "sample_inputs": [
+    "value = [[1, 2, 3], [4, 5, 6]]\ndtype = tf.float32\ndtype_hint = tf.int32",
+    "value = [[1, 2], [3, 4]]\ndtype = tf.float32\ndtype_hint = None",
+    "value = [[1, 2], [3, 4]]\ndtype = tf.float32\ndtype_hint = tf.float32"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(value,dtype=None,dtype_hint=None):\n  return tf.convert_to_tensor(value,dtype,dtype_hint)",
+    "pytorch": "def pytorch_call(value, dtype=None, dtype_hint=None):\n    if dtype is None:\n        if dtype_hint is not None:\n            dtype = dtype_hint\n    return torch.tensor(value, dtype=dtype)"
+  },
+  "llm_inputs": [
+    "value = [[1, 2, 3], [4, 5, 6]]\ndtype = tf.float32\ndtype_hint = tf.int32",
+    "value = [[1, 2], [3, 4]]\ndtype = tf.float32\ndtype_hint = None",
+    "value = [[1, 2], [3, 4]]\ndtype = tf.float32\ndtype_hint = tf.float32"
+  ]
+}

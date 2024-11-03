@@ -1,0 +1,31 @@
+{
+  "function_name": "tf.raw_ops.ComplexAbs(x,Tout=tf.dtypes.float32,name=None)",
+  "inputs": [
+    "x",
+    "Tout"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.dtypes.complex64)\nTout = tf.dtypes.float32",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.dtypes.complex64)\nTout = tf.dtypes.float32",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.complex64)\nTout = tf.dtypes.float32",
+    "Tout = tf.dtypes.float32\nx = tf.constant(np.random.randn(5,2), dtype='complex64')",
+    "Tout = tf.dtypes.float32\nx = tf.constant(np.random.randn(2), dtype='complex64')",
+    "Tout = tf.dtypes.float32\nx = tf.constant(np.random.randn(2,2,1,1,1), dtype='complex64')",
+    "Tout = tf.dtypes.float32\nx = tf.constant(np.random.randn(), dtype='complex64')",
+    "Tout = tf.dtypes.float32\nx = tf.constant(np.random.randn(2,1), dtype='complex64')",
+    "Tout = tf.dtypes.float32\nx = tf.constant(np.random.randn(2,2,1), dtype='complex64')",
+    "Tout = tf.dtypes.float32\nx = tf.constant(np.random.randn(2,2), dtype='complex64')",
+    "Tout = tf.dtypes.float32\nx = tf.constant(np.random.randn(1,2), dtype='complex64')",
+    "Tout = tf.dtypes.float32\nx = tf.constant(np.random.randn(2,2,1,1), dtype='complex64')",
+    "Tout = tf.dtypes.float32\nx = tf.constant(np.random.randn(2,5), dtype='complex64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,Tout=tf.dtypes.float32):\n  return tf.raw_ops.ComplexAbs(x=x,Tout=Tout)",
+    "pytorch": "def pytorch_call(x, Tout=torch.float32):\n    return x.abs().to(Tout)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.dtypes.complex64)\nTout = tf.dtypes.float32",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.dtypes.complex64)\nTout = tf.dtypes.float32",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.complex64)\nTout = tf.dtypes.float32"
+  ]
+}

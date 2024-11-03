@@ -1,0 +1,32 @@
+{
+  "function_name": "torch.Tensor.addr(input, vec1, vec2, *, beta=1, alpha=1)",
+  "inputs": [
+    "input",
+    "vec1",
+    "vec2"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\nvec1 = torch.tensor([1, 1])\nvec2 = torch.tensor([2, 2])",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nvec1 = torch.tensor([0.1, 0.2])\nvec2 = torch.tensor([0.3, 0.4])",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nvec1 = torch.tensor([0.5, 1.5])\nvec2 = torch.tensor([1.0, 2.0])",
+    "vec1 = torch.tensor([1, 1])\nvec2 = torch.tensor([2, 2])\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nvec1 = torch.tensor([1, 1])\nvec2 = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int32)",
+    "vec1 = torch.tensor([1, 1])\nvec2 = torch.tensor([2, 2])\ninput = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "vec1 = torch.tensor([1, 1])\nvec2 = torch.tensor([2, 2])\ninput = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "vec1 = torch.tensor([1, 1])\nvec2 = torch.tensor([2, 2])\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "vec1 = torch.tensor([1, 1])\nvec2 = torch.tensor([2, 2])\ninput = torch.tensor(np.random.randint(-50, 50, (1,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nvec1 = torch.tensor([1, 1])\nvec2 = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nvec2 = torch.tensor([2, 2])\nvec1 = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nvec2 = torch.tensor([2, 2])\nvec1 = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int32)",
+    "vec1 = torch.tensor([1, 1])\nvec2 = torch.tensor([2, 2])\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,vec1,vec2):\n  return torch.Tensor.addr(input,vec1,vec2)",
+    "tensorflow": "def tensorflow_call(input, vec1, vec2):\n    input = tf.cast(input, tf.float32)\n    vec1 = tf.cast(vec1, tf.float32)\n    vec2 = tf.cast(vec2, tf.float32)\n    outer_product = tf.matmul(tf.reshape(vec1, (-1, 1)), tf.reshape(vec2, (1, -1)))\n    result = input + outer_product\n    return result"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\nvec1 = torch.tensor([1, 1])\nvec2 = torch.tensor([2, 2])",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nvec1 = torch.tensor([0.1, 0.2])\nvec2 = torch.tensor([0.3, 0.4])",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nvec1 = torch.tensor([0.5, 1.5])\nvec2 = torch.tensor([1.0, 2.0])"
+  ]
+}

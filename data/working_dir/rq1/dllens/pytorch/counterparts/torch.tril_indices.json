@@ -1,0 +1,22 @@
+{
+  "function_name": "torch.tril_indices(row, col, offset=0, *, dtype=torch.long, device='cpu', layout=torch.strided)",
+  "inputs": [
+    "row",
+    "col",
+    "offset"
+  ],
+  "sample_inputs": [
+    "row = torch.tensor(5)\ncol = torch.tensor(5)\noffset = torch.tensor(0)",
+    "row = torch.tensor(5)\ncol = torch.tensor(5)\noffset = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int32)",
+    "row = torch.tensor(5)\ncol = torch.tensor(5)\noffset = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(row,col,offset=0):\n  return torch.tril_indices(row,col,offset)",
+    "tensorflow": "def tensorflow_call(row, col, offset=0):\n    row = tf.cast(row, tf.int32)\n    col = tf.cast(col, tf.int32)\n    offset = tf.cast(offset, tf.int32)\n    (row_indices, col_indices) = tf.meshgrid(tf.range(row), tf.range(col), indexing='ij')\n    mask = col_indices - row_indices <= offset\n    lower_triangular_indices = tf.where(mask)\n    return tf.transpose(lower_triangular_indices)"
+  },
+  "llm_inputs": [
+    "row = torch.tensor(5)\ncol = torch.tensor(5)\noffset = torch.tensor(0)",
+    "row = torch.tensor(5)\ncol = torch.tensor(5)\noffset = torch.tensor(0)",
+    "row = torch.tensor(5)\ncol = torch.tensor(5)\noffset = torch.tensor(0)"
+  ]
+}

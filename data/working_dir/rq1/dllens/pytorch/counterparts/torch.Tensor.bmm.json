@@ -1,0 +1,24 @@
+{
+  "function_name": "torch.Tensor.bmm(input, batch2)",
+  "inputs": [
+    "input",
+    "batch2"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[[1, 2], [3, 4]]], dtype=torch.float32)\nbatch2 = torch.tensor([[[5, 6], [7, 8]]], dtype=torch.float32)",
+    "input = torch.tensor([[[1, 2], [3, 4]]], dtype=torch.float32)\nbatch2 = torch.tensor(np.random.randn(1,2,2), dtype=torch.float32)",
+    "batch2 = torch.tensor([[[5, 6], [7, 8]]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(1,4,2), dtype=torch.float32)",
+    "batch2 = torch.tensor([[[5, 6], [7, 8]]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(1,1,2), dtype=torch.float32)",
+    "batch2 = torch.tensor([[[5, 6], [7, 8]]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(1,5,2), dtype=torch.float32)",
+    "batch2 = torch.tensor([[[5, 6], [7, 8]]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(1,2,2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,batch2):\n  return torch.Tensor.bmm(input,batch2)",
+    "tensorflow": "def tensorflow_call(input, batch2):\n    return tf.matmul(input, batch2)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[[1, 2], [3, 4]]], dtype=torch.float32)\nbatch2 = torch.tensor([[[5, 6], [7, 8]]], dtype=torch.float32)",
+    "input = torch.tensor([[[1, 2], [3, 4]]], dtype=torch.float32)\nbatch2 = torch.tensor([[[5, 6], [7, 8]]], dtype=torch.float32)",
+    "input = torch.tensor([[[1, 2], [3, 4]]], dtype=torch.float32)\nbatch2 = torch.tensor([[[5, 6], [7, 8]]], dtype=torch.float32)"
+  ]
+}

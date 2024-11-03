@@ -1,0 +1,19 @@
+{
+  "function_name": "tf.losses.deserialize(name,custom_objects=None)",
+  "inputs": [
+    "name",
+    "custom_objects"
+  ],
+  "sample_inputs": [
+    "name = 'MeanSquaredError'\ncustom_objects = {'MeanSquaredError': tf.constant(0.0)}"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(name,custom_objects=None):\n  return tf.losses.deserialize(name,custom_objects)",
+    "pytorch": "def pytorch_call(name, custom_objects=None):\n    if name == 'MeanSquaredError':\n        if custom_objects and name in custom_objects:\n            return custom_objects[name].item()\n        else:\n            return 0.0\n    else:\n        raise ValueError(f\"Loss function '{name}' is not recognized.\")"
+  },
+  "llm_inputs": [
+    "name = 'MeanSquaredError'\ncustom_objects = {'MeanSquaredError': tf.constant(0.0)}",
+    "name = 'MeanSquaredError'\ncustom_objects = {'MeanSquaredError': tf.constant(0.0)}",
+    "name = 'MeanSquaredError'\ncustom_objects = {'MeanSquaredError': tf.constant(0.0)}"
+  ]
+}

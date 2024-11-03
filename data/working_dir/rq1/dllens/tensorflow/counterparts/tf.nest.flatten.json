@@ -1,0 +1,33 @@
+{
+  "function_name": "tf.nest.flatten(structure,expand_composites=False)",
+  "inputs": [
+    "structure",
+    "expand_composites"
+  ],
+  "sample_inputs": [
+    "structure = tf.constant([[1, 2], [3, 4]])\nexpand_composites = tf.constant(True)",
+    "structure = tf.constant([[1, 2], [3, 4], [5, 6]])\nexpand_composites = tf.constant(True)",
+    "structure = tf.constant([[1, 2], [3, 4]])\nexpand_composites = False",
+    "expand_composites = tf.constant(True)\nstructure = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int64')",
+    "expand_composites = tf.constant(True)\nstructure = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int32')",
+    "expand_composites = tf.constant(True)\nstructure = tf.constant(np.random.randint(-50, 50, (2,2,1)), dtype='int32')",
+    "expand_composites = tf.constant(True)\nstructure = tf.constant(np.random.randint(-50, 50, (5,2)), dtype='int32')",
+    "expand_composites = tf.constant(True)\nstructure = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int32')",
+    "expand_composites = tf.constant(True)\nstructure = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "expand_composites = tf.constant(True)\nstructure = tf.constant(np.random.randint(-50, 50, (2,2,1,1,1)), dtype='int32')",
+    "expand_composites = tf.constant(True)\nstructure = tf.constant(np.random.randint(-50, 50, (2,5)), dtype='int32')",
+    "expand_composites = tf.constant(True)\nstructure = tf.constant(np.random.randint(-50, 50, (1,2)), dtype='int32')",
+    "expand_composites = tf.constant(True)\nstructure = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "expand_composites = tf.constant(True)\nstructure = tf.constant(np.random.randint(-50, 50, (2,4)), dtype='int32')",
+    "expand_composites = tf.constant(True)\nstructure = tf.constant(np.random.randint(-50, 50, (2,2,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(structure,expand_composites=False):\n  return tf.nest.flatten(structure,expand_composites)",
+    "pytorch": "def pytorch_call(structure, expand_composites=False):\n    if expand_composites:\n        return [structure]\n    else:\n        return structure.tolist()"
+  },
+  "llm_inputs": [
+    "structure = tf.constant([[1, 2], [3, 4]])\nexpand_composites = tf.constant(True)",
+    "structure = tf.constant([[1, 2], [3, 4], [5, 6]])\nexpand_composites = tf.constant(True)",
+    "structure = tf.constant([[1, 2], [3, 4]])\nexpand_composites = False"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.raw_ops.DynamicPartition(data,partitions,num_partitions,name=None)",
+  "inputs": [
+    "data",
+    "partitions",
+    "num_partitions"
+  ],
+  "sample_inputs": [
+    "data = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\npartitions = tf.constant([0, 1, 0, 1, 0], dtype=tf.int32)\nnum_partitions = tf.constant(2, dtype=tf.int32)",
+    "data = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\npartitions = tf.constant([0, 1, 0, 1, 0], dtype=tf.int32)\nnum_partitions = 2",
+    "partitions = tf.constant([0, 1, 0, 1, 0], dtype=tf.int32)\nnum_partitions = tf.constant(2, dtype=tf.int32)\ndata = tf.constant(np.random.randint(-50, 50, (5)), dtype='int64')",
+    "partitions = tf.constant([0, 1, 0, 1, 0], dtype=tf.int32)\nnum_partitions = tf.constant(2, dtype=tf.int32)\ndata = tf.constant(np.random.randint(-50, 50, (5,1,1,1,1)), dtype='int32')",
+    "partitions = tf.constant([0, 1, 0, 1, 0], dtype=tf.int32)\nnum_partitions = tf.constant(2, dtype=tf.int32)\ndata = tf.constant(np.random.randint(-50, 50, (5,1,1,1)), dtype='int32')",
+    "partitions = tf.constant([0, 1, 0, 1, 0], dtype=tf.int32)\nnum_partitions = tf.constant(2, dtype=tf.int32)\ndata = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "partitions = tf.constant([0, 1, 0, 1, 0], dtype=tf.int32)\nnum_partitions = tf.constant(2, dtype=tf.int32)\ndata = tf.constant(np.random.randint(-50, 50, (5,1)), dtype='int32')",
+    "partitions = tf.constant([0, 1, 0, 1, 0], dtype=tf.int32)\nnum_partitions = tf.constant(2, dtype=tf.int32)\ndata = tf.constant(np.random.randint(-50, 50, (5,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(data,partitions,num_partitions):\n  return tf.raw_ops.DynamicPartition(data=data,partitions=partitions,num_partitions=num_partitions)",
+    "pytorch": "def pytorch_call(data, partitions, num_partitions):\n    partitioned_data = [torch.empty(0, dtype=data.dtype) for _ in range(num_partitions)]\n    for i in range(len(partitions)):\n        partitioned_data[partitions[i].item()] = torch.cat((partitioned_data[partitions[i].item()], data[i:i + 1]))\n    return partitioned_data"
+  },
+  "llm_inputs": [
+    "data = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\npartitions = tf.constant([0, 1, 0, 1, 0], dtype=tf.int32)\nnum_partitions = tf.constant(2, dtype=tf.int32)",
+    "data = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\npartitions = tf.constant([0, 1, 0, 1, 0], dtype=tf.int32)\nnum_partitions = tf.constant(2, dtype=tf.int32)",
+    "data = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\npartitions = tf.constant([0, 1, 0, 1, 0], dtype=tf.int32)\nnum_partitions = 2"
+  ]
+}

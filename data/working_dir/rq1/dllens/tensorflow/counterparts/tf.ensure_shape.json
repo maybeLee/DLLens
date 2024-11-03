@@ -1,0 +1,24 @@
+{
+  "function_name": "tf.ensure_shape(x,shape,name=None)",
+  "inputs": [
+    "x",
+    "shape"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nshape = (2, 2)",
+    "x = tf.constant([[1, 2], [3, 4]])\nshape = (2, 2)",
+    "shape = (2, 2)\nx = tf.constant(np.random.randn(2,2), dtype='half')",
+    "shape = (2, 2)\nx = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "shape = (2, 2)\nx = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "shape = (2, 2)\nx = tf.constant(np.random.randn(2,2), dtype='float16')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,shape):\n  return tf.ensure_shape(x,shape)",
+    "pytorch": "def pytorch_call(x, shape):\n    return x.view(shape)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nshape = (2, 2)",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nshape = (2, 2)",
+    "x = tf.constant([[1, 2], [3, 4]])\nshape = (2, 2)"
+  ]
+}

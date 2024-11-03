@@ -1,0 +1,25 @@
+{
+  "function_name": "tf.raw_ops.DenseBincount(input,size,weights,binary_output=False,name=None)",
+  "inputs": [
+    "input",
+    "size",
+    "weights",
+    "binary_output"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nsize = tf.constant(6, dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\nbinary_output = False",
+    "input = tf.constant([1, 2, 3, 4], dtype=tf.int32)\nsize = tf.constant(5, dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4], dtype=tf.float32)\nbinary_output = False",
+    "input = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nsize = tf.constant(6, dtype=tf.int32)\nbinary_output = False\nweights = tf.constant(np.random.randn(5), dtype='float32')",
+    "input = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nsize = tf.constant(6, dtype=tf.int32)\nbinary_output = False\nweights = tf.constant(np.random.randn(5), dtype='float64')",
+    "input = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nsize = tf.constant(6, dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\nbinary_output = True"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,size,weights,binary_output=False):\n  return tf.raw_ops.DenseBincount(input=input,size=size,weights=weights,binary_output=binary_output)",
+    "pytorch": "def pytorch_call(input, size, weights=None, binary_output=False):\n    input = input.view(-1)\n    bincount = torch.zeros(size.item(), dtype=torch.float32)\n    bincount.index_add_(0, input, torch.ones_like(input, dtype=torch.float32))\n    if weights is not None:\n        weights = weights.to(dtype=torch.float32)\n        weighted_bincount = torch.zeros(size.item(), dtype=torch.float32)\n        weighted_bincount.index_add_(0, input, weights)\n        bincount = weighted_bincount\n    if binary_output:\n        bincount = (bincount > 0).float()\n    return bincount"
+  },
+  "llm_inputs": [
+    "input = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nsize = tf.constant(6, dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)\nbinary_output = False",
+    "input = tf.constant([1, 2, 3, 4], dtype=tf.int32)\nsize = tf.constant(5, dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4], dtype=tf.float32)\nbinary_output = False",
+    "input = tf.constant([1, 2, 3, 4], dtype=tf.int32)\nsize = tf.constant(5, dtype=tf.int32)\nweights = tf.constant([0.1, 0.2, 0.3, 0.4], dtype=tf.float32)\nbinary_output = False"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "function_name": "tf.raw_ops.Cumsum(x,axis,exclusive=False,reverse=False,name=None)",
+  "inputs": [
+    "x",
+    "axis",
+    "exclusive",
+    "reverse"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)\naxis = 0\nexclusive = False\nreverse = False",
+    "x = tf.constant([1, 2, 3], dtype=tf.float32)\naxis = 0\nexclusive = False\nreverse = False",
+    "x = tf.constant([1, 2, 3], dtype=tf.int32)\naxis = 0\nexclusive = False\nreverse = False",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (4,1)), dtype='int32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (4)), dtype='int64')",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)\nexclusive = False\nreverse = False\naxis = -1",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (4,1,1)), dtype='int32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (4,1,1,1,1)), dtype='int32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (4)), dtype='int32')",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)\naxis = 0\nexclusive = False\nreverse = True",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)\naxis = 0\nreverse = False\nexclusive = True",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (4,1,1,1)), dtype='int32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)\nexclusive = False\nreverse = False\naxis = 0"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,axis,exclusive=False,reverse=False):\n  return tf.raw_ops.Cumsum(x=x,axis=axis,exclusive=exclusive,reverse=reverse)",
+    "pytorch": "def pytorch_call(x, axis, exclusive=False, reverse=False):\n    if reverse:\n        x = x.flip(dims=[axis])\n    if exclusive:\n        cumsum = torch.cumsum(x, dim=axis) - x\n    else:\n        cumsum = torch.cumsum(x, dim=axis)\n    if reverse:\n        cumsum = cumsum.flip(dims=[axis])\n    return cumsum"
+  },
+  "llm_inputs": [
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)\naxis = 0\nexclusive = False\nreverse = False",
+    "x = tf.constant([1, 2, 3], dtype=tf.float32)\naxis = 0\nexclusive = False\nreverse = False",
+    "x = tf.constant([1, 2, 3], dtype=tf.int32)\naxis = 0\nexclusive = False\nreverse = False"
+  ]
+}

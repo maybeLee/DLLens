@@ -1,0 +1,32 @@
+{
+  "function_name": "tf.math.polygamma(a,x,name=None)",
+  "inputs": [
+    "a",
+    "x"
+  ],
+  "sample_inputs": [
+    "a = tf.constant(1.0)\nx = tf.constant(0.5)",
+    "a = tf.constant(1.0)\nx = tf.constant(2.0)",
+    "x = tf.constant(0.5)\na = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "a = tf.constant(1.0)\nx = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "x = tf.constant(0.5)\na = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "x = tf.constant(0.5)\na = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant(0.5)\na = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "a = tf.constant(1.0)\nx = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "a = tf.constant(1.0)\nx = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "a = tf.constant(1.0)\nx = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "x = tf.constant(0.5)\na = tf.constant(np.random.randn(1), dtype='float32')",
+    "a = tf.constant(1.0)\nx = tf.constant(np.random.randn(1), dtype='float32')",
+    "a = tf.constant(1.0)\nx = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant(0.5)\na = tf.constant(np.random.randn(1,1,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(a,x):\n  return tf.math.polygamma(a,x)",
+    "pytorch": "def pytorch_call(a, x):\n    a_int = int(a.item())\n    if a_int <= 0:\n        return torch.tensor([[float('nan')]], dtype=x.dtype)\n    return torch.polygamma(a_int, x)"
+  },
+  "llm_inputs": [
+    "a = tf.constant(1.0)\nx = tf.constant(0.5)",
+    "a = tf.constant(1.0)\nx = tf.constant(0.5)",
+    "a = tf.constant(1.0)\nx = tf.constant(2.0)"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "function_name": "tf.raw_ops.Diag(diagonal,name=None)",
+  "inputs": [
+    "diagonal"
+  ],
+  "sample_inputs": [
+    "diagonal = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)",
+    "diagonal_values = [1, 2, 3, 4, 5]\ndiagonal = tf.constant(diagonal_values)",
+    "diagonal = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "diagonal = tf.constant(np.random.randint(-50, 50, (5,1,1,1)), dtype='int32')",
+    "diagonal = tf.constant(np.random.randint(-50, 50, (5,1)), dtype='int32')",
+    "diagonal = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "diagonal = tf.constant(np.random.randint(-50, 50, (5,1,1,1,1)), dtype='int32')",
+    "diagonal = tf.constant(np.random.randint(-50, 50, (5,1,1)), dtype='int32')",
+    "diagonal = tf.constant(np.random.randint(-50, 50, (5)), dtype='int64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(diagonal):\n  return tf.raw_ops.Diag(diagonal=diagonal)",
+    "pytorch": "def pytorch_call(diagonal):\n    if diagonal.dim() > 2:\n        diagonal = diagonal.view(-1)\n    elif diagonal.dim() == 2:\n        diagonal = diagonal.squeeze()\n    return torch.diag(diagonal)"
+  },
+  "llm_inputs": [
+    "diagonal = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)",
+    "diagonal = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)",
+    "diagonal_values = [1, 2, 3, 4, 5]\ndiagonal = tf.constant(diagonal_values)"
+  ]
+}

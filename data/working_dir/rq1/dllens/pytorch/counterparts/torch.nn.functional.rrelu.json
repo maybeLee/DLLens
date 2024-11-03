@@ -1,0 +1,44 @@
+{
+  "function_name": "torch.nn.functional.rrelu(input, lower=1./8, upper=1./3, training=False, inplace=False)",
+  "inputs": [
+    "input",
+    "lower",
+    "upper",
+    "training",
+    "inplace"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nlower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False",
+    "input = torch.tensor([[0.1, -0.2], [0.3, -0.4]])\nlower = 1.0 / 8\nupper = 1.0 / 3\ntraining = False\ninplace = False",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nlower = 1.0 / 8\nupper = 1.0 / 3\ntraining = False\ninplace = False",
+    "lower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "lower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False\ninput = torch.tensor(np.random.randn(4,2), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nlower = torch.tensor(1.0 / 8)\ntraining = False\ninplace = False\nupper = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nlower = torch.tensor(1.0 / 8)\ntraining = False\ninplace = False\nupper = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nlower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ninplace = False\ntraining = True",
+    "lower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nlower = torch.tensor(1.0 / 8)\ntraining = False\ninplace = False\nupper = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "lower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "lower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "lower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "lower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "lower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "lower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "lower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nlower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = True",
+    "lower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "lower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "lower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False\ninput = torch.tensor(np.random.randn(3,2), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nlower = torch.tensor(1.0 / 8)\ntraining = False\ninplace = False\nupper = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "lower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,lower=1.0 / 8,upper=1.0 / 3,training=False,inplace=False):\n  return torch.nn.functional.rrelu(input,lower,upper,training,inplace)",
+    "tensorflow": "def tensorflow_call(input, lower=1.0 / 8, upper=1.0 / 3, training=False, inplace=False):\n    lower = tf.cast(lower, dtype=input.dtype)\n    upper = tf.cast(upper, dtype=input.dtype)\n    if training:\n        random_slope = tf.random.uniform(tf.shape(input), minval=lower, maxval=upper, dtype=input.dtype)\n        output = tf.where(input > 0, input, input * random_slope)\n    else:\n        avg_slope = (lower + upper) / 2\n        output = tf.where(input > 0, input, input * avg_slope)\n    return output"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nlower = torch.tensor(1.0 / 8)\nupper = torch.tensor(1.0 / 3)\ntraining = False\ninplace = False",
+    "input = torch.tensor([[0.1, -0.2], [0.3, -0.4]])\nlower = 1.0 / 8\nupper = 1.0 / 3\ntraining = False\ninplace = False",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]])\nlower = 1.0 / 8\nupper = 1.0 / 3\ntraining = False\ninplace = False"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "function_name": "tf.nn.bias_add(value,bias,data_format=None,name=None)",
+  "inputs": [
+    "value",
+    "bias",
+    "data_format"
+  ],
+  "sample_inputs": [
+    "value = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nbias = tf.constant([0.5, 1.5])\ndata_format = 'NHWC'",
+    "value = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nbias = tf.constant([1.0, 2.0], dtype=tf.float32)\ndata_format = 'NHWC'",
+    "value = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nbias = tf.constant([1, 2], dtype=tf.float32)\ndata_format = 'NHWC'",
+    "bias = tf.constant([0.5, 1.5])\ndata_format = 'NHWC'\nvalue = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "value = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ndata_format = 'NHWC'\nbias = tf.constant(np.random.randn(2), dtype='float32')",
+    "bias = tf.constant([0.5, 1.5])\ndata_format = 'NHWC'\nvalue = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "bias = tf.constant([0.5, 1.5])\ndata_format = 'NHWC'\nvalue = tf.constant(np.random.randn(1,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(value,bias,data_format=None):\n  return tf.nn.bias_add(value,bias,data_format)",
+    "pytorch": "def pytorch_call(value, bias, data_format=None):\n    if data_format == 'NHWC':\n        value = value.unsqueeze(1)\n        bias = bias.view(1, 1, -1)\n        output = value + bias\n        return output.squeeze(1)\n    else:\n        return value + bias.view(1, -1)"
+  },
+  "llm_inputs": [
+    "value = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nbias = tf.constant([0.5, 1.5])\ndata_format = 'NHWC'",
+    "value = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nbias = tf.constant([1.0, 2.0], dtype=tf.float32)\ndata_format = 'NHWC'",
+    "value = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nbias = tf.constant([1, 2], dtype=tf.float32)\ndata_format = 'NHWC'"
+  ]
+}

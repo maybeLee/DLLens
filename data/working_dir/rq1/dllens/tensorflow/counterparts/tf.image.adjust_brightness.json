@@ -1,0 +1,42 @@
+{
+  "function_name": "tf.image.adjust_brightness(image,delta)",
+  "inputs": [
+    "image",
+    "delta"
+  ],
+  "sample_inputs": [
+    "image = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]], dtype=tf.float32)\ndelta = tf.constant(0.2, dtype=tf.float32)",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ndelta = tf.constant(0.1, dtype=tf.float32)",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ndelta = tf.constant(0.5, dtype=tf.float32)",
+    "delta = tf.constant(0.2, dtype=tf.float32)\nimage = tf.constant(np.random.randn(3,3,1), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]], dtype=tf.float32)\ndelta = tf.constant(np.random.randn(), dtype='float16')",
+    "image = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]], dtype=tf.float32)\ndelta = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]], dtype=tf.float32)\ndelta = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]], dtype=tf.float32)\ndelta = tf.constant(np.random.randn(1), dtype='float32')",
+    "delta = tf.constant(0.2, dtype=tf.float32)\nimage = tf.constant(np.random.randn(1,3), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]], dtype=tf.float32)\ndelta = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]], dtype=tf.float32)\ndelta = tf.constant(np.random.randn(), dtype='half')",
+    "delta = tf.constant(0.2, dtype=tf.float32)\nimage = tf.constant(np.random.randn(3,3), dtype='float64')",
+    "delta = tf.constant(0.2, dtype=tf.float32)\nimage = tf.constant(np.random.randn(3,3), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]], dtype=tf.float32)\ndelta = tf.constant(np.random.randn(), dtype='float64')",
+    "delta = tf.constant(0.2, dtype=tf.float32)\nimage = tf.constant(np.random.randn(3), dtype='float32')",
+    "delta = tf.constant(0.2, dtype=tf.float32)\nimage = tf.constant(np.random.randn(3,3,1,1), dtype='float32')",
+    "delta = tf.constant(0.2, dtype=tf.float32)\nimage = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]], dtype=tf.float32)\ndelta = tf.constant(np.random.randn(), dtype='float32')",
+    "delta = tf.constant(0.2, dtype=tf.float32)\nimage = tf.constant(np.random.randn(), dtype='float32')",
+    "delta = tf.constant(0.2, dtype=tf.float32)\nimage = tf.constant(np.random.randn(3,3), dtype='float16')",
+    "image = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]], dtype=tf.float32)\ndelta = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "delta = tf.constant(0.2, dtype=tf.float32)\nimage = tf.constant(np.random.randn(3,3,1,1,1), dtype='float32')",
+    "delta = tf.constant(0.2, dtype=tf.float32)\nimage = tf.constant(np.random.randn(3,3), dtype='half')",
+    "delta = tf.constant(0.2, dtype=tf.float32)\nimage = tf.constant(np.random.randn(3,5), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(image,delta):\n  return tf.image.adjust_brightness(image,delta)",
+    "pytorch": "def pytorch_call(image, delta):\n    adjusted_image = image + delta\n    return adjusted_image"
+  },
+  "llm_inputs": [
+    "image = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]], dtype=tf.float32)\ndelta = tf.constant(0.2, dtype=tf.float32)",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ndelta = tf.constant(0.1, dtype=tf.float32)",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ndelta = tf.constant(0.5, dtype=tf.float32)"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "function_name": "tf.raw_ops.ScatterNd(indices,updates,shape,name=None)",
+  "inputs": [
+    "indices",
+    "updates",
+    "shape"
+  ],
+  "sample_inputs": [
+    "indices = tf.constant([[0], [1], [2]], dtype=tf.int32)\nupdates = tf.constant([10, 20, 30], dtype=tf.float32)\nshape = tf.constant([5], dtype=tf.int32)",
+    "indices = tf.constant([[0], [1]], dtype=tf.int32)\nupdates = tf.constant([10, 20], dtype=tf.float32)\nshape = tf.constant([3], dtype=tf.int32)",
+    "indices = tf.constant([[0], [1], [2]], dtype=tf.int32)\nshape = tf.constant([5], dtype=tf.int32)\nupdates = tf.constant(np.random.randn(3), dtype='float32')",
+    "indices = tf.constant([[0], [1], [2]], dtype=tf.int32)\nshape = tf.constant([5], dtype=tf.int32)\nupdates = tf.constant(np.random.randn(3), dtype='float64')",
+    "indices = tf.constant([[0], [1], [2]], dtype=tf.int32)\nshape = tf.constant([5], dtype=tf.int32)\nupdates = tf.constant(np.random.randn(3), dtype='half')",
+    "indices = tf.constant([[0], [1], [2]], dtype=tf.int32)\nshape = tf.constant([5], dtype=tf.int32)\nupdates = tf.constant(np.random.randn(3), dtype='float16')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(indices,updates,shape):\n  return tf.raw_ops.ScatterNd(indices=indices,updates=updates,shape=shape)",
+    "pytorch": "def pytorch_call(indices, updates, shape):\n    indices = indices.to(torch.int64)\n    output = torch.zeros(shape.tolist(), dtype=updates.dtype)\n    output.scatter_(0, indices.squeeze(), updates)\n    return output"
+  },
+  "llm_inputs": [
+    "indices = tf.constant([[0], [1], [2]], dtype=tf.int32)\nupdates = tf.constant([10, 20, 30], dtype=tf.float32)\nshape = tf.constant([5], dtype=tf.int32)",
+    "indices = tf.constant([[0], [1]], dtype=tf.int32)\nupdates = tf.constant([10, 20], dtype=tf.float32)\nshape = tf.constant([3], dtype=tf.int32)",
+    "indices = tf.constant([[0], [1], [2]], dtype=tf.int32)\nupdates = tf.constant([10, 20, 30], dtype=tf.float32)\nshape = tf.constant([5], dtype=tf.int32)"
+  ]
+}

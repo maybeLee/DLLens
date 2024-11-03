@@ -1,0 +1,21 @@
+{
+  "function_name": "tf.sparse.reset_shape(sp_input,new_shape=None)",
+  "inputs": [
+    "sp_input",
+    "new_shape"
+  ],
+  "sample_inputs": [
+    "sp_input = tf.sparse.SparseTensor(indices=[[0, 1], [1, 2]], values=[1.0, 2.0], dense_shape=[3, 3])\nnew_shape = tf.constant([3, 3], dtype=tf.int32)\nresult = tf.sparse.reset_shape(sp_input, new_shape)",
+    "sp_input = tf.sparse.SparseTensor(indices=[[0, 0], [1, 1], [2, 2]], values=[1, 2, 3], dense_shape=[3, 3])\nnew_shape = tf.constant([3, 3], dtype=tf.int32)",
+    "sp_input = tf.sparse.SparseTensor(indices=[[0, 0], [1, 1], [2, 2]], values=[1.0, 2.0, 3.0], dense_shape=[3, 3])\nnew_shape = tf.constant([3, 3], dtype=tf.int32)"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(sp_input,new_shape=None):\n  return tf.sparse.reset_shape(sp_input,new_shape)",
+    "pytorch": "def pytorch_call(sp_input, new_shape=None):\n    indices = sp_input.indices.numpy()\n    values = sp_input.values.numpy()\n    if new_shape is not None:\n        new_shape = new_shape.tolist()\n    else:\n        new_shape = sp_input.dense_shape.numpy().tolist()\n    return torch.sparse_coo_tensor(torch.tensor(indices).T, torch.tensor(values), size=new_shape)"
+  },
+  "llm_inputs": [
+    "sp_input = tf.sparse.SparseTensor(indices=[[0, 1], [1, 2]], values=[1.0, 2.0], dense_shape=[3, 3])\nnew_shape = tf.constant([3, 3], dtype=tf.int32)\nresult = tf.sparse.reset_shape(sp_input, new_shape)",
+    "sp_input = tf.sparse.SparseTensor(indices=[[0, 0], [1, 1], [2, 2]], values=[1, 2, 3], dense_shape=[3, 3])\nnew_shape = tf.constant([3, 3], dtype=tf.int32)",
+    "sp_input = tf.sparse.SparseTensor(indices=[[0, 0], [1, 1], [2, 2]], values=[1.0, 2.0, 3.0], dense_shape=[3, 3])\nnew_shape = tf.constant([3, 3], dtype=tf.int32)"
+  ]
+}

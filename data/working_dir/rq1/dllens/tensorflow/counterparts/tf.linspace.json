@@ -1,0 +1,36 @@
+{
+  "function_name": "tf.linspace(start,stop,num,name=None,axis=0)",
+  "inputs": [
+    "start",
+    "stop",
+    "num",
+    "name",
+    "axis"
+  ],
+  "sample_inputs": [
+    "start = tf.constant(0.0)\nstop = tf.constant(1.0)\nnum = tf.constant(5)\nname = None\naxis = 0",
+    "start = tf.constant(0.0)\nstop = tf.constant(10.0)\nnum = tf.constant(5)\nname = None\naxis = 0",
+    "start = tf.constant(0.0)\nnum = tf.constant(5)\nname = None\naxis = 0\nstop = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "stop = tf.constant(1.0)\nnum = tf.constant(5)\nname = None\naxis = 0\nstart = tf.constant(np.random.randn(1), dtype='float32')",
+    "start = tf.constant(0.0)\nnum = tf.constant(5)\nname = None\naxis = 0\nstop = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "start = tf.constant(0.0)\nnum = tf.constant(5)\nname = None\naxis = 0\nstop = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "start = tf.constant(0.0)\nnum = tf.constant(5)\nname = None\naxis = 0\nstop = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "stop = tf.constant(1.0)\nnum = tf.constant(5)\nname = None\naxis = 0\nstart = tf.constant(np.random.randn(), dtype='float32')",
+    "start = tf.constant(0.0)\nnum = tf.constant(5)\nname = None\naxis = 0\nstop = tf.constant(np.random.randn(1), dtype='float32')",
+    "stop = tf.constant(1.0)\nnum = tf.constant(5)\nname = None\naxis = 0\nstart = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "start = tf.constant(0.0)\nnum = tf.constant(5)\nname = None\naxis = 0\nstop = tf.constant(np.random.randn(), dtype='float32')",
+    "stop = tf.constant(1.0)\nnum = tf.constant(5)\nname = None\naxis = 0\nstart = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "start = tf.constant(0.0)\nstop = tf.constant(1.0)\nnum = tf.constant(5)\nname = None\naxis = -1",
+    "stop = tf.constant(1.0)\nnum = tf.constant(5)\nname = None\naxis = 0\nstart = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "stop = tf.constant(1.0)\nnum = tf.constant(5)\nname = None\naxis = 0\nstart = tf.constant(np.random.randn(1,1,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(start,stop,num,name=None,axis=0):\n  return tf.linspace(start,stop,num,name,axis)",
+    "pytorch": "def pytorch_call(start, stop, num, name=None, axis=0):\n    return torch.linspace(start.item(), stop.item(), num.item())"
+  },
+  "llm_inputs": [
+    "start = tf.constant(0.0)\nstop = tf.constant(1.0)\nnum = tf.constant(5)\nname = None\naxis = 0",
+    "start = tf.constant(0.0)\nstop = tf.constant(10.0)\nnum = tf.constant(5)\nname = None\naxis = 0",
+    "start = tf.constant(0.0)\nstop = tf.constant(1.0)\nnum = tf.constant(5)\nname = None\naxis = 0"
+  ]
+}

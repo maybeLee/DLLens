@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.keras.utils.to_categorical(y,num_classes=None,dtype='float32')",
+  "inputs": [
+    "y",
+    "num_classes",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "y = tf.constant([0, 1, 2, 1, 0], dtype=tf.int32)\nnum_classes = 3\ndtype = 'float32'",
+    "y = tf.constant([0, 1, 2, 1, 0])\nnum_classes = 3\ndtype = 'float32'",
+    "num_classes = 3\ndtype = 'float32'\ny = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "y = tf.constant([0, 1, 2, 1, 0], dtype=tf.int32)\ndtype = 'float32'\nnum_classes = 0",
+    "num_classes = 3\ndtype = 'float32'\ny = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "y = tf.constant([0, 1, 2, 1, 0], dtype=tf.int32)\ndtype = 'float32'\nnum_classes = 4",
+    "y = tf.constant([0, 1, 2, 1, 0], dtype=tf.int32)\ndtype = 'float32'\nnum_classes = 3",
+    "y = tf.constant([0, 1, 2, 1, 0], dtype=tf.int32)\ndtype = 'float32'\nnum_classes = 5"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(y,num_classes=None,dtype='float32'):\n  return tf.keras.utils.to_categorical(y,num_classes,dtype)",
+    "pytorch": "def pytorch_call(y, num_classes=None, dtype=torch.float32):\n    if y.dim() == 0:\n        y = y.unsqueeze(0)\n    if num_classes is None or num_classes <= 0:\n        num_classes = y.max().item() + 1\n    one_hot = torch.zeros(y.size(0), num_classes, dtype=dtype)\n    one_hot[torch.arange(y.size(0)), y] = 1\n    return one_hot"
+  },
+  "llm_inputs": [
+    "y = tf.constant([0, 1, 2, 1, 0], dtype=tf.int32)\nnum_classes = 3\ndtype = 'float32'",
+    "y = tf.constant([0, 1, 2, 1, 0], dtype=tf.int32)\nnum_classes = 3\ndtype = 'float32'",
+    "y = tf.constant([0, 1, 2, 1, 0])\nnum_classes = 3\ndtype = 'float32'"
+  ]
+}

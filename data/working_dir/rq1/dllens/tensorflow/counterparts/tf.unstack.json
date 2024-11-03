@@ -1,0 +1,31 @@
+{
+  "function_name": "tf.unstack(value,num=None,axis=0,name='unstack')",
+  "inputs": [
+    "value",
+    "num",
+    "axis"
+  ],
+  "sample_inputs": [
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]])\nnum = 2\naxis = 0",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2,3)), dtype='int32')",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int32')",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2,3,1)), dtype='int32')",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2,3)), dtype='int64')",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2,3,1,1,1)), dtype='int32')",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2,3,1,1)), dtype='int32')",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]])\naxis = 0\nnum = 2",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]])\nnum = 2\naxis = -2",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]])\naxis = 0\nnum = 0",
+    "num = 2\naxis = 0\nvalue = tf.constant(np.random.randint(-50, 50, (2,5)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(value,num=None,axis=0):\n  return tf.unstack(value,num,axis)",
+    "pytorch": "def pytorch_call(value, num=None, axis=0):\n    if num is None or num <= 0:\n        return []\n    return torch.unbind(value, dim=axis) if num == 1 else torch.split(value, split_size_or_sections=num, dim=axis)"
+  },
+  "llm_inputs": [
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]])\nnum = 2\naxis = 0",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]])\nnum = 2\naxis = 0",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]])\nnum = 2\naxis = 0"
+  ]
+}

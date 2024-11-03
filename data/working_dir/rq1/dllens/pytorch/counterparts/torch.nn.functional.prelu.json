@@ -1,0 +1,32 @@
+{
+  "function_name": "torch.nn.functional.prelu(input, weight)",
+  "inputs": [
+    "input",
+    "weight"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[0.1, -0.2], [0.3, -0.4]], dtype=torch.float32)\nweight = torch.tensor([0.25], dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]], dtype=torch.float32)\nweight = torch.tensor([0.5], dtype=torch.float32)",
+    "weight = torch.tensor([0.25], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "weight = torch.tensor([0.25], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "weight = torch.tensor([0.25], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, -0.2], [0.3, -0.4]], dtype=torch.float32)\nweight = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "weight = torch.tensor([0.25], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, -0.2], [0.3, -0.4]], dtype=torch.float32)\nweight = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "weight = torch.tensor([0.25], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "weight = torch.tensor([0.25], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "weight = torch.tensor([0.25], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "weight = torch.tensor([0.25], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "weight = torch.tensor([0.25], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "weight = torch.tensor([0.25], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,weight):\n  return torch.nn.functional.prelu(input,weight)",
+    "tensorflow": "def tensorflow_call(input, weight):\n    return tf.where(input >= 0, input, weight * input)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[0.1, -0.2], [0.3, -0.4]], dtype=torch.float32)\nweight = torch.tensor([0.25], dtype=torch.float32)",
+    "input = torch.tensor([[0.1, -0.2], [0.3, -0.4]], dtype=torch.float32)\nweight = torch.tensor([0.25], dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2], [0.3, 0.4]], dtype=torch.float32)\nweight = torch.tensor([0.5], dtype=torch.float32)"
+  ]
+}

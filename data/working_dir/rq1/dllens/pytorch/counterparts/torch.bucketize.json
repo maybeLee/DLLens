@@ -1,0 +1,39 @@
+{
+  "function_name": "torch.bucketize(input, boundaries, *, out_int32=False, right=False, out=None)",
+  "inputs": [
+    "input",
+    "boundaries"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1.0, 2.5, 3.0, 4.5])\nboundaries = torch.tensor([0.0, 2.0, 3.0, 5.0])",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nboundaries = torch.tensor([0.5, 1.5, 2.5])",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\nboundaries = torch.tensor([1.5, 2.5, 3.5])",
+    "boundaries = torch.tensor([0.0, 2.0, 3.0, 5.0])\ninput = torch.tensor(np.random.randn(4), dtype=torch.half)",
+    "input = torch.tensor([1.0, 2.5, 3.0, 4.5])\nboundaries = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.5, 3.0, 4.5])\nboundaries = torch.tensor(np.random.randn(4), dtype=torch.float16)",
+    "input = torch.tensor([1.0, 2.5, 3.0, 4.5])\nboundaries = torch.tensor(np.random.randn(4), dtype=torch.half)",
+    "boundaries = torch.tensor([0.0, 2.0, 3.0, 5.0])\ninput = torch.tensor(np.random.randn(4), dtype=torch.float16)",
+    "boundaries = torch.tensor([0.0, 2.0, 3.0, 5.0])\ninput = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "boundaries = torch.tensor([0.0, 2.0, 3.0, 5.0])\ninput = torch.tensor(np.random.randn(4), dtype=torch.float32)",
+    "boundaries = torch.tensor([0.0, 2.0, 3.0, 5.0])\ninput = torch.tensor(np.random.randn(4,1,1,1), dtype=torch.float32)",
+    "boundaries = torch.tensor([0.0, 2.0, 3.0, 5.0])\ninput = torch.tensor(np.random.randn(4), dtype=torch.float64)",
+    "boundaries = torch.tensor([0.0, 2.0, 3.0, 5.0])\ninput = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.5, 3.0, 4.5])\nboundaries = torch.tensor(np.random.randn(4), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.5, 3.0, 4.5])\nboundaries = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.5, 3.0, 4.5])\nboundaries = torch.tensor(np.random.randn(4), dtype=torch.float64)",
+    "boundaries = torch.tensor([0.0, 2.0, 3.0, 5.0])\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "boundaries = torch.tensor([0.0, 2.0, 3.0, 5.0])\ninput = torch.tensor(np.random.randn(4,1,1), dtype=torch.float32)",
+    "boundaries = torch.tensor([0.0, 2.0, 3.0, 5.0])\ninput = torch.tensor(np.random.randn(4,1), dtype=torch.float32)",
+    "boundaries = torch.tensor([0.0, 2.0, 3.0, 5.0])\ninput = torch.tensor(np.random.randn(4,1,1,1,1), dtype=torch.float32)",
+    "boundaries = torch.tensor([0.0, 2.0, 3.0, 5.0])\ninput = torch.tensor(np.random.randn(3), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,boundaries):\n  return torch.bucketize(input,boundaries)",
+    "tensorflow": "def tensorflow_call(input, boundaries):\n    input = tf.cast(input, boundaries.dtype)\n    input_flat = tf.reshape(input, [-1])\n    indices = tf.searchsorted(boundaries, input_flat)\n    return tf.reshape(indices, tf.shape(input))"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1.0, 2.5, 3.0, 4.5])\nboundaries = torch.tensor([0.0, 2.0, 3.0, 5.0])",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nboundaries = torch.tensor([0.5, 1.5, 2.5])",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\nboundaries = torch.tensor([1.5, 2.5, 3.5])"
+  ]
+}

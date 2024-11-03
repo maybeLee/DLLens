@@ -1,0 +1,35 @@
+{
+  "function_name": "torch.nn.functional.layer_norm(input, normalized_shape, weight=None, bias=None, eps=1e-05)",
+  "inputs": [
+    "input",
+    "normalized_shape",
+    "weight",
+    "bias",
+    "eps"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnormalized_shape = (2,)\nweight = torch.tensor([0.5, 0.5])\nbias = torch.tensor([1.0, 1.0])\neps = 1e-05",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnormalized_shape = (2,)\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = 1e-05",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnormalized_shape = (2,)\nweight = torch.tensor([0.5, 0.5])\nbias = torch.tensor([0.1, 0.1])\neps = 1e-05",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnormalized_shape = (2,)\nweight = torch.tensor([0.5, 0.5])\nbias = torch.tensor([1.0, 1.0])\neps = -16.83",
+    "normalized_shape = (2,)\nweight = torch.tensor([0.5, 0.5])\nbias = torch.tensor([1.0, 1.0])\neps = 1e-05\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnormalized_shape = (2,)\nweight = torch.tensor([0.5, 0.5])\nbias = torch.tensor([1.0, 1.0])\neps = -98.68",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnormalized_shape = (2,)\nweight = torch.tensor([0.5, 0.5])\nbias = torch.tensor([1.0, 1.0])\neps = -2.03",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnormalized_shape = (2,)\nweight = torch.tensor([0.5, 0.5])\neps = 1e-05\nbias = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnormalized_shape = (2,)\nweight = torch.tensor([0.5, 0.5])\nbias = torch.tensor([1.0, 1.0])\neps = 90.58",
+    "normalized_shape = (2,)\nweight = torch.tensor([0.5, 0.5])\nbias = torch.tensor([1.0, 1.0])\neps = 1e-05\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnormalized_shape = (2,)\nweight = torch.tensor([0.5, 0.5])\nbias = torch.tensor([1.0, 1.0])\neps = 13.04",
+    "normalized_shape = (2,)\nweight = torch.tensor([0.5, 0.5])\nbias = torch.tensor([1.0, 1.0])\neps = 1e-05\ninput = torch.tensor(np.random.randn(3,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnormalized_shape = (2,)\nbias = torch.tensor([1.0, 1.0])\neps = 1e-05\nweight = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "normalized_shape = (2,)\nweight = torch.tensor([0.5, 0.5])\nbias = torch.tensor([1.0, 1.0])\neps = 1e-05\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,normalized_shape,weight=None,bias=None,eps=1e-05):\n  return torch.nn.functional.layer_norm(input,normalized_shape,weight,bias,eps)",
+    "tensorflow": "def tensorflow_call(input, normalized_shape, weight=None, bias=None, eps=1e-05):\n    if weight is not None:\n        weight = tf.reshape(weight, normalized_shape)\n    if bias is not None:\n        bias = tf.reshape(bias, normalized_shape)\n    (mean, variance) = tf.nn.moments(input, axes=-1, keepdims=True)\n    normalized_input = (input - mean) / tf.sqrt(variance + eps)\n    if weight is not None:\n        normalized_input = normalized_input * weight\n    if bias is not None:\n        normalized_input = normalized_input + bias\n    return normalized_input"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnormalized_shape = (2,)\nweight = torch.tensor([0.5, 0.5])\nbias = torch.tensor([1.0, 1.0])\neps = 1e-05",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnormalized_shape = (2,)\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = 1e-05",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnormalized_shape = (2,)\nweight = torch.tensor([0.5, 0.5])\nbias = torch.tensor([0.1, 0.1])\neps = 1e-05"
+  ]
+}

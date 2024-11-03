@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.raw_ops.HistogramFixedWidth(values,value_range,nbins,dtype=tf.dtypes.int32,name=None)",
+  "inputs": [
+    "values",
+    "value_range",
+    "nbins",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "values = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nvalue_range = tf.constant([0.0, 5.0], dtype=tf.float32)\nnbins = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.int32",
+    "value_range = tf.constant([0.0, 5.0], dtype=tf.float32)\nnbins = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.int32\nvalues = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "value_range = tf.constant([0.0, 5.0], dtype=tf.float32)\nnbins = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.int32\nvalues = tf.constant(np.random.randn(3,1,1,1), dtype='float32')",
+    "value_range = tf.constant([0.0, 5.0], dtype=tf.float32)\nnbins = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.int32\nvalues = tf.constant(np.random.randn(3), dtype='float32')",
+    "value_range = tf.constant([0.0, 5.0], dtype=tf.float32)\nnbins = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.int32\nvalues = tf.constant(np.random.randn(3,1,1,1,1), dtype='float32')",
+    "value_range = tf.constant([0.0, 5.0], dtype=tf.float32)\nnbins = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.int32\nvalues = tf.constant(np.random.randn(1), dtype='float32')",
+    "value_range = tf.constant([0.0, 5.0], dtype=tf.float32)\nnbins = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.int32\nvalues = tf.constant(np.random.randn(), dtype='float32')",
+    "value_range = tf.constant([0.0, 5.0], dtype=tf.float32)\nnbins = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.int32\nvalues = tf.constant(np.random.randn(2), dtype='float32')",
+    "value_range = tf.constant([0.0, 5.0], dtype=tf.float32)\nnbins = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.int32\nvalues = tf.constant(np.random.randn(3,1,1), dtype='float32')",
+    "value_range = tf.constant([0.0, 5.0], dtype=tf.float32)\nnbins = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.int32\nvalues = tf.constant(np.random.randn(5), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(values,value_range,nbins,dtype=tf.dtypes.int32):\n  return tf.raw_ops.HistogramFixedWidth(values=values,value_range=value_range,nbins=nbins,dtype=dtype)",
+    "pytorch": "def pytorch_call(values, value_range, nbins, dtype=torch.int32):\n    values_clamped = torch.clamp(values, min=value_range[0], max=value_range[1])\n    hist = torch.histc(values_clamped, bins=nbins.item(), min=value_range[0].item(), max=value_range[1].item())\n    return hist.to(dtype)"
+  },
+  "llm_inputs": [
+    "values = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nvalue_range = tf.constant([0.0, 5.0], dtype=tf.float32)\nnbins = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.int32",
+    "values = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nvalue_range = tf.constant([0.0, 5.0], dtype=tf.float32)\nnbins = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.int32",
+    "values = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nvalue_range = tf.constant([0.0, 5.0], dtype=tf.float32)\nnbins = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.int32"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "function_name": "tf.raw_ops.FakeQuantWithMinMaxVars(inputs,min,max,num_bits=8,narrow_range=False,name=None)",
+  "inputs": [
+    "inputs",
+    "min",
+    "max",
+    "num_bits",
+    "narrow_range"
+  ],
+  "sample_inputs": [
+    "inputs = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nmin = tf.constant(0.0, dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnum_bits = 8\nnarrow_range = False",
+    "inputs = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nmin = tf.constant(0.0, dtype=tf.float32)\nnum_bits = 8\nnarrow_range = False\nmax = tf.constant(np.random.randn(), dtype='float32')",
+    "inputs = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nmin = tf.constant(0.0, dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnarrow_range = False\nnum_bits = 2",
+    "min = tf.constant(0.0, dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnum_bits = 8\nnarrow_range = False\ninputs = tf.constant(np.random.randn(3,1,1), dtype='float32')",
+    "min = tf.constant(0.0, dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnum_bits = 8\nnarrow_range = False\ninputs = tf.constant(np.random.randn(), dtype='float32')",
+    "inputs = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nmin = tf.constant(0.0, dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnarrow_range = False\nnum_bits = 5",
+    "min = tf.constant(0.0, dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnum_bits = 8\nnarrow_range = False\ninputs = tf.constant(np.random.randn(3), dtype='float32')",
+    "min = tf.constant(0.0, dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnum_bits = 8\nnarrow_range = False\ninputs = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "min = tf.constant(0.0, dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnum_bits = 8\nnarrow_range = False\ninputs = tf.constant(np.random.randn(3,1,1,1,1), dtype='float32')",
+    "inputs = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nmin = tf.constant(0.0, dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnarrow_range = False\nnum_bits = 3",
+    "inputs = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nmin = tf.constant(0.0, dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnarrow_range = False\nnum_bits = 4",
+    "min = tf.constant(0.0, dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnum_bits = 8\nnarrow_range = False\ninputs = tf.constant(np.random.randn(3,1,1,1), dtype='float32')",
+    "inputs = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nmin = tf.constant(0.0, dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnum_bits = 8\nnarrow_range = True",
+    "inputs = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnum_bits = 8\nnarrow_range = False\nmin = tf.constant(np.random.randn(), dtype='float32')",
+    "min = tf.constant(0.0, dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnum_bits = 8\nnarrow_range = False\ninputs = tf.constant(np.random.randn(5), dtype='float32')",
+    "min = tf.constant(0.0, dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnum_bits = 8\nnarrow_range = False\ninputs = tf.constant(np.random.randn(1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(inputs,min,max,num_bits=8,narrow_range=False):\n  return tf.raw_ops.FakeQuantWithMinMaxVars(inputs=inputs,min=min,max=max,num_bits=num_bits,narrow_range=narrow_range)",
+    "pytorch": "def pytorch_call(inputs, min, max, num_bits=8, narrow_range=False):\n    if narrow_range:\n        quant_min = 1\n        quant_max = 2 ** num_bits - 1\n    else:\n        quant_min = 0\n        quant_max = 2 ** num_bits - 1\n    scale = (max - min) / (quant_max - quant_min)\n    zero_point = quant_min - min / scale\n    quantized = torch.round(inputs / scale + zero_point).clamp(quant_min, quant_max)\n    dequantized = (quantized - zero_point) * scale\n    return dequantized"
+  },
+  "llm_inputs": [
+    "inputs = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nmin = tf.constant(0.0, dtype=tf.float32)\nmax = tf.constant(5.0, dtype=tf.float32)\nnum_bits = 8\nnarrow_range = False"
+  ]
+}

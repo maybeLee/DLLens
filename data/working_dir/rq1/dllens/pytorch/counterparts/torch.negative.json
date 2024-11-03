@@ -1,0 +1,32 @@
+{
+  "function_name": "torch.negative(input, *, out=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, -2, 3], [-4, 5, -6]], dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(4,3), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2,3,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2,3), dtype=torch.half)",
+    "input = torch.tensor(np.random.randn(2,3), dtype=torch.float16)",
+    "input = torch.tensor(np.random.randn(2,3,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(1,3), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5,3), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2,3), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2,3,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2,3), dtype=torch.float64)",
+    "input = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.negative(input)",
+    "tensorflow": "def tensorflow_call(input):\n    return tf.negative(input)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, -2, 3], [-4, 5, -6]], dtype=torch.float32)",
+    "input = torch.tensor([[1, -2, 3], [-4, 5, -6]], dtype=torch.float32)",
+    "input = torch.tensor([[1, -2, 3], [-4, 5, -6]], dtype=torch.float32)"
+  ]
+}

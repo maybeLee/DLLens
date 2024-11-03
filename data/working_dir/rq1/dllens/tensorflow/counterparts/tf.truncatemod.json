@@ -1,0 +1,36 @@
+{
+  "function_name": "tf.truncatemod(x,y,name=None)",
+  "inputs": [
+    "x",
+    "y"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[5]], dtype=tf.int32)\ny = tf.constant([[3]], dtype=tf.int32)",
+    "x = tf.constant([[5]], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1,1)), dtype='int32')",
+    "y = tf.constant([[3]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1,1,1,1)), dtype='int32')",
+    "y = tf.constant([[3]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "x = tf.constant([[5]], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1,1,1,1)), dtype='int32')",
+    "y = tf.constant([[3]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (5,1)), dtype='int32')",
+    "y = tf.constant([[3]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1,1,1,1,1)), dtype='int32')",
+    "y = tf.constant([[3]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1,1,1)), dtype='int32')",
+    "x = tf.constant([[5]], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1,1,1)), dtype='int32')",
+    "x = tf.constant([[5]], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "y = tf.constant([[3]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "y = tf.constant([[3]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1,3)), dtype='int32')",
+    "x = tf.constant([[5]], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1,3)), dtype='int32')",
+    "x = tf.constant([[5]], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "x = tf.constant([[5]], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1,1,1,1,1)), dtype='int32')",
+    "x = tf.constant([[5]], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1,5)), dtype='int32')",
+    "y = tf.constant([[3]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1,5)), dtype='int32')",
+    "y = tf.constant([[3]], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,y):\n  return tf.truncatemod(x,y)",
+    "pytorch": "def pytorch_call(x, y):\n    remainder = torch.remainder(x, y)\n    return remainder + (y * (remainder < 0)).abs()"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[5]], dtype=tf.int32)\ny = tf.constant([[3]], dtype=tf.int32)",
+    "x = tf.constant([[5]], dtype=tf.int32)\ny = tf.constant([[3]], dtype=tf.int32)",
+    "x = tf.constant([[5]], dtype=tf.int32)\ny = tf.constant([[3]], dtype=tf.int32)"
+  ]
+}

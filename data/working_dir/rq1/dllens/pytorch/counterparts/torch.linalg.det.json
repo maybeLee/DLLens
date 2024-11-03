@@ -1,0 +1,23 @@
+{
+  "function_name": "torch.linalg.det(A, *, out=None)",
+  "inputs": [
+    "A"
+  ],
+  "sample_inputs": [
+    "A = torch.tensor([[1.0, 2.0, 3.0], [0.0, 1.0, 4.0], [5.0, 6.0, 0.0]])",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])",
+    "A = torch.tensor(np.random.randn(3,3), dtype=torch.float32)",
+    "A = torch.tensor(np.random.randn(3,3,1,1,1), dtype=torch.float32)",
+    "A = torch.tensor(np.random.randn(3,3), dtype=torch.float64)",
+    "A = torch.tensor(np.random.randn(3,3,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(A):\n  return torch.linalg.det(A)",
+    "tensorflow": "def tensorflow_call(A):\n    return tf.linalg.det(A)"
+  },
+  "llm_inputs": [
+    "A = torch.tensor([[1.0, 2.0, 3.0], [0.0, 1.0, 4.0], [5.0, 6.0, 0.0]])",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])",
+    "A = torch.tensor([[1.0, 2.0], [3.0, 4.0]])"
+  ]
+}

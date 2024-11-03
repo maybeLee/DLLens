@@ -1,0 +1,40 @@
+{
+  "function_name": "torch.swapaxes(input, axis0, axis1)",
+  "inputs": [
+    "input",
+    "axis0",
+    "axis1"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\naxis0 = 0\naxis1 = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\naxis0 = 0\naxis1 = 1",
+    "axis0 = 0\naxis1 = 1\ninput = torch.tensor(np.random.randn(5,3), dtype=torch.float32)",
+    "axis0 = 0\naxis1 = 1\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\naxis1 = 1\naxis0 = 0",
+    "axis0 = 0\naxis1 = 1\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float64)",
+    "axis0 = 0\naxis1 = 1\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.half)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\naxis1 = 1\naxis0 = 1",
+    "axis0 = 0\naxis1 = 1\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float16)",
+    "axis0 = 0\naxis1 = 1\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "axis0 = 0\naxis1 = 1\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "axis0 = 0\naxis1 = 1\ninput = torch.tensor(np.random.randn(2,3,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\naxis0 = 0\naxis1 = -2",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\naxis0 = 0\naxis1 = -1",
+    "axis0 = 0\naxis1 = 1\ninput = torch.tensor(np.random.randn(2,3,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\naxis0 = 0\naxis1 = 0",
+    "axis0 = 0\naxis1 = 1\ninput = torch.tensor(np.random.randn(2,3,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\naxis1 = 1\naxis0 = -1",
+    "axis0 = 0\naxis1 = 1\ninput = torch.tensor(np.random.randn(2,4), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\naxis1 = 1\naxis0 = -2",
+    "axis0 = 0\naxis1 = 1\ninput = torch.tensor(np.random.randn(1,3), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,axis0,axis1):\n  return torch.swapaxes(input,axis0,axis1)",
+    "tensorflow": "def tensorflow_call(input, axis0, axis1):\n    axis0 = axis0 if axis0 >= 0 else input.shape.ndims + axis0\n    axis1 = axis1 if axis1 >= 0 else input.shape.ndims + axis1\n    perm = list(range(input.shape.ndims))\n    (perm[axis0], perm[axis1]) = (perm[axis1], perm[axis0])\n    return tf.transpose(input, perm=perm)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\naxis0 = 0\naxis1 = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\naxis0 = 0\naxis1 = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\naxis0 = 0\naxis1 = 1"
+  ]
+}

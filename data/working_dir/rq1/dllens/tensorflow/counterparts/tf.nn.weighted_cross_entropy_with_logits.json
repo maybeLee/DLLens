@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.nn.weighted_cross_entropy_with_logits(labels,logits,pos_weight,name=None)",
+  "inputs": [
+    "labels",
+    "logits",
+    "pos_weight"
+  ],
+  "sample_inputs": [
+    "labels = tf.constant([[1.0], [0.0], [1.0]], dtype=tf.float32)\nlogits = tf.constant([[0.5], [-0.5], [1.0]], dtype=tf.float32)\npos_weight = tf.constant(2.0, dtype=tf.float32)",
+    "labels = tf.constant([[1.0], [0.0], [1.0], [0.0]], dtype=tf.float32)\nlogits = tf.constant([[0.5], [-0.5], [0.8], [-0.2]], dtype=tf.float32)\npos_weight = tf.constant(2.0, dtype=tf.float32)",
+    "labels = tf.constant([[1.0], [0.0], [1.0], [0.0]], dtype=tf.float32)\nlogits = tf.constant([[0.5], [-0.5], [0.3], [-0.2]], dtype=tf.float32)\npos_weight = tf.constant([2.0], dtype=tf.float32)",
+    "logits = tf.constant([[0.5], [-0.5], [1.0]], dtype=tf.float32)\npos_weight = tf.constant(2.0, dtype=tf.float32)\nlabels = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "labels = tf.constant([[1.0], [0.0], [1.0]], dtype=tf.float32)\nlogits = tf.constant([[0.5], [-0.5], [1.0]], dtype=tf.float32)\npos_weight = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "labels = tf.constant([[1.0], [0.0], [1.0]], dtype=tf.float32)\nlogits = tf.constant([[0.5], [-0.5], [1.0]], dtype=tf.float32)\npos_weight = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "labels = tf.constant([[1.0], [0.0], [1.0]], dtype=tf.float32)\nlogits = tf.constant([[0.5], [-0.5], [1.0]], dtype=tf.float32)\npos_weight = tf.constant(np.random.randn(), dtype='float32')",
+    "labels = tf.constant([[1.0], [0.0], [1.0]], dtype=tf.float32)\nlogits = tf.constant([[0.5], [-0.5], [1.0]], dtype=tf.float32)\npos_weight = tf.constant(np.random.randn(1), dtype='float32')",
+    "labels = tf.constant([[1.0], [0.0], [1.0]], dtype=tf.float32)\nlogits = tf.constant([[0.5], [-0.5], [1.0]], dtype=tf.float32)\npos_weight = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "labels = tf.constant([[1.0], [0.0], [1.0]], dtype=tf.float32)\nlogits = tf.constant([[0.5], [-0.5], [1.0]], dtype=tf.float32)\npos_weight = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "labels = tf.constant([[1.0], [0.0], [1.0]], dtype=tf.float32)\npos_weight = tf.constant(2.0, dtype=tf.float32)\nlogits = tf.constant(np.random.randn(3,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(labels,logits,pos_weight):\n  return tf.nn.weighted_cross_entropy_with_logits(labels,logits,pos_weight)",
+    "pytorch": "def pytorch_call(labels, logits, pos_weight):\n    sigmoid_logits = torch.sigmoid(logits)\n    loss = -(labels * pos_weight * torch.log(sigmoid_logits) + (1 - labels) * torch.log(1 - sigmoid_logits))\n    return loss"
+  },
+  "llm_inputs": [
+    "labels = tf.constant([[1.0], [0.0], [1.0]], dtype=tf.float32)\nlogits = tf.constant([[0.5], [-0.5], [1.0]], dtype=tf.float32)\npos_weight = tf.constant(2.0, dtype=tf.float32)",
+    "labels = tf.constant([[1.0], [0.0], [1.0], [0.0]], dtype=tf.float32)\nlogits = tf.constant([[0.5], [-0.5], [0.8], [-0.2]], dtype=tf.float32)\npos_weight = tf.constant(2.0, dtype=tf.float32)",
+    "labels = tf.constant([[1.0], [0.0], [1.0], [0.0]], dtype=tf.float32)\nlogits = tf.constant([[0.5], [-0.5], [0.3], [-0.2]], dtype=tf.float32)\npos_weight = tf.constant([2.0], dtype=tf.float32)"
+  ]
+}

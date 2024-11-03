@@ -1,0 +1,20 @@
+{
+  "function_name": "torch.cholesky(input, upper=False, *, out=None)",
+  "inputs": [
+    "input",
+    "upper"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[4.0, 2.0], [2.0, 3.0]])\nupper = False",
+    "input = torch.tensor([[4.0, 2.0], [2.0, 3.0]])\nupper = True"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,upper=False):\n  return torch.cholesky(input,upper)",
+    "tensorflow": "def tensorflow_call(input, upper=False):\n    cholesky_result = tf.linalg.cholesky(input)\n    if upper:\n        return tf.transpose(cholesky_result)\n    return cholesky_result"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[4.0, 2.0], [2.0, 3.0]])\nupper = False",
+    "input = torch.tensor([[4.0, 2.0], [2.0, 3.0]])\nupper = False",
+    "input = torch.tensor([[4.0, 2.0], [2.0, 3.0]])\nupper = False"
+  ]
+}

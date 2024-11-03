@@ -1,0 +1,20 @@
+{
+  "function_name": "tf.keras.layers.subtract(inputs,**kwargs)",
+  "inputs": [
+    "inputs"
+  ],
+  "sample_inputs": [
+    "inputs = [tf.constant([[1.0, 2.0]]), tf.constant([[3.0, 4.0]])]",
+    "inputs = [tf.constant([[1, 2]], dtype=tf.float32), tf.constant([[3, 4]], dtype=tf.float32)]",
+    "inputs = (tf.constant([[1, 2], [3, 4]], dtype=tf.float32), tf.constant([[5, 6], [7, 8]], dtype=tf.float32))"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(inputs):\n  return tf.keras.layers.subtract(inputs)",
+    "pytorch": "def pytorch_call(inputs):\n    return torch.sub(*inputs)"
+  },
+  "llm_inputs": [
+    "inputs = [tf.constant([[1.0, 2.0]]), tf.constant([[3.0, 4.0]])]",
+    "inputs = [tf.constant([[1, 2]], dtype=tf.float32), tf.constant([[3, 4]], dtype=tf.float32)]",
+    "inputs = (tf.constant([[1, 2], [3, 4]], dtype=tf.float32), tf.constant([[5, 6], [7, 8]], dtype=tf.float32))"
+  ]
+}

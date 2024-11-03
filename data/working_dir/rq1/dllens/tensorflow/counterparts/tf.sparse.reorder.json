@@ -1,0 +1,20 @@
+{
+  "function_name": "tf.sparse.reorder(sp_input,name=None)",
+  "inputs": [
+    "sp_input"
+  ],
+  "sample_inputs": [
+    "indices = [[0, 0], [1, 2], [2, 1]]\nvalues = [1, 2, 3]\ndense_shape = [3, 3]\nsp_input = tf.sparse.SparseTensor(indices=indices, values=values, dense_shape=dense_shape)",
+    "indices = [[0, 0], [1, 2], [2, 3]]\nvalues = [1, 2, 3]\ndense_shape = [3, 4]\nsp_input = tf.sparse.SparseTensor(indices=indices, values=values, dense_shape=dense_shape)",
+    "indices = [[0, 0], [1, 2], [2, 1]]\nvalues = [1, 2, 3]\ndense_shape = [3, 3]\nsp_input = tf.sparse.SparseTensor(indices, values, dense_shape)"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(sp_input):\n  return tf.sparse.reorder(sp_input)",
+    "pytorch": "def pytorch_call(sp_input):\n    indices = torch.tensor(sp_input.indices.numpy(), dtype=torch.long).t()\n    values = torch.tensor(sp_input.values.numpy(), dtype=torch.float)\n    size = torch.Size(sp_input.dense_shape)\n    return torch.sparse_coo_tensor(indices, values, size).coalesce()"
+  },
+  "llm_inputs": [
+    "indices = [[0, 0], [1, 2], [2, 1]]\nvalues = [1, 2, 3]\ndense_shape = [3, 3]\nsp_input = tf.sparse.SparseTensor(indices=indices, values=values, dense_shape=dense_shape)",
+    "indices = [[0, 0], [1, 2], [2, 3]]\nvalues = [1, 2, 3]\ndense_shape = [3, 4]\nsp_input = tf.sparse.SparseTensor(indices=indices, values=values, dense_shape=dense_shape)",
+    "indices = [[0, 0], [1, 2], [2, 1]]\nvalues = [1, 2, 3]\ndense_shape = [3, 3]\nsp_input = tf.sparse.SparseTensor(indices, values, dense_shape)"
+  ]
+}

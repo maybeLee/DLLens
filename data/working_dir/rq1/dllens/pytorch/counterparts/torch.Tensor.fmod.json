@@ -1,0 +1,42 @@
+{
+  "function_name": "torch.Tensor.fmod(input, divisor)",
+  "inputs": [
+    "input",
+    "divisor"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndivisor = torch.tensor([[2]], dtype=torch.float32)",
+    "input = torch.tensor([[2, 3, 4], [5, 6, 7]], dtype=torch.float32)\ndivisor = torch.tensor([[3]], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndivisor = torch.tensor([[2, 2, 2], [3, 3, 3]], dtype=torch.float32)",
+    "divisor = torch.tensor([[2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,3,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndivisor = torch.tensor(np.random.randn(1,1), dtype=torch.float16)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndivisor = torch.tensor(np.random.randn(1,1), dtype=torch.half)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndivisor = torch.tensor(np.random.randn(1,1,1,1,1), dtype=torch.float32)",
+    "divisor = torch.tensor([[2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "divisor = torch.tensor([[2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "divisor = torch.tensor([[2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndivisor = torch.tensor(np.random.randn(1,1), dtype=torch.float64)",
+    "divisor = torch.tensor([[2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndivisor = torch.tensor(np.random.randn(1,1,1,1), dtype=torch.float32)",
+    "divisor = torch.tensor([[2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.half)",
+    "divisor = torch.tensor([[2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "divisor = torch.tensor([[2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndivisor = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "divisor = torch.tensor([[2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,3,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndivisor = torch.tensor(np.random.randn(1,1), dtype=torch.float32)",
+    "divisor = torch.tensor([[2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float16)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndivisor = torch.tensor(np.random.randn(1,1,1), dtype=torch.float32)",
+    "divisor = torch.tensor([[2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,3,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndivisor = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "divisor = torch.tensor([[2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,divisor):\n  return torch.Tensor.fmod(input,divisor)",
+    "tensorflow": "def tensorflow_call(input, divisor):\n    divisor = tf.cast(divisor, input.dtype)\n    return tf.math.floormod(input, divisor) - divisor * tf.cast(tf.math.less(input, 0), input.dtype)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndivisor = torch.tensor([[2]], dtype=torch.float32)",
+    "input = torch.tensor([[2, 3, 4], [5, 6, 7]], dtype=torch.float32)\ndivisor = torch.tensor([[3]], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndivisor = torch.tensor([[2, 2, 2], [3, 3, 3]], dtype=torch.float32)"
+  ]
+}

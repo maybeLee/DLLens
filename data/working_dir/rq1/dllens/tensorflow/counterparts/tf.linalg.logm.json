@@ -1,0 +1,24 @@
+{
+  "function_name": "tf.linalg.logm(input,name=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1.0 + 0j, 2.0 + 0j], [3.0 + 0j, 4.0 + 0j]], dtype=tf.complex64)",
+    "input = tf.constant([[1 + 0j, 2 + 0j], [3 + 0j, 4 + 0j]], dtype=tf.complex64)",
+    "input = tf.constant([[1.0 + 0j, 0.0 + 0j], [0.0 + 0j, 2.0 + 0j]])",
+    "input = tf.constant(np.random.randn(2,2), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,2,1,1), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,2,1,1,1), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,2), dtype='complex128')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input):\n  return tf.linalg.logm(input)",
+    "pytorch": "def pytorch_call(input):\n    (eigenvalues, eigenvectors) = torch.linalg.eig(input)\n    log_eigenvalues = torch.log(eigenvalues)\n    log_diag = torch.diag_embed(log_eigenvalues)\n    log_matrix = eigenvectors @ log_diag @ torch.linalg.inv(eigenvectors)\n    return log_matrix"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1.0 + 0j, 2.0 + 0j], [3.0 + 0j, 4.0 + 0j]], dtype=tf.complex64)",
+    "input = tf.constant([[1 + 0j, 2 + 0j], [3 + 0j, 4 + 0j]], dtype=tf.complex64)",
+    "input = tf.constant([[1.0 + 0j, 0.0 + 0j], [0.0 + 0j, 2.0 + 0j]])"
+  ]
+}

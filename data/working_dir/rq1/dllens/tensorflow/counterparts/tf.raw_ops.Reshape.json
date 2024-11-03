@@ -1,0 +1,25 @@
+{
+  "function_name": "tf.raw_ops.Reshape(tensor,shape,name=None)",
+  "inputs": [
+    "tensor",
+    "shape"
+  ],
+  "sample_inputs": [
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nshape = tf.constant([4], dtype=tf.int32)",
+    "tensor = tf.constant([[1, 2], [3, 4]])\nshape = tf.constant([4])",
+    "shape = tf.constant([4], dtype=tf.int32)\ntensor = tf.constant(np.random.randint(-50, 50, (2,2,1)), dtype='int32')",
+    "shape = tf.constant([4], dtype=tf.int32)\ntensor = tf.constant(np.random.randint(-50, 50, (2,2,1,1,1)), dtype='int32')",
+    "shape = tf.constant([4], dtype=tf.int32)\ntensor = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int32')",
+    "shape = tf.constant([4], dtype=tf.int32)\ntensor = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int64')",
+    "shape = tf.constant([4], dtype=tf.int32)\ntensor = tf.constant(np.random.randint(-50, 50, (2,2,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(tensor,shape):\n  return tf.raw_ops.Reshape(tensor=tensor,shape=shape)",
+    "pytorch": "def pytorch_call(tensor, shape):\n    return torch.reshape(tensor, shape.tolist())"
+  },
+  "llm_inputs": [
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nshape = tf.constant([4], dtype=tf.int32)",
+    "tensor = tf.constant([[1, 2], [3, 4]])\nshape = tf.constant([4])",
+    "tensor = tf.constant([[1, 2], [3, 4]])\nshape = tf.constant([4])"
+  ]
+}

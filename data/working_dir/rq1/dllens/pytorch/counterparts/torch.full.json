@@ -1,0 +1,30 @@
+{
+  "function_name": "torch.full(size, fill_value, *, out=None, dtype=None, layout=torch.strided, device=None, requires_grad=False)",
+  "inputs": [
+    "size",
+    "fill_value"
+  ],
+  "sample_inputs": [
+    "size = (3, 3)\nfill_value = 5",
+    "size = (2, 3)\nfill_value = 5",
+    "size = (3, 3)\nfill_value = 2",
+    "size = (3, 3)\nfill_value = -5",
+    "size = (3, 3)\nfill_value = 3",
+    "size = (3, 3)\nfill_value = 4",
+    "size = (3, 3)\nfill_value = -1",
+    "size = (3, 3)\nfill_value = -2",
+    "size = (3, 3)\nfill_value = -3",
+    "size = (3, 3)\nfill_value = 1",
+    "size = (3, 3)\nfill_value = -4",
+    "size = (3, 3)\nfill_value = 0"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(size,fill_value):\n  return torch.full(size,fill_value)",
+    "tensorflow": "def tensorflow_call(size, fill_value):\n    return tf.fill(size, fill_value)"
+  },
+  "llm_inputs": [
+    "size = (3, 3)\nfill_value = 5",
+    "size = (3, 3)\nfill_value = 5",
+    "size = (2, 3)\nfill_value = 5"
+  ]
+}

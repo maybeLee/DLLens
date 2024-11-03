@@ -1,0 +1,29 @@
+{
+  "function_name": "tf.scalar_mul(scalar,x,name=None)",
+  "inputs": [
+    "scalar",
+    "x"
+  ],
+  "sample_inputs": [
+    "scalar = tf.constant(2)\nx = tf.constant([1, 2, 3])",
+    "scalar = tf.constant(2.0)\nx = tf.constant([1.0, 2.0, 3.0])",
+    "scalar = tf.constant(2)\nx = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "scalar = tf.constant(2)\nx = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "x = tf.constant([1, 2, 3])\nscalar = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "scalar = tf.constant(2)\nx = tf.constant(np.random.randint(-50, 50, (3,1,1)), dtype='int32')",
+    "scalar = tf.constant(2)\nx = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "scalar = tf.constant(2)\nx = tf.constant(np.random.randint(-50, 50, (3,1,1,1,1)), dtype='int32')",
+    "scalar = tf.constant(2)\nx = tf.constant(np.random.randint(-50, 50, (3,1)), dtype='int32')",
+    "scalar = tf.constant(2)\nx = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "scalar = tf.constant(2)\nx = tf.constant(np.random.randint(-50, 50, (3,1,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(scalar,x):\n  return tf.scalar_mul(scalar,x)",
+    "pytorch": "def pytorch_call(scalar, x):\n    return torch.mul(scalar, x)"
+  },
+  "llm_inputs": [
+    "scalar = tf.constant(2)\nx = tf.constant([1, 2, 3])",
+    "scalar = tf.constant(2.0)\nx = tf.constant([1.0, 2.0, 3.0])",
+    "scalar = tf.constant(2)\nx = tf.constant([1, 2, 3])"
+  ]
+}

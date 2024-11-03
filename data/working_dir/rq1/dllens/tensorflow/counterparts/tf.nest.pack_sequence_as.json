@@ -1,0 +1,21 @@
+{
+  "function_name": "tf.nest.pack_sequence_as(structure,flat_sequence,expand_composites=False)",
+  "inputs": [
+    "structure",
+    "flat_sequence",
+    "expand_composites"
+  ],
+  "sample_inputs": [
+    "structure = [[1, 2], [3, 4]]\nflat_sequence = [5, 6, 7, 8]\nexpand_composites = False",
+    "structure = [[1, 2], [3, 4]]\nflat_sequence = [5, 6, 7, 8]\nexpand_composites = True"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(structure,flat_sequence,expand_composites=False):\n  return tf.nest.pack_sequence_as(structure,flat_sequence,expand_composites)",
+    "pytorch": "def pytorch_call(structure, flat_sequence, expand_composites=False):\n    flat_tensor = torch.tensor(flat_sequence)\n    if expand_composites:\n        result = []\n        start = 0\n        for sublist in structure:\n            length = len(sublist)\n            result.append(flat_tensor[start:start + length].tolist())\n            start += length\n        return result\n    else:\n        result = []\n        start = 0\n        for sublist in structure:\n            length = len(sublist)\n            result.append(flat_tensor[start:start + length].tolist())\n            start += length\n        return result"
+  },
+  "llm_inputs": [
+    "structure = [[1, 2], [3, 4]]\nflat_sequence = [5, 6, 7, 8]\nexpand_composites = False",
+    "structure = [[1, 2], [3, 4]]\nflat_sequence = [5, 6, 7, 8]\nexpand_composites = False",
+    "structure = [[1, 2], [3, 4]]\nflat_sequence = [5, 6, 7, 8]\nexpand_composites = False"
+  ]
+}

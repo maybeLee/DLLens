@@ -1,0 +1,38 @@
+{
+  "function_name": "torch.transpose(input, dim0, dim1)",
+  "inputs": [
+    "input",
+    "dim0",
+    "dim1"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4], [5, 6]])\ndim0 = 0\ndim1 = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndim0 = 0\ndim1 = 1",
+    "input = torch.tensor([[1, 2], [3, 4], [5, 6]])\ndim1 = 1\ndim0 = -2",
+    "input = torch.tensor([[1, 2], [3, 4], [5, 6]])\ndim0 = 0\ndim1 = -1",
+    "input = torch.tensor([[1, 2], [3, 4], [5, 6]])\ndim0 = 0\ndim1 = 0",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (3,4)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4], [5, 6]])\ndim1 = 1\ndim0 = 0",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (3,2)), dtype=torch.int32)",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (3,2,1,1,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4], [5, 6]])\ndim0 = 0\ndim1 = -2",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (3,5)), dtype=torch.int64)",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (1,2)), dtype=torch.int64)",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (3,1)), dtype=torch.int64)",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (3,2)), dtype=torch.int64)",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (3,2,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4], [5, 6]])\ndim1 = 1\ndim0 = -1",
+    "input = torch.tensor([[1, 2], [3, 4], [5, 6]])\ndim1 = 1\ndim0 = 1",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (5,2)), dtype=torch.int64)",
+    "dim0 = 0\ndim1 = 1\ninput = torch.tensor(np.random.randint(-50, 50, (3,2,1,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim0,dim1):\n  return torch.transpose(input,dim0,dim1)",
+    "tensorflow": "def tensorflow_call(input, dim0, dim1):\n    num_dims = len(input.shape)\n    if dim0 < 0:\n        dim0 += num_dims\n    if dim1 < 0:\n        dim1 += num_dims\n    perm = list(range(num_dims))\n    (perm[dim0], perm[dim1]) = (perm[dim1], perm[dim0])\n    return tf.transpose(input, perm=perm)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4], [5, 6]])\ndim0 = 0\ndim1 = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndim0 = 0\ndim1 = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndim0 = 0\ndim1 = 1"
+  ]
+}

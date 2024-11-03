@@ -1,0 +1,33 @@
+{
+  "function_name": "tf.argsort(values,axis=-1,direction='ASCENDING',stable=False,name=None)",
+  "inputs": [
+    "values",
+    "axis",
+    "direction",
+    "stable"
+  ],
+  "sample_inputs": [
+    "values = tf.constant([3, 1, 4, 1, 5], dtype=tf.int32)\naxis = -1\ndirection = 'ASCENDING'\nstable = False",
+    "values = tf.constant([3, 1, 4, 1, 5], dtype=tf.float32)\naxis = -1\ndirection = 'ASCENDING'\nstable = False",
+    "values = tf.constant([3, 1, 4, 1, 5], dtype=tf.int32)\ndirection = 'ASCENDING'\nstable = False\naxis = -1",
+    "axis = -1\ndirection = 'ASCENDING'\nstable = False\nvalues = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "axis = -1\ndirection = 'ASCENDING'\nstable = False\nvalues = tf.constant(np.random.randint(-50, 50, (5,1,1,1,1)), dtype='int32')",
+    "values = tf.constant([3, 1, 4, 1, 5], dtype=tf.int32)\naxis = -1\ndirection = 'ASCENDING'\nstable = True",
+    "axis = -1\ndirection = 'ASCENDING'\nstable = False\nvalues = tf.constant(np.random.randint(-50, 50, (4)), dtype='int32')",
+    "values = tf.constant([3, 1, 4, 1, 5], dtype=tf.int32)\ndirection = 'ASCENDING'\nstable = False\naxis = 0",
+    "axis = -1\ndirection = 'ASCENDING'\nstable = False\nvalues = tf.constant(np.random.randint(-50, 50, (5,1,1)), dtype='int32')",
+    "axis = -1\ndirection = 'ASCENDING'\nstable = False\nvalues = tf.constant(np.random.randint(-50, 50, (5,1)), dtype='int32')",
+    "axis = -1\ndirection = 'ASCENDING'\nstable = False\nvalues = tf.constant(np.random.randint(-50, 50, (5,1,1,1)), dtype='int32')",
+    "axis = -1\ndirection = 'ASCENDING'\nstable = False\nvalues = tf.constant(np.random.randint(-50, 50, (5)), dtype='int64')",
+    "axis = -1\ndirection = 'ASCENDING'\nstable = False\nvalues = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(values,axis=-1,direction='ASCENDING',stable=False):\n  return tf.argsort(values,axis,direction,stable)",
+    "pytorch": "def pytorch_call(values, axis=-1, direction='ASCENDING', stable=False):\n    if direction == 'ASCENDING':\n        return torch.argsort(values, dim=axis, descending=False, stable=stable)\n    else:\n        return torch.argsort(values, dim=axis, descending=True, stable=stable)"
+  },
+  "llm_inputs": [
+    "values = tf.constant([3, 1, 4, 1, 5], dtype=tf.int32)\naxis = -1\ndirection = 'ASCENDING'\nstable = False",
+    "values = tf.constant([3, 1, 4, 1, 5], dtype=tf.float32)\naxis = -1\ndirection = 'ASCENDING'\nstable = False",
+    "values = tf.constant([3, 1, 4, 1, 5], dtype=tf.float32)\naxis = -1\ndirection = 'ASCENDING'\nstable = False"
+  ]
+}

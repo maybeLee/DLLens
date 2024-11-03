@@ -1,0 +1,38 @@
+{
+  "function_name": "torch.Tensor.diagflat(input, offset=0)",
+  "inputs": [
+    "input",
+    "offset"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3, 4, 5])\noffset = 1",
+    "input = torch.tensor([1, 2, 3, 4, 5])\noffset = -5",
+    "offset = 1\ninput = torch.tensor(np.random.randint(-50, 50, (5,1,1,1)), dtype=torch.int64)",
+    "offset = 1\ninput = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 4, 5])\noffset = -1",
+    "offset = 1\ninput = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int32)",
+    "input = torch.tensor([1, 2, 3, 4, 5])\noffset = 4",
+    "offset = 1\ninput = torch.tensor(np.random.randint(-50, 50, (5,1,1,1,1)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 4, 5])\noffset = -4",
+    "offset = 1\ninput = torch.tensor(np.random.randint(-50, 50, (3)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 4, 5])\noffset = -3",
+    "input = torch.tensor([1, 2, 3, 4, 5])\noffset = 3",
+    "offset = 1\ninput = torch.tensor(np.random.randint(-50, 50, (5,1)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 4, 5])\noffset = -2",
+    "input = torch.tensor([1, 2, 3, 4, 5])\noffset = 5",
+    "offset = 1\ninput = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)",
+    "offset = 1\ninput = torch.tensor(np.random.randint(-50, 50, (5,1,1)), dtype=torch.int64)",
+    "offset = 1\ninput = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 4, 5])\noffset = 2",
+    "input = torch.tensor([1, 2, 3, 4, 5])\noffset = 0"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,offset=0):\n  return torch.Tensor.diagflat(input,offset)",
+    "tensorflow": "def tensorflow_call(input, offset=0):\n    input_reshaped = tf.reshape(input, [-1])\n    diag_size = len(input_reshaped) + abs(offset)\n    diag_tensor = tf.zeros((diag_size, diag_size), dtype=input.dtype)\n    diag_tensor = tf.linalg.set_diag(diag_tensor, input_reshaped, k=offset)\n    return diag_tensor"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3, 4, 5])\noffset = 1",
+    "input = torch.tensor([1, 2, 3, 4, 5])\noffset = 1",
+    "input = torch.tensor([1, 2, 3, 4, 5])\noffset = 1"
+  ]
+}

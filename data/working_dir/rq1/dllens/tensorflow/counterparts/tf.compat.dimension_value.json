@@ -1,0 +1,29 @@
+{
+  "function_name": "tf.compat.dimension_value(dimension)",
+  "inputs": [
+    "dimension"
+  ],
+  "sample_inputs": [
+    "dimension = tf.constant([3, 4, 2])",
+    "dimension = tf.constant([1, 2, 3], dtype=tf.int32)",
+    "dimension = tf.constant(np.random.randint(-50, 50, (3,1,1,1)), dtype='int32')",
+    "dimension = tf.constant(np.random.randint(-50, 50, (4)), dtype='int32')",
+    "dimension = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "dimension = tf.constant(np.random.randint(-50, 50, (3)), dtype='int64')",
+    "dimension = tf.constant(np.random.randint(-50, 50, (3,1,1,1,1)), dtype='int32')",
+    "dimension = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "dimension = tf.constant(np.random.randint(-50, 50, (3,1,1)), dtype='int32')",
+    "dimension = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "dimension = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "dimension = tf.constant(np.random.randint(-50, 50, (3,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(dimension):\n  return tf.compat.dimension_value(dimension)",
+    "pytorch": "def pytorch_call(dimension):\n    return dimension.tolist()"
+  },
+  "llm_inputs": [
+    "dimension = tf.constant([3, 4, 2])",
+    "dimension = tf.constant([1, 2, 3], dtype=tf.int32)",
+    "dimension = tf.constant([1, 2, 3], dtype=tf.int32)"
+  ]
+}

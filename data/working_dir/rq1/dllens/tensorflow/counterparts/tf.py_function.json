@@ -1,0 +1,18 @@
+{
+  "function_name": "tf.py_function(func,inp,Tout,name=None)",
+  "inputs": [
+    "func",
+    "inp",
+    "Tout"
+  ],
+  "sample_inputs": [
+    "func = lambda x: x[0] * 2\ninp = [tf.constant([1.0])]\nTout = tf.float32"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(func,inp,Tout):\n  return tf.py_function(func,inp,Tout)",
+    "pytorch": "def pytorch_call(func, inp, Tout):\n\n    class CustomFunction(torch.autograd.Function):\n\n        @staticmethod\n        def forward(ctx, *input):\n            ctx.save_for_backward(*input)\n            return func(*input)\n\n        @staticmethod\n        def backward(ctx, *grad_output):\n            return (None,) * len(ctx.saved_tensors)\n    return CustomFunction.apply(*inp)"
+  },
+  "llm_inputs": [
+    "func = lambda x: x[0] * 2\ninp = [tf.constant([1.0])]\nTout = tf.float32"
+  ]
+}

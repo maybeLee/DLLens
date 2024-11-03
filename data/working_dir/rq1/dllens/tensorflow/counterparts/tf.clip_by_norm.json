@@ -1,0 +1,35 @@
+{
+  "function_name": "tf.clip_by_norm(t,clip_norm,axes=None,name=None)",
+  "inputs": [
+    "t",
+    "clip_norm",
+    "axes"
+  ],
+  "sample_inputs": [
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nclip_norm = tf.constant(5.0)\naxes = tf.constant(0)",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nclip_norm = 5.0\naxes = 0",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nclip_norm = 5.0\naxes = None",
+    "clip_norm = tf.constant(5.0)\naxes = tf.constant(0)\nt = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxes = tf.constant(0)\nclip_norm = tf.constant(np.random.randn(), dtype='float32')",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxes = tf.constant(0)\nclip_norm = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "clip_norm = tf.constant(5.0)\naxes = tf.constant(0)\nt = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxes = tf.constant(0)\nclip_norm = tf.constant(np.random.randn(1), dtype='float32')",
+    "clip_norm = tf.constant(5.0)\naxes = tf.constant(0)\nt = tf.constant(np.random.randn(2), dtype='float32')",
+    "clip_norm = tf.constant(5.0)\naxes = tf.constant(0)\nt = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "clip_norm = tf.constant(5.0)\naxes = tf.constant(0)\nt = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "clip_norm = tf.constant(5.0)\naxes = tf.constant(0)\nt = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "clip_norm = tf.constant(5.0)\naxes = tf.constant(0)\nt = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "clip_norm = tf.constant(5.0)\naxes = tf.constant(0)\nt = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "clip_norm = tf.constant(5.0)\naxes = tf.constant(0)\nt = tf.constant(np.random.randn(4,2), dtype='float32')",
+    "clip_norm = tf.constant(5.0)\naxes = tf.constant(0)\nt = tf.constant(np.random.randn(2,2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(t,clip_norm,axes=None):\n  return tf.clip_by_norm(t,clip_norm,axes)",
+    "pytorch": "def pytorch_call(t, clip_norm, axes=None):\n    if axes is None:\n        norm = torch.norm(t)\n        return t * (clip_norm / norm) if norm > clip_norm else t\n    else:\n        if not isinstance(axes, tuple):\n            axes = (axes,)\n        norm = torch.norm(t, p=2, dim=axes, keepdim=True)\n        return t * (clip_norm / norm) if norm.max() > clip_norm else t"
+  },
+  "llm_inputs": [
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nclip_norm = tf.constant(5.0)\naxes = tf.constant(0)",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nclip_norm = 5.0\naxes = 0",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nclip_norm = 5.0\naxes = None"
+  ]
+}

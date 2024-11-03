@@ -1,0 +1,36 @@
+{
+  "function_name": "tf.linalg.matmul(a,b,transpose_a=False,transpose_b=False,adjoint_a=False,adjoint_b=False,a_is_sparse=False,b_is_sparse=False,output_type=None,name=None)",
+  "inputs": [
+    "a",
+    "b",
+    "transpose_a",
+    "transpose_b",
+    "adjoint_a",
+    "adjoint_b",
+    "a_is_sparse",
+    "b_is_sparse",
+    "output_type"
+  ],
+  "sample_inputs": [
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nb = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\ntranspose_a = False\ntranspose_b = True\nadjoint_a = False\nadjoint_b = False\na_is_sparse = False\nb_is_sparse = False\noutput_type = None",
+    "b = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\ntranspose_a = False\ntranspose_b = True\nadjoint_a = False\nadjoint_b = False\na_is_sparse = False\nb_is_sparse = False\noutput_type = None\na = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nb = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\ntranspose_a = False\ntranspose_b = True\nadjoint_b = False\na_is_sparse = False\nb_is_sparse = False\noutput_type = None\nadjoint_a = True",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ntranspose_a = False\ntranspose_b = True\nadjoint_a = False\nadjoint_b = False\na_is_sparse = False\nb_is_sparse = False\noutput_type = None\nb = tf.constant(np.random.randn(3,2), dtype='float32')",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ntranspose_a = False\ntranspose_b = True\nadjoint_a = False\nadjoint_b = False\na_is_sparse = False\nb_is_sparse = False\noutput_type = None\nb = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "b = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\ntranspose_a = False\ntranspose_b = True\nadjoint_a = False\nadjoint_b = False\na_is_sparse = False\nb_is_sparse = False\noutput_type = None\na = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ntranspose_a = False\ntranspose_b = True\nadjoint_a = False\nadjoint_b = False\na_is_sparse = False\nb_is_sparse = False\noutput_type = None\nb = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nb = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\ntranspose_b = True\nadjoint_a = False\nadjoint_b = False\na_is_sparse = False\nb_is_sparse = False\noutput_type = None\ntranspose_a = True",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ntranspose_a = False\ntranspose_b = True\nadjoint_a = False\nadjoint_b = False\na_is_sparse = False\nb_is_sparse = False\noutput_type = None\nb = tf.constant(np.random.randn(4,2), dtype='float32')",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nb = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\ntranspose_a = False\nadjoint_a = False\nadjoint_b = False\na_is_sparse = False\nb_is_sparse = False\noutput_type = None\ntranspose_b = False",
+    "b = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\ntranspose_a = False\ntranspose_b = True\nadjoint_a = False\nadjoint_b = False\na_is_sparse = False\nb_is_sparse = False\noutput_type = None\na = tf.constant(np.random.randn(1,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(a,b,transpose_a=False,transpose_b=False,adjoint_a=False,adjoint_b=False,a_is_sparse=False,b_is_sparse=False,output_type=None):\n  return tf.linalg.matmul(a,b,transpose_a,transpose_b,adjoint_a,adjoint_b,a_is_sparse,b_is_sparse,output_type)",
+    "pytorch": "def pytorch_call(a, b, transpose_a=False, transpose_b=False, adjoint_a=False, adjoint_b=False, a_is_sparse=False, b_is_sparse=False, output_type=None):\n    if transpose_a:\n        a = a.t()\n    if adjoint_a:\n        a = a.conj().t()\n    if transpose_b:\n        b = b.t()\n    if adjoint_b:\n        b = b.conj().t()\n    result = torch.matmul(a, b)\n    return result"
+  },
+  "llm_inputs": [
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nb = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\ntranspose_a = False\ntranspose_b = True\nadjoint_a = False\nadjoint_b = False\na_is_sparse = False\nb_is_sparse = False\noutput_type = None",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nb = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\ntranspose_a = False\ntranspose_b = True\nadjoint_a = False\nadjoint_b = False\na_is_sparse = False\nb_is_sparse = False\noutput_type = None",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nb = tf.constant([[5, 6], [7, 8]], dtype=tf.float32)\ntranspose_a = False\ntranspose_b = True\nadjoint_a = False\nadjoint_b = False\na_is_sparse = False\nb_is_sparse = False\noutput_type = None"
+  ]
+}

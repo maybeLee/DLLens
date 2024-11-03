@@ -1,0 +1,24 @@
+{
+  "function_name": "tf.raw_ops.MatrixSolve(matrix,rhs,adjoint=False,name=None)",
+  "inputs": [
+    "matrix",
+    "rhs",
+    "adjoint"
+  ],
+  "sample_inputs": [
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nrhs = tf.constant([[5.0], [6.0]])\nadjoint = False",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nadjoint = False\nrhs = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "rhs = tf.constant([[5.0], [6.0]])\nadjoint = False\nmatrix = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nadjoint = False\nrhs = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nrhs = tf.constant([[5.0], [6.0]])\nadjoint = True"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(matrix,rhs,adjoint=False):\n  return tf.raw_ops.MatrixSolve(matrix=matrix,rhs=rhs,adjoint=adjoint)",
+    "pytorch": "def pytorch_call(matrix, rhs, adjoint=False):\n    if adjoint:\n        matrix = matrix.t()\n    return torch.linalg.solve(matrix, rhs)"
+  },
+  "llm_inputs": [
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nrhs = tf.constant([[5.0], [6.0]])\nadjoint = False",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nrhs = tf.constant([[5.0], [6.0]])\nadjoint = False",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nrhs = tf.constant([[5.0], [6.0]])\nadjoint = False"
+  ]
+}

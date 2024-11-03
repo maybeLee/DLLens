@@ -1,0 +1,20 @@
+{
+  "function_name": "torch.row_stack(tensors, *, out=None)",
+  "inputs": [
+    "tensors"
+  ],
+  "sample_inputs": [
+    "tensors = [torch.tensor([1, 2]), torch.tensor([3, 4]), torch.tensor([5, 6])]",
+    "tensors = [torch.tensor([1, 2, 3]), torch.tensor([4, 5, 6]), torch.tensor([7, 8, 9])]",
+    "tensors = [torch.tensor([[1, 2], [3, 4]]), torch.tensor([[5, 6], [7, 8]])]"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(tensors):\n  return torch.row_stack(tensors)",
+    "tensorflow": "def tensorflow_call(tensors):\n    return tf.stack(tensors)"
+  },
+  "llm_inputs": [
+    "tensors = [torch.tensor([1, 2]), torch.tensor([3, 4]), torch.tensor([5, 6])]",
+    "tensors = [torch.tensor([1, 2, 3]), torch.tensor([4, 5, 6]), torch.tensor([7, 8, 9])]",
+    "tensors = [torch.tensor([[1, 2], [3, 4]]), torch.tensor([[5, 6], [7, 8]])]"
+  ]
+}

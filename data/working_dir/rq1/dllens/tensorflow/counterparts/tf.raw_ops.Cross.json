@@ -1,0 +1,21 @@
+{
+  "function_name": "tf.raw_ops.Cross(a,b,name=None)",
+  "inputs": [
+    "a",
+    "b"
+  ],
+  "sample_inputs": [
+    "a = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nb = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)",
+    "a = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nb = tf.constant(np.random.randn(3), dtype='float32')",
+    "b = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\na = tf.constant(np.random.randn(3), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(a,b):\n  return tf.raw_ops.Cross(a=a,b=b)",
+    "pytorch": "def pytorch_call(a, b):\n    return torch.cross(a, b)"
+  },
+  "llm_inputs": [
+    "a = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nb = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)",
+    "a = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nb = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)",
+    "a = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nb = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)"
+  ]
+}

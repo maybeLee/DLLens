@@ -1,0 +1,20 @@
+{
+  "function_name": "torch.atleast_2d(*tensors)",
+  "inputs": [
+    "*tensors"
+  ],
+  "sample_inputs": [
+    "tensors = (torch.tensor([[1, 2], [3, 4]]), torch.tensor([5]), torch.tensor([[6, 7]]))",
+    "tensors = (torch.tensor([[1, 2], [3, 4]]), torch.tensor([5, 6]), torch.tensor(7))",
+    "tensor1 = torch.tensor([[1, 2], [3, 4]])\ntensor2 = torch.tensor([[5, 6, 7]])\ntensor3 = torch.tensor([[8]])"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(*tensors):\n  return torch.atleast_2d(*tensors)",
+    "tensorflow": "def tensorflow_call(*tensors):\n    return [tf.expand_dims(tf.convert_to_tensor(tensor), axis=0) if len(tensor.shape) < 2 else tensor for tensor in tensors]"
+  },
+  "llm_inputs": [
+    "tensors = (torch.tensor([[1, 2], [3, 4]]), torch.tensor([5]), torch.tensor([[6, 7]]))",
+    "tensors = (torch.tensor([[1, 2], [3, 4]]), torch.tensor([5, 6]), torch.tensor(7))",
+    "tensor1 = torch.tensor([[1, 2], [3, 4]])\ntensor2 = torch.tensor([[5, 6, 7]])\ntensor3 = torch.tensor([[8]])"
+  ]
+}

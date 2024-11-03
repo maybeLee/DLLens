@@ -1,0 +1,27 @@
+{
+  "function_name": "torch.any(input, dim, keepdim=False, *, out=None)",
+  "inputs": [
+    "input",
+    "dim",
+    "keepdim"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[True, False, False], [False, True, False], [False, False, True]])\ndim = 1\nkeepdim = True",
+    "input = torch.tensor([[True, False, False], [False, False, False], [True, True, False]])\ndim = 1\nkeepdim = True",
+    "input = torch.tensor([[True, False], [False, False], [True, True]])\ndim = 0\nkeepdim = True",
+    "input = torch.tensor([[True, False, False], [False, True, False], [False, False, True]])\nkeepdim = True\ndim = 1",
+    "input = torch.tensor([[True, False, False], [False, True, False], [False, False, True]])\nkeepdim = True\ndim = -2",
+    "input = torch.tensor([[True, False, False], [False, True, False], [False, False, True]])\ndim = 1\nkeepdim = False",
+    "input = torch.tensor([[True, False, False], [False, True, False], [False, False, True]])\nkeepdim = True\ndim = -1",
+    "input = torch.tensor([[True, False, False], [False, True, False], [False, False, True]])\nkeepdim = True\ndim = 0"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim,keepdim=False):\n  return torch.any(input,dim,keepdim)",
+    "tensorflow": "def tensorflow_call(input, dim, keepdim=False):\n    return tf.reduce_any(input, axis=dim, keepdims=keepdim)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[True, False, False], [False, True, False], [False, False, True]])\ndim = 1\nkeepdim = True",
+    "input = torch.tensor([[True, False, False], [False, False, False], [True, True, False]])\ndim = 1\nkeepdim = True",
+    "input = torch.tensor([[True, False], [False, False], [True, True]])\ndim = 0\nkeepdim = True"
+  ]
+}

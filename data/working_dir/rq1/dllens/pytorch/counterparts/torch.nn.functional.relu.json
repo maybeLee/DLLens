@@ -1,0 +1,34 @@
+{
+  "function_name": "torch.nn.functional.relu(input, inplace=False)",
+  "inputs": [
+    "input",
+    "inplace"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\ninplace = False",
+    "inplace = False\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "inplace = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "inplace = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\ninplace = True",
+    "inplace = False\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "inplace = False\ninput = torch.tensor(np.random.randn(4,2), dtype=torch.float32)",
+    "inplace = False\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "inplace = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "inplace = False\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "inplace = False\ninput = torch.tensor(np.random.randn(2,4), dtype=torch.float32)",
+    "inplace = False\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "inplace = False\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "inplace = False\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "inplace = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "inplace = False\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,inplace=False):\n  return torch.nn.functional.relu(input,inplace)",
+    "tensorflow": "def tensorflow_call(input, inplace=False):\n    return tf.nn.relu(input)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\ninplace = False",
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\ninplace = False",
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\ninplace = False"
+  ]
+}

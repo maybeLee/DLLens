@@ -1,0 +1,36 @@
+{
+  "function_name": "tf.split(value,num_or_size_splits,axis=0,num=None,name='split')",
+  "inputs": [
+    "value",
+    "num_or_size_splits",
+    "axis",
+    "num"
+  ],
+  "sample_inputs": [
+    "value = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nnum_or_size_splits = 3\naxis = 0\nnum = None",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.int32)\nnum_or_size_splits = 3\naxis = 0\nnum = None",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nnum_or_size_splits = 3\nnum = None\naxis = -2",
+    "num_or_size_splits = 3\naxis = 0\nnum = None\nvalue = tf.constant(np.random.randint(-50, 50, (3,3,1)), dtype='int32')",
+    "num_or_size_splits = 3\naxis = 0\nnum = None\nvalue = tf.constant(np.random.randint(-50, 50, (3,1)), dtype='int32')",
+    "num_or_size_splits = 3\naxis = 0\nnum = None\nvalue = tf.constant(np.random.randint(-50, 50, (3,3)), dtype='int32')",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\naxis = 0\nnum = None\nnum_or_size_splits = 1",
+    "num_or_size_splits = 3\naxis = 0\nnum = None\nvalue = tf.constant(np.random.randint(-50, 50, (3,3,1,1,1)), dtype='int32')",
+    "num_or_size_splits = 3\naxis = 0\nnum = None\nvalue = tf.constant(np.random.randint(-50, 50, (3,3)), dtype='int64')",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nnum_or_size_splits = 3\nnum = None\naxis = 0",
+    "num_or_size_splits = 3\naxis = 0\nnum = None\nvalue = tf.constant(np.random.randint(-50, 50, (3,5)), dtype='int32')",
+    "num_or_size_splits = 3\naxis = 0\nnum = None\nvalue = tf.constant(np.random.randint(-50, 50, (3,3,1,1)), dtype='int32')",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\naxis = 0\nnum = None\nnum_or_size_splits = 3",
+    "num_or_size_splits = 3\naxis = 0\nnum = None\nvalue = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nnum_or_size_splits = 3\nnum = None\naxis = -1",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nnum_or_size_splits = 3\nnum = None\naxis = 1"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(value,num_or_size_splits,axis=0,num=None):\n  return tf.split(value,num_or_size_splits,axis,num)",
+    "pytorch": "def pytorch_call(value, num_or_size_splits, axis=0, num=None):\n    if isinstance(num_or_size_splits, int):\n        return torch.split(value, value.size(axis) // num_or_size_splits, dim=axis)\n    else:\n        return torch.split(value, num_or_size_splits, dim=axis)"
+  },
+  "llm_inputs": [
+    "value = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nnum_or_size_splits = 3\naxis = 0\nnum = None",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.int32)\nnum_or_size_splits = 3\naxis = 0\nnum = None",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nnum_or_size_splits = 3\naxis = 0\nnum = None"
+  ]
+}

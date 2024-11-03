@@ -1,0 +1,19 @@
+{
+  "function_name": "torch.Tensor.i0(input)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input_values = [1.0, 2.0, 3.0]\ninput = torch.tensor(input_values)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.Tensor.i0(input)",
+    "tensorflow": "def tensorflow_call(input):\n    return tf.math.bessel_i0(input)"
+  },
+  "llm_inputs": [
+    "input_values = [1.0, 2.0, 3.0]\ninput = torch.tensor(input_values)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])"
+  ]
+}

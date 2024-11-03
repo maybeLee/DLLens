@@ -1,0 +1,18 @@
+{
+  "function_name": "torch.tensor(data, *, dtype=None, device=None, requires_grad=False, pin_memory=False)",
+  "inputs": [
+    "data"
+  ],
+  "sample_inputs": [
+    "data = [[1, 2, 3], [4, 5, 6]]"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(data):\n  return torch.tensor(data)",
+    "tensorflow": "def tensorflow_call(data):\n    return tf.convert_to_tensor(data)"
+  },
+  "llm_inputs": [
+    "data = [[1, 2, 3], [4, 5, 6]]",
+    "data = [[1, 2, 3], [4, 5, 6]]",
+    "data = [[1, 2, 3], [4, 5, 6]]"
+  ]
+}

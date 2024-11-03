@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.sort(values,axis=-1,direction='ASCENDING',name=None)",
+  "inputs": [
+    "values",
+    "axis",
+    "direction"
+  ],
+  "sample_inputs": [
+    "values = tf.constant([3, 1, 4, 1, 5], dtype=tf.int32)\naxis = tf.constant(-1, dtype=tf.int32)\ndirection = 'ASCENDING'",
+    "values = tf.constant([[3, 1, 2], [6, 4, 5]])\naxis = tf.constant(1)\ndirection = 'ASCENDING'",
+    "axis = tf.constant(-1, dtype=tf.int32)\ndirection = 'ASCENDING'\nvalues = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "axis = tf.constant(-1, dtype=tf.int32)\ndirection = 'ASCENDING'\nvalues = tf.constant(np.random.randint(-50, 50, (5,1,1)), dtype='int32')",
+    "axis = tf.constant(-1, dtype=tf.int32)\ndirection = 'ASCENDING'\nvalues = tf.constant(np.random.randint(-50, 50, (5,1,1,1)), dtype='int32')",
+    "axis = tf.constant(-1, dtype=tf.int32)\ndirection = 'ASCENDING'\nvalues = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "axis = tf.constant(-1, dtype=tf.int32)\ndirection = 'ASCENDING'\nvalues = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "axis = tf.constant(-1, dtype=tf.int32)\ndirection = 'ASCENDING'\nvalues = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "axis = tf.constant(-1, dtype=tf.int32)\ndirection = 'ASCENDING'\nvalues = tf.constant(np.random.randint(-50, 50, (5)), dtype='int64')",
+    "axis = tf.constant(-1, dtype=tf.int32)\ndirection = 'ASCENDING'\nvalues = tf.constant(np.random.randint(-50, 50, (5,1,1,1,1)), dtype='int32')",
+    "axis = tf.constant(-1, dtype=tf.int32)\ndirection = 'ASCENDING'\nvalues = tf.constant(np.random.randint(-50, 50, (5,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(values,axis=-1,direction='ASCENDING'):\n  return tf.sort(values,axis,direction)",
+    "pytorch": "def pytorch_call(values, axis=-1, direction='ASCENDING'):\n    if direction == 'ASCENDING':\n        return torch.sort(values, dim=axis, descending=False).values\n    else:\n        return torch.sort(values, dim=axis, descending=True).values"
+  },
+  "llm_inputs": [
+    "values = tf.constant([3, 1, 4, 1, 5], dtype=tf.int32)\naxis = tf.constant(-1, dtype=tf.int32)\ndirection = 'ASCENDING'",
+    "values = tf.constant([[3, 1, 2], [6, 4, 5]])\naxis = tf.constant(1)\ndirection = 'ASCENDING'",
+    "values = tf.constant([3, 1, 4, 1, 5], dtype=tf.int32)\naxis = tf.constant(-1, dtype=tf.int32)\ndirection = 'ASCENDING'"
+  ]
+}

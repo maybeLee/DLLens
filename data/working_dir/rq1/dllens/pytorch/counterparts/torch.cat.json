@@ -1,0 +1,20 @@
+{
+  "function_name": "torch.cat(tensors, dim=0, *, out=None)",
+  "inputs": [
+    "tensors",
+    "dim"
+  ],
+  "sample_inputs": [
+    "tensors = [torch.tensor([1, 2, 3]), torch.tensor([4, 5, 6])]\ndim = 0",
+    "tensors = [torch.tensor([1, 2, 3]), torch.tensor([4, 5, 6])]\ndim = -1"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(tensors,dim=0):\n  return torch.cat(tensors,dim)",
+    "tensorflow": "def tensorflow_call(tensors, dim=0):\n    return tf.concat(tensors, axis=dim)"
+  },
+  "llm_inputs": [
+    "tensors = [torch.tensor([1, 2, 3]), torch.tensor([4, 5, 6])]\ndim = 0",
+    "tensors = [torch.tensor([1, 2, 3]), torch.tensor([4, 5, 6])]\ndim = 0",
+    "tensors = [torch.tensor([1, 2, 3]), torch.tensor([4, 5, 6])]\ndim = 0"
+  ]
+}

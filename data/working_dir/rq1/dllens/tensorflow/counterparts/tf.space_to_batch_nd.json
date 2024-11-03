@@ -1,0 +1,29 @@
+{
+  "function_name": "tf.space_to_batch_nd(input,block_shape,paddings,name=None)",
+  "inputs": [
+    "input",
+    "block_shape",
+    "paddings"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[[1], [2]], [[3], [4]]], dtype=tf.float32)\nblock_shape = tf.constant([1, 1], dtype=tf.int32)\npaddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)",
+    "block_shape = tf.constant([1, 1], dtype=tf.int32)\npaddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,2,4), dtype='float32')",
+    "block_shape = tf.constant([1, 1], dtype=tf.int32)\npaddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "block_shape = tf.constant([1, 1], dtype=tf.int32)\npaddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,2,1), dtype='float64')",
+    "block_shape = tf.constant([1, 1], dtype=tf.int32)\npaddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,1,1), dtype='float32')",
+    "block_shape = tf.constant([1, 1], dtype=tf.int32)\npaddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,2,3), dtype='float32')",
+    "block_shape = tf.constant([1, 1], dtype=tf.int32)\npaddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(4,2,1), dtype='float32')",
+    "block_shape = tf.constant([1, 1], dtype=tf.int32)\npaddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "block_shape = tf.constant([1, 1], dtype=tf.int32)\npaddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "block_shape = tf.constant([1, 1], dtype=tf.int32)\npaddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,2,1), dtype='half')",
+    "block_shape = tf.constant([1, 1], dtype=tf.int32)\npaddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(2,2,1), dtype='float16')",
+    "block_shape = tf.constant([1, 1], dtype=tf.int32)\npaddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)\ninput = tf.constant(np.random.randn(1,2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,block_shape,paddings):\n  return tf.space_to_batch_nd(input,block_shape,paddings)",
+    "pytorch": "def pytorch_call(input, block_shape, paddings):\n    input_shape = input.shape\n    (batch_size, height, width) = (input_shape[0], input_shape[1], input_shape[2])\n    (block_height, block_width) = block_shape.tolist()\n    new_batch_size = batch_size * block_height * block_width\n    new_height = (height + paddings[0][0] + paddings[0][1]) // block_height\n    new_width = (width + paddings[1][0] + paddings[1][1]) // block_width\n    input_padded = torch.nn.functional.pad(input, (paddings[1][0], paddings[1][1], paddings[0][0], paddings[0][1]))\n    reshaped = input_padded.view(new_batch_size, new_height, new_width)\n    return reshaped"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[[1], [2]], [[3], [4]]], dtype=tf.float32)\nblock_shape = tf.constant([1, 1], dtype=tf.int32)\npaddings = tf.constant([[0, 0], [0, 0]], dtype=tf.int32)"
+  ]
+}

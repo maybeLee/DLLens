@@ -1,0 +1,28 @@
+{
+  "function_name": "tf.math.special.dawsn(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([0.1, 0.5, 1.0, 1.5, 2.0], dtype=tf.float32)",
+    "x = tf.constant([1.0, 2.0, 3.0])",
+    "x = tf.constant(np.random.randn(2), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='float64')",
+    "x = tf.constant(np.random.randn(4), dtype='float32')",
+    "x = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.math.special.dawsn(x)",
+    "pytorch": "def pytorch_call(x):\n\n    def dawson_approximation(x):\n        n = 100\n        h = x / n\n        integral = 0.0\n        for i in range(n):\n            t = i * h\n            integral += torch.exp(t ** 2) * h\n        return torch.exp(-x ** 2) * integral\n    return dawson_approximation(x)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([0.1, 0.5, 1.0, 1.5, 2.0], dtype=tf.float32)",
+    "x = tf.constant([0.1, 0.5, 1.0, 1.5, 2.0], dtype=tf.float32)",
+    "x = tf.constant([1.0, 2.0, 3.0])"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "function_name": "tf.raw_ops.MatrixDiagPartV2(input,k,padding_value,name=None)",
+  "inputs": [
+    "input",
+    "k",
+    "padding_value"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nk = tf.constant(1, dtype=tf.int32)\npadding_value = tf.constant(0, dtype=tf.int32)",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)\nk = tf.constant(1, dtype=tf.int32)\npadding_value = tf.constant(0, dtype=tf.float32)",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nk = tf.constant(1, dtype=tf.int32)\npadding_value = tf.constant(np.random.randint(-50, 50, (1,1,1,1)), dtype='int32')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nk = tf.constant(1, dtype=tf.int32)\npadding_value = tf.constant(np.random.randint(-50, 50, (1,1,1,1,1)), dtype='int32')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nk = tf.constant(1, dtype=tf.int32)\npadding_value = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nk = tf.constant(1, dtype=tf.int32)\npadding_value = tf.constant(np.random.randint(-50, 50, (1,1,1)), dtype='int32')",
+    "k = tf.constant(1, dtype=tf.int32)\npadding_value = tf.constant(0, dtype=tf.int32)\ninput = tf.constant(np.random.randint(-50, 50, (2,3)), dtype='int32')",
+    "k = tf.constant(1, dtype=tf.int32)\npadding_value = tf.constant(0, dtype=tf.int32)\ninput = tf.constant(np.random.randint(-50, 50, (5,3)), dtype='int32')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nk = tf.constant(1, dtype=tf.int32)\npadding_value = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nk = tf.constant(1, dtype=tf.int32)\npadding_value = tf.constant(np.random.randint(-50, 50, (1,1)), dtype='int32')",
+    "k = tf.constant(1, dtype=tf.int32)\npadding_value = tf.constant(0, dtype=tf.int32)\ninput = tf.constant(np.random.randint(-50, 50, (2,5)), dtype='int32')",
+    "k = tf.constant(1, dtype=tf.int32)\npadding_value = tf.constant(0, dtype=tf.int32)\ninput = tf.constant(np.random.randint(-50, 50, (1,3)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,k,padding_value):\n  return tf.raw_ops.MatrixDiagPartV2(input=input,k=k,padding_value=padding_value)",
+    "pytorch": "def pytorch_call(input, k, padding_value):\n    if input.dim() != 2:\n        raise ValueError('Input must be a 2D tensor.')\n    (num_rows, num_cols) = input.size()\n    output_length = min(num_rows, num_cols - k.item()) if k.item() >= 0 else min(num_rows + k.item(), num_cols)\n    output = torch.full((output_length,), padding_value.item(), dtype=input.dtype)\n    for i in range(output_length):\n        row_index = i\n        col_index = i + k.item()\n        if 0 <= col_index < num_cols:\n            output[i] = input[row_index, col_index]\n    return output"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nk = tf.constant(1, dtype=tf.int32)\npadding_value = tf.constant(0, dtype=tf.int32)",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nk = tf.constant(1, dtype=tf.int32)\npadding_value = tf.constant(0, dtype=tf.int32)",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)\nk = tf.constant(1, dtype=tf.int32)\npadding_value = tf.constant(0, dtype=tf.float32)"
+  ]
+}

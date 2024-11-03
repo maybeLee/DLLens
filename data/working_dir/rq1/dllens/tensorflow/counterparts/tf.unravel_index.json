@@ -1,0 +1,23 @@
+{
+  "function_name": "tf.unravel_index(indices,dims,name=None)",
+  "inputs": [
+    "indices",
+    "dims"
+  ],
+  "sample_inputs": [
+    "indices = tf.constant([0, 1, 2, 3], dtype=tf.int32)\ndims = tf.constant([2, 2], dtype=tf.int32)",
+    "indices = tf.constant([1, 2, 3], dtype=tf.int32)\ndims = tf.constant([3, 4], dtype=tf.int32)",
+    "indices = tf.constant([0, 1, 2, 3])\ndims = tf.constant([2, 2])",
+    "dims = tf.constant([2, 2], dtype=tf.int32)\nindices = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "dims = tf.constant([2, 2], dtype=tf.int32)\nindices = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(indices,dims):\n  return tf.unravel_index(indices,dims)",
+    "pytorch": "def pytorch_call(indices, dims):\n    dims_tuple = tuple(dims.tolist())\n    total_elements = torch.prod(torch.tensor(dims_tuple, dtype=indices.dtype))\n    row_indices = torch.full(indices.shape, -1, dtype=indices.dtype)\n    col_indices = torch.full(indices.shape, -1, dtype=indices.dtype)\n    valid_mask = (indices >= 0) & (indices < total_elements)\n    if valid_mask.any():\n        valid_indices = indices[valid_mask]\n        row_indices[valid_mask] = valid_indices // torch.prod(torch.tensor(dims_tuple[1:], dtype=indices.dtype))\n        col_indices[valid_mask] = valid_indices % torch.prod(torch.tensor(dims_tuple[1:], dtype=indices.dtype))\n    return (row_indices, col_indices)"
+  },
+  "llm_inputs": [
+    "indices = tf.constant([0, 1, 2, 3], dtype=tf.int32)\ndims = tf.constant([2, 2], dtype=tf.int32)",
+    "indices = tf.constant([1, 2, 3], dtype=tf.int32)\ndims = tf.constant([3, 4], dtype=tf.int32)",
+    "indices = tf.constant([0, 1, 2, 3])\ndims = tf.constant([2, 2])"
+  ]
+}

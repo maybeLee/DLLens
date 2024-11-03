@@ -1,0 +1,23 @@
+{
+  "function_name": "tf.raw_ops.MatrixSetDiag(input,diagonal,name=None)",
+  "inputs": [
+    "input",
+    "diagonal"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\ndiagonal = tf.constant([10, 11, 12], dtype=tf.float32)",
+    "diagonal = tf.constant([10, 11, 12], dtype=tf.float32)\ninput = tf.constant(np.random.randn(5,3), dtype='float32')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\ndiagonal = tf.constant(np.random.randn(3), dtype='float32')",
+    "diagonal = tf.constant([10, 11, 12], dtype=tf.float32)\ninput = tf.constant(np.random.randn(3,5), dtype='float32')",
+    "diagonal = tf.constant([10, 11, 12], dtype=tf.float32)\ninput = tf.constant(np.random.randn(3,3), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,diagonal):\n  return tf.raw_ops.MatrixSetDiag(input=input,diagonal=diagonal)",
+    "pytorch": "def pytorch_call(input, diagonal):\n    output = input.clone()\n    diag_size = diagonal.size(0)\n    for i in range(diag_size):\n        output[i, i] = diagonal[i]\n    return output"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\ndiagonal = tf.constant([10, 11, 12], dtype=tf.float32)",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\ndiagonal = tf.constant([10, 11, 12], dtype=tf.float32)",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\ndiagonal = tf.constant([10, 11, 12], dtype=tf.float32)"
+  ]
+}

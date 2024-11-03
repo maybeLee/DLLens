@@ -1,0 +1,23 @@
+{
+  "function_name": "tf.fill(dims,value,name=None)",
+  "inputs": [
+    "dims",
+    "value"
+  ],
+  "sample_inputs": [
+    "dims = tf.constant([2, 3])\nvalue = tf.constant(5)",
+    "dims = tf.constant([3, 3])\nvalue = tf.constant(5)",
+    "dims = tf.constant([2, 3])\nvalue = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "dims = tf.constant([2, 3])\nvalue = tf.constant(np.random.randint(-50, 50, ()), dtype='int64')",
+    "dims = tf.constant([2, 3])\nvalue = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(dims,value):\n  return tf.fill(dims,value)",
+    "pytorch": "def pytorch_call(dims, value):\n    return torch.full(dims.tolist(), value.item())"
+  },
+  "llm_inputs": [
+    "dims = tf.constant([2, 3])\nvalue = tf.constant(5)",
+    "dims = tf.constant([3, 3])\nvalue = tf.constant(5)",
+    "dims = tf.constant([2, 3])\nvalue = tf.constant(5)"
+  ]
+}

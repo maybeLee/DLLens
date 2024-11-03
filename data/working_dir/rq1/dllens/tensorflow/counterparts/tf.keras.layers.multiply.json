@@ -1,0 +1,18 @@
+{
+  "function_name": "tf.keras.layers.multiply(inputs,**kwargs)",
+  "inputs": [
+    "inputs"
+  ],
+  "sample_inputs": [
+    "inputs = [tf.constant([[1.0, 2.0]]), tf.constant([[3.0, 4.0]])]"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(inputs):\n  return tf.keras.layers.multiply(inputs)",
+    "pytorch": "def pytorch_call(inputs):\n    return torch.mul(inputs[0], inputs[1])"
+  },
+  "llm_inputs": [
+    "inputs = [tf.constant([[1.0, 2.0]]), tf.constant([[3.0, 4.0]])]",
+    "inputs = [tf.constant([[1.0, 2.0]]), tf.constant([[3.0, 4.0]])]",
+    "inputs = [tf.constant([[1.0, 2.0]]), tf.constant([[3.0, 4.0]])]"
+  ]
+}

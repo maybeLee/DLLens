@@ -1,0 +1,32 @@
+{
+  "function_name": "torch.tril(input, diagonal=0, *, out=None)",
+  "inputs": [
+    "input",
+    "diagonal"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=torch.float32)\ndiagonal = torch.tensor(1)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndiagonal = torch.tensor(1)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=torch.float32)\ndiagonal = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "diagonal = torch.tensor(1)\ninput = torch.tensor(np.random.randn(3,4), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=torch.float32)\ndiagonal = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int32)",
+    "diagonal = torch.tensor(1)\ninput = torch.tensor(np.random.randn(3,3), dtype=torch.half)",
+    "diagonal = torch.tensor(1)\ninput = torch.tensor(np.random.randn(3,3,1,1,1), dtype=torch.float32)",
+    "diagonal = torch.tensor(1)\ninput = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "diagonal = torch.tensor(1)\ninput = torch.tensor(np.random.randn(3,3), dtype=torch.float16)",
+    "diagonal = torch.tensor(1)\ninput = torch.tensor(np.random.randn(3,3), dtype=torch.float64)",
+    "diagonal = torch.tensor(1)\ninput = torch.tensor(np.random.randn(1,3), dtype=torch.float32)",
+    "diagonal = torch.tensor(1)\ninput = torch.tensor(np.random.randn(3,3), dtype=torch.float32)",
+    "diagonal = torch.tensor(1)\ninput = torch.tensor(np.random.randn(3,3,1,1), dtype=torch.float32)",
+    "diagonal = torch.tensor(1)\ninput = torch.tensor(np.random.randn(3,3,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,diagonal=0):\n  return torch.tril(input,diagonal)",
+    "tensorflow": "def tensorflow_call(input, diagonal=0):\n    diagonal_value = diagonal.numpy() if isinstance(diagonal, tf.Tensor) else diagonal\n    if diagonal_value < 0:\n        return tf.zeros_like(input)\n    return tf.linalg.band_part(input, num_lower=-1, num_upper=diagonal)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=torch.float32)\ndiagonal = torch.tensor(1)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=torch.float32)\ndiagonal = torch.tensor(1)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndiagonal = torch.tensor(1)"
+  ]
+}

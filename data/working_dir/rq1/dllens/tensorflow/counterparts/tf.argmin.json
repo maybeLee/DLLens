@@ -1,0 +1,33 @@
+{
+  "function_name": "tf.argmin(input,axis=None,output_type=tf.dtypes.int64,name=None)",
+  "inputs": [
+    "input",
+    "axis",
+    "output_type"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\naxis = 0\noutput_type = tf.dtypes.int64",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\naxis = 1\noutput_type = tf.dtypes.int64",
+    "axis = 0\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int32')",
+    "axis = 0\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (2,3,1,1,1)), dtype='int32')",
+    "axis = 0\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (1,3)), dtype='int32')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\noutput_type = tf.dtypes.int64\naxis = -1",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\noutput_type = tf.dtypes.int64\naxis = -2",
+    "axis = 0\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (2,3,1)), dtype='int32')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\noutput_type = tf.dtypes.int64\naxis = 0",
+    "axis = 0\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (2,3,1,1)), dtype='int32')",
+    "axis = 0\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "axis = 0\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (2,3)), dtype='int32')",
+    "axis = 0\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (2,3)), dtype='int64')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\noutput_type = tf.dtypes.int64\naxis = 1"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,axis=None,output_type=tf.dtypes.int64):\n  return tf.argmin(input,axis,output_type)",
+    "pytorch": "def pytorch_call(input, axis=None, output_type=torch.int64):\n    return torch.argmin(input, dim=axis).to(output_type)"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\naxis = 0\noutput_type = tf.dtypes.int64",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\naxis = 1\noutput_type = tf.dtypes.int64",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\naxis = 1\noutput_type = tf.dtypes.int64"
+  ]
+}

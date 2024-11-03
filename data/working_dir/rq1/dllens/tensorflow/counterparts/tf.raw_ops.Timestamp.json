@@ -1,0 +1,18 @@
+{
+  "function_name": "tf.raw_ops.Timestamp(name=None)",
+  "inputs": [],
+  "sample_inputs": [
+    "param1 = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nparam2 = tf.constant([5, 6, 7], dtype=tf.int32)",
+    "param1 = tf.constant([1, 2, 3], dtype=tf.int32)\nparam2 = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)",
+    "param_tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call():\n  return tf.raw_ops.Timestamp()",
+    "pytorch": "def pytorch_call():\n    import time\n    return torch.tensor(time.time())"
+  },
+  "llm_inputs": [
+    "param1 = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nparam2 = tf.constant([5, 6, 7], dtype=tf.int32)",
+    "param1 = tf.constant([1, 2, 3], dtype=tf.int32)\nparam2 = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)",
+    "param_tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)"
+  ]
+}

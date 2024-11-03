@@ -1,0 +1,18 @@
+{
+  "function_name": "tf.keras.layers.add(inputs,**kwargs)",
+  "inputs": [
+    "inputs"
+  ],
+  "sample_inputs": [
+    "inputs = [tf.constant([[1, 2]], dtype=tf.float32), tf.constant([[3, 4]], dtype=tf.float32)]"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(inputs):\n  return tf.keras.layers.add(inputs)",
+    "pytorch": "def pytorch_call(inputs):\n    return torch.add(inputs[0], inputs[1])"
+  },
+  "llm_inputs": [
+    "inputs = [tf.constant([[1, 2]], dtype=tf.float32), tf.constant([[3, 4]], dtype=tf.float32)]",
+    "inputs = [tf.constant([[1, 2]], dtype=tf.float32), tf.constant([[3, 4]], dtype=tf.float32)]",
+    "inputs = [tf.constant([[1, 2]], dtype=tf.float32), tf.constant([[3, 4]], dtype=tf.float32)]"
+  ]
+}

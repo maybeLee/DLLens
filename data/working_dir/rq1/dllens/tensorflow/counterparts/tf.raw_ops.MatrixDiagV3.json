@@ -1,0 +1,25 @@
+{
+  "function_name": "tf.raw_ops.MatrixDiagV3(diagonal,k,num_rows,num_cols,padding_value,align='RIGHT_LEFT',name=None)",
+  "inputs": [
+    "diagonal",
+    "k",
+    "num_rows",
+    "num_cols",
+    "padding_value",
+    "align"
+  ],
+  "sample_inputs": [
+    "diagonal = tf.constant([1, 2, 3], dtype=tf.float32)\nk = tf.constant(1, dtype=tf.int32)\nnum_rows = tf.constant(4, dtype=tf.int32)\nnum_cols = tf.constant(4, dtype=tf.int32)\npadding_value = tf.constant(0, dtype=tf.float32)\nalign = 'RIGHT_LEFT'",
+    "diagonal = tf.constant([1, 2, 3], dtype=tf.float32)\nk = tf.constant(1, dtype=tf.int32)\nnum_rows = tf.constant(4, dtype=tf.int32)\nnum_cols = tf.constant(4, dtype=tf.int32)\nalign = 'RIGHT_LEFT'\npadding_value = tf.constant(np.random.randn(), dtype='float32')",
+    "k = tf.constant(1, dtype=tf.int32)\nnum_rows = tf.constant(4, dtype=tf.int32)\nnum_cols = tf.constant(4, dtype=tf.int32)\npadding_value = tf.constant(0, dtype=tf.float32)\nalign = 'RIGHT_LEFT'\ndiagonal = tf.constant(np.random.randn(3), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(diagonal,k,num_rows,num_cols,padding_value,align='RIGHT_LEFT'):\n  return tf.raw_ops.MatrixDiagV3(diagonal=diagonal,k=k,num_rows=num_rows,num_cols=num_cols,padding_value=padding_value,align=align)",
+    "pytorch": "def pytorch_call(diagonal, k, num_rows, num_cols, padding_value, align='RIGHT_LEFT'):\n    result = torch.full((num_rows.item(), num_cols.item()), padding_value.item())\n    if align == 'RIGHT_LEFT':\n        for i in range(diagonal.size(0)):\n            row = i\n            col = i + k\n            if row < num_rows.item() and col < num_cols.item():\n                result[row, col] = diagonal[i]\n    else:\n        raise ValueError(\"Unsupported alignment option. Only 'RIGHT_LEFT' is implemented.\")\n    return result"
+  },
+  "llm_inputs": [
+    "diagonal = tf.constant([1, 2, 3], dtype=tf.float32)\nk = tf.constant(1, dtype=tf.int32)\nnum_rows = tf.constant(4, dtype=tf.int32)\nnum_cols = tf.constant(4, dtype=tf.int32)\npadding_value = tf.constant(0, dtype=tf.float32)\nalign = 'RIGHT_LEFT'",
+    "diagonal = tf.constant([1, 2, 3], dtype=tf.float32)\nk = tf.constant(1, dtype=tf.int32)\nnum_rows = tf.constant(4, dtype=tf.int32)\nnum_cols = tf.constant(4, dtype=tf.int32)\npadding_value = tf.constant(0, dtype=tf.float32)\nalign = 'RIGHT_LEFT'",
+    "diagonal = tf.constant([1, 2, 3], dtype=tf.float32)\nk = tf.constant(1, dtype=tf.int32)\nnum_rows = tf.constant(4, dtype=tf.int32)\nnum_cols = tf.constant(4, dtype=tf.int32)\npadding_value = tf.constant(0, dtype=tf.float32)\nalign = 'RIGHT_LEFT'"
+  ]
+}

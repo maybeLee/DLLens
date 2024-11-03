@@ -1,0 +1,37 @@
+{
+  "function_name": "tf.raw_ops.CumulativeLogsumexp(x,axis,exclusive=False,reverse=False,name=None)",
+  "inputs": [
+    "x",
+    "axis",
+    "exclusive",
+    "reverse"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = tf.constant(0)\nexclusive = False\nreverse = False",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = 0\nexclusive = False\nreverse = True",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = tf.constant(0)\nexclusive = False\nreverse = True",
+    "axis = tf.constant(0)\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "axis = tf.constant(0)\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "axis = tf.constant(0)\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "axis = tf.constant(0)\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "axis = tf.constant(0)\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "axis = tf.constant(0)\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "axis = tf.constant(0)\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "axis = tf.constant(0)\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(2), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = tf.constant(0)\nreverse = False\nexclusive = True",
+    "axis = tf.constant(0)\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "axis = tf.constant(0)\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(2,2), dtype='half')",
+    "axis = tf.constant(0)\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(3,2), dtype='float32')",
+    "axis = tf.constant(0)\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "axis = tf.constant(0)\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,axis,exclusive=False,reverse=False):\n  return tf.raw_ops.CumulativeLogsumexp(x=x,axis=axis,exclusive=exclusive,reverse=reverse)",
+    "pytorch": "def pytorch_call(x, axis, exclusive=False, reverse=False):\n    if isinstance(axis, torch.Tensor):\n        axis = axis.item()\n    x = x.to(torch.float32)\n    max_x = x.max(dim=axis, keepdim=True).values\n    stable_x = x - max_x\n    if exclusive:\n        inf_tensor = torch.full_like(stable_x, float('-inf'))\n        stable_x = torch.cat((inf_tensor.narrow(axis, 0, 1), stable_x.narrow(axis, 0, stable_x.size(axis) - 1)), dim=axis)\n    if reverse:\n        stable_x = stable_x.flip(dims=[axis])\n    log_x = torch.log(torch.exp(stable_x).cumsum(dim=axis))\n    if reverse:\n        log_x = log_x.flip(dims=[axis])\n    result = log_x + max_x.squeeze(axis)\n    return result.to(x.dtype)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = tf.constant(0)\nexclusive = False\nreverse = False",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = 0\nexclusive = False\nreverse = True",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = tf.constant(0)\nexclusive = False\nreverse = False"
+  ]
+}

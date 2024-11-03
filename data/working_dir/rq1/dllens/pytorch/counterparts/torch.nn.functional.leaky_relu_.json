@@ -1,0 +1,39 @@
+{
+  "function_name": "torch.nn.functional.leaky_relu_(input, negative_slope=0.01)",
+  "inputs": [
+    "input",
+    "negative_slope"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[0.5, -0.5], [1.0, -1.0]])\nnegative_slope = torch.tensor(0.1)",
+    "input = torch.tensor([[0.5, -0.5], [1.0, -1.0]], dtype=torch.float32)\nnegative_slope = torch.tensor(0.01, dtype=torch.float32)",
+    "input = torch.tensor([[1.0, -1.0], [0.0, 2.0]])\nnegative_slope = torch.tensor(0.01)",
+    "input = torch.tensor([[0.5, -0.5], [1.0, -1.0]])\nnegative_slope = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "negative_slope = torch.tensor(0.1)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "negative_slope = torch.tensor(0.1)\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[0.5, -0.5], [1.0, -1.0]])\nnegative_slope = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "negative_slope = torch.tensor(0.1)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "negative_slope = torch.tensor(0.1)\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "negative_slope = torch.tensor(0.1)\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "negative_slope = torch.tensor(0.1)\ninput = torch.tensor(np.random.randn(3,2), dtype=torch.float32)",
+    "negative_slope = torch.tensor(0.1)\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "negative_slope = torch.tensor(0.1)\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "negative_slope = torch.tensor(0.1)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "negative_slope = torch.tensor(0.1)\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "negative_slope = torch.tensor(0.1)\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "negative_slope = torch.tensor(0.1)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "input = torch.tensor([[0.5, -0.5], [1.0, -1.0]])\nnegative_slope = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[0.5, -0.5], [1.0, -1.0]])\nnegative_slope = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "negative_slope = torch.tensor(0.1)\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "negative_slope = torch.tensor(0.1)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,negative_slope=0.01):\n  return torch.nn.functional.leaky_relu_(input,negative_slope)",
+    "tensorflow": "def tensorflow_call(input, negative_slope=0.01):\n    return tf.nn.leaky_relu(input, alpha=negative_slope.numpy())"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[0.5, -0.5], [1.0, -1.0]])\nnegative_slope = torch.tensor(0.1)",
+    "input = torch.tensor([[0.5, -0.5], [1.0, -1.0]], dtype=torch.float32)\nnegative_slope = torch.tensor(0.01, dtype=torch.float32)",
+    "input = torch.tensor([[1.0, -1.0], [0.0, 2.0]])\nnegative_slope = torch.tensor(0.01)"
+  ]
+}

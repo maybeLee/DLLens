@@ -1,0 +1,32 @@
+{
+  "function_name": "torch.cumprod(input, dim, *, dtype=None, out=None)",
+  "inputs": [
+    "input",
+    "dim"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndim = 1",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,3,1,1,1)), dtype=torch.int64)",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,3,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = -1",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (4,3)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 0",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (5,3)), dtype=torch.int64)",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,3)), dtype=torch.int32)",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (1,3)), dtype=torch.int64)",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,3,1,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = -2",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,3)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim):\n  return torch.cumprod(input,dim)",
+    "tensorflow": "def tensorflow_call(input, dim):\n    return tf.math.cumprod(input, axis=dim)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndim = 1"
+  ]
+}

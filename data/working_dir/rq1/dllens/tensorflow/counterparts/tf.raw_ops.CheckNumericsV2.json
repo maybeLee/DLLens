@@ -1,0 +1,35 @@
+{
+  "function_name": "tf.raw_ops.CheckNumericsV2(tensor,message,name=None)",
+  "inputs": [
+    "tensor",
+    "message"
+  ],
+  "sample_inputs": [
+    "tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nmessage = 'Tensor contains valid numbers.'",
+    "tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nmessage = 'Check for NaNs or Infs'",
+    "tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nmessage = 'Check for NaN or Inf values'",
+    "message = 'Tensor contains valid numbers.'\ntensor = tf.constant(np.random.randn(), dtype='float32')",
+    "message = 'Tensor contains valid numbers.'\ntensor = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "message = 'Tensor contains valid numbers.'\ntensor = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "message = 'Tensor contains valid numbers.'\ntensor = tf.constant(np.random.randn(2), dtype='float32')",
+    "message = 'Tensor contains valid numbers.'\ntensor = tf.constant(np.random.randn(3,2), dtype='float32')",
+    "message = 'Tensor contains valid numbers.'\ntensor = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "message = 'Tensor contains valid numbers.'\ntensor = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "message = 'Tensor contains valid numbers.'\ntensor = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "message = 'Tensor contains valid numbers.'\ntensor = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "message = 'Tensor contains valid numbers.'\ntensor = tf.constant(np.random.randn(4,2), dtype='float32')",
+    "message = 'Tensor contains valid numbers.'\ntensor = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "message = 'Tensor contains valid numbers.'\ntensor = tf.constant(np.random.randn(2,2), dtype='half')",
+    "message = 'Tensor contains valid numbers.'\ntensor = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "message = 'Tensor contains valid numbers.'\ntensor = tf.constant(np.random.randn(2,2,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(tensor,message):\n  return tf.raw_ops.CheckNumericsV2(tensor=tensor,message=message)",
+    "pytorch": "def pytorch_call(tensor, message):\n    if torch.isnan(tensor).any() or torch.isinf(tensor).any():\n        raise ValueError(message)\n    return tensor"
+  },
+  "llm_inputs": [
+    "tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nmessage = 'Tensor contains valid numbers.'",
+    "tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nmessage = 'Check for NaNs or Infs'",
+    "tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nmessage = 'Check for NaN or Inf values'"
+  ]
+}

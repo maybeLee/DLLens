@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.math.special.bessel_j1(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0], dtype=tf.float32)",
+    "x = tf.constant([0.1, 0.5, 1.0, 2.0, 3.0], dtype=tf.float32)",
+    "x = tf.constant(np.random.randn(2), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='float64')",
+    "x = tf.constant(np.random.randn(5), dtype='float16')",
+    "x = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='half')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.math.special.bessel_j1(x)",
+    "pytorch": "def pytorch_call(x):\n    x = x.to(torch.float32)\n    return torch.special.bessel_j1(x)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0], dtype=tf.float32)",
+    "x = tf.constant([1.0, 2.0, 3.0, 4.0, 5.0], dtype=tf.float32)",
+    "x = tf.constant([0.1, 0.5, 1.0, 2.0, 3.0], dtype=tf.float32)"
+  ]
+}

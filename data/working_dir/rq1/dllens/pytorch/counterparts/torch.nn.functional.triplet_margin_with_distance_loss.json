@@ -1,0 +1,40 @@
+{
+  "function_name": "torch.nn.functional.triplet_margin_with_distance_loss(anchor, positive, negative, *, distance_function=None, margin=1.0, swap=False, reduction='mean')",
+  "inputs": [
+    "anchor",
+    "positive",
+    "negative"
+  ],
+  "sample_inputs": [
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\npositive = torch.tensor([[1.1, 2.1], [3.1, 4.1]], dtype=torch.float32)\nnegative = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)",
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\npositive = torch.tensor([[1.5, 2.5], [3.5, 4.5]], dtype=torch.float32)\nnegative = torch.tensor([[0.0, 0.0], [5.0, 6.0]], dtype=torch.float32)",
+    "anchor = torch.tensor([1.0, 2.0, 3.0], dtype=torch.float32)\npositive = torch.tensor([1.5, 2.5, 3.5], dtype=torch.float32)\nnegative = torch.tensor([4.0, 5.0, 6.0], dtype=torch.float32)",
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\nnegative = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)\npositive = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\npositive = torch.tensor([[1.1, 2.1], [3.1, 4.1]], dtype=torch.float32)\nnegative = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\npositive = torch.tensor([[1.1, 2.1], [3.1, 4.1]], dtype=torch.float32)\nnegative = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "positive = torch.tensor([[1.1, 2.1], [3.1, 4.1]], dtype=torch.float32)\nnegative = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)\nanchor = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "positive = torch.tensor([[1.1, 2.1], [3.1, 4.1]], dtype=torch.float32)\nnegative = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)\nanchor = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\npositive = torch.tensor([[1.1, 2.1], [3.1, 4.1]], dtype=torch.float32)\nnegative = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\npositive = torch.tensor([[1.1, 2.1], [3.1, 4.1]], dtype=torch.float32)\nnegative = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\nnegative = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)\npositive = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "positive = torch.tensor([[1.1, 2.1], [3.1, 4.1]], dtype=torch.float32)\nnegative = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)\nanchor = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\nnegative = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)\npositive = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\npositive = torch.tensor([[1.1, 2.1], [3.1, 4.1]], dtype=torch.float32)\nnegative = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\npositive = torch.tensor([[1.1, 2.1], [3.1, 4.1]], dtype=torch.float32)\nnegative = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\nnegative = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)\npositive = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "positive = torch.tensor([[1.1, 2.1], [3.1, 4.1]], dtype=torch.float32)\nnegative = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)\nanchor = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\nnegative = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)\npositive = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\nnegative = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)\npositive = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "positive = torch.tensor([[1.1, 2.1], [3.1, 4.1]], dtype=torch.float32)\nnegative = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)\nanchor = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "positive = torch.tensor([[1.1, 2.1], [3.1, 4.1]], dtype=torch.float32)\nnegative = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)\nanchor = torch.tensor(np.random.randn(2,2), dtype=torch.float16)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(anchor,positive,negative):\n  return torch.nn.functional.triplet_margin_with_distance_loss(anchor,positive,negative)",
+    "tensorflow": "def tensorflow_call(anchor, positive, negative):\n    anchor = tf.cast(anchor, tf.float32)\n    positive = tf.cast(positive, tf.float32)\n    negative = tf.cast(negative, tf.float32)\n    margin = 1.0\n    return tf.reduce_mean(tf.maximum(0.0, tf.norm(anchor - positive, axis=-1) - tf.norm(anchor - negative, axis=-1) + margin))"
+  },
+  "llm_inputs": [
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\npositive = torch.tensor([[1.1, 2.1], [3.1, 4.1]], dtype=torch.float32)\nnegative = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)",
+    "anchor = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\npositive = torch.tensor([[1.5, 2.5], [3.5, 4.5]], dtype=torch.float32)\nnegative = torch.tensor([[0.0, 0.0], [5.0, 6.0]], dtype=torch.float32)",
+    "anchor = torch.tensor([1.0, 2.0, 3.0], dtype=torch.float32)\npositive = torch.tensor([1.5, 2.5, 3.5], dtype=torch.float32)\nnegative = torch.tensor([4.0, 5.0, 6.0], dtype=torch.float32)"
+  ]
+}

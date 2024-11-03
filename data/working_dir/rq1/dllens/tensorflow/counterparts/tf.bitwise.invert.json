@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.bitwise.invert(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([1, 2, 3], dtype=tf.int32)",
+    "x = tf.constant([1, 2, 3, 4, 5])",
+    "x = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)",
+    "x = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (4)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (3,1,1)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (3,1,1,1,1)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (3,1)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (3)), dtype='int64')",
+    "x = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (3,1,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.bitwise.invert(x)",
+    "pytorch": "def pytorch_call(x):\n    return ~x"
+  },
+  "llm_inputs": [
+    "x = tf.constant([1, 2, 3], dtype=tf.int32)",
+    "x = tf.constant([1, 2, 3, 4, 5])",
+    "x = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)"
+  ]
+}

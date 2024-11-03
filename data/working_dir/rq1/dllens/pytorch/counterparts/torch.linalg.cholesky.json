@@ -1,0 +1,18 @@
+{
+  "function_name": "torch.linalg.cholesky(A, *, upper=False, out=None)",
+  "inputs": [
+    "A"
+  ],
+  "sample_inputs": [
+    "A = torch.tensor([[2.0, 1.0], [1.0, 2.0]])"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(A):\n  return torch.linalg.cholesky(A)",
+    "tensorflow": "def tensorflow_call(A):\n    return tf.linalg.cholesky(A)"
+  },
+  "llm_inputs": [
+    "A = torch.tensor([[2.0, 1.0], [1.0, 2.0]])",
+    "A = torch.tensor([[2.0, 1.0], [1.0, 2.0]])",
+    "A = torch.tensor([[2.0, 1.0], [1.0, 2.0]])"
+  ]
+}

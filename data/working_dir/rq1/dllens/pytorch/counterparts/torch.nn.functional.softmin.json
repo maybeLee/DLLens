@@ -1,0 +1,45 @@
+{
+  "function_name": "torch.nn.functional.softmin(input, dim=None, _stacklevel=3, dtype=None)",
+  "inputs": [
+    "input",
+    "dim",
+    "_stacklevel",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\ndim = 1\n_stacklevel = 3\ndtype = None",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\ndim = 1\ndtype = None\n_stacklevel = 1",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\ndim = 1\ndtype = None\n_stacklevel = -1",
+    "dim = 1\n_stacklevel = 3\ndtype = None\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\ndim = 1\ndtype = None\n_stacklevel = -5",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\ndim = 1\ndtype = None\n_stacklevel = 3",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\ndim = 1\ndtype = None\n_stacklevel = -2",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\ndim = 1\ndtype = None\n_stacklevel = 2",
+    "dim = 1\n_stacklevel = 3\ndtype = None\ninput = torch.tensor(np.random.randn(2,3,1,1,1), dtype=torch.float32)",
+    "dim = 1\n_stacklevel = 3\ndtype = None\ninput = torch.tensor(np.random.randn(2,3,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\n_stacklevel = 3\ndtype = None\ndim = -2",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\n_stacklevel = 3\ndtype = None\ndim = 1",
+    "dim = 1\n_stacklevel = 3\ndtype = None\ninput = torch.tensor(np.random.randn(2,3,1), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\ndim = 1\ndtype = None\n_stacklevel = -4",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\ndim = 1\ndtype = None\n_stacklevel = 4",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\ndim = 1\ndtype = None\n_stacklevel = -3",
+    "dim = 1\n_stacklevel = 3\ndtype = None\ninput = torch.tensor(np.random.randn(2,4), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\ndim = 1\ndtype = None\n_stacklevel = 5",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\n_stacklevel = 3\ndtype = None\ndim = 0",
+    "dim = 1\n_stacklevel = 3\ndtype = None\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "dim = 1\n_stacklevel = 3\ndtype = None\ninput = torch.tensor(np.random.randn(1,3), dtype=torch.float32)",
+    "dim = 1\n_stacklevel = 3\ndtype = None\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float64)",
+    "dim = 1\n_stacklevel = 3\ndtype = None\ninput = torch.tensor(np.random.randn(5,3), dtype=torch.float32)",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\n_stacklevel = 3\ndtype = None\ndim = -1",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\ndim = 1\ndtype = None\n_stacklevel = 0"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim=None,_stacklevel=3,dtype=None):\n  return torch.nn.functional.softmin(input,dim,_stacklevel,dtype)",
+    "tensorflow": "def tensorflow_call(input, dim=None, _stacklevel=3, dtype=None):\n    softmin_result = tf.nn.softmax(-input, axis=dim)\n    return softmin_result"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\ndim = 1\n_stacklevel = 3\ndtype = None",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\ndim = 1\n_stacklevel = 3\ndtype = None",
+    "input = torch.tensor([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]])\ndim = 1\n_stacklevel = 3\ndtype = None"
+  ]
+}

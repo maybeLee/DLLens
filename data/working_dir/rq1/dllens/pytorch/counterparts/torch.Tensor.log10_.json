@@ -1,0 +1,19 @@
+{
+  "function_name": "torch.Tensor.log10_(input)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1.0, 10.0, 100.0, 1000.0, 0.1, 0.01, 0.001, 0.0001, 0.5, 5.0])\ninput = input[:9]",
+    "input = torch.tensor([1.0, 10.0, 100.0, 1000.0, 10000.0])"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.Tensor.log10_(input)",
+    "tensorflow": "def tensorflow_call(input):\n    return tf.math.log(input) / tf.math.log(10.0)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1.0, 10.0, 100.0, 1000.0, 0.1, 0.01, 0.001, 0.0001, 0.5, 5.0])\ninput = input[:9]",
+    "input = torch.tensor([1.0, 10.0, 100.0, 1000.0, 10000.0])",
+    "input = torch.tensor([1.0, 10.0, 100.0, 1000.0, 10000.0])"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "function_name": "tf.random.experimental.create_rng_state(seed,alg)",
+  "inputs": [
+    "seed",
+    "alg"
+  ],
+  "sample_inputs": [
+    "seed = tf.constant(5)\nalg = tf.constant(1)",
+    "alg = tf.constant(1)\nseed = tf.constant(np.random.randint(-50, 50, (1,1,1,1,1)), dtype='int32')",
+    "alg = tf.constant(1)\nseed = tf.constant(np.random.randint(-50, 50, (1,1,1)), dtype='int32')",
+    "alg = tf.constant(1)\nseed = tf.constant(np.random.randint(-50, 50, ()), dtype='int64')",
+    "alg = tf.constant(1)\nseed = tf.constant(np.random.randint(-50, 50, (1,1)), dtype='int32')",
+    "alg = tf.constant(1)\nseed = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "alg = tf.constant(1)\nseed = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "alg = tf.constant(1)\nseed = tf.constant(np.random.randint(-50, 50, (1,1,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(seed,alg):\n  return tf.random.experimental.create_rng_state(seed,alg)",
+    "pytorch": "def pytorch_call(seed, alg):\n    return torch.tensor([0, 0, seed.item()], dtype=torch.int32)"
+  },
+  "llm_inputs": [
+    "seed = tf.constant(5)\nalg = tf.constant(1)",
+    "seed = tf.constant(5)\nalg = tf.constant(1)",
+    "seed = tf.constant(5)\nalg = tf.constant(1)"
+  ]
+}

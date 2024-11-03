@@ -1,0 +1,21 @@
+{
+  "function_name": "tf.constant(value,dtype=None,shape=None,name='Const')",
+  "inputs": [
+    "value",
+    "dtype",
+    "shape"
+  ],
+  "sample_inputs": [
+    "value = [[1, 2], [3, 4]]\ndtype = tf.float32\nshape = (2, 2)",
+    "value = [[1, 2, 3], [4, 5, 6]]\ndtype = tf.float32\nshape = (2, 3)"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(value,dtype=None,shape=None):\n  return tf.constant(value,dtype,shape)",
+    "pytorch": "def pytorch_call(value, dtype=None, shape=None):\n    tensor = torch.tensor(value, dtype=dtype)\n    if shape is not None:\n        tensor = tensor.view(shape)\n    return tensor"
+  },
+  "llm_inputs": [
+    "value = [[1, 2], [3, 4]]\ndtype = tf.float32\nshape = (2, 2)",
+    "value = [[1, 2], [3, 4]]\ndtype = tf.float32\nshape = (2, 2)",
+    "value = [[1, 2, 3], [4, 5, 6]]\ndtype = tf.float32\nshape = (2, 3)"
+  ]
+}

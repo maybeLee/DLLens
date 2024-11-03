@@ -1,0 +1,25 @@
+{
+  "function_name": "tf.raw_ops.Fill(dims,value,name=None)",
+  "inputs": [
+    "dims",
+    "value"
+  ],
+  "sample_inputs": [
+    "dims = tf.constant([2], dtype=tf.int32)\nvalue = tf.constant(5.0, dtype=tf.float32)",
+    "dims = tf.constant([2], dtype=tf.int32)\nvalue = tf.constant(5.0)",
+    "dims = tf.constant([2], dtype=tf.int32)\nvalue = tf.constant(np.random.randn(1), dtype='float32')",
+    "dims = tf.constant([2], dtype=tf.int32)\nvalue = tf.constant(np.random.randn(), dtype='float64')",
+    "dims = tf.constant([2], dtype=tf.int32)\nvalue = tf.constant(np.random.randn(), dtype='float32')",
+    "dims = tf.constant([2], dtype=tf.int32)\nvalue = tf.constant(np.random.randn(), dtype='float16')",
+    "dims = tf.constant([2], dtype=tf.int32)\nvalue = tf.constant(np.random.randn(), dtype='half')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(dims,value):\n  return tf.raw_ops.Fill(dims=dims,value=value)",
+    "pytorch": "def pytorch_call(dims, value):\n    return torch.full(tuple(dims.tolist()), value.item())"
+  },
+  "llm_inputs": [
+    "dims = tf.constant([2], dtype=tf.int32)\nvalue = tf.constant(5.0, dtype=tf.float32)",
+    "dims = tf.constant([2], dtype=tf.int32)\nvalue = tf.constant(5.0, dtype=tf.float32)",
+    "dims = tf.constant([2], dtype=tf.int32)\nvalue = tf.constant(5.0)"
+  ]
+}

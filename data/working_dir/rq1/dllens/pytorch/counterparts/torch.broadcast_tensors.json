@@ -1,0 +1,19 @@
+{
+  "function_name": "torch.broadcast_tensors(*tensors)",
+  "inputs": [
+    "*tensors"
+  ],
+  "sample_inputs": [
+    "tensor1 = torch.tensor([[1, 2], [3, 4]])\ntensor2 = torch.tensor([[5], [6]])\ntensor3 = torch.tensor([7])",
+    "tensor1 = torch.tensor([[1, 2], [3, 4]])\ntensor2 = torch.tensor([[5], [6], [7]])\ntensor3 = torch.tensor([8])"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(*tensors):\n  return torch.broadcast_tensors(*tensors)",
+    "tensorflow": "def tensorflow_call(*tensors):\n    return [tf.broadcast_to(tensor, tf.broadcast_static_shape(*[tf.shape(t) for t in tensors])) for tensor in tensors]"
+  },
+  "llm_inputs": [
+    "tensor1 = torch.tensor([[1, 2], [3, 4]])\ntensor2 = torch.tensor([[5], [6]])\ntensor3 = torch.tensor([7])",
+    "tensor1 = torch.tensor([[1, 2], [3, 4]])\ntensor2 = torch.tensor([[5], [6], [7]])\ntensor3 = torch.tensor([8])",
+    "tensor1 = torch.tensor([[1, 2], [3, 4]])\ntensor2 = torch.tensor([[5], [6]])\ntensor3 = torch.tensor([7])"
+  ]
+}

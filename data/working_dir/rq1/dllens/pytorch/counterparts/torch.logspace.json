@@ -1,0 +1,30 @@
+{
+  "function_name": "torch.logspace(start, end, steps, base=10.0, *, out=None, dtype=None, layout=torch.strided, device=None, requires_grad=False)",
+  "inputs": [
+    "start",
+    "end",
+    "steps",
+    "base"
+  ],
+  "sample_inputs": [
+    "start = torch.tensor(1)\nend = torch.tensor(3)\nsteps = torch.tensor(5)\nbase = torch.tensor(10.0)",
+    "start = torch.tensor(1.0)\nend = torch.tensor(3.0)\nsteps = torch.tensor(5)\nbase = torch.tensor(10.0)",
+    "start = torch.tensor(1)\nend = torch.tensor(3)\nsteps = torch.tensor(5)\nbase = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "start = torch.tensor(1)\nsteps = torch.tensor(5)\nbase = torch.tensor(10.0)\nend = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int32)",
+    "start = torch.tensor(1)\nend = torch.tensor(3)\nsteps = torch.tensor(5)\nbase = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "start = torch.tensor(1)\nend = torch.tensor(3)\nsteps = torch.tensor(5)\nbase = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "end = torch.tensor(3)\nsteps = torch.tensor(5)\nbase = torch.tensor(10.0)\nstart = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "start = torch.tensor(1)\nsteps = torch.tensor(5)\nbase = torch.tensor(10.0)\nend = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "end = torch.tensor(3)\nsteps = torch.tensor(5)\nbase = torch.tensor(10.0)\nstart = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int32)",
+    "start = torch.tensor(1)\nend = torch.tensor(3)\nsteps = torch.tensor(5)\nbase = torch.tensor(np.random.randn(), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(start,end,steps,base=10.0):\n  return torch.logspace(start,end,steps,base)",
+    "tensorflow": "def tensorflow_call(start, end, steps, base=10.0):\n    start = tf.cast(start, tf.float32)\n    end = tf.cast(end, tf.float32)\n    steps = tf.cast(steps, tf.int32)\n    linear_space = tf.linspace(start, end, steps)\n    base = tf.cast(base, linear_space.dtype)\n    return tf.pow(base, linear_space)"
+  },
+  "llm_inputs": [
+    "start = torch.tensor(1)\nend = torch.tensor(3)\nsteps = torch.tensor(5)\nbase = torch.tensor(10.0)",
+    "start = torch.tensor(1.0)\nend = torch.tensor(3.0)\nsteps = torch.tensor(5)\nbase = torch.tensor(10.0)",
+    "start = torch.tensor(1)\nend = torch.tensor(3)\nsteps = torch.tensor(5)\nbase = torch.tensor(10.0)"
+  ]
+}

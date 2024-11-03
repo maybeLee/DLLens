@@ -1,0 +1,23 @@
+{
+  "function_name": "tf.raw_ops.EluGrad(gradients,outputs,name=None)",
+  "inputs": [
+    "gradients",
+    "outputs"
+  ],
+  "sample_inputs": [
+    "gradients = tf.constant([0.1, 0.2, 0.3], dtype=tf.float32)\noutputs = tf.constant([0.5, 0.6, 0.7], dtype=tf.float32)",
+    "gradients = tf.constant([[1.0, 2.0], [3.0, 4.0]])\noutputs = tf.constant([[0.5, 1.5], [2.5, 3.5]])",
+    "gradients = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\noutputs = tf.constant([[0.5, 1.5], [2.5, 3.5]], dtype=tf.float32)",
+    "outputs = tf.constant([0.5, 0.6, 0.7], dtype=tf.float32)\ngradients = tf.constant(np.random.randn(3), dtype='float32')",
+    "gradients = tf.constant([0.1, 0.2, 0.3], dtype=tf.float32)\noutputs = tf.constant(np.random.randn(3), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(gradients,outputs):\n  return tf.raw_ops.EluGrad(gradients=gradients,outputs=outputs)",
+    "pytorch": "def pytorch_call(gradients, outputs):\n    elu_grad = torch.where(outputs > 0, gradients, gradients * torch.exp(outputs))\n    return elu_grad"
+  },
+  "llm_inputs": [
+    "gradients = tf.constant([0.1, 0.2, 0.3], dtype=tf.float32)\noutputs = tf.constant([0.5, 0.6, 0.7], dtype=tf.float32)",
+    "gradients = tf.constant([[1.0, 2.0], [3.0, 4.0]])\noutputs = tf.constant([[0.5, 1.5], [2.5, 3.5]])",
+    "gradients = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\noutputs = tf.constant([[0.5, 1.5], [2.5, 3.5]], dtype=tf.float32)"
+  ]
+}

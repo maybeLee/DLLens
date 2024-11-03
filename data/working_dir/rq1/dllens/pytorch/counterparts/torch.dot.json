@@ -1,0 +1,22 @@
+{
+  "function_name": "torch.dot(input, other, *, out=None)",
+  "inputs": [
+    "input",
+    "other"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor([4, 5, 6], dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nother = torch.tensor([4.0, 5.0, 6.0])",
+    "other = torch.tensor([4, 5, 6], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor(np.random.randn(3), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,other):\n  return torch.dot(input,other)",
+    "tensorflow": "def tensorflow_call(input, other):\n    return tf.tensordot(input, other, axes=1)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor([4, 5, 6], dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nother = torch.tensor([4.0, 5.0, 6.0])",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nother = torch.tensor([4.0, 5.0, 6.0])"
+  ]
+}

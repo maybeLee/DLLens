@@ -1,0 +1,25 @@
+{
+  "function_name": "torch.Tensor.cross(input, other, dim=-1)",
+  "inputs": [
+    "input",
+    "other",
+    "dim"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2, 3]], dtype=torch.float32)\nother = torch.tensor([[4, 5, 6]], dtype=torch.float32)\ndim = -1",
+    "other = torch.tensor([[4, 5, 6]], dtype=torch.float32)\ndim = -1\ninput = torch.tensor(np.random.randn(1,3), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3]], dtype=torch.float32)\ndim = -1\nother = torch.tensor(np.random.randn(3,3), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3]], dtype=torch.float32)\ndim = -1\nother = torch.tensor(np.random.randn(1,3), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3]], dtype=torch.float32)\ndim = -1\nother = torch.tensor(np.random.randn(5,3), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3]], dtype=torch.float32)\nother = torch.tensor([[4, 5, 6]], dtype=torch.float32)\ndim = 1"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,other,dim=-1):\n  return torch.Tensor.cross(input,other,dim)",
+    "tensorflow": "def tensorflow_call(input, other, dim=-1):\n    if input.shape[0] != other.shape[0]:\n        input = tf.repeat(input, repeats=other.shape[0], axis=0)\n    return tf.linalg.cross(input, other)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2, 3]], dtype=torch.float32)\nother = torch.tensor([[4, 5, 6]], dtype=torch.float32)\ndim = -1",
+    "input = torch.tensor([[1, 2, 3]], dtype=torch.float32)\nother = torch.tensor([[4, 5, 6]], dtype=torch.float32)\ndim = -1",
+    "input = torch.tensor([[1, 2, 3]], dtype=torch.float32)\nother = torch.tensor([[4, 5, 6]], dtype=torch.float32)\ndim = -1"
+  ]
+}

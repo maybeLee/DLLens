@@ -1,0 +1,31 @@
+{
+  "function_name": "tf.stop_gradient(input,name=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)",
+    "input = tf.constant([[1.0, 2.0], [3.0, 4.0]])",
+    "input = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "input = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "input = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "input = tf.constant(np.random.randn(2), dtype='float32')",
+    "input = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "input = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "input = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "input = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "input = tf.constant(np.random.randn(), dtype='float32')",
+    "input = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "input = tf.constant(np.random.randn(2,2), dtype='half')",
+    "input = tf.constant(np.random.randn(2,2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input):\n  return tf.stop_gradient(input)",
+    "pytorch": "def pytorch_call(input):\n    return input.detach()"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)",
+    "input = tf.constant([[1.0, 2.0], [3.0, 4.0]])",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)"
+  ]
+}

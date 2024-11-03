@@ -1,0 +1,32 @@
+{
+  "function_name": "tf.math.confusion_matrix(labels,predictions,num_classes=None,weights=None,dtype=tf.dtypes.int32,name=None)",
+  "inputs": [
+    "labels",
+    "predictions",
+    "num_classes",
+    "weights",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "labels = tf.constant([0, 1, 1, 0, 1], dtype=tf.int32)\npredictions = tf.constant([0, 1, 0, 0, 1], dtype=tf.int32)\nnum_classes = 2\nweights = tf.constant([1, 1, 1, 1, 1], dtype=tf.float32)\ndtype = tf.dtypes.int32",
+    "labels = tf.constant([0, 1, 0, 1, 0], dtype=tf.int32)\npredictions = tf.constant([0, 0, 1, 1, 0], dtype=tf.int32)\nnum_classes = 2\nweights = tf.constant([1, 1, 1, 1, 1], dtype=tf.float32)\ndtype = tf.dtypes.int32",
+    "labels = tf.constant([0, 1, 2, 1, 0], dtype=tf.int32)\npredictions = tf.constant([0, 0, 2, 1, 1], dtype=tf.int32)\nnum_classes = 3\nweights = tf.constant([1, 1, 1, 1, 1], dtype=tf.float32)\ndtype = tf.dtypes.int32",
+    "labels = tf.constant([0, 1, 1, 0, 1], dtype=tf.int32)\npredictions = tf.constant([0, 1, 0, 0, 1], dtype=tf.int32)\nweights = tf.constant([1, 1, 1, 1, 1], dtype=tf.float32)\ndtype = tf.dtypes.int32\nnum_classes = 2",
+    "labels = tf.constant([0, 1, 1, 0, 1], dtype=tf.int32)\npredictions = tf.constant([0, 1, 0, 0, 1], dtype=tf.int32)\nnum_classes = 2\ndtype = tf.dtypes.int32\nweights = tf.constant(np.random.randn(5), dtype='float32')",
+    "labels = tf.constant([0, 1, 1, 0, 1], dtype=tf.int32)\npredictions = tf.constant([0, 1, 0, 0, 1], dtype=tf.int32)\nnum_classes = 2\ndtype = tf.dtypes.int32\nweights = tf.constant(np.random.randn(5), dtype='half')",
+    "labels = tf.constant([0, 1, 1, 0, 1], dtype=tf.int32)\npredictions = tf.constant([0, 1, 0, 0, 1], dtype=tf.int32)\nweights = tf.constant([1, 1, 1, 1, 1], dtype=tf.float32)\ndtype = tf.dtypes.int32\nnum_classes = 4",
+    "labels = tf.constant([0, 1, 1, 0, 1], dtype=tf.int32)\npredictions = tf.constant([0, 1, 0, 0, 1], dtype=tf.int32)\nweights = tf.constant([1, 1, 1, 1, 1], dtype=tf.float32)\ndtype = tf.dtypes.int32\nnum_classes = 3",
+    "labels = tf.constant([0, 1, 1, 0, 1], dtype=tf.int32)\npredictions = tf.constant([0, 1, 0, 0, 1], dtype=tf.int32)\nnum_classes = 2\ndtype = tf.dtypes.int32\nweights = tf.constant(np.random.randn(5), dtype='float16')",
+    "labels = tf.constant([0, 1, 1, 0, 1], dtype=tf.int32)\npredictions = tf.constant([0, 1, 0, 0, 1], dtype=tf.int32)\nnum_classes = 2\ndtype = tf.dtypes.int32\nweights = tf.constant(np.random.randn(5), dtype='float64')",
+    "labels = tf.constant([0, 1, 1, 0, 1], dtype=tf.int32)\npredictions = tf.constant([0, 1, 0, 0, 1], dtype=tf.int32)\nweights = tf.constant([1, 1, 1, 1, 1], dtype=tf.float32)\ndtype = tf.dtypes.int32\nnum_classes = 5"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(labels,predictions,num_classes=None,weights=None,dtype=tf.dtypes.int32):\n  return tf.math.confusion_matrix(labels,predictions,num_classes,weights,dtype)",
+    "pytorch": "def pytorch_call(labels, predictions, num_classes=None, weights=None, dtype=torch.int32):\n    assert labels.shape == predictions.shape, 'Labels and predictions must have the same shape.'\n    confusion_matrix = torch.zeros((num_classes, num_classes), dtype=torch.float32)\n    if weights is not None:\n        assert weights.shape == labels.shape, 'Weights must have the same shape as labels.'\n    for i in range(labels.shape[0]):\n        true_label = labels[i].item()\n        pred_label = predictions[i].item()\n        if weights is not None:\n            confusion_matrix[true_label, pred_label] += weights[i].item()\n        else:\n            confusion_matrix[true_label, pred_label] += 1\n    return confusion_matrix.to(dtype)"
+  },
+  "llm_inputs": [
+    "labels = tf.constant([0, 1, 1, 0, 1], dtype=tf.int32)\npredictions = tf.constant([0, 1, 0, 0, 1], dtype=tf.int32)\nnum_classes = 2\nweights = tf.constant([1, 1, 1, 1, 1], dtype=tf.float32)\ndtype = tf.dtypes.int32",
+    "labels = tf.constant([0, 1, 0, 1, 0], dtype=tf.int32)\npredictions = tf.constant([0, 0, 1, 1, 0], dtype=tf.int32)\nnum_classes = 2\nweights = tf.constant([1, 1, 1, 1, 1], dtype=tf.float32)\ndtype = tf.dtypes.int32",
+    "labels = tf.constant([0, 1, 2, 1, 0], dtype=tf.int32)\npredictions = tf.constant([0, 0, 2, 1, 1], dtype=tf.int32)\nnum_classes = 3\nweights = tf.constant([1, 1, 1, 1, 1], dtype=tf.float32)\ndtype = tf.dtypes.int32"
+  ]
+}

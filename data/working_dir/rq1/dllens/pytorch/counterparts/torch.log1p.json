@@ -1,0 +1,29 @@
+{
+  "function_name": "torch.log1p(input, *, out=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5])",
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.float16)",
+    "input = torch.tensor(np.random.randn(5,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.float64)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.half)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.log1p(input)",
+    "tensorflow": "def tensorflow_call(input):\n    return tf.math.log1p(input)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5])",
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)",
+    "input = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "function_name": "tf.raw_ops.Select(condition,x,y,name=None)",
+  "inputs": [
+    "condition",
+    "x",
+    "y"
+  ],
+  "sample_inputs": [
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\nx = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ny = tf.constant([10, 20, 30, 40, 50], dtype=tf.int32)",
+    "condition = tf.constant([True, False, True, False], dtype=tf.bool)\nx = tf.constant([1, 2, 3, 4], dtype=tf.int32)\ny = tf.constant([5, 6, 7, 8], dtype=tf.int32)",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\ny = tf.constant([10, 20, 30, 40, 50], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\nx = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(condition,x,y):\n  return tf.raw_ops.Select(condition=condition,x=x,y=y)",
+    "pytorch": "def pytorch_call(condition, x, y):\n    return torch.where(condition, x, y)"
+  },
+  "llm_inputs": [
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\nx = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ny = tf.constant([10, 20, 30, 40, 50], dtype=tf.int32)",
+    "condition = tf.constant([True, False, True, False, True], dtype=tf.bool)\nx = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ny = tf.constant([10, 20, 30, 40, 50], dtype=tf.int32)",
+    "condition = tf.constant([True, False, True, False], dtype=tf.bool)\nx = tf.constant([1, 2, 3, 4], dtype=tf.int32)\ny = tf.constant([5, 6, 7, 8], dtype=tf.int32)"
+  ]
+}

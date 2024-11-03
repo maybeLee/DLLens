@@ -1,0 +1,29 @@
+{
+  "function_name": "torch.cdist(x1, x2, p=2.0, compute_mode='use_mm_for_euclid_dist_if_necessary')",
+  "inputs": [
+    "x1",
+    "x2",
+    "p",
+    "compute_mode"
+  ],
+  "sample_inputs": [
+    "x1 = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nx2 = torch.tensor([[5.0, 6.0], [7.0, 8.0]])\np = 2.0\ncompute_mode = 'use_mm_for_euclid_dist_if_necessary'",
+    "x1 = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\nx2 = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)\np = 2.0\ncompute_mode = 'use_mm_for_euclid_dist_if_necessary'",
+    "x2 = torch.tensor([[5.0, 6.0], [7.0, 8.0]])\np = 2.0\ncompute_mode = 'use_mm_for_euclid_dist_if_necessary'\nx1 = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "x2 = torch.tensor([[5.0, 6.0], [7.0, 8.0]])\np = 2.0\ncompute_mode = 'use_mm_for_euclid_dist_if_necessary'\nx1 = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "x1 = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nx2 = torch.tensor([[5.0, 6.0], [7.0, 8.0]])\ncompute_mode = 'use_mm_for_euclid_dist_if_necessary'\np = 91.46",
+    "x2 = torch.tensor([[5.0, 6.0], [7.0, 8.0]])\np = 2.0\ncompute_mode = 'use_mm_for_euclid_dist_if_necessary'\nx1 = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "x1 = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 2.0\ncompute_mode = 'use_mm_for_euclid_dist_if_necessary'\nx2 = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "x2 = torch.tensor([[5.0, 6.0], [7.0, 8.0]])\np = 2.0\ncompute_mode = 'use_mm_for_euclid_dist_if_necessary'\nx1 = torch.tensor(np.random.randn(3,2), dtype=torch.float32)",
+    "x1 = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 2.0\ncompute_mode = 'use_mm_for_euclid_dist_if_necessary'\nx2 = torch.tensor(np.random.randn(1,2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(x1,x2,p=2.0,compute_mode='use_mm_for_euclid_dist_if_necessary'):\n  return torch.cdist(x1,x2,p,compute_mode)",
+    "tensorflow": "def tensorflow_call(x1, x2, p=2.0, compute_mode='use_mm_for_euclid_dist_if_necessary'):\n    if p == 2.0 and compute_mode == 'use_mm_for_euclid_dist_if_necessary':\n        x1_sq = tf.reduce_sum(tf.square(x1), axis=1, keepdims=True)\n        x2_sq = tf.reduce_sum(tf.square(x2), axis=1, keepdims=True)\n        dist = x1_sq + tf.transpose(x2_sq) - 2 * tf.matmul(x1, tf.transpose(x2))\n        return tf.sqrt(tf.maximum(dist, 0.0))\n    else:\n        x1_expanded = tf.expand_dims(x1, 1)\n        x2_expanded = tf.expand_dims(x2, 0)\n        return tf.norm(x1_expanded - x2_expanded, ord=p, axis=2)"
+  },
+  "llm_inputs": [
+    "x1 = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nx2 = torch.tensor([[5.0, 6.0], [7.0, 8.0]])\np = 2.0\ncompute_mode = 'use_mm_for_euclid_dist_if_necessary'",
+    "x1 = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\nx2 = torch.tensor([[5.0, 6.0], [7.0, 8.0]], dtype=torch.float32)\np = 2.0\ncompute_mode = 'use_mm_for_euclid_dist_if_necessary'",
+    "x1 = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nx2 = torch.tensor([[5.0, 6.0], [7.0, 8.0]])\np = 2.0\ncompute_mode = 'use_mm_for_euclid_dist_if_necessary'"
+  ]
+}

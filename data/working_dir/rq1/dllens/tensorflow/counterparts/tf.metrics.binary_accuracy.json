@@ -1,0 +1,44 @@
+{
+  "function_name": "tf.metrics.binary_accuracy(y_true,y_pred,threshold=0.5)",
+  "inputs": [
+    "y_true",
+    "y_pred",
+    "threshold"
+  ],
+  "sample_inputs": [
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\ny_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\ny_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.2], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\ny_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "y_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(1), dtype='float32')",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\ny_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\ny_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(np.random.randn(), dtype='float64')",
+    "y_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5,1,1,1), dtype='float32')",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\ny_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\ny_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(np.random.randn(), dtype='float32')",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(), dtype='float32')",
+    "y_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5), dtype='float32')",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\ny_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(np.random.randn(1), dtype='float32')",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\ny_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(np.random.randn(), dtype='half')",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\ny_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5), dtype='float32')",
+    "y_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)\ny_true = tf.constant(np.random.randn(1), dtype='float32')",
+    "y_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "y_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)\ny_true = tf.constant(np.random.randn(), dtype='float32')",
+    "y_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)\ny_true = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\ny_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(np.random.randn(), dtype='float16')",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)\ny_pred = tf.constant(np.random.randn(5,1,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(y_true,y_pred,threshold=0.5):\n  return tf.metrics.binary_accuracy(y_true,y_pred,threshold)",
+    "pytorch": "def pytorch_call(y_true, y_pred, threshold=0.5):\n    y_pred_binary = (y_pred >= threshold).float()\n    correct_predictions = (y_true == y_pred_binary).float()\n    accuracy = correct_predictions.sum(dim=-1, keepdim=True) / y_true.numel()\n    return accuracy"
+  },
+  "llm_inputs": [
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\ny_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\ny_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.2], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)",
+    "y_true = tf.constant([1, 0, 1, 1, 0], dtype=tf.float32)\ny_pred = tf.constant([0.9, 0.1, 0.8, 0.6, 0.4], dtype=tf.float32)\nthreshold = tf.constant(0.5, dtype=tf.float32)"
+  ]
+}

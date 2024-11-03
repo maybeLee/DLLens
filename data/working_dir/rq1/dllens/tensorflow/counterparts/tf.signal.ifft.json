@@ -1,0 +1,28 @@
+{
+  "function_name": "tf.signal.ifft(input,name=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1.0 + 2j, 3.0 + 4j], [5.0 + 6j, 7.0 + 8j]], dtype=tf.complex64)",
+    "input = tf.constant([[1.0 + 2j, 3.0 + 4j]], dtype=tf.complex64)",
+    "input = tf.constant(np.random.randn(2), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,2,1,1,1), dtype='complex64')",
+    "input = tf.constant(np.random.randn(1,2), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,2), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,2,1,1), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,1), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,5), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,2,1), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,2), dtype='complex128')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input):\n  return tf.signal.ifft(input)",
+    "pytorch": "def pytorch_call(input):\n    return torch.fft.ifft(input)"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1.0 + 2j, 3.0 + 4j], [5.0 + 6j, 7.0 + 8j]], dtype=tf.complex64)",
+    "input = tf.constant([[1.0 + 2j, 3.0 + 4j]], dtype=tf.complex64)",
+    "input = tf.constant([[1.0 + 2j, 3.0 + 4j], [5.0 + 6j, 7.0 + 8j]], dtype=tf.complex64)"
+  ]
+}

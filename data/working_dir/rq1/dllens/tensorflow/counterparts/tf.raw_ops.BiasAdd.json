@@ -1,0 +1,26 @@
+{
+  "function_name": "tf.raw_ops.BiasAdd(value,bias,data_format='NHWC',name=None)",
+  "inputs": [
+    "value",
+    "bias",
+    "data_format"
+  ],
+  "sample_inputs": [
+    "value = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nbias = tf.constant([1.0, 2.0], dtype=tf.float32)\ndata_format = 'NHWC'",
+    "value = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nbias = tf.constant([1, 1], dtype=tf.float32)\ndata_format = 'NHWC'",
+    "bias = tf.constant([1.0, 2.0], dtype=tf.float32)\ndata_format = 'NHWC'\nvalue = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "bias = tf.constant([1.0, 2.0], dtype=tf.float32)\ndata_format = 'NHWC'\nvalue = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "bias = tf.constant([1.0, 2.0], dtype=tf.float32)\ndata_format = 'NHWC'\nvalue = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "value = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\ndata_format = 'NHWC'\nbias = tf.constant(np.random.randn(2), dtype='float32')",
+    "bias = tf.constant([1.0, 2.0], dtype=tf.float32)\ndata_format = 'NHWC'\nvalue = tf.constant(np.random.randn(3,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(value,bias,data_format='NHWC'):\n  return tf.raw_ops.BiasAdd(value=value,bias=bias,data_format=data_format)",
+    "pytorch": "def pytorch_call(value, bias, data_format='NHWC'):\n    if data_format == 'NHWC':\n        value = value.unsqueeze(0)\n        value = value.permute(0, 2, 1)\n        result = value + bias.view(1, -1, 1)\n        return result.permute(0, 2, 1).squeeze(0)\n    else:\n        raise ValueError('Unsupported data format')"
+  },
+  "llm_inputs": [
+    "value = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nbias = tf.constant([1.0, 2.0], dtype=tf.float32)\ndata_format = 'NHWC'",
+    "value = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nbias = tf.constant([1, 1], dtype=tf.float32)\ndata_format = 'NHWC'",
+    "value = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nbias = tf.constant([1.0, 2.0], dtype=tf.float32)\ndata_format = 'NHWC'"
+  ]
+}

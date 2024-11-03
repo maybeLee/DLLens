@@ -1,0 +1,35 @@
+{
+  "function_name": "tf.bitwise.right_shift(x,y,name=None)",
+  "inputs": [
+    "x",
+    "y"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([8], dtype=tf.int32)\ny = tf.constant([2], dtype=tf.int32)",
+    "x = tf.constant([8], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1,1,1,1)), dtype='int32')",
+    "x = tf.constant([8], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "x = tf.constant([8], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1,1,1,1,1)), dtype='int32')",
+    "y = tf.constant([2], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1,1,1,1)), dtype='int32')",
+    "y = tf.constant([2], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1,1)), dtype='int32')",
+    "y = tf.constant([2], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "y = tf.constant([2], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1,1,1,1,1)), dtype='int32')",
+    "x = tf.constant([8], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1,1,1)), dtype='int32')",
+    "y = tf.constant([2], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (4)), dtype='int32')",
+    "x = tf.constant([8], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "y = tf.constant([2], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "y = tf.constant([2], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (1,1,1)), dtype='int32')",
+    "y = tf.constant([2], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "y = tf.constant([2], dtype=tf.int32)\nx = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "x = tf.constant([8], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "x = tf.constant([8], dtype=tf.int32)\ny = tf.constant(np.random.randint(-50, 50, (1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,y):\n  return tf.bitwise.right_shift(x,y)",
+    "pytorch": "def pytorch_call(x, y):\n    return torch.where(y < 0, x, torch.bitwise_right_shift(x, y))"
+  },
+  "llm_inputs": [
+    "x = tf.constant([8], dtype=tf.int32)\ny = tf.constant([2], dtype=tf.int32)",
+    "x = tf.constant([8], dtype=tf.int32)\ny = tf.constant([2], dtype=tf.int32)",
+    "x = tf.constant([8], dtype=tf.int32)\ny = tf.constant([2], dtype=tf.int32)"
+  ]
+}

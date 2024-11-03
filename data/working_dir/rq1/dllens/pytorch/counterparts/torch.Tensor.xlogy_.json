@@ -1,0 +1,31 @@
+{
+  "function_name": "torch.Tensor.xlogy_(input, other)",
+  "inputs": [
+    "input",
+    "other"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\nother = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nother = torch.tensor([0.1, 0.2, 0.3])",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)",
+    "other = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(5), dtype=torch.float64)",
+    "input = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\nother = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\nother = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "other = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(5), dtype=torch.float16)",
+    "input = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\nother = torch.tensor(np.random.randn(5), dtype=torch.float16)",
+    "input = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\nother = torch.tensor(np.random.randn(5), dtype=torch.float64)",
+    "other = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(5), dtype=torch.half)",
+    "input = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\nother = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\nother = torch.tensor(np.random.randn(5), dtype=torch.half)",
+    "other = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(5), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,other):\n  return torch.Tensor.xlogy_(input,other)",
+    "tensorflow": "def tensorflow_call(input, other):\n    other = tf.cast(other, dtype=input.dtype)\n    log_other = tf.where(other > 0, tf.math.log(other), tf.constant(float('nan'), dtype=input.dtype, shape=tf.shape(other)))\n    result = input * log_other\n    return result"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\nother = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.5], dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nother = torch.tensor([0.1, 0.2, 0.3])",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)"
+  ]
+}

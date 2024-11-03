@@ -1,0 +1,22 @@
+{
+  "function_name": "tf.raw_ops.StageSize(dtypes,capacity=0,memory_limit=0,container='',shared_name='',name=None)",
+  "inputs": [
+    "dtypes",
+    "capacity",
+    "memory_limit",
+    "container",
+    "shared_name"
+  ],
+  "sample_inputs": [
+    "dtypes = [tf.float32, tf.int32]\ncapacity = tf.constant(5)\nmemory_limit = tf.constant(1024)\ncontainer = ''\nshared_name = 'example_shared_name'",
+    "dtypes = [tf.float32]\ncapacity = tf.constant(5)\nmemory_limit = tf.constant(1024)\ncontainer = ''\nshared_name = ''"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(dtypes,capacity=0,memory_limit=0,container='',shared_name=''):\n  return tf.raw_ops.StageSize(dtypes=dtypes,capacity=capacity,memory_limit=memory_limit,container=container,shared_name=shared_name)",
+    "pytorch": "def pytorch_call(dtypes, capacity=torch.tensor(0), memory_limit=torch.tensor(0), container='', shared_name=''):\n    return torch.tensor(0)"
+  },
+  "llm_inputs": [
+    "dtypes = [tf.float32, tf.int32]\ncapacity = tf.constant(5)\nmemory_limit = tf.constant(1024)\ncontainer = ''\nshared_name = 'example_shared_name'",
+    "dtypes = [tf.float32]\ncapacity = tf.constant(5)\nmemory_limit = tf.constant(1024)\ncontainer = ''\nshared_name = ''"
+  ]
+}

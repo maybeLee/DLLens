@@ -1,0 +1,31 @@
+{
+  "function_name": "torch.bincount(input, weights=None, minlength=0)",
+  "inputs": [
+    "input",
+    "weights",
+    "minlength"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3, 4, 1, 2, 3, 1])\nweights = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.1, 0.2, 0.3, 0.1])\nminlength = 5",
+    "input = torch.tensor([1, 2, 3, 4], dtype=torch.int64)\nweights = torch.tensor([0.1, 0.2, 0.3, 0.4], dtype=torch.float32)\nminlength = torch.tensor(5, dtype=torch.int64)",
+    "input = torch.tensor([0, 1, 2, 1, 0, 2])\nweights = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0, 6.0])\nminlength = 3",
+    "input = torch.tensor([1, 2, 3, 4, 1, 2, 3, 1])\nminlength = 5\nweights = torch.tensor(np.random.randn(8), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3, 4, 1, 2, 3, 1])\nweights = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.1, 0.2, 0.3, 0.1])\nminlength = 1",
+    "input = torch.tensor([1, 2, 3, 4, 1, 2, 3, 1])\nminlength = 5\nweights = torch.tensor(np.random.randn(8), dtype=torch.float64)",
+    "input = torch.tensor([1, 2, 3, 4, 1, 2, 3, 1])\nweights = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.1, 0.2, 0.3, 0.1])\nminlength = 4",
+    "input = torch.tensor([1, 2, 3, 4, 1, 2, 3, 1])\nminlength = 5\nweights = torch.tensor(np.random.randn(8), dtype=torch.float16)",
+    "input = torch.tensor([1, 2, 3, 4, 1, 2, 3, 1])\nweights = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.1, 0.2, 0.3, 0.1])\nminlength = 3",
+    "input = torch.tensor([1, 2, 3, 4, 1, 2, 3, 1])\nweights = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.1, 0.2, 0.3, 0.1])\nminlength = 0",
+    "input = torch.tensor([1, 2, 3, 4, 1, 2, 3, 1])\nweights = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.1, 0.2, 0.3, 0.1])\nminlength = 2",
+    "input = torch.tensor([1, 2, 3, 4, 1, 2, 3, 1])\nminlength = 5\nweights = torch.tensor(np.random.randn(8), dtype=torch.half)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,weights=None,minlength=0):\n  return torch.bincount(input,weights,minlength)",
+    "tensorflow": "def tensorflow_call(input, weights=None, minlength=0):\n    input = tf.cast(input, tf.int32)\n    if weights is not None:\n        weights = tf.cast(weights, tf.float32)\n    minlength = tf.cast(minlength, tf.int32)\n    return tf.math.bincount(input, weights=weights, minlength=minlength)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3, 4, 1, 2, 3, 1])\nweights = torch.tensor([0.1, 0.2, 0.3, 0.4, 0.1, 0.2, 0.3, 0.1])\nminlength = 5",
+    "input = torch.tensor([1, 2, 3, 4], dtype=torch.int64)\nweights = torch.tensor([0.1, 0.2, 0.3, 0.4], dtype=torch.float32)\nminlength = torch.tensor(5, dtype=torch.int64)",
+    "input = torch.tensor([0, 1, 2, 1, 0, 2])\nweights = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0, 6.0])\nminlength = 3"
+  ]
+}

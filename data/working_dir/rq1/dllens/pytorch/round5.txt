@@ -1,0 +1,11 @@
+torch.trapezoid
+torch.msort
+torch.fake_quantize_per_tensor_affine
+torch.addbmm
+torch.angle
+torch.clip
+torch.take_along_dim
+torch.Tensor.diagflat
+torch.Tensor.diff
+torch.Tensor.dist
+torch.Tensor.sign_

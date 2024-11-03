@@ -1,0 +1,30 @@
+{
+  "function_name": "torch.Tensor.sinc(input)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0], dtype=torch.float32)",
+    "input = torch.tensor([0.0, 1.0, 2.0, 3.0, 4.0], dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])",
+    "input = torch.tensor(np.random.randn(9,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(9), dtype=torch.float16)",
+    "input = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(9,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(9,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(9), dtype=torch.float64)",
+    "input = torch.tensor(np.random.randn(9,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(9), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(9), dtype=torch.half)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.Tensor.sinc(input)",
+    "tensorflow": "def tensorflow_call(input):\n    input = tf.cast(input, dtype=tf.float32)\n    pi_x = tf.constant(3.141592653589793, dtype=tf.float32) * input\n    sinc_values = tf.where(input == 0, tf.ones_like(input, dtype=tf.float32), tf.sin(pi_x) / pi_x)\n    return sinc_values"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0], dtype=torch.float32)",
+    "input = torch.tensor([0.0, 1.0, 2.0, 3.0, 4.0], dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])"
+  ]
+}

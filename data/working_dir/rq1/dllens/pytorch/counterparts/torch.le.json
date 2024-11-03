@@ -1,0 +1,39 @@
+{
+  "function_name": "torch.le(input, other, *, out=None)",
+  "inputs": [
+    "input",
+    "other"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor([[2, 2], [4, 3]])",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor([[4, 3], [2, 1]])",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor([[4, 3], [2, 1]], dtype=torch.float32)",
+    "other = torch.tensor([[2, 2], [4, 3]])\ninput = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "other = torch.tensor([[2, 2], [4, 3]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)",
+    "other = torch.tensor([[2, 2], [4, 3]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "other = torch.tensor([[2, 2], [4, 3]])\ninput = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)",
+    "other = torch.tensor([[2, 2], [4, 3]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "other = torch.tensor([[2, 2], [4, 3]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor(np.random.randint(-50, 50, (1,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)",
+    "other = torch.tensor([[2, 2], [4, 3]])\ninput = torch.tensor(np.random.randint(-50, 50, (1,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor(np.random.randint(-50, 50, (2,2,1)), dtype=torch.int64)",
+    "other = torch.tensor([[2, 2], [4, 3]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "other = torch.tensor([[2, 2], [4, 3]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,other):\n  return torch.le(input,other)",
+    "tensorflow": "def tensorflow_call(input, other):\n    input = tf.cast(input, other.dtype)\n    return tf.less_equal(input, other)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor([[2, 2], [4, 3]])",
+    "input = torch.tensor([[1, 2], [3, 4]])\nother = torch.tensor([[4, 3], [2, 1]])",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor([[4, 3], [2, 1]], dtype=torch.float32)"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.image.rot90(image,k=1,name=None)",
+  "inputs": [
+    "image",
+    "k"
+  ],
+  "sample_inputs": [
+    "image = tf.constant([[[1, 2], [3, 4]]])\nk = tf.constant(2)",
+    "image = tf.constant([[[1, 2, 3], [4, 5, 6], [7, 8, 9]]])\nk = tf.constant(2)",
+    "k = tf.constant(2)\nimage = tf.constant(np.random.randint(-50, 50, (1,2,3)), dtype='int32')",
+    "k = tf.constant(2)\nimage = tf.constant(np.random.randint(-50, 50, (5,2,2)), dtype='int32')",
+    "k = tf.constant(2)\nimage = tf.constant(np.random.randint(-50, 50, (1,2,1)), dtype='int32')",
+    "image = tf.constant([[[1, 2], [3, 4]]])\nk = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "k = tf.constant(2)\nimage = tf.constant(np.random.randint(-50, 50, (1,2,2)), dtype='int32')",
+    "k = tf.constant(2)\nimage = tf.constant(np.random.randint(-50, 50, (1,2,2)), dtype='int64')",
+    "k = tf.constant(2)\nimage = tf.constant(np.random.randint(-50, 50, (1,2,2,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(image,k=1):\n  return tf.image.rot90(image,k)",
+    "pytorch": "def pytorch_call(image, k=1):\n    return torch.rot90(image, k, dims=(-3, -2))"
+  },
+  "llm_inputs": [
+    "image = tf.constant([[[1, 2], [3, 4]]])\nk = tf.constant(2)",
+    "image = tf.constant([[[1, 2, 3], [4, 5, 6], [7, 8, 9]]])\nk = tf.constant(2)",
+    "image = tf.constant([[[1, 2, 3], [4, 5, 6], [7, 8, 9]]])\nk = tf.constant(2)"
+  ]
+}

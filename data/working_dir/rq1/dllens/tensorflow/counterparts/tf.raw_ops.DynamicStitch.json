@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.raw_ops.DynamicStitch(indices,data,name=None)",
+  "inputs": [
+    "indices",
+    "data"
+  ],
+  "sample_inputs": [
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant([10.0, 20.0, 30.0], dtype=tf.float32)",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant(np.random.randn(3,1,1), dtype='float32')",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant(np.random.randn(3), dtype='float32')",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant(np.random.randn(3), dtype='half')",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant(np.random.randn(3,1,1,1), dtype='float32')",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant(np.random.randn(3), dtype='float64')",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant(np.random.randn(3,1,1,1,1), dtype='float32')",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant(np.random.randn(3), dtype='float16')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(indices,data):\n  return tf.raw_ops.DynamicStitch(indices=indices,data=data)",
+    "pytorch": "def pytorch_call(indices, data):\n    output_shape = (indices.max() + 1,) + data.shape[1:]\n    output = torch.zeros(output_shape, dtype=data.dtype)\n    output[indices] = data\n    return output"
+  },
+  "llm_inputs": [
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant([10.0, 20.0, 30.0], dtype=tf.float32)",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant([10.0, 20.0, 30.0], dtype=tf.float32)",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant([10.0, 20.0, 30.0], dtype=tf.float32)"
+  ]
+}

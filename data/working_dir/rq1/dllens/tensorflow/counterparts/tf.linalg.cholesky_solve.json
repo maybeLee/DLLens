@@ -1,0 +1,21 @@
+{
+  "function_name": "tf.linalg.cholesky_solve(chol,rhs,name=None)",
+  "inputs": [
+    "chol",
+    "rhs"
+  ],
+  "sample_inputs": [
+    "chol = tf.constant([[4.0, 0.0], [2.0, 3.0]])\nrhs = tf.constant([[1.0], [2.0]])",
+    "chol = tf.constant([[4.0, 0.0], [2.0, 3.0]])\nrhs = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "rhs = tf.constant([[1.0], [2.0]])\nchol = tf.constant(np.random.randn(2,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(chol,rhs):\n  return tf.linalg.cholesky_solve(chol,rhs)",
+    "pytorch": "def pytorch_call(chol, rhs):\n    return torch.cholesky_solve(rhs, chol)"
+  },
+  "llm_inputs": [
+    "chol = tf.constant([[4.0, 0.0], [2.0, 3.0]])\nrhs = tf.constant([[1.0], [2.0]])",
+    "chol = tf.constant([[4.0, 0.0], [2.0, 3.0]])\nrhs = tf.constant([[1.0], [2.0]])",
+    "chol = tf.constant([[4.0, 0.0], [2.0, 3.0]])\nrhs = tf.constant([[1.0], [2.0]])"
+  ]
+}

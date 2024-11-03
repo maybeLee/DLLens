@@ -1,0 +1,726 @@
+{
+    "AddN": [
+        "AddN"
+    ],
+    "AdjustContrastv2": [
+        "AdjustContrastv2"
+    ],
+    "AdjustHue": [
+        "AdjustHue"
+    ],
+    "AdjustSaturation": [
+        "AdjustSaturation"
+    ],
+    "AllAny": [
+        "All",
+        "Any"
+    ],
+    "ArgMax": [
+        "ArgMax",
+        "ArgMin"
+    ],
+    "AsString": [
+        "AsString"
+    ],
+    "Atan2Op": [
+        "Atan2"
+    ],
+    "BatchNorm": [
+        "FusedBatchNorm",
+        "FusedBatchNormV2",
+        "FusedBatchNormV3"
+    ],
+    "BatchToSpace": [
+        "BatchToSpaceND"
+    ],
+    "BiasAdd": [
+        "BiasAdd",
+        "BiasAddV1"
+    ],
+    "Bincount": [
+        "Bincount",
+        "DenseBincount"
+    ],
+    "BitShift": [
+        "LeftShift",
+        "RightShift"
+    ],
+    "BitwiseOps": [
+        "BitwiseAnd"
+    ],
+    "BroadcastOp": [
+        "Add",
+        "AddV2",
+        "Div",
+        "Mul",
+        "Sub"
+    ],
+    "BroadcastTo": [
+        "BroadcastTo"
+    ],
+    "CTCGreedyDecoder": [
+        "CTCGreedyDecoder"
+    ],
+    "Cast": [
+        "Cast"
+    ],
+    "ClipByValueOp": [
+        "ClipByValue"
+    ],
+    "CombinedNonMaxSuppression": [
+        "CombinedNonMaxSuppression"
+    ],
+    "ComplexAbsOp": [
+        "ComplexAbs"
+    ],
+    "Concat": [
+        "Concat"
+    ],
+    "ConcatV2": [
+        "ConcatV2"
+    ],
+    "ConvOp": [
+        "Conv1D",
+        "Conv2D",
+        "Conv3D"
+    ],
+    "ConvTranspose": [
+        "Conv2DBackpropInput",
+        "Conv3DBackpropInputV2"
+    ],
+    "ConvTransposeWithDynamicPads": [
+        "Conv2DBackpropInput"
+    ],
+    "CropAndResize": [
+        "CropAndResize"
+    ],
+    "CudnnRNN": [
+        "CudnnRNN"
+    ],
+    "CumProd": [
+        "Cumprod"
+    ],
+    "CumSum": [
+        "Cumsum"
+    ],
+    "DenseToDenseSetOperation": [
+        "DenseToDenseSetOperation"
+    ],
+    "DepthToSpace": [
+        "DepthToSpace"
+    ],
+    "DepthwiseConv2d": [
+        "DepthwiseConv2d",
+        "DepthwiseConv2dNative"
+    ],
+    "Det": [
+        "MatrixDeterminant"
+    ],
+    "DirectOp": [
+        "Placeholder",
+        "PlaceholderV2",
+        "PlaceholderWithDefault"
+    ],
+    "DirectOpSinceOpset1": [
+        "LeakyRelu",
+        "Softplus",
+        "Softsign"
+    ],
+    "DivNoNan": [
+        "DivNoNan"
+    ],
+    "Dropout": [
+        "Dropout"
+    ],
+    "DynamicPartition": [
+        "DynamicPartition"
+    ],
+    "DynamicStitch": [
+        "DynamicStitch",
+        "ParallelDynamicStitch"
+    ],
+    "Einsum": [
+        "Einsum"
+    ],
+    "EnsureShape": [
+        "EnsureShape"
+    ],
+    "Equal": [
+        "Equal",
+        "NotEqual"
+    ],
+    "Erf": [
+        "Erf"
+    ],
+    "ExpandDims": [
+        "ExpandDims"
+    ],
+    "FFTOp": [
+        "FFT"
+    ],
+    "FakeQuantWithMinMaxArgs": [
+        "FakeQuantWithMinMaxArgs",
+        "FakeQuantWithMinMaxVars"
+    ],
+    "Fill": [
+        "Fill"
+    ],
+    "Flatten": [
+        "Flatten"
+    ],
+    "FloorDiv": [
+        "FloorDiv"
+    ],
+    "FloorMod": [
+        "FloorMod"
+    ],
+    "Gather": [
+        "Gather"
+    ],
+    "GatherND": [
+        "GatherNd"
+    ],
+    "GatherV2": [
+        "GatherV2"
+    ],
+    "GreaterLess": [
+        "Greater",
+        "Less"
+    ],
+    "GreaterLessEqual": [
+        "GreaterEqual",
+        "LessEqual"
+    ],
+    "HardSwish": [
+        "HardSwish"
+    ],
+    "HashTable": [
+        "HashTableV2"
+    ],
+    "Identity": [
+        "Identity"
+    ],
+    "IdentityN": [
+        "IdentityN"
+    ],
+    "IfOp": [
+        "If"
+    ],
+    "Inverse": [
+        "MatrixInverse"
+    ],
+    "InvertPermutationOp": [
+        "InvertPermutation"
+    ],
+    "IsFinite": [
+        "IsFinite"
+    ],
+    "IsInf": [
+        "IsInf"
+    ],
+    "IsNan": [
+        "IsNan"
+    ],
+    "Iterator": [
+        "IteratorV2",
+        "FIFOQueueV2"
+    ],
+    "IteratorGetNext": [
+        "IteratorGetNext",
+        "QueueDequeueV2"
+    ],
+    "L2Normalization": [
+        "L2Normalization"
+    ],
+    "LRN": [
+        "LRN"
+    ],
+    "LSTMBlockCell": [
+        "LSTMBlockCell"
+    ],
+    "LookupTableFind": [
+        "LookupTableFindV2"
+    ],
+    "LookupTableSize": [
+        "LookupTableSizeV2"
+    ],
+    "MatMul": [
+        "MatMul",
+        "BatchMatMul",
+        "BatchMatMulV2",
+        "BatchMatMulV3"
+    ],
+    "MatrixBandPart": [
+        "MatrixBandPart"
+    ],
+    "MatrixDiag": [
+        "MatrixDiag",
+        "MatrixDiagV2",
+        "MatrixDiagV3"
+    ],
+    "MatrixDiagPart": [
+        "MatrixDiagPart"
+    ],
+    "MatrixDiagPartV2V3": [
+        "MatrixDiagPartV2",
+        "MatrixDiagPartV3"
+    ],
+    "MatrixSetDiagV3": [
+        "MatrixSetDiagV3"
+    ],
+    "MaxPoolWithArgmaxOp": [
+        "MaxPoolWithArgmax"
+    ],
+    "MinMaxOp": [
+        "Minimum"
+    ],
+    "MoveToIdent": [
+        "CheckNumerics",
+        "StopGradient"
+    ],
+    "Multinomial": [
+        "Multinomial"
+    ],
+    "NonMaxSuppression": [
+        "NonMaxSuppressionV2",
+        "NonMaxSuppressionV3",
+        "NonMaxSuppressionV4",
+        "NonMaxSuppressionV5"
+    ],
+    "NukeNode": [
+        "NoOp"
+    ],
+    "OneHot": [
+        "OneHot"
+    ],
+    "OnesLike": [
+        "OnesLike"
+    ],
+    "Pack": [
+        "Pack"
+    ],
+    "Pad": [
+        "Pad",
+        "PadV2",
+        "MirrorPad"
+    ],
+    "PassThroughOp": [
+        "RandomNormalLike",
+        "RandomUniformLike"
+    ],
+    "PoolOp": [
+        "AvgPool",
+        "AvgPool3D"
+    ],
+    "Pow": [
+        "Pow"
+    ],
+    "Prelu": [
+        "Prelu"
+    ],
+    "QueueDequeueManyV2": [
+        "QueueDequeueManyV2",
+        "QueueDequeueUpToV2"
+    ],
+    "RFFT2DOp": [
+        "RFFT2D"
+    ],
+    "RFFTOp": [
+        "RFFT"
+    ],
+    "RaggedGather": [
+        "RaggedGather"
+    ],
+    "RaggedRange": [
+        "RaggedRange"
+    ],
+    "RaggedTensorFromVariant": [
+        "RaggedTensorFromVariant"
+    ],
+    "RaggedTensorToSparse": [
+        "RaggedTensorToSparse"
+    ],
+    "RaggedTensorToTensor": [
+        "RaggedTensorToTensor"
+    ],
+    "RaggedTensorToVariant": [
+        "RaggedTensorToVariant"
+    ],
+    "RandomOp": [
+        "RandomNormal",
+        "RandomUniform",
+        "RandomUniformInt",
+        "RandomStandardNormal"
+    ],
+    "RandomShuffleOp": [
+        "RandomShuffle"
+    ],
+    "Range": [
+        "Range"
+    ],
+    "RealDiv": [
+        "RealDiv",
+        "TruncateDiv"
+    ],
+    "ReduceJoin": [
+        "ReduceJoin"
+    ],
+    "ReduceOpBase": [
+        "Max"
+    ],
+    "RegexSplitWithOffsetsOp": [
+        "RegexSplitWithOffsets"
+    ],
+    "Relu6": [
+        "Relu6"
+    ],
+    "Reshape": [
+        "Reshape"
+    ],
+    "Resize": [
+        "ResizeBilinear",
+        "ResizeNearestNeighbor",
+        "ResizeBicubic",
+        "ResizeArea"
+    ],
+    "ReverseSequence": [
+        "ReverseSequence"
+    ],
+    "ReverseV2": [
+        "ReverseV2"
+    ],
+    "Rint": [
+        "Rint"
+    ],
+    "Roll": [
+        "Roll"
+    ],
+    "Round": [
+        "Round"
+    ],
+    "Rsqrt": [
+        "Rsqrt"
+    ],
+    "SampleDistortedBoundingBox": [
+        "SampleDistortedBoundingBox",
+        "SampleDistortedBoundingBoxV2"
+    ],
+    "ScatterND": [
+        "ScatterNd"
+    ],
+    "SegmentSum": [
+        "SegmentSum",
+        "SegmentProd",
+        "SegmentMax",
+        "SegmentMin",
+        "SegmentMean",
+        "SparseSegmentSum",
+        "SparseSegmentMean",
+        "SparseSegmentSqrtN",
+        "SparseSegmentSumWithNumSegments",
+        "SparseSegmentMeanWithNumSegments",
+        "SparseSegmentSqrtNWithNumSegments",
+        "UnsortedSegmentSum",
+        "UnsortedSegmentProd",
+        "UnsortedSegmentMax",
+        "UnsortedSegmentMin"
+    ],
+    "Select": [
+        "Select",
+        "SelectV2"
+    ],
+    "Selu": [
+        "Selu"
+    ],
+    "SentencepieceOp": [
+        "SentencepieceOp"
+    ],
+    "SentencepieceTokenizeOp": [
+        "SentencepieceTokenizeOp"
+    ],
+    "Shape": [
+        "Shape"
+    ],
+    "Sign": [
+        "Sign"
+    ],
+    "Size": [
+        "Size"
+    ],
+    "Slice": [
+        "Slice"
+    ],
+    "Softmax": [
+        "LogSoftmax",
+        "Softmax"
+    ],
+    "SoftmaxCrossEntropyWithLogits": [
+        "SoftmaxCrossEntropyWithLogits"
+    ],
+    "SpaceToBatch": [
+        "SpaceToBatchND"
+    ],
+    "SpaceToDepth": [
+        "SpaceToDepth"
+    ],
+    "SparseFillEmptyRows": [
+        "SparseFillEmptyRows"
+    ],
+    "SparseReshape": [
+        "SparseReshape"
+    ],
+    "SparseSoftmaxCrossEntropyWithLogits": [
+        "SparseSoftmaxCrossEntropyWithLogits"
+    ],
+    "SparseToDense": [
+        "SparseToDense"
+    ],
+    "Split": [
+        "Split"
+    ],
+    "SplitV": [
+        "SplitV"
+    ],
+    "Square": [
+        "Square"
+    ],
+    "SquaredDifference": [
+        "SquaredDifference"
+    ],
+    "SquaredDistance": [
+        "SquaredDistance"
+    ],
+    "Squeeze": [
+        "Squeeze"
+    ],
+    "StatelessIfOp": [
+        "StatelessIf"
+    ],
+    "StaticRegexReplace": [
+        "StaticRegexReplace"
+    ],
+    "StridedSlice": [
+        "StridedSlice"
+    ],
+    "StringEqual": [
+        "Equal",
+        "NotEqual"
+    ],
+    "StringJoin": [
+        "StringJoin"
+    ],
+    "StringLower": [
+        "StringLower",
+        "StringUpper"
+    ],
+    "StringOps": [
+        "StringSplit",
+        "StringSplitV2"
+    ],
+    "StringToHashBucketFast": [
+        "StringToHashBucketFast"
+    ],
+    "StringToNumber": [
+        "StringToNumber"
+    ],
+    "TFlLocalResponseNormalizationOp": [
+        "TFL_LOCAL_RESPONSE_NORMALIZATION"
+    ],
+    "TFlPackOp": [
+        "TFL_PACK"
+    ],
+    "TFlSoftmaxOp": [
+        "TFL_SOFTMAX"
+    ],
+    "TFlSpaceToBatchNDOp": [
+        "TFL_SPACE_TO_BATCH_ND"
+    ],
+    "TFlSpaceToDepthOp": [
+        "TFL_SPACE_TO_DEPTH"
+    ],
+    "TFlTopKV2Op": [
+        "TFL_TOPK_V2"
+    ],
+    "TFlUniqueOp": [
+        "TFL_UNIQUE"
+    ],
+    "TensorListFromTensor": [
+        "TensorListFromTensor"
+    ],
+    "TensorListGetItem": [
+        "TensorListGetItem"
+    ],
+    "TensorListLength": [
+        "TensorListLength"
+    ],
+    "TensorListReserve": [
+        "TensorListReserve",
+        "TensorListResize"
+    ],
+    "TensorListSetItem": [
+        "TensorListSetItem"
+    ],
+    "TensorListStack": [
+        "TensorListStack"
+    ],
+    "TensorScatterAdd": [
+        "TensorScatterAdd"
+    ],
+    "TensorScatterMax": [
+        "TensorScatterMax"
+    ],
+    "TensorScatterMin": [
+        "TensorScatterMin"
+    ],
+    "TensorScatterSub": [
+        "TensorScatterSub"
+    ],
+    "TensorScatterUpdate": [
+        "TensorScatterUpdate"
+    ],
+    "TflAdd": [
+        "TFL_ADD"
+    ],
+    "TflAveragePool": [
+        "TFL_AVERAGE_POOL_2D"
+    ],
+    "TflCast": [
+        "TFL_CAST"
+    ],
+    "TflConcatenation": [
+        "TFL_CONCATENATION"
+    ],
+    "TflConv2D": [
+        "TFL_CONV_2D"
+    ],
+    "TflConv3D": [
+        "TFL_CONV_3D"
+    ],
+    "TflConv3DTranspose": [
+        "TFL_CONV_3D_TRANSPOSE"
+    ],
+    "TflDepthwiseConv2D": [
+        "TFL_DEPTHWISE_CONV_2D"
+    ],
+    "TflDequantizeOp": [
+        "TFL_DEQUANTIZE"
+    ],
+    "TflDetectionPostProcess": [
+        "TFL_TFLite_Detection_PostProcess"
+    ],
+    "TflDirectOp": [
+        "TFL_ABS"
+    ],
+    "TflDiv": [
+        "TFL_DIV"
+    ],
+    "TflFullyConnectedOp": [
+        "TFL_FULLY_CONNECTED"
+    ],
+    "TflGather": [
+        "TFL_GATHER"
+    ],
+    "TflIfOp": [
+        "TFL_IF"
+    ],
+    "TflLogistic": [
+        "TFL_LOGISTIC"
+    ],
+    "TflMul": [
+        "TFL_MUL"
+    ],
+    "TflNonMaxSuppressionV4Op": [
+        "TFL_NON_MAX_SUPPRESSION_V4"
+    ],
+    "TflPadV2Op": [
+        "TFL_PADV2"
+    ],
+    "TflPreluOp": [
+        "TFL_PRELU"
+    ],
+    "TflQuantizeOp": [
+        "TFL_QUANTIZE"
+    ],
+    "TflRangeOp": [
+        "TFL_RANGE"
+    ],
+    "TflReduceOp": [
+        "TFL_REDUCE_MAX"
+    ],
+    "TflReshape": [
+        "TFL_RESHAPE"
+    ],
+    "TflSlice": [
+        "TFL_BATCH_TO_SPACE_ND"
+    ],
+    "TflSplit": [
+        "TFL_SPLIT"
+    ],
+    "TflSplitV": [
+        "TFL_SPLIT_V"
+    ],
+    "TflSub": [
+        "TFL_SUB"
+    ],
+    "TflTransposeConv": [
+        "TFL_TRANSPOSE_CONV"
+    ],
+    "TflUnsortedSegmentMax": [
+        "TFL_UNSORTED_SEGMENT_MAX"
+    ],
+    "TflUnsortedSegmentMin": [
+        "TFL_UNSORTED_SEGMENT_MIN"
+    ],
+    "TflUnsortedSegmentProd": [
+        "TFL_UNSORTED_SEGMENT_PROD"
+    ],
+    "TflUnsortedSegmentSum": [
+        "TFL_UNSORTED_SEGMENT_SUM"
+    ],
+    "TflWhile": [
+        "TFL_WHILE"
+    ],
+    "Tile": [
+        "Tile"
+    ],
+    "TopKV2": [
+        "TopKV2"
+    ],
+    "Transpose": [
+        "Transpose"
+    ],
+    "TrigOpSinceOpset7": [
+        "Acos",
+        "Asin",
+        "Atan",
+        "Cos",
+        "Sin",
+        "Tan"
+    ],
+    "TrigOpSinceOpset9": [
+        "Acosh",
+        "Asinh",
+        "Atanh",
+        "Cosh",
+        "Sinh"
+    ],
+    "Unique": [
+        "Unique"
+    ],
+    "Unpack": [
+        "Unpack"
+    ],
+    "Where": [
+        "Where"
+    ],
+    "While": [
+        "While",
+        "StatelessWhile"
+    ],
+    "WordpieceTokenizeWithOffsetsOp": [
+        "WordpieceTokenizeWithOffsets"
+    ],
+    "ZerosLike": [
+        "ZerosLike"
+    ]
+}

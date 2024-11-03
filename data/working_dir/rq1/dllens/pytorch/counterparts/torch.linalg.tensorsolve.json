@@ -1,0 +1,23 @@
+{
+  "function_name": "torch.linalg.tensorsolve(A, B, dims=None, *, out=None)",
+  "inputs": [
+    "A",
+    "B",
+    "dims"
+  ],
+  "sample_inputs": [
+    "A = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nB = torch.tensor([5, 6], dtype=torch.float32)\ndims = (1,)",
+    "B = torch.tensor([5, 6], dtype=torch.float32)\ndims = (1,)\nA = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "B = torch.tensor([5, 6], dtype=torch.float32)\ndims = (1,)\nA = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "A = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\ndims = (1,)\nB = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "B = torch.tensor([5, 6], dtype=torch.float32)\ndims = (1,)\nA = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "B = torch.tensor([5, 6], dtype=torch.float32)\ndims = (1,)\nA = torch.tensor(np.random.randn(2,2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(A,B,dims=None):\n  return torch.linalg.tensorsolve(A,B,dims)",
+    "tensorflow": "def tensorflow_call(A, B, dims=None):\n    if dims is not None:\n        A_shape = tf.shape(A)\n        B_shape = tf.shape(B)\n        B_expanded = tf.expand_dims(B, axis=dims[0])\n        A_reshaped = tf.reshape(A, (A_shape[0], -1))\n        return tf.linalg.solve(A_reshaped, B_expanded)\n    else:\n        B_reshaped = tf.reshape(B, (-1, 1))\n        return tf.linalg.solve(A, B_reshaped)"
+  },
+  "llm_inputs": [
+    "A = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nB = torch.tensor([5, 6], dtype=torch.float32)\ndims = (1,)"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "function_name": "tf.keras.layers.minimum(inputs,**kwargs)",
+  "inputs": [
+    "inputs"
+  ],
+  "sample_inputs": [
+    "inputs = [tf.constant([1.0, 2.0], dtype=tf.float32), tf.constant([3.0, 4.0], dtype=tf.float32)]"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(inputs):\n  return tf.keras.layers.minimum(inputs)",
+    "pytorch": "def pytorch_call(inputs):\n    return torch.min(inputs[0], inputs[1])"
+  },
+  "llm_inputs": [
+    "inputs = [tf.constant([1.0, 2.0], dtype=tf.float32), tf.constant([3.0, 4.0], dtype=tf.float32)]"
+  ]
+}

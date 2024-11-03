@@ -1,0 +1,29 @@
+{
+  "function_name": "tf.linalg.triangular_solve(matrix,rhs,lower=True,adjoint=False,name=None)",
+  "inputs": [
+    "matrix",
+    "rhs",
+    "lower",
+    "adjoint"
+  ],
+  "sample_inputs": [
+    "matrix = tf.constant([[1, 0], [2, 1]], dtype=tf.float32)\nrhs = tf.constant([[1], [2]], dtype=tf.float32)\nlower = True\nadjoint = False",
+    "matrix = tf.constant([[1.0, 0.0, 0.0], [2.0, 3.0, 0.0], [4.0, 5.0, 6.0]])\nrhs = tf.constant([[1.0], [2.0], [3.0]])\nlower = True\nadjoint = False",
+    "matrix = tf.constant([[1.0, 0.0], [1.0, 1.0]], dtype=tf.float32)\nrhs = tf.constant([[1.0], [2.0]], dtype=tf.float32)\nlower = True\nadjoint = False",
+    "matrix = tf.constant([[1, 0], [2, 1]], dtype=tf.float32)\nlower = True\nadjoint = False\nrhs = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "matrix = tf.constant([[1, 0], [2, 1]], dtype=tf.float32)\nlower = True\nadjoint = False\nrhs = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "matrix = tf.constant([[1, 0], [2, 1]], dtype=tf.float32)\nrhs = tf.constant([[1], [2]], dtype=tf.float32)\nlower = True\nadjoint = True",
+    "matrix = tf.constant([[1, 0], [2, 1]], dtype=tf.float32)\nlower = True\nadjoint = False\nrhs = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "matrix = tf.constant([[1, 0], [2, 1]], dtype=tf.float32)\nrhs = tf.constant([[1], [2]], dtype=tf.float32)\nadjoint = False\nlower = False",
+    "rhs = tf.constant([[1], [2]], dtype=tf.float32)\nlower = True\nadjoint = False\nmatrix = tf.constant(np.random.randn(2,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(matrix,rhs,lower=True,adjoint=False):\n  return tf.linalg.triangular_solve(matrix,rhs,lower,adjoint)",
+    "pytorch": "def pytorch_call(matrix, rhs, lower=True, adjoint=False):\n    if lower:\n        matrix = torch.tril(matrix)\n    else:\n        matrix = torch.triu(matrix)\n    if adjoint:\n        matrix = matrix.t()\n    return torch.linalg.solve(matrix, rhs)"
+  },
+  "llm_inputs": [
+    "matrix = tf.constant([[1, 0], [2, 1]], dtype=tf.float32)\nrhs = tf.constant([[1], [2]], dtype=tf.float32)\nlower = True\nadjoint = False",
+    "matrix = tf.constant([[1.0, 0.0, 0.0], [2.0, 3.0, 0.0], [4.0, 5.0, 6.0]])\nrhs = tf.constant([[1.0], [2.0], [3.0]])\nlower = True\nadjoint = False",
+    "matrix = tf.constant([[1.0, 0.0], [1.0, 1.0]], dtype=tf.float32)\nrhs = tf.constant([[1.0], [2.0]], dtype=tf.float32)\nlower = True\nadjoint = False"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "function_name": "tf.linalg.matrix_rank(a,tol=None,validate_args=False,name=None)",
+  "inputs": [
+    "a",
+    "tol",
+    "validate_args"
+  ],
+  "sample_inputs": [
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ntol = tf.constant(1e-05, dtype=tf.float32)\nvalidate_args = False",
+    "a = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\ntol = tf.constant(1e-05, dtype=tf.float32)\nvalidate_args = False",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ntol = tf.constant(1e-05, dtype=tf.float32)\nvalidate_args = tf.constant(False)",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nvalidate_args = False\ntol = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nvalidate_args = False\ntol = tf.constant(np.random.randn(), dtype='float32')",
+    "tol = tf.constant(1e-05, dtype=tf.float32)\nvalidate_args = False\na = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "tol = tf.constant(1e-05, dtype=tf.float32)\nvalidate_args = False\na = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "tol = tf.constant(1e-05, dtype=tf.float32)\nvalidate_args = False\na = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "tol = tf.constant(1e-05, dtype=tf.float32)\nvalidate_args = False\na = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "tol = tf.constant(1e-05, dtype=tf.float32)\nvalidate_args = False\na = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nvalidate_args = False\ntol = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "tol = tf.constant(1e-05, dtype=tf.float32)\nvalidate_args = False\na = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ntol = tf.constant(1e-05, dtype=tf.float32)\nvalidate_args = True",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nvalidate_args = False\ntol = tf.constant(np.random.randn(1), dtype='float32')",
+    "tol = tf.constant(1e-05, dtype=tf.float32)\nvalidate_args = False\na = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nvalidate_args = False\ntol = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "tol = tf.constant(1e-05, dtype=tf.float32)\nvalidate_args = False\na = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nvalidate_args = False\ntol = tf.constant(np.random.randn(1,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(a,tol=None,validate_args=False):\n  return tf.linalg.matrix_rank(a,tol,validate_args)",
+    "pytorch": "def pytorch_call(a, tol=None, validate_args=False):\n    if validate_args:\n        pass\n    return torch.linalg.matrix_rank(a, tol)"
+  },
+  "llm_inputs": [
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ntol = tf.constant(1e-05, dtype=tf.float32)\nvalidate_args = False",
+    "a = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\ntol = tf.constant(1e-05, dtype=tf.float32)\nvalidate_args = False",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ntol = tf.constant(1e-05, dtype=tf.float32)\nvalidate_args = tf.constant(False)"
+  ]
+}

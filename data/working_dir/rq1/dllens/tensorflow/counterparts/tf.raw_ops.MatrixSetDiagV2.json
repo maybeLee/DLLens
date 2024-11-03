@@ -1,0 +1,25 @@
+{
+  "function_name": "tf.raw_ops.MatrixSetDiagV2(input,diagonal,k,name=None)",
+  "inputs": [
+    "input",
+    "diagonal",
+    "k"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\ndiagonal = tf.constant([10, 11, 12], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ndiagonal = tf.constant([5, 6], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)",
+    "diagonal = tf.constant([10, 11, 12], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)\ninput = tf.constant(np.random.randn(3,5), dtype='float32')",
+    "diagonal = tf.constant([10, 11, 12], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)\ninput = tf.constant(np.random.randn(5,3), dtype='float32')",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)\ndiagonal = tf.constant(np.random.randn(3), dtype='float32')",
+    "diagonal = tf.constant([10, 11, 12], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)\ninput = tf.constant(np.random.randn(3,3), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,diagonal,k):\n  return tf.raw_ops.MatrixSetDiagV2(input=input,diagonal=diagonal,k=k)",
+    "pytorch": "def pytorch_call(input, diagonal, k):\n    input_shape = input.shape\n    diagonal_length = diagonal.shape[0]\n    row_indices = torch.arange(diagonal_length)\n    col_indices = row_indices + k.item()\n    valid_mask = (col_indices >= 0) & (col_indices < input_shape[1])\n    row_indices = row_indices[valid_mask]\n    col_indices = col_indices[valid_mask]\n    input[row_indices, col_indices] = diagonal[valid_mask]\n    return input"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\ndiagonal = tf.constant([10, 11, 12], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=tf.float32)\ndiagonal = tf.constant([10, 11, 12], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ndiagonal = tf.constant([5, 6], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)"
+  ]
+}

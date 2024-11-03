@@ -1,0 +1,19 @@
+{
+  "function_name": "tf.raw_ops.Empty(shape,dtype,init=False,name=None)",
+  "inputs": [
+    "shape",
+    "dtype",
+    "init"
+  ],
+  "sample_inputs": [
+    "shape = tf.constant([2, 3], dtype=tf.int32)\ndtype = tf.dtypes.float32\ninit = False",
+    "shape = tf.constant([2, 3], dtype=tf.int32)\ndtype = tf.dtypes.float32\ninit = True"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(shape,dtype,init=False):\n  return tf.raw_ops.Empty(shape=shape,dtype=dtype,init=init)",
+    "pytorch": "def pytorch_call(shape, dtype, init=False):\n    if init:\n        return torch.empty(shape.tolist(), dtype=dtype).fill_(0)\n    else:\n        return torch.empty(shape.tolist(), dtype=dtype)"
+  },
+  "llm_inputs": [
+    "shape = tf.constant([2, 3], dtype=tf.int32)\ndtype = tf.dtypes.float32\ninit = False"
+  ]
+}

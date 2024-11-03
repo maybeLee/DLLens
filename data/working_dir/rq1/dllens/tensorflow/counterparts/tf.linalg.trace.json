@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.linalg.trace(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)",
+    "x = tf.constant([[1, 2], [3, 4]])",
+    "x = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2), dtype='half')",
+    "x = tf.constant(np.random.randn(3,2), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "x = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "x = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(1,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.linalg.trace(x)",
+    "pytorch": "def pytorch_call(x):\n    if x.dim() < 2:\n        raise ValueError('Input tensor must be at least 2D.')\n    trace = torch.diagonal(x, dim1=-2, dim2=-1).sum(dim=-1)\n    if x.dim() > 2:\n        return trace.view(trace.size(0), -1)\n    else:\n        return trace"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)",
+    "x = tf.constant([[1, 2], [3, 4]])",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)"
+  ]
+}

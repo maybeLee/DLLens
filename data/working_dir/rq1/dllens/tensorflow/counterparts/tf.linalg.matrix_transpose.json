@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.linalg.matrix_transpose(a,name='matrix_transpose',conjugate=False)",
+  "inputs": [
+    "a",
+    "name",
+    "conjugate"
+  ],
+  "sample_inputs": [
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nname = 'matrix_transpose'\nconjugate = False",
+    "name = 'matrix_transpose'\nconjugate = False\na = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "name = 'matrix_transpose'\nconjugate = False\na = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "name = 'matrix_transpose'\nconjugate = False\na = tf.constant(np.random.randn(2,2), dtype='half')",
+    "name = 'matrix_transpose'\nconjugate = False\na = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "name = 'matrix_transpose'\nconjugate = False\na = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "name = 'matrix_transpose'\nconjugate = False\na = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nname = 'matrix_transpose'\nconjugate = True",
+    "name = 'matrix_transpose'\nconjugate = False\na = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "name = 'matrix_transpose'\nconjugate = False\na = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "name = 'matrix_transpose'\nconjugate = False\na = tf.constant(np.random.randn(2,2,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(a,name='matrix_transpose',conjugate=False):\n  return tf.linalg.matrix_transpose(a,name,conjugate)",
+    "pytorch": "def pytorch_call(a, name='matrix_transpose', conjugate=False):\n    if conjugate:\n        return a.transpose(-2, -1).conj()\n    return a.transpose(-2, -1)"
+  },
+  "llm_inputs": [
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nname = 'matrix_transpose'\nconjugate = False",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nname = 'matrix_transpose'\nconjugate = False",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nname = 'matrix_transpose'\nconjugate = False"
+  ]
+}

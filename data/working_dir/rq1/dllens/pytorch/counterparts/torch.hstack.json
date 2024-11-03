@@ -1,0 +1,19 @@
+{
+  "function_name": "torch.hstack(tensors, *, out=None)",
+  "inputs": [
+    "tensors"
+  ],
+  "sample_inputs": [
+    "tensors = [torch.tensor([1, 2, 3]), torch.tensor([4, 5, 6]), torch.tensor([7, 8, 9])]",
+    "tensors = [torch.tensor([1, 2, 3]), torch.tensor([4, 5, 6]), torch.tensor([7, 8])]"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(tensors):\n  return torch.hstack(tensors)",
+    "tensorflow": "def tensorflow_call(tensors):\n    return tf.concat(tensors, axis=0)"
+  },
+  "llm_inputs": [
+    "tensors = [torch.tensor([1, 2, 3]), torch.tensor([4, 5, 6]), torch.tensor([7, 8, 9])]",
+    "tensors = [torch.tensor([1, 2, 3]), torch.tensor([4, 5, 6]), torch.tensor([7, 8])]",
+    "tensors = [torch.tensor([1, 2, 3]), torch.tensor([4, 5, 6]), torch.tensor([7, 8])]"
+  ]
+}

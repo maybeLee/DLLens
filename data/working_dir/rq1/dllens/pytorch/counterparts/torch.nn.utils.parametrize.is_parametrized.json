@@ -1,0 +1,34 @@
+{
+  "function_name": "torch.nn.utils.parametrize.is_parametrized(module, tensor_name=None)",
+  "inputs": [
+    "module",
+    "tensor_name"
+  ],
+  "sample_inputs": [
+    "module = torch.nn.Linear(2, 2)\ntensor_name = torch.tensor([[1.0, 2.0], [3.0, 4.0]])",
+    "module = torch.nn.Linear(5, 3)\ntensor_name = torch.tensor([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])",
+    "module = torch.nn.Linear(3, 2)\ntensor_name = torch.tensor([[1.0, 2.0], [3.0, 4.0]])",
+    "module = torch.nn.Linear(2, 2)\ntensor_name = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "module = torch.nn.Linear(2, 2)\ntensor_name = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "module = torch.nn.Linear(2, 2)\ntensor_name = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "module = torch.nn.Linear(2, 2)\ntensor_name = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "module = torch.nn.Linear(2, 2)\ntensor_name = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "module = torch.nn.Linear(2, 2)\ntensor_name = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "module = torch.nn.Linear(2, 2)\ntensor_name = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "module = torch.nn.Linear(2, 2)\ntensor_name = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "module = torch.nn.Linear(2, 2)\ntensor_name = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "module = torch.nn.Linear(2, 2)\ntensor_name = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "module = torch.nn.Linear(2, 2)\ntensor_name = torch.tensor(np.random.randn(3,2), dtype=torch.float32)",
+    "module = torch.nn.Linear(2, 2)\ntensor_name = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "module = torch.nn.Linear(2, 2)\ntensor_name = torch.tensor(np.random.randn(2,2), dtype=torch.float64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(module,tensor_name=None):\n  return torch.nn.utils.parametrize.is_parametrized(module,tensor_name)",
+    "tensorflow": "def tensorflow_call(module, tensor_name=None):\n    if tensor_name is not None:\n        try:\n            output = module(tensor_name)\n            return True\n        except Exception as e:\n            return False\n    return False"
+  },
+  "llm_inputs": [
+    "module = torch.nn.Linear(2, 2)\ntensor_name = torch.tensor([[1.0, 2.0], [3.0, 4.0]])",
+    "module = torch.nn.Linear(5, 3)\ntensor_name = torch.tensor([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])",
+    "module = torch.nn.Linear(3, 2)\ntensor_name = torch.tensor([[1.0, 2.0], [3.0, 4.0]])"
+  ]
+}

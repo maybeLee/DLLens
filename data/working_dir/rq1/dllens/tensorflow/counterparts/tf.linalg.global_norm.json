@@ -1,0 +1,18 @@
+{
+  "function_name": "tf.linalg.global_norm(t_list,name=None)",
+  "inputs": [
+    "t_list"
+  ],
+  "sample_inputs": [
+    "t_list = [tf.constant(1.0), tf.constant(2.0), tf.constant(3.0)]"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(t_list):\n  return tf.linalg.global_norm(t_list)",
+    "pytorch": "def pytorch_call(t_list):\n    return torch.linalg.norm(torch.stack(t_list))"
+  },
+  "llm_inputs": [
+    "t_list = [tf.constant(1.0), tf.constant(2.0), tf.constant(3.0)]",
+    "t_list = [tf.constant(1.0), tf.constant(2.0), tf.constant(3.0)]",
+    "t_list = [tf.constant(1.0), tf.constant(2.0), tf.constant(3.0)]"
+  ]
+}

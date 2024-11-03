@@ -1,0 +1,31 @@
+{
+  "function_name": "tf.raw_ops.Softsign(features,name=None)",
+  "inputs": [
+    "features"
+  ],
+  "sample_inputs": [
+    "features = tf.constant([[1.0], [2.0], [3.0]])",
+    "features = tf.constant([[0.1], [0.2], [0.3], [0.4], [0.5]])",
+    "features = tf.constant(np.random.randn(3,5), dtype='float32')",
+    "features = tf.constant(np.random.randn(), dtype='float32')",
+    "features = tf.constant(np.random.randn(3,1), dtype='half')",
+    "features = tf.constant(np.random.randn(3,1), dtype='float16')",
+    "features = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "features = tf.constant(np.random.randn(3,1,1), dtype='float32')",
+    "features = tf.constant(np.random.randn(3,1,1,1,1), dtype='float32')",
+    "features = tf.constant(np.random.randn(3,1), dtype='float64')",
+    "features = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "features = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "features = tf.constant(np.random.randn(3,1,1,1), dtype='float32')",
+    "features = tf.constant(np.random.randn(3), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(features):\n  return tf.raw_ops.Softsign(features=features)",
+    "pytorch": "def pytorch_call(features):\n    return features / (1 + torch.abs(features))"
+  },
+  "llm_inputs": [
+    "features = tf.constant([[1.0], [2.0], [3.0]])",
+    "features = tf.constant([[0.1], [0.2], [0.3], [0.4], [0.5]])",
+    "features = tf.constant([[1.0], [2.0], [3.0]])"
+  ]
+}

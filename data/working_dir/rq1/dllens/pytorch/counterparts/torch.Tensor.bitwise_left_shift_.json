@@ -1,0 +1,25 @@
+{
+  "function_name": "torch.Tensor.bitwise_left_shift_(input, other)",
+  "inputs": [
+    "input",
+    "other"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3, 4], dtype=torch.int32)\nother = torch.tensor([1, 1, 1, 1], dtype=torch.int32)",
+    "input = torch.tensor([1, 2, 3, 4], dtype=torch.int32)\nother = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int32)",
+    "input = torch.tensor([1, 2, 3, 4], dtype=torch.int32)\nother = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int32)",
+    "other = torch.tensor([1, 1, 1, 1], dtype=torch.int32)\ninput = torch.tensor(np.random.randint(-50, 50, (4)), dtype=torch.int32)",
+    "input = torch.tensor([1, 2, 3, 4], dtype=torch.int32)\nother = torch.tensor(np.random.randint(-50, 50, (4)), dtype=torch.int32)",
+    "other = torch.tensor([1, 1, 1, 1], dtype=torch.int32)\ninput = torch.tensor(np.random.randint(-50, 50, (4)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 4], dtype=torch.int32)\nother = torch.tensor(np.random.randint(-50, 50, (4)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,other):\n  return torch.Tensor.bitwise_left_shift_(input,other)",
+    "tensorflow": "def tensorflow_call(input, other):\n    other = tf.cast(other, tf.int32)\n    input = tf.cast(input, tf.int32)\n    mask = other < 0\n    result = tf.where(mask, tf.zeros_like(input, dtype=tf.int32), tf.bitwise.left_shift(input, other))\n    return result"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3, 4], dtype=torch.int32)\nother = torch.tensor([1, 1, 1, 1], dtype=torch.int32)",
+    "input = torch.tensor([1, 2, 3, 4], dtype=torch.int32)\nother = torch.tensor([1, 1, 1, 1], dtype=torch.int32)",
+    "input = torch.tensor([1, 2, 3, 4], dtype=torch.int32)\nother = torch.tensor([1, 1, 1, 1], dtype=torch.int32)"
+  ]
+}

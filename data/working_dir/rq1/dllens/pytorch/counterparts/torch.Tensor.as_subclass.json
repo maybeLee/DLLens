@@ -1,0 +1,32 @@
+{
+  "function_name": "torch.Tensor.as_subclass(input, cls)",
+  "inputs": [
+    "input",
+    "cls"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\ncls = torch.Tensor",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\ncls = torch.Tensor",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\ncls = torch.Tensor",
+    "cls = torch.Tensor\ninput = torch.tensor(np.random.randint(-50, 50, (2,5)), dtype=torch.int64)",
+    "cls = torch.Tensor\ninput = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "cls = torch.Tensor\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "cls = torch.Tensor\ninput = torch.tensor(np.random.randint(-50, 50, (1,2)), dtype=torch.int64)",
+    "cls = torch.Tensor\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)",
+    "cls = torch.Tensor\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "cls = torch.Tensor\ninput = torch.tensor(np.random.randint(-50, 50, (5,2)), dtype=torch.int64)",
+    "cls = torch.Tensor\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "cls = torch.Tensor\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)",
+    "cls = torch.Tensor\ninput = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "cls = torch.Tensor\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,cls):\n  return torch.Tensor.as_subclass(input,cls)",
+    "tensorflow": "def tensorflow_call(input, cls):\n    if cls is torch.Tensor:\n        return tf.convert_to_tensor(input)\n    return tf.experimental.numpy.asarray(input, dtype=cls)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\ncls = torch.Tensor",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]], dtype=torch.float32)\ncls = torch.Tensor",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\ncls = torch.Tensor"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "function_name": "torch.nn.functional.pdist(input, p=2)",
+  "inputs": [
+    "input",
+    "p"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = torch.tensor(2)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])\np = torch.tensor(2)",
+    "p = torch.tensor(2)\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "p = torch.tensor(2)\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "p = torch.tensor(2)\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "p = torch.tensor(2)\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float32)",
+    "p = torch.tensor(2)\ninput = torch.tensor(np.random.randn(3,2), dtype=torch.float32)",
+    "p = torch.tensor(2)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "p = torch.tensor(2)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,p=2):\n  return torch.nn.functional.pdist(input,p)",
+    "tensorflow": "def tensorflow_call(input, p=2):\n    n = tf.shape(input)[0]\n    input_expanded = tf.expand_dims(input, axis=1)\n    input_transposed = tf.expand_dims(input, axis=0)\n    pairwise_distance = tf.norm(input_expanded - input_transposed, ord=float(p), axis=-1)\n    upper_triangular_indices = tf.linalg.band_part(tf.ones((n, n)), 0, -1) - tf.eye(n)\n    distances = tf.boolean_mask(pairwise_distance, upper_triangular_indices > 0)\n    return distances"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = torch.tensor(2)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])\np = torch.tensor(2)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]])\np = torch.tensor(2)"
+  ]
+}

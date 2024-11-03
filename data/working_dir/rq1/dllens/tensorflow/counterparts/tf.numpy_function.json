@@ -1,0 +1,20 @@
+{
+  "function_name": "tf.numpy_function(func,inp,Tout,name=None)",
+  "inputs": [
+    "func",
+    "inp",
+    "Tout"
+  ],
+  "sample_inputs": [
+    "func = lambda x: x * 2\ninp = [tf.constant([1, 2, 3], dtype=tf.float32)]\nTout = tf.float32",
+    "func = lambda x: x + 1\ninp = [tf.constant([1, 2, 3], dtype=tf.float32)]\nTout = tf.float32"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(func,inp,Tout):\n  return tf.numpy_function(func,inp,Tout)",
+    "pytorch": "def pytorch_call(func, inp, Tout):\n    result = func(inp[0])\n    return result.to(Tout)"
+  },
+  "llm_inputs": [
+    "func = lambda x: x * 2\ninp = [tf.constant([1, 2, 3], dtype=tf.float32)]\nTout = tf.float32",
+    "func = lambda x: x + 1\ninp = [tf.constant([1, 2, 3], dtype=tf.float32)]\nTout = tf.float32"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "function_name": "tf.clip_by_value(t,clip_value_min,clip_value_max,name=None)",
+  "inputs": [
+    "t",
+    "clip_value_min",
+    "clip_value_max"
+  ],
+  "sample_inputs": [
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nclip_value_min = tf.constant(2.0, dtype=tf.float32)\nclip_value_max = tf.constant(3.0, dtype=tf.float32)",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nclip_value_min = tf.constant(2.5)\nclip_value_max = tf.constant(3.5)",
+    "clip_value_min = tf.constant(2.0, dtype=tf.float32)\nclip_value_max = tf.constant(3.0, dtype=tf.float32)\nt = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nclip_value_min = tf.constant(2.0, dtype=tf.float32)\nclip_value_max = tf.constant(np.random.randn(1), dtype='float32')",
+    "clip_value_min = tf.constant(2.0, dtype=tf.float32)\nclip_value_max = tf.constant(3.0, dtype=tf.float32)\nt = tf.constant(np.random.randn(), dtype='float32')",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nclip_value_max = tf.constant(3.0, dtype=tf.float32)\nclip_value_min = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nclip_value_min = tf.constant(2.0, dtype=tf.float32)\nclip_value_max = tf.constant(np.random.randn(), dtype='float32')",
+    "clip_value_min = tf.constant(2.0, dtype=tf.float32)\nclip_value_max = tf.constant(3.0, dtype=tf.float32)\nt = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "clip_value_min = tf.constant(2.0, dtype=tf.float32)\nclip_value_max = tf.constant(3.0, dtype=tf.float32)\nt = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "clip_value_min = tf.constant(2.0, dtype=tf.float32)\nclip_value_max = tf.constant(3.0, dtype=tf.float32)\nt = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nclip_value_min = tf.constant(2.0, dtype=tf.float32)\nclip_value_max = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "clip_value_min = tf.constant(2.0, dtype=tf.float32)\nclip_value_max = tf.constant(3.0, dtype=tf.float32)\nt = tf.constant(np.random.randn(2), dtype='float32')",
+    "clip_value_min = tf.constant(2.0, dtype=tf.float32)\nclip_value_max = tf.constant(3.0, dtype=tf.float32)\nt = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "clip_value_min = tf.constant(2.0, dtype=tf.float32)\nclip_value_max = tf.constant(3.0, dtype=tf.float32)\nt = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "clip_value_min = tf.constant(2.0, dtype=tf.float32)\nclip_value_max = tf.constant(3.0, dtype=tf.float32)\nt = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nclip_value_max = tf.constant(3.0, dtype=tf.float32)\nclip_value_min = tf.constant(np.random.randn(), dtype='float32')",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nclip_value_max = tf.constant(3.0, dtype=tf.float32)\nclip_value_min = tf.constant(np.random.randn(1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(t,clip_value_min,clip_value_max):\n  return tf.clip_by_value(t,clip_value_min,clip_value_max)",
+    "pytorch": "def pytorch_call(t, clip_value_min, clip_value_max):\n    clip_value_min = torch.max(clip_value_min, clip_value_max.new_ones(1) * float('-inf'))\n    clip_value_max = torch.max(clip_value_min, clip_value_max)\n    return torch.clamp(t, clip_value_min, clip_value_max)"
+  },
+  "llm_inputs": [
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nclip_value_min = tf.constant(2.0, dtype=tf.float32)\nclip_value_max = tf.constant(3.0, dtype=tf.float32)",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nclip_value_min = tf.constant(2.5)\nclip_value_max = tf.constant(3.5)",
+    "t = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nclip_value_min = tf.constant(2.0, dtype=tf.float32)\nclip_value_max = tf.constant(3.0, dtype=tf.float32)"
+  ]
+}

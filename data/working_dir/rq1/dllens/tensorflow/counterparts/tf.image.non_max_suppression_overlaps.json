@@ -1,0 +1,28 @@
+{
+  "function_name": "tf.image.non_max_suppression_overlaps(overlaps,scores,max_output_size,overlap_threshold=0.5,score_threshold=float('-inf'),name=None)",
+  "inputs": [
+    "overlaps",
+    "scores",
+    "max_output_size",
+    "overlap_threshold",
+    "score_threshold"
+  ],
+  "sample_inputs": [
+    "overlaps = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.8], dtype=tf.float32)\nmax_output_size = tf.constant(5, dtype=tf.int32)\noverlap_threshold = tf.constant(0.5, dtype=tf.float32)\nscore_threshold = tf.constant(float('-inf'), dtype=tf.float32)",
+    "overlaps = tf.constant([[0.1, 0.2, 0.3], [0.2, 0.4, 0.5], [0.3, 0.5, 0.6]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.8, 0.7], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\noverlap_threshold = tf.constant(0.5, dtype=tf.float32)\nscore_threshold = tf.constant(float('-inf'), dtype=tf.float32)\nresult = tf.image.non_max_suppression_overlaps(overlaps, scores, max_output_size, overlap_threshold, score_threshold)",
+    "overlaps = tf.constant([[0.1, 0.2, 0.3], [0.2, 0.4, 0.1], [0.3, 0.1, 0.5]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.8, 0.7], dtype=tf.float32)\nmax_output_size = tf.constant(3, dtype=tf.int32)\noverlap_threshold = tf.constant(0.5, dtype=tf.float32)\nscore_threshold = tf.constant(float('-inf'), dtype=tf.float32)\nresult = tf.image.non_max_suppression_overlaps(overlaps, scores, max_output_size, overlap_threshold, score_threshold)",
+    "scores = tf.constant([0.9, 0.8], dtype=tf.float32)\nmax_output_size = tf.constant(5, dtype=tf.int32)\noverlap_threshold = tf.constant(0.5, dtype=tf.float32)\nscore_threshold = tf.constant(float('-inf'), dtype=tf.float32)\noverlaps = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "overlaps = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\nmax_output_size = tf.constant(5, dtype=tf.int32)\noverlap_threshold = tf.constant(0.5, dtype=tf.float32)\nscore_threshold = tf.constant(float('-inf'), dtype=tf.float32)\nscores = tf.constant(np.random.randn(2), dtype='float32')",
+    "overlaps = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.8], dtype=tf.float32)\nmax_output_size = tf.constant(5, dtype=tf.int32)\noverlap_threshold = tf.constant(0.5, dtype=tf.float32)\nscore_threshold = tf.constant(np.random.randn(), dtype='float32')",
+    "overlaps = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.8], dtype=tf.float32)\nmax_output_size = tf.constant(5, dtype=tf.int32)\nscore_threshold = tf.constant(float('-inf'), dtype=tf.float32)\noverlap_threshold = tf.constant(np.random.randn(), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(overlaps,scores,max_output_size,overlap_threshold=0.5,score_threshold=float('-inf')):\n  return tf.image.non_max_suppression_overlaps(overlaps,scores,max_output_size,overlap_threshold,score_threshold)",
+    "pytorch": "def pytorch_call(overlaps, scores, max_output_size, overlap_threshold=0.5, score_threshold=float('-inf')):\n    valid_indices = scores > score_threshold\n    overlaps = overlaps[valid_indices]\n    scores = scores[valid_indices]\n    if len(scores) == 0:\n        return torch.tensor([], dtype=torch.int64)\n    sorted_indices = torch.argsort(scores, descending=True)\n    selected_indices = []\n    while len(sorted_indices) > 0 and len(selected_indices) < max_output_size:\n        current_index = sorted_indices[0]\n        selected_indices.append(current_index.item())\n        current_overlaps = overlaps[current_index].unsqueeze(0)\n        remaining_overlaps = overlaps[sorted_indices[1:]]\n        iou = (current_overlaps * remaining_overlaps).sum(dim=1) / (current_overlaps + remaining_overlaps).sum(dim=1)\n        sorted_indices = sorted_indices[1:][iou <= overlap_threshold]\n    return torch.tensor(selected_indices, dtype=torch.int64)"
+  },
+  "llm_inputs": [
+    "overlaps = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.8], dtype=tf.float32)\nmax_output_size = tf.constant(5, dtype=tf.int32)\noverlap_threshold = tf.constant(0.5, dtype=tf.float32)\nscore_threshold = tf.constant(float('-inf'), dtype=tf.float32)",
+    "overlaps = tf.constant([[0.1, 0.2, 0.3], [0.2, 0.4, 0.5], [0.3, 0.5, 0.6]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.8, 0.7], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\noverlap_threshold = tf.constant(0.5, dtype=tf.float32)\nscore_threshold = tf.constant(float('-inf'), dtype=tf.float32)\nresult = tf.image.non_max_suppression_overlaps(overlaps, scores, max_output_size, overlap_threshold, score_threshold)",
+    "overlaps = tf.constant([[0.1, 0.2, 0.3], [0.2, 0.4, 0.1], [0.3, 0.1, 0.5]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.8, 0.7], dtype=tf.float32)\nmax_output_size = tf.constant(3, dtype=tf.int32)\noverlap_threshold = tf.constant(0.5, dtype=tf.float32)\nscore_threshold = tf.constant(float('-inf'), dtype=tf.float32)\nresult = tf.image.non_max_suppression_overlaps(overlaps, scores, max_output_size, overlap_threshold, score_threshold)"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "function_name": "tf.sequence_mask(lengths,maxlen=None,dtype=tf.dtypes.bool,name=None)",
+  "inputs": [
+    "lengths",
+    "maxlen",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "lengths = tf.constant([3, 5, 2], dtype=tf.int32)\nmaxlen = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.bool",
+    "lengths = tf.constant([3, 5, 2], dtype=tf.int32)\nmaxlen = tf.constant(6, dtype=tf.int32)\ndtype = tf.dtypes.bool",
+    "maxlen = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.bool\nlengths = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "maxlen = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.bool\nlengths = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "maxlen = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.bool\nlengths = tf.constant(np.random.randint(-50, 50, (3,1)), dtype='int32')",
+    "maxlen = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.bool\nlengths = tf.constant(np.random.randint(-50, 50, (3,1,1)), dtype='int32')",
+    "maxlen = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.bool\nlengths = tf.constant(np.random.randint(-50, 50, (3,1,1,1)), dtype='int32')",
+    "maxlen = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.bool\nlengths = tf.constant(np.random.randint(-50, 50, (3,1,1,1,1)), dtype='int32')",
+    "maxlen = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.bool\nlengths = tf.constant(np.random.randint(-50, 50, (4)), dtype='int32')",
+    "maxlen = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.bool\nlengths = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "maxlen = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.bool\nlengths = tf.constant(np.random.randint(-50, 50, (3)), dtype='int64')",
+    "maxlen = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.bool\nlengths = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "maxlen = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.bool\nlengths = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(lengths,maxlen=None,dtype=tf.dtypes.bool):\n  return tf.sequence_mask(lengths,maxlen,dtype)",
+    "pytorch": "def pytorch_call(lengths, maxlen=None, dtype=torch.bool):\n    if maxlen is None:\n        maxlen = lengths.max()\n    lengths = lengths.view(-1)\n    mask = torch.arange(maxlen.item(), device=lengths.device).expand(lengths.size(0), -1) < lengths.unsqueeze(1)\n    return mask.to(dtype)"
+  },
+  "llm_inputs": [
+    "lengths = tf.constant([3, 5, 2], dtype=tf.int32)\nmaxlen = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.bool",
+    "lengths = tf.constant([3, 5, 2], dtype=tf.int32)\nmaxlen = tf.constant(6, dtype=tf.int32)\ndtype = tf.dtypes.bool",
+    "lengths = tf.constant([3, 5, 2], dtype=tf.int32)\nmaxlen = tf.constant(5, dtype=tf.int32)\ndtype = tf.dtypes.bool"
+  ]
+}

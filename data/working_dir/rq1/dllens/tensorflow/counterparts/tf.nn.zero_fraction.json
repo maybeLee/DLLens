@@ -1,0 +1,34 @@
+{
+  "function_name": "tf.nn.zero_fraction(value,name=None)",
+  "inputs": [
+    "value"
+  ],
+  "sample_inputs": [
+    "value = tf.constant([[0.0, 1.0, 2.0], [3.0, 0.0, 5.0]])",
+    "value = tf.constant([[1.0, 2.0, 0.0], [4.0, 5.0, 6.0]])",
+    "value = tf.constant([[1.0, 0.0], [0.0, 2.0]])",
+    "value = tf.constant(np.random.randn(2,3,1,1), dtype='float32')",
+    "value = tf.constant(np.random.randn(5,3), dtype='float32')",
+    "value = tf.constant(np.random.randn(1,3), dtype='float32')",
+    "value = tf.constant(np.random.randn(2,3), dtype='float64')",
+    "value = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "value = tf.constant(np.random.randn(2,3,1), dtype='float32')",
+    "value = tf.constant(np.random.randn(), dtype='float32')",
+    "value = tf.constant(np.random.randn(2), dtype='float32')",
+    "value = tf.constant(np.random.randn(4,3), dtype='float32')",
+    "value = tf.constant(np.random.randn(2,3), dtype='half')",
+    "value = tf.constant(np.random.randn(2,4), dtype='float32')",
+    "value = tf.constant(np.random.randn(2,3,1,1,1), dtype='float32')",
+    "value = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "value = tf.constant(np.random.randn(2,3), dtype='float16')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(value):\n  return tf.nn.zero_fraction(value)",
+    "pytorch": "def pytorch_call(value):\n    zero_count = (value == 0).sum().item()\n    total_count = value.numel()\n    zero_fraction = zero_count / total_count\n    return zero_fraction"
+  },
+  "llm_inputs": [
+    "value = tf.constant([[0.0, 1.0, 2.0], [3.0, 0.0, 5.0]])",
+    "value = tf.constant([[1.0, 2.0, 0.0], [4.0, 5.0, 6.0]])",
+    "value = tf.constant([[1.0, 0.0], [0.0, 2.0]])"
+  ]
+}

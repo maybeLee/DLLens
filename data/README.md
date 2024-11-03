@@ -11,11 +11,6 @@
 └── working_dir/rq1/counterpart
 ```
 
-- `./api.key` contains the key used for accessing the OpenAI's gpt-turbo-3.5 service.
-- `./api_implementations` contains the implementations of the API in PyTorch and TensorFlow.
-- `./tf_api_100samples.txt` and `./torch_api_100samples.txt` 
-  - contain sampled 100 TensorFlow and PyTorch, respectively.
-  - These sampled APIs are used in RQ4.
 - `./tf_api_list.txt` and `./torch_api_list.txt`
   - contain the total list of TensorFlow APIs (3249) and PyTorch APIs (1574), respectively.
 - `./tf_skip_pref.txt` and `./torch_skip_pref.txt`

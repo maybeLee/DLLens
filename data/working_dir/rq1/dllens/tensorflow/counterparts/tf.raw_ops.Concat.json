@@ -1,0 +1,25 @@
+{
+  "function_name": "tf.raw_ops.Concat(concat_dim,values,name=None)",
+  "inputs": [
+    "concat_dim",
+    "values"
+  ],
+  "sample_inputs": [
+    "concat_dim = 1\nvalues = [tf.constant([[1], [2]]), tf.constant([[3], [4]])]",
+    "concat_dim = 1\nvalues = [tf.constant([[1], [2], [3]]), tf.constant([[4], [5], [6]])]",
+    "concat_dim = tf.constant(0)\nvalues = tf.constant([[1, 2], [3, 4]])",
+    "values = [tf.constant([[1], [2]]), tf.constant([[3], [4]])]\nconcat_dim = -1",
+    "values = [tf.constant([[1], [2]]), tf.constant([[3], [4]])]\nconcat_dim = 0",
+    "values = [tf.constant([[1], [2]]), tf.constant([[3], [4]])]\nconcat_dim = 1",
+    "values = [tf.constant([[1], [2]]), tf.constant([[3], [4]])]\nconcat_dim = -2"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(concat_dim,values):\n  return tf.raw_ops.Concat(concat_dim=concat_dim,values=values)",
+    "pytorch": "def pytorch_call(concat_dim, values):\n    if isinstance(values, torch.Tensor):\n        values = [values]\n    return torch.cat(values, dim=concat_dim.item() if isinstance(concat_dim, torch.Tensor) else concat_dim)"
+  },
+  "llm_inputs": [
+    "concat_dim = 1\nvalues = [tf.constant([[1], [2]]), tf.constant([[3], [4]])]",
+    "concat_dim = 1\nvalues = [tf.constant([[1], [2], [3]]), tf.constant([[4], [5], [6]])]",
+    "concat_dim = tf.constant(0)\nvalues = tf.constant([[1, 2], [3, 4]])"
+  ]
+}

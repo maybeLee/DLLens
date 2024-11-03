@@ -1,0 +1,39 @@
+{
+  "function_name": "tf.raw_ops.Cumprod(x,axis,exclusive=False,reverse=False,name=None)",
+  "inputs": [
+    "x",
+    "axis",
+    "exclusive",
+    "reverse"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([1, 2, 3], dtype=tf.float32)\naxis = 0\nexclusive = False\nreverse = False",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.float32)\naxis = 0\nexclusive = False\nreverse = False",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.float32)\naxis = 0\nexclusive = False\nreverse = True\nresult = tf.raw_ops.Cumprod(x=x, axis=axis, exclusive=exclusive, reverse=reverse)",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(3), dtype='float16')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(1), dtype='float32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(3), dtype='half')",
+    "x = tf.constant([1, 2, 3], dtype=tf.float32)\nexclusive = False\nreverse = False\naxis = -1",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(4), dtype='float32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(3,1,1,1,1), dtype='float32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(3,1,1,1), dtype='float32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(5), dtype='float32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(2), dtype='float32')",
+    "x = tf.constant([1, 2, 3], dtype=tf.float32)\nexclusive = False\nreverse = False\naxis = 0",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(3,1,1), dtype='float32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(3), dtype='float64')",
+    "x = tf.constant([1, 2, 3], dtype=tf.float32)\naxis = 0\nexclusive = False\nreverse = True",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(3), dtype='float32')",
+    "x = tf.constant([1, 2, 3], dtype=tf.float32)\naxis = 0\nreverse = False\nexclusive = True"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,axis,exclusive=False,reverse=False):\n  return tf.raw_ops.Cumprod(x=x,axis=axis,exclusive=exclusive,reverse=reverse)",
+    "pytorch": "def pytorch_call(x, axis, exclusive=False, reverse=False):\n    if x.dtype == torch.half:\n        x = x.to(torch.float32)\n    if exclusive:\n        x = torch.cat((torch.tensor([1.0], dtype=x.dtype), x[:-1]))\n    if reverse:\n        x = x.flip(dims=[axis])\n    result = torch.cumprod(x, dim=axis)\n    if reverse:\n        result = result.flip(dims=[axis])\n    return result"
+  },
+  "llm_inputs": [
+    "x = tf.constant([1, 2, 3], dtype=tf.float32)\naxis = 0\nexclusive = False\nreverse = False",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.float32)\naxis = 0\nexclusive = False\nreverse = False",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.float32)\naxis = 0\nexclusive = False\nreverse = True\nresult = tf.raw_ops.Cumprod(x=x, axis=axis, exclusive=exclusive, reverse=reverse)"
+  ]
+}

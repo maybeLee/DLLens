@@ -1,0 +1,30 @@
+{
+  "function_name": "torch.view_as_real(input)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1.0 + 2j, 3.0 + 4j])",
+    "input = torch.tensor([1 + 2j, 3 + 4j], dtype=torch.complex64)",
+    "input = torch.tensor([1 + 2j, 3 + 4j, 5 + 6j])",
+    "input = torch.tensor(np.random.randn(2), dtype=torch.complex64)",
+    "input = torch.tensor(np.random.randn(4), dtype=torch.complex64)",
+    "input = torch.tensor(np.random.randn(1), dtype=torch.complex64)",
+    "input = torch.tensor(np.random.randn(2,1), dtype=torch.complex64)",
+    "input = torch.tensor(np.random.randn(2,1,1), dtype=torch.complex64)",
+    "input = torch.tensor(np.random.randn(2,1,1,1,1), dtype=torch.complex64)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.complex64)",
+    "input = torch.tensor(np.random.randn(2), dtype=torch.complex128)",
+    "input = torch.tensor(np.random.randn(2,1,1,1), dtype=torch.complex64)",
+    "input = torch.tensor(np.random.randn(), dtype=torch.complex64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.view_as_real(input)",
+    "tensorflow": "def tensorflow_call(input):\n    real_part = tf.math.real(input)\n    imag_part = tf.math.imag(input)\n    return tf.stack([real_part, imag_part], axis=-1)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1.0 + 2j, 3.0 + 4j])",
+    "input = torch.tensor([1 + 2j, 3 + 4j], dtype=torch.complex64)",
+    "input = torch.tensor([1 + 2j, 3 + 4j, 5 + 6j])"
+  ]
+}

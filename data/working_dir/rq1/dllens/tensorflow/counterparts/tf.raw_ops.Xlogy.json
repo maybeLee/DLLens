@@ -1,0 +1,33 @@
+{
+  "function_name": "tf.raw_ops.Xlogy(x,y,name=None)",
+  "inputs": [
+    "x",
+    "y"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\ny = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)",
+    "x = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\ny = tf.constant(np.random.randn(3,1,1), dtype='float32')",
+    "y = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nx = tf.constant(np.random.randn(3), dtype='float32')",
+    "x = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\ny = tf.constant(np.random.randn(3,1,1,1,1), dtype='float32')",
+    "y = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nx = tf.constant(np.random.randn(3,1,1), dtype='float32')",
+    "x = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\ny = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\ny = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "x = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\ny = tf.constant(np.random.randn(3,1,1,1), dtype='float32')",
+    "y = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nx = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "x = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\ny = tf.constant(np.random.randn(1), dtype='float32')",
+    "y = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nx = tf.constant(np.random.randn(1), dtype='float32')",
+    "y = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nx = tf.constant(np.random.randn(3,1,1,1,1), dtype='float32')",
+    "x = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\ny = tf.constant(np.random.randn(3), dtype='float32')",
+    "y = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nx = tf.constant(np.random.randn(3,1,1,1), dtype='float32')",
+    "y = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nx = tf.constant(np.random.randn(), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,y):\n  return tf.raw_ops.Xlogy(x=x,y=y)",
+    "pytorch": "def pytorch_call(x, y):\n    return x * torch.log(y)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\ny = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)",
+    "x = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\ny = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)",
+    "x = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\ny = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)"
+  ]
+}

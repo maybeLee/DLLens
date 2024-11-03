@@ -1,0 +1,31 @@
+{
+  "function_name": "tf.math.nextafter(x1,x2,name=None)",
+  "inputs": [
+    "x1",
+    "x2"
+  ],
+  "sample_inputs": [
+    "x1 = tf.constant(1.0)\nx2 = tf.constant(2.0)",
+    "x2 = tf.constant(2.0)\nx1 = tf.constant(np.random.randn(), dtype='float32')",
+    "x1 = tf.constant(1.0)\nx2 = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "x1 = tf.constant(1.0)\nx2 = tf.constant(np.random.randn(), dtype='float32')",
+    "x2 = tf.constant(2.0)\nx1 = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "x1 = tf.constant(1.0)\nx2 = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "x1 = tf.constant(1.0)\nx2 = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "x2 = tf.constant(2.0)\nx1 = tf.constant(np.random.randn(1), dtype='float32')",
+    "x2 = tf.constant(2.0)\nx1 = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "x2 = tf.constant(2.0)\nx1 = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "x2 = tf.constant(2.0)\nx1 = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "x1 = tf.constant(1.0)\nx2 = tf.constant(np.random.randn(1), dtype='float32')",
+    "x1 = tf.constant(1.0)\nx2 = tf.constant(np.random.randn(1,1,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x1,x2):\n  return tf.math.nextafter(x1,x2)",
+    "pytorch": "def pytorch_call(x1, x2):\n    x1 = x1.squeeze()\n    x2 = x2.squeeze()\n    return torch.where(x1 < x2, x1 + 1e-05, x1 - 1e-05)"
+  },
+  "llm_inputs": [
+    "x1 = tf.constant(1.0)\nx2 = tf.constant(2.0)",
+    "x1 = tf.constant(1.0)\nx2 = tf.constant(2.0)",
+    "x1 = tf.constant(1.0)\nx2 = tf.constant(2.0)"
+  ]
+}

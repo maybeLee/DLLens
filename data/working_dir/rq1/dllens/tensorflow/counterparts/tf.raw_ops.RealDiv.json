@@ -1,0 +1,36 @@
+{
+  "function_name": "tf.raw_ops.RealDiv(x,y,name=None)",
+  "inputs": [
+    "x",
+    "y"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[4]], dtype=tf.float32)\ny = tf.constant([[2]], dtype=tf.float32)",
+    "y = tf.constant([[2]], dtype=tf.float32)\nx = tf.constant(np.random.randn(1,5), dtype='float32')",
+    "y = tf.constant([[2]], dtype=tf.float32)\nx = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "y = tf.constant([[2]], dtype=tf.float32)\nx = tf.constant(np.random.randn(), dtype='float32')",
+    "y = tf.constant([[2]], dtype=tf.float32)\nx = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "x = tf.constant([[4]], dtype=tf.float32)\ny = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "y = tf.constant([[2]], dtype=tf.float32)\nx = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant([[4]], dtype=tf.float32)\ny = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "x = tf.constant([[4]], dtype=tf.float32)\ny = tf.constant(np.random.randn(1), dtype='float32')",
+    "y = tf.constant([[2]], dtype=tf.float32)\nx = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "x = tf.constant([[4]], dtype=tf.float32)\ny = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "x = tf.constant([[4]], dtype=tf.float32)\ny = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "x = tf.constant([[4]], dtype=tf.float32)\ny = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "y = tf.constant([[2]], dtype=tf.float32)\nx = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "y = tf.constant([[2]], dtype=tf.float32)\nx = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "x = tf.constant([[4]], dtype=tf.float32)\ny = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "x = tf.constant([[4]], dtype=tf.float32)\ny = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant([[4]], dtype=tf.float32)\ny = tf.constant(np.random.randn(1,4), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,y):\n  return tf.raw_ops.RealDiv(x=x,y=y)",
+    "pytorch": "def pytorch_call(x, y):\n    return torch.div(x, y)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[4]], dtype=tf.float32)\ny = tf.constant([[2]], dtype=tf.float32)",
+    "x = tf.constant([[4]], dtype=tf.float32)\ny = tf.constant([[2]], dtype=tf.float32)",
+    "x = tf.constant([[4]], dtype=tf.float32)\ny = tf.constant([[2]], dtype=tf.float32)"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "function_name": "tf.image.adjust_gamma(image,gamma=1,gain=1)",
+  "inputs": [
+    "image",
+    "gamma",
+    "gain"
+  ],
+  "sample_inputs": [
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\ngamma = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "gamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\nimage = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\ngamma = tf.constant(np.random.randn(), dtype='float32')",
+    "gamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\nimage = tf.constant(np.random.randn(), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\ngamma = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\ngamma = tf.constant(np.random.randn(1), dtype='float32')",
+    "gamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\nimage = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "gamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\nimage = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "gamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\nimage = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "gamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\nimage = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "gamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\nimage = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(np.random.randn(), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\ngamma = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "gamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\nimage = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(np.random.randn(1), dtype='float32')",
+    "gamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\nimage = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "gamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\nimage = tf.constant(np.random.randn(2), dtype='float32')",
+    "gamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\nimage = tf.constant(np.random.randn(3,2), dtype='float32')",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\ngamma = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "gamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)\nimage = tf.constant(np.random.randn(1,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(image,gamma=1,gain=1):\n  return tf.image.adjust_gamma(image,gamma,gain)",
+    "pytorch": "def pytorch_call(image, gamma=1, gain=1):\n    adjusted_image = gain * image ** gamma\n    return adjusted_image"
+  },
+  "llm_inputs": [
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)",
+    "image = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\ngamma = tf.constant(2.0, dtype=tf.float32)\ngain = tf.constant(1.0, dtype=tf.float32)"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "function_name": "tf.eigvals(tensor,name=None)",
+  "inputs": [
+    "tensor"
+  ],
+  "sample_inputs": [
+    "tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])",
+    "tensor = tf.constant([[4.0, 2.0], [1.0, 3.0]])",
+    "tensor = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "tensor = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "tensor = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "tensor = tf.constant(np.random.randn(2,2), dtype='float64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(tensor):\n  return tf.eigvals(tensor)",
+    "pytorch": "def pytorch_call(tensor):\n    return torch.linalg.eigvals(tensor)"
+  },
+  "llm_inputs": [
+    "tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])",
+    "tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])",
+    "tensor = tf.constant([[4.0, 2.0], [1.0, 3.0]])"
+  ]
+}

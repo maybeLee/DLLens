@@ -1,0 +1,32 @@
+{
+  "function_name": "torch.Tensor.round(input)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.2, 2.5], [3.7, 4.1]], dtype=torch.float32)",
+    "input = torch.tensor([[1.2, 2.5], [3.7, 4.4]], dtype=torch.float32)",
+    "input = torch.tensor([[1.1, 2.5], [3.7, 4.4]])",
+    "input = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "input = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "input = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "input = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.Tensor.round(input)",
+    "tensorflow": "def tensorflow_call(input):\n    return tf.round(input)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.2, 2.5], [3.7, 4.1]], dtype=torch.float32)",
+    "input = torch.tensor([[1.2, 2.5], [3.7, 4.4]], dtype=torch.float32)",
+    "input = torch.tensor([[1.1, 2.5], [3.7, 4.4]])"
+  ]
+}

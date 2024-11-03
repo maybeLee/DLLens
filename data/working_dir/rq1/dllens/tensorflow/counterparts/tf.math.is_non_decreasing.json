@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.math.is_non_decreasing(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([1, 2, 2, 3, 4], dtype=tf.int32)",
+    "x = tf.constant(np.random.randint(-50, 50, (5)), dtype='int64')",
+    "x = tf.constant(np.random.randint(-50, 50, (5,1,1)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (5,1,1,1,1)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (5,1)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (5,1,1,1)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (4)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.math.is_non_decreasing(x)",
+    "pytorch": "def pytorch_call(x):\n    if x.dim() == 0:\n        return True\n    shifted_x = torch.roll(x, shifts=-1)\n    is_non_decreasing = x <= shifted_x\n    return is_non_decreasing[:-1].all()"
+  },
+  "llm_inputs": [
+    "x = tf.constant([1, 2, 2, 3, 4], dtype=tf.int32)",
+    "x = tf.constant([1, 2, 2, 3, 4], dtype=tf.int32)",
+    "x = tf.constant([1, 2, 2, 3, 4], dtype=tf.int32)"
+  ]
+}

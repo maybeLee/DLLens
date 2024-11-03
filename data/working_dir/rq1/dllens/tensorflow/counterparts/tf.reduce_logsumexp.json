@@ -1,0 +1,38 @@
+{
+  "function_name": "tf.reduce_logsumexp(input_tensor,axis=None,keepdims=False,name=None)",
+  "inputs": [
+    "input_tensor",
+    "axis",
+    "keepdims"
+  ],
+  "sample_inputs": [
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = 1\nkeepdims = True",
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\naxis = 0\nkeepdims = True",
+    "axis = 1\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,2), dtype='half')",
+    "axis = 1\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "axis = 1\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "axis = 1\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "axis = 1\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "axis = 1\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "axis = 1\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "axis = 1\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "axis = 1\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nkeepdims = True\naxis = -2",
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = 1\nkeepdims = False",
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nkeepdims = True\naxis = -1",
+    "axis = 1\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nkeepdims = True\naxis = 0",
+    "axis = 1\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(3,2), dtype='float32')",
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nkeepdims = True\naxis = 1",
+    "axis = 1\nkeepdims = True\ninput_tensor = tf.constant(np.random.randn(2,2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input_tensor,axis=None,keepdims=False):\n  return tf.reduce_logsumexp(input_tensor,axis,keepdims)",
+    "pytorch": "def pytorch_call(input_tensor, axis=None, keepdims=False):\n    output = torch.logsumexp(input_tensor, dim=axis)\n    if keepdims:\n        output = output.unsqueeze(axis) if axis is not None else output.unsqueeze(0)\n    return output"
+  },
+  "llm_inputs": [
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = 1\nkeepdims = True",
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\naxis = 0\nkeepdims = True",
+    "input_tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = 1\nkeepdims = True"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "function_name": "torch.logit(input, eps=None, *, out=None)",
+  "inputs": [
+    "input",
+    "eps"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([0.1, 0.5, 0.9])\neps = torch.tensor(1e-07)",
+    "eps = torch.tensor(1e-07)\ninput = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "eps = torch.tensor(1e-07)\ninput = torch.tensor(np.random.randn(3), dtype=torch.float64)",
+    "eps = torch.tensor(1e-07)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "eps = torch.tensor(1e-07)\ninput = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([0.1, 0.5, 0.9])\neps = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "eps = torch.tensor(1e-07)\ninput = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([0.1, 0.5, 0.9])\neps = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([0.1, 0.5, 0.9])\neps = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "eps = torch.tensor(1e-07)\ninput = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "eps = torch.tensor(1e-07)\ninput = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "eps = torch.tensor(1e-07)\ninput = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "input = torch.tensor([0.1, 0.5, 0.9])\neps = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "eps = torch.tensor(1e-07)\ninput = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,eps=None):\n  return torch.logit(input,eps)",
+    "tensorflow": "def tensorflow_call(input, eps=None):\n    if eps is None:\n        eps = tf.constant(1e-07, dtype=input.dtype)\n    else:\n        eps = tf.cast(eps, input.dtype)\n    input_clipped = tf.clip_by_value(input, eps, 1 - eps)\n    return tf.math.log(input_clipped / (1 - input_clipped))"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([0.1, 0.5, 0.9])\neps = torch.tensor(1e-07)",
+    "input = torch.tensor([0.1, 0.5, 0.9])\neps = torch.tensor(1e-07)",
+    "input = torch.tensor([0.1, 0.5, 0.9])\neps = torch.tensor(1e-07)"
+  ]
+}

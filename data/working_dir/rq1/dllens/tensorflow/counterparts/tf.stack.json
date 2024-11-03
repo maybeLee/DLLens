@@ -1,0 +1,22 @@
+{
+  "function_name": "tf.stack(values,axis=0,name='stack')",
+  "inputs": [
+    "values",
+    "axis"
+  ],
+  "sample_inputs": [
+    "values = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\naxis = 0",
+    "values = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\naxis = -1",
+    "values = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\naxis = 1",
+    "values = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\naxis = -2"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(values,axis=0):\n  return tf.stack(values,axis)",
+    "pytorch": "def pytorch_call(values, axis=0):\n    return torch.stack(values, dim=axis)"
+  },
+  "llm_inputs": [
+    "values = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\naxis = 0",
+    "values = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\naxis = 0",
+    "values = [tf.constant([1, 2, 3]), tf.constant([4, 5, 6])]\naxis = 0"
+  ]
+}

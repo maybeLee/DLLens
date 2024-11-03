@@ -1,0 +1,36 @@
+{
+  "function_name": "tf.linalg.norm(tensor,ord='euclidean',axis=None,keepdims=None,name=None)",
+  "inputs": [
+    "tensor",
+    "ord",
+    "axis",
+    "keepdims"
+  ],
+  "sample_inputs": [
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nord = 'euclidean'\naxis = None\nkeepdims = False",
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nord = 'euclidean'\naxis = 0\nkeepdims = True",
+    "tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nord = 'euclidean'\naxis = 0\nkeepdims = True",
+    "ord = 'euclidean'\naxis = None\nkeepdims = False\ntensor = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "ord = 'euclidean'\naxis = None\nkeepdims = False\ntensor = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\nkeepdims = False\ntensor = tf.constant(np.random.randn(2), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\nkeepdims = False\ntensor = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "ord = 'euclidean'\naxis = None\nkeepdims = False\ntensor = tf.constant(np.random.randn(2,2), dtype='half')",
+    "ord = 'euclidean'\naxis = None\nkeepdims = False\ntensor = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\nkeepdims = False\ntensor = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\nkeepdims = False\ntensor = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\nkeepdims = False\ntensor = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nord = 'euclidean'\naxis = None\nkeepdims = True",
+    "ord = 'euclidean'\naxis = None\nkeepdims = False\ntensor = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\nkeepdims = False\ntensor = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "ord = 'euclidean'\naxis = None\nkeepdims = False\ntensor = tf.constant(np.random.randn(), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(tensor,ord='euclidean',axis=None,keepdims=None):\n  return tf.linalg.norm(tensor,ord,axis,keepdims)",
+    "pytorch": "def pytorch_call(tensor, ord='euclidean', axis=None, keepdims=False):\n    if ord == 'euclidean':\n        ord = 2\n    if axis is None:\n        norm = torch.norm(tensor, p=ord)\n        if keepdims:\n            norm = norm.unsqueeze(0)\n    else:\n        norm = torch.norm(tensor, p=ord, dim=axis)\n        if keepdims:\n            norm = norm.unsqueeze(axis)\n    return norm"
+  },
+  "llm_inputs": [
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nord = 'euclidean'\naxis = None\nkeepdims = False",
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nord = 'euclidean'\naxis = 0\nkeepdims = True",
+    "tensor = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nord = 'euclidean'\naxis = 0\nkeepdims = True"
+  ]
+}

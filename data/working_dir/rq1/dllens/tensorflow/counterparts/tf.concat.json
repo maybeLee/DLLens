@@ -1,0 +1,20 @@
+{
+  "function_name": "tf.concat(values,axis,name='concat')",
+  "inputs": [
+    "values",
+    "axis"
+  ],
+  "sample_inputs": [
+    "values = [tf.constant([[1, 2], [3, 4]]), tf.constant([[5, 6]])]\naxis = 0",
+    "values = [tf.constant([[1, 2], [3, 4]]), tf.constant([[5, 6]])]\naxis = -2"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(values,axis):\n  return tf.concat(values,axis)",
+    "pytorch": "def pytorch_call(values, axis):\n    return torch.cat(values, dim=axis)"
+  },
+  "llm_inputs": [
+    "values = [tf.constant([[1, 2], [3, 4]]), tf.constant([[5, 6]])]\naxis = 0",
+    "values = [tf.constant([[1, 2], [3, 4]]), tf.constant([[5, 6]])]\naxis = 0",
+    "values = [tf.constant([[1, 2], [3, 4]]), tf.constant([[5, 6]])]\naxis = 0"
+  ]
+}

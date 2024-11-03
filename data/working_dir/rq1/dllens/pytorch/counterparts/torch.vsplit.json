@@ -1,0 +1,28 @@
+{
+  "function_name": "torch.vsplit(input, indices_or_sections)",
+  "inputs": [
+    "input",
+    "indices_or_sections"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nindices_or_sections = 2",
+    "indices_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (2,3)), dtype=torch.int32)",
+    "indices_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (4,3)), dtype=torch.int64)",
+    "indices_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (2,3)), dtype=torch.int64)",
+    "indices_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (2,3,1,1,1)), dtype=torch.int64)",
+    "indices_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (2,5)), dtype=torch.int64)",
+    "indices_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (2,3,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nindices_or_sections = 1",
+    "indices_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (2,3,1,1)), dtype=torch.int64)",
+    "indices_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,indices_or_sections):\n  return torch.vsplit(input,indices_or_sections)",
+    "tensorflow": "def tensorflow_call(input, indices_or_sections):\n    return tf.split(input, num_or_size_splits=indices_or_sections, axis=0)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nindices_or_sections = 2",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nindices_or_sections = 2",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nindices_or_sections = 2"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "function_name": "torch.nn.functional.avg_pool1d(input, kernel_size, stride=None, padding=0, ceil_mode=False, count_include_pad=True)",
+  "inputs": [
+    "input",
+    "kernel_size",
+    "stride",
+    "padding",
+    "ceil_mode",
+    "count_include_pad"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nkernel_size = 3\nstride = 1\npadding = 0\nceil_mode = False\ncount_include_pad = True",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]])\nkernel_size = 3\nstride = 1\npadding = 0\nceil_mode = False\ncount_include_pad = True",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nkernel_size = (3,)\nstride = (1,)\npadding = 0\nceil_mode = False\ncount_include_pad = True",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nstride = 1\npadding = 0\nceil_mode = False\ncount_include_pad = True\nkernel_size = 4",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nstride = 1\npadding = 0\nceil_mode = False\ncount_include_pad = True\nkernel_size = 1",
+    "kernel_size = 3\nstride = 1\npadding = 0\nceil_mode = False\ncount_include_pad = True\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nkernel_size = 3\nstride = 1\npadding = 0\ncount_include_pad = True\nceil_mode = True",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nkernel_size = 3\nstride = 1\nceil_mode = False\ncount_include_pad = True\npadding = 1",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nkernel_size = 3\npadding = 0\nceil_mode = False\ncount_include_pad = True\nstride = 2",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nkernel_size = 3\npadding = 0\nceil_mode = False\ncount_include_pad = True\nstride = 1",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nstride = 1\npadding = 0\nceil_mode = False\ncount_include_pad = True\nkernel_size = 3",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nkernel_size = 3\npadding = 0\nceil_mode = False\ncount_include_pad = True\nstride = 5",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nstride = 1\npadding = 0\nceil_mode = False\ncount_include_pad = True\nkernel_size = 2",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nkernel_size = 3\npadding = 0\nceil_mode = False\ncount_include_pad = True\nstride = 3",
+    "kernel_size = 3\nstride = 1\npadding = 0\nceil_mode = False\ncount_include_pad = True\ninput = torch.tensor(np.random.randn(5,5), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nkernel_size = 3\nstride = 1\npadding = 0\nceil_mode = False\ncount_include_pad = False",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nkernel_size = 3\npadding = 0\nceil_mode = False\ncount_include_pad = True\nstride = 4",
+    "kernel_size = 3\nstride = 1\npadding = 0\nceil_mode = False\ncount_include_pad = True\ninput = torch.tensor(np.random.randn(1,5), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nkernel_size = 3\nstride = 1\nceil_mode = False\ncount_include_pad = True\npadding = 0",
+    "kernel_size = 3\nstride = 1\npadding = 0\nceil_mode = False\ncount_include_pad = True\ninput = torch.tensor(np.random.randn(1,5), dtype=torch.float64)",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nstride = 1\npadding = 0\nceil_mode = False\ncount_include_pad = True\nkernel_size = 5"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,kernel_size,stride=None,padding=0,ceil_mode=False,count_include_pad=True):\n  return torch.nn.functional.avg_pool1d(input,kernel_size,stride,padding,ceil_mode,count_include_pad)",
+    "tensorflow": "def tensorflow_call(input, kernel_size, stride=None, padding=0, ceil_mode=False, count_include_pad=True):\n    if stride is None:\n        stride = 1\n    if isinstance(kernel_size, int):\n        kernel_size = (kernel_size,)\n    if isinstance(stride, int):\n        stride = (stride,)\n    input = tf.expand_dims(input, axis=2)\n    input = tf.pad(input, [[0, 0], [padding, padding], [0, 0]], mode='CONSTANT')\n    pooled_output = tf.nn.avg_pool(input, ksize=[1, kernel_size[0], 1], strides=[1, stride[0], 1], padding='VALID')\n    if count_include_pad:\n        return tf.squeeze(pooled_output, axis=2)\n    else:\n        valid_elements = tf.nn.max_pool(tf.cast(input[:, :, :], tf.float32), ksize=[1, kernel_size[0], 1], strides=[1, stride[0], 1], padding='VALID')\n        valid_elements = tf.where(valid_elements > 0, tf.ones_like(valid_elements), tf.zeros_like(valid_elements))\n        valid_count = tf.nn.avg_pool(valid_elements, ksize=[1, kernel_size[0], 1], strides=[1, stride[0], 1], padding='VALID')\n        valid_count = tf.maximum(valid_count, 1.0)\n        pooled_output = pooled_output / valid_count\n        return tf.squeeze(pooled_output, axis=2)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nkernel_size = 3\nstride = 1\npadding = 0\nceil_mode = False\ncount_include_pad = True",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]])\nkernel_size = 3\nstride = 1\npadding = 0\nceil_mode = False\ncount_include_pad = True",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]], dtype=torch.float32)\nkernel_size = (3,)\nstride = (1,)\npadding = 0\nceil_mode = False\ncount_include_pad = True"
+  ]
+}

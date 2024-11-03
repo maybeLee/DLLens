@@ -1,0 +1,33 @@
+{
+  "function_name": "tf.keras.utils.get_source_inputs(tensor,layer=None,node_index=None)",
+  "inputs": [
+    "tensor",
+    "layer",
+    "node_index"
+  ],
+  "sample_inputs": [
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nlayer = None\nnode_index = None",
+    "tensor = tf.constant([[1, 2], [3, 4]])\nlayer = None\nnode_index = None",
+    "layer = None\nnode_index = None\ntensor = tf.constant(np.random.randn(2,2), dtype='half')",
+    "layer = None\nnode_index = None\ntensor = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "layer = None\nnode_index = None\ntensor = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "layer = None\nnode_index = None\ntensor = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "layer = None\nnode_index = None\ntensor = tf.constant(np.random.randn(), dtype='float32')",
+    "layer = None\nnode_index = None\ntensor = tf.constant(np.random.randn(2), dtype='float32')",
+    "layer = None\nnode_index = None\ntensor = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "layer = None\nnode_index = None\ntensor = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "layer = None\nnode_index = None\ntensor = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "layer = None\nnode_index = None\ntensor = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "layer = None\nnode_index = None\ntensor = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "layer = None\nnode_index = None\ntensor = tf.constant(np.random.randn(2,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(tensor,layer=None,node_index=None):\n  return tf.keras.utils.get_source_inputs(tensor,layer,node_index)",
+    "pytorch": "def pytorch_call(tensor, layer=None, node_index=None):\n    return tensor"
+  },
+  "llm_inputs": [
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nlayer = None\nnode_index = None",
+    "tensor = tf.constant([[1, 2], [3, 4]])\nlayer = None\nnode_index = None",
+    "tensor = tf.constant([[1, 2], [3, 4]])\nlayer = None\nnode_index = None"
+  ]
+}

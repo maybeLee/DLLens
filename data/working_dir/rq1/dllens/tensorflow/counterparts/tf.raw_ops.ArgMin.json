@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.raw_ops.ArgMin(input,dimension,output_type=tf.dtypes.int64,name=None)",
+  "inputs": [
+    "input",
+    "dimension",
+    "output_type"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.dtypes.float32)\ndimension = tf.constant(1, dtype=tf.dtypes.int32)\noutput_type = tf.dtypes.int64",
+    "dimension = tf.constant(1, dtype=tf.dtypes.int32)\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randn(1,3), dtype='float32')",
+    "dimension = tf.constant(1, dtype=tf.dtypes.int32)\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randn(2,3), dtype='half')",
+    "dimension = tf.constant(1, dtype=tf.dtypes.int32)\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randn(5,3), dtype='float32')",
+    "dimension = tf.constant(1, dtype=tf.dtypes.int32)\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randn(2,3,1), dtype='float32')",
+    "dimension = tf.constant(1, dtype=tf.dtypes.int32)\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "dimension = tf.constant(1, dtype=tf.dtypes.int32)\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randn(2,3,1,1,1), dtype='float32')",
+    "dimension = tf.constant(1, dtype=tf.dtypes.int32)\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randn(2,3), dtype='float64')",
+    "dimension = tf.constant(1, dtype=tf.dtypes.int32)\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randn(2,3,1,1), dtype='float32')",
+    "dimension = tf.constant(1, dtype=tf.dtypes.int32)\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randn(2,3), dtype='float16')",
+    "dimension = tf.constant(1, dtype=tf.dtypes.int32)\noutput_type = tf.dtypes.int64\ninput = tf.constant(np.random.randn(2,3), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,dimension,output_type=tf.dtypes.int64):\n  return tf.raw_ops.ArgMin(input=input,dimension=dimension,output_type=output_type)",
+    "pytorch": "def pytorch_call(input, dimension, output_type=torch.int64):\n    dim = dimension.item()\n    result = torch.argmin(input, dim=dim)\n    return result.to(output_type)"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.dtypes.float32)\ndimension = tf.constant(1, dtype=tf.dtypes.int32)\noutput_type = tf.dtypes.int64",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.dtypes.float32)\ndimension = tf.constant(1, dtype=tf.dtypes.int32)\noutput_type = tf.dtypes.int64",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.dtypes.float32)\ndimension = tf.constant(1, dtype=tf.dtypes.int32)\noutput_type = tf.dtypes.int64"
+  ]
+}

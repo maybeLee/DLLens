@@ -1,0 +1,44 @@
+{
+  "function_name": "torch.nn.functional.hardtanh(input, min_val=-1., max_val=1., inplace=False)",
+  "inputs": [
+    "input",
+    "min_val",
+    "max_val",
+    "inplace"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[0.5, -0.5], [1.5, -1.5]])\nmin_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)",
+    "input = torch.tensor([[0.5, -1.5, 2.0], [-0.5, 1.0, -2.0]])\nmin_val = -0.5\nmax_val = 0.5\ninplace = False",
+    "input = torch.tensor([[0.5, -0.5], [1.5, -1.5]])\nmin_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = False",
+    "input = torch.tensor([[0.5, -0.5], [1.5, -1.5]])\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\nmin_val = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "min_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "min_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "input = torch.tensor([[0.5, -0.5], [1.5, -1.5]])\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\nmin_val = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "min_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "min_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[0.5, -0.5], [1.5, -1.5]])\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\nmin_val = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "min_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "min_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "min_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "min_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "input = torch.tensor([[0.5, -0.5], [1.5, -1.5]])\nmin_val = torch.tensor(-1.0)\ninplace = torch.tensor(False)\nmax_val = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "input = torch.tensor([[0.5, -0.5], [1.5, -1.5]])\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\nmin_val = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "min_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "min_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[0.5, -0.5], [1.5, -1.5]])\nmin_val = torch.tensor(-1.0)\ninplace = torch.tensor(False)\nmax_val = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "min_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "min_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "min_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "input = torch.tensor([[0.5, -0.5], [1.5, -1.5]])\nmin_val = torch.tensor(-1.0)\ninplace = torch.tensor(False)\nmax_val = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "input = torch.tensor([[0.5, -0.5], [1.5, -1.5]])\nmin_val = torch.tensor(-1.0)\ninplace = torch.tensor(False)\nmax_val = torch.tensor(np.random.randn(), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,min_val=-1.0,max_val=1.0,inplace=False):\n  return torch.nn.functional.hardtanh(input,min_val,max_val,inplace)",
+    "tensorflow": "def tensorflow_call(input, min_val=-1.0, max_val=1.0, inplace=False):\n    min_val = tf.cast(min_val, input.dtype)\n    max_val = tf.cast(max_val, input.dtype)\n    if inplace:\n        input = tf.clip_by_value(input, min_val, max_val)\n    else:\n        input = tf.clip_by_value(input, min_val, max_val)\n    return input"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[0.5, -0.5], [1.5, -1.5]])\nmin_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = torch.tensor(False)",
+    "input = torch.tensor([[0.5, -1.5, 2.0], [-0.5, 1.0, -2.0]])\nmin_val = -0.5\nmax_val = 0.5\ninplace = False",
+    "input = torch.tensor([[0.5, -0.5], [1.5, -1.5]])\nmin_val = torch.tensor(-1.0)\nmax_val = torch.tensor(1.0)\ninplace = False"
+  ]
+}

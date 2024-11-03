@@ -1,0 +1,32 @@
+{
+  "function_name": "tf.metrics.sparse_top_k_categorical_accuracy(y_true,y_pred,k=5)",
+  "inputs": [
+    "y_true",
+    "y_pred",
+    "k"
+  ],
+  "sample_inputs": [
+    "y_true = tf.constant([1, 0, 2, 1], dtype=tf.int32)\ny_pred = tf.constant([[0.1, 0.9, 0.0], [0.8, 0.1, 0.1], [0.2, 0.2, 0.6], [0.0, 0.8, 0.2]], dtype=tf.float32)\nk = tf.constant(2, dtype=tf.int32)",
+    "y_true = tf.constant([1, 0, 2, 1], dtype=tf.int32)\ny_pred = tf.constant([[0.1, 0.9, 0.0], [0.8, 0.1, 0.1], [0.2, 0.3, 0.5], [0.0, 0.8, 0.2]], dtype=tf.float32)\nk = tf.constant(2, dtype=tf.int32)",
+    "y_true = tf.constant([1, 0, 2, 1], dtype=tf.int32)\ny_pred = tf.constant([[0.1, 0.9, 0.0], [0.8, 0.1, 0.1], [0.0, 0.2, 0.8], [0.6, 0.3, 0.1]], dtype=tf.float32)\nk = tf.constant(2, dtype=tf.int32)",
+    "y_pred = tf.constant([[0.1, 0.9, 0.0], [0.8, 0.1, 0.1], [0.2, 0.2, 0.6], [0.0, 0.8, 0.2]], dtype=tf.float32)\nk = tf.constant(2, dtype=tf.int32)\ny_true = tf.constant(np.random.randint(-50, 50, (4)), dtype='int32')",
+    "y_pred = tf.constant([[0.1, 0.9, 0.0], [0.8, 0.1, 0.1], [0.2, 0.2, 0.6], [0.0, 0.8, 0.2]], dtype=tf.float32)\nk = tf.constant(2, dtype=tf.int32)\ny_true = tf.constant(np.random.randint(-50, 50, (4,1,1,1,1)), dtype='int32')",
+    "y_true = tf.constant([1, 0, 2, 1], dtype=tf.int32)\nk = tf.constant(2, dtype=tf.int32)\ny_pred = tf.constant(np.random.randn(4,5), dtype='float32')",
+    "y_pred = tf.constant([[0.1, 0.9, 0.0], [0.8, 0.1, 0.1], [0.2, 0.2, 0.6], [0.0, 0.8, 0.2]], dtype=tf.float32)\nk = tf.constant(2, dtype=tf.int32)\ny_true = tf.constant(np.random.randint(-50, 50, (4,1,1,1)), dtype='int32')",
+    "y_pred = tf.constant([[0.1, 0.9, 0.0], [0.8, 0.1, 0.1], [0.2, 0.2, 0.6], [0.0, 0.8, 0.2]], dtype=tf.float32)\nk = tf.constant(2, dtype=tf.int32)\ny_true = tf.constant(np.random.randint(-50, 50, (4)), dtype='int64')",
+    "y_true = tf.constant([1, 0, 2, 1], dtype=tf.int32)\nk = tf.constant(2, dtype=tf.int32)\ny_pred = tf.constant(np.random.randn(4,3), dtype='float32')",
+    "y_pred = tf.constant([[0.1, 0.9, 0.0], [0.8, 0.1, 0.1], [0.2, 0.2, 0.6], [0.0, 0.8, 0.2]], dtype=tf.float32)\nk = tf.constant(2, dtype=tf.int32)\ny_true = tf.constant(np.random.randint(-50, 50, (4,1)), dtype='int32')",
+    "y_true = tf.constant([1, 0, 2, 1], dtype=tf.int32)\nk = tf.constant(2, dtype=tf.int32)\ny_pred = tf.constant(np.random.randn(4,1), dtype='float32')",
+    "y_true = tf.constant([1, 0, 2, 1], dtype=tf.int32)\ny_pred = tf.constant([[0.1, 0.9, 0.0], [0.8, 0.1, 0.1], [0.2, 0.2, 0.6], [0.0, 0.8, 0.2]], dtype=tf.float32)\nk = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "y_pred = tf.constant([[0.1, 0.9, 0.0], [0.8, 0.1, 0.1], [0.2, 0.2, 0.6], [0.0, 0.8, 0.2]], dtype=tf.float32)\nk = tf.constant(2, dtype=tf.int32)\ny_true = tf.constant(np.random.randint(-50, 50, (4,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(y_true,y_pred,k=5):\n  return tf.metrics.sparse_top_k_categorical_accuracy(y_true,y_pred,k)",
+    "pytorch": "def pytorch_call(y_true, y_pred, k=5):\n    num_classes = y_pred.size(1)\n    k = max(0, min(k.item(), num_classes))\n    top_k_indices = torch.topk(y_pred, k=k, dim=1).indices\n    valid_indices = (y_true >= 0) & (y_true < num_classes)\n    accuracy = torch.zeros(y_true.size(0), dtype=torch.float32)\n    if valid_indices.any():\n        correct = (top_k_indices == y_true.unsqueeze(1)).any(dim=1)\n        accuracy[valid_indices] = correct[valid_indices].float()\n    return accuracy.view(-1, 1, 1)"
+  },
+  "llm_inputs": [
+    "y_true = tf.constant([1, 0, 2, 1], dtype=tf.int32)\ny_pred = tf.constant([[0.1, 0.9, 0.0], [0.8, 0.1, 0.1], [0.2, 0.2, 0.6], [0.0, 0.8, 0.2]], dtype=tf.float32)\nk = tf.constant(2, dtype=tf.int32)",
+    "y_true = tf.constant([1, 0, 2, 1], dtype=tf.int32)\ny_pred = tf.constant([[0.1, 0.9, 0.0], [0.8, 0.1, 0.1], [0.2, 0.3, 0.5], [0.0, 0.8, 0.2]], dtype=tf.float32)\nk = tf.constant(2, dtype=tf.int32)",
+    "y_true = tf.constant([1, 0, 2, 1], dtype=tf.int32)\ny_pred = tf.constant([[0.1, 0.9, 0.0], [0.8, 0.1, 0.1], [0.0, 0.2, 0.8], [0.6, 0.3, 0.1]], dtype=tf.float32)\nk = tf.constant(2, dtype=tf.int32)"
+  ]
+}

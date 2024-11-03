@@ -1,0 +1,33 @@
+{
+  "function_name": "tf.raw_ops.ZerosLike(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)",
+    "x = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)",
+    "x = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "x = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2), dtype='half')",
+    "x = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "x = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "x = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "x = tf.constant(np.random.randn(4,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.raw_ops.ZerosLike(x=x)",
+    "pytorch": "def pytorch_call(x):\n    return torch.zeros_like(x)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)",
+    "x = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)",
+    "x = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.image.non_max_suppression_with_scores(boxes,scores,max_output_size,iou_threshold=0.5,score_threshold=float('-inf'),soft_nms_sigma=0.0,name=None)",
+  "inputs": [
+    "boxes",
+    "scores",
+    "max_output_size",
+    "iou_threshold",
+    "score_threshold",
+    "soft_nms_sigma"
+  ],
+  "sample_inputs": [
+    "boxes = tf.constant([[0.1, 0.1, 0.2, 0.2], [0.3, 0.3, 0.4, 0.4], [0.5, 0.5, 0.6, 0.6]])\nscores = tf.constant([0.9, 0.8, 0.75])\nmax_output_size = tf.constant(3)\niou_threshold = tf.constant(0.5)\nscore_threshold = tf.constant(float('-inf'))\nsoft_nms_sigma = tf.constant(0.0)",
+    "boxes = tf.constant([[0.1, 0.2, 0.3, 0.4], [0.5, 0.6, 0.7, 0.8]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.75], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\niou_threshold = tf.constant(0.5, dtype=tf.float32)\nscore_threshold = tf.constant(float('-inf'), dtype=tf.float32)\nsoft_nms_sigma = tf.constant(0.0, dtype=tf.float32)",
+    "boxes = tf.constant([[0.0, 0.0, 1.0, 1.0], [0.5, 0.5, 1.5, 1.5], [1.0, 1.0, 2.0, 2.0]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.75, 0.6], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\niou_threshold = tf.constant(0.5, dtype=tf.float32)\nscore_threshold = tf.constant(float('-inf'), dtype=tf.float32)\nsoft_nms_sigma = tf.constant(0.0, dtype=tf.float32)",
+    "boxes = tf.constant([[0.1, 0.1, 0.2, 0.2], [0.3, 0.3, 0.4, 0.4], [0.5, 0.5, 0.6, 0.6]])\nscores = tf.constant([0.9, 0.8, 0.75])\nmax_output_size = tf.constant(3)\niou_threshold = tf.constant(0.5)\nsoft_nms_sigma = tf.constant(0.0)\nscore_threshold = tf.constant(np.random.randn(), dtype='float32')",
+    "boxes = tf.constant([[0.1, 0.1, 0.2, 0.2], [0.3, 0.3, 0.4, 0.4], [0.5, 0.5, 0.6, 0.6]])\nmax_output_size = tf.constant(3)\niou_threshold = tf.constant(0.5)\nscore_threshold = tf.constant(float('-inf'))\nsoft_nms_sigma = tf.constant(0.0)\nscores = tf.constant(np.random.randn(3), dtype='float32')",
+    "scores = tf.constant([0.9, 0.8, 0.75])\nmax_output_size = tf.constant(3)\niou_threshold = tf.constant(0.5)\nscore_threshold = tf.constant(float('-inf'))\nsoft_nms_sigma = tf.constant(0.0)\nboxes = tf.constant(np.random.randn(3,4), dtype='float32')",
+    "boxes = tf.constant([[0.1, 0.1, 0.2, 0.2], [0.3, 0.3, 0.4, 0.4], [0.5, 0.5, 0.6, 0.6]])\nscores = tf.constant([0.9, 0.8, 0.75])\nmax_output_size = tf.constant(3)\niou_threshold = tf.constant(0.5)\nscore_threshold = tf.constant(float('-inf'))\nsoft_nms_sigma = tf.constant(np.random.randn(), dtype='float32')",
+    "boxes = tf.constant([[0.1, 0.1, 0.2, 0.2], [0.3, 0.3, 0.4, 0.4], [0.5, 0.5, 0.6, 0.6]])\nscores = tf.constant([0.9, 0.8, 0.75])\nmax_output_size = tf.constant(3)\nscore_threshold = tf.constant(float('-inf'))\nsoft_nms_sigma = tf.constant(0.0)\niou_threshold = tf.constant(np.random.randn(), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(boxes,scores,max_output_size,iou_threshold=0.5,score_threshold=float('-inf'),soft_nms_sigma=0.0):\n  return tf.image.non_max_suppression_with_scores(boxes,scores,max_output_size,iou_threshold,score_threshold,soft_nms_sigma)",
+    "pytorch": "def pytorch_call(boxes, scores, max_output_size, iou_threshold=0.5, score_threshold=float('-inf'), soft_nms_sigma=0.0):\n\n    def nms(boxes, scores, iou_threshold):\n        indices = scores.argsort(descending=True)\n        selected_indices = []\n        while indices.numel() > 0:\n            current_index = indices[0]\n            selected_indices.append(current_index.item())\n            if indices.numel() == 1:\n                break\n            current_box = boxes[current_index].unsqueeze(0)\n            rest_boxes = boxes[indices[1:]]\n            iou = box_iou(current_box, rest_boxes)\n            indices = indices[1:][iou <= iou_threshold]\n        return torch.tensor(selected_indices)\n\n    def box_iou(box1, box2):\n        inter_x1 = torch.max(box1[..., 0], box2[..., 0])\n        inter_y1 = torch.max(box1[..., 1], box2[..., 1])\n        inter_x2 = torch.min(box1[..., 2], box2[..., 2])\n        inter_y2 = torch.min(box1[..., 3], box2[..., 3])\n        inter_area = torch.clamp(inter_x2 - inter_x1, min=0) * torch.clamp(inter_y2 - inter_y1, min=0)\n        box1_area = (box1[..., 2] - box1[..., 0]) * (box1[..., 3] - box1[..., 1])\n        box2_area = (box2[..., 2] - box2[..., 0]) * (box2[..., 3] - box2[..., 1])\n        union_area = box1_area + box2_area - inter_area\n        return inter_area / union_area\n    valid_indices = scores > score_threshold\n    boxes = boxes[valid_indices]\n    scores = scores[valid_indices]\n    selected_indices = nms(boxes, scores, iou_threshold)\n    selected_indices = selected_indices[:max_output_size.item()]\n    selected_scores = scores[selected_indices]\n    return (selected_indices, selected_scores)"
+  },
+  "llm_inputs": [
+    "boxes = tf.constant([[0.1, 0.1, 0.2, 0.2], [0.3, 0.3, 0.4, 0.4], [0.5, 0.5, 0.6, 0.6]])\nscores = tf.constant([0.9, 0.8, 0.75])\nmax_output_size = tf.constant(3)\niou_threshold = tf.constant(0.5)\nscore_threshold = tf.constant(float('-inf'))\nsoft_nms_sigma = tf.constant(0.0)",
+    "boxes = tf.constant([[0.1, 0.2, 0.3, 0.4], [0.5, 0.6, 0.7, 0.8]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.75], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\niou_threshold = tf.constant(0.5, dtype=tf.float32)\nscore_threshold = tf.constant(float('-inf'), dtype=tf.float32)\nsoft_nms_sigma = tf.constant(0.0, dtype=tf.float32)",
+    "boxes = tf.constant([[0.0, 0.0, 1.0, 1.0], [0.5, 0.5, 1.5, 1.5], [1.0, 1.0, 2.0, 2.0]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.75, 0.6], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\niou_threshold = tf.constant(0.5, dtype=tf.float32)\nscore_threshold = tf.constant(float('-inf'), dtype=tf.float32)\nsoft_nms_sigma = tf.constant(0.0, dtype=tf.float32)"
+  ]
+}

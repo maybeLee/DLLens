@@ -1,0 +1,38 @@
+{
+  "function_name": "tf.keras.activations.elu(x,alpha=1.0)",
+  "inputs": [
+    "x",
+    "alpha"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nalpha = tf.constant(1.0, dtype=tf.float32)",
+    "alpha = tf.constant(1.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "alpha = tf.constant(1.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nalpha = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "alpha = tf.constant(1.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "alpha = tf.constant(1.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "alpha = tf.constant(1.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nalpha = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "alpha = tf.constant(1.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(), dtype='float32')",
+    "alpha = tf.constant(1.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nalpha = tf.constant(np.random.randn(1), dtype='float32')",
+    "alpha = tf.constant(1.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "alpha = tf.constant(1.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nalpha = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nalpha = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "alpha = tf.constant(1.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,2), dtype='half')",
+    "alpha = tf.constant(1.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nalpha = tf.constant(np.random.randn(), dtype='float32')",
+    "alpha = tf.constant(1.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "alpha = tf.constant(1.0, dtype=tf.float32)\nx = tf.constant(np.random.randn(2,2), dtype='float16')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,alpha=1.0):\n  return tf.keras.activations.elu(x,alpha)",
+    "pytorch": "def pytorch_call(x, alpha=1.0):\n    return torch.nn.functional.elu(x, alpha.item())"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nalpha = tf.constant(1.0, dtype=tf.float32)",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nalpha = tf.constant(1.0, dtype=tf.float32)",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nalpha = tf.constant(1.0, dtype=tf.float32)"
+  ]
+}

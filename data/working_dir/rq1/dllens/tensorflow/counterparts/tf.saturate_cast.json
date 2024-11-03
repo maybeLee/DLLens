@@ -1,0 +1,31 @@
+{
+  "function_name": "tf.saturate_cast(value,dtype,name=None)",
+  "inputs": [
+    "value",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "value = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\ndtype = tf.int32",
+    "value = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\ndtype = tf.float32",
+    "dtype = tf.int32\nvalue = tf.constant(np.random.randint(-50, 50, (2,2,1,1)), dtype='int32')",
+    "dtype = tf.int32\nvalue = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "dtype = tf.int32\nvalue = tf.constant(np.random.randint(-50, 50, (2,5)), dtype='int32')",
+    "dtype = tf.int32\nvalue = tf.constant(np.random.randint(-50, 50, (2,2,1)), dtype='int32')",
+    "dtype = tf.int32\nvalue = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "dtype = tf.int32\nvalue = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int64')",
+    "dtype = tf.int32\nvalue = tf.constant(np.random.randint(-50, 50, (2,2,1,1,1)), dtype='int32')",
+    "dtype = tf.int32\nvalue = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int32')",
+    "dtype = tf.int32\nvalue = tf.constant(np.random.randint(-50, 50, (1,2)), dtype='int32')",
+    "dtype = tf.int32\nvalue = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int32')",
+    "dtype = tf.int32\nvalue = tf.constant(np.random.randint(-50, 50, (2,4)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(value,dtype):\n  return tf.saturate_cast(value,dtype)",
+    "pytorch": "def pytorch_call(value, dtype):\n    if dtype == torch.int32:\n        value = torch.clamp(value, min=torch.iinfo(torch.int32).min, max=torch.iinfo(torch.int32).max)\n    elif dtype == torch.float32:\n        value = torch.clamp(value, min=torch.finfo(torch.float32).min, max=torch.finfo(torch.float32).max)\n    return value.to(dtype)"
+  },
+  "llm_inputs": [
+    "value = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\ndtype = tf.int32",
+    "value = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\ndtype = tf.float32",
+    "value = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\ndtype = tf.int32"
+  ]
+}

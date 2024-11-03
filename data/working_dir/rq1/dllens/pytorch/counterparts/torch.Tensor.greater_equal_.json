@@ -1,0 +1,31 @@
+{
+  "function_name": "torch.Tensor.greater_equal_(input, other)",
+  "inputs": [
+    "input",
+    "other"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor([[2, 2], [2, 2]], dtype=torch.float32)",
+    "other = torch.tensor([[2, 2], [2, 2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "other = torch.tensor([[2, 2], [2, 2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "other = torch.tensor([[2, 2], [2, 2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "other = torch.tensor([[2, 2], [2, 2]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor(np.random.randn(2,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,other):\n  return torch.Tensor.greater_equal_(input,other)",
+    "tensorflow": "def tensorflow_call(input, other):\n    other = tf.cast(other, input.dtype)\n    return tf.greater_equal(input, other)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor([[2, 2], [2, 2]], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor([[2, 2], [2, 2]], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor([[2, 2], [2, 2]], dtype=torch.float32)"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.raw_ops.Ndtri(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([0.1, 0.5, 0.9], dtype=tf.float32)",
+    "x = tf.constant(np.random.randn(3), dtype='float64')",
+    "x = tf.constant(np.random.randn(3,1,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(3,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant(np.random.randn(3,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant(np.random.randn(3), dtype='float32')",
+    "x = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.raw_ops.Ndtri(x=x)",
+    "pytorch": "def pytorch_call(x):\n    output = torch.empty_like(x)\n    output[x <= 0] = float('-inf')\n    output[x >= 1] = float('inf')\n    mask = (x > 0) & (x < 1)\n    output[mask] = torch.distributions.Normal(0, 1).icdf(x[mask])\n    return output"
+  },
+  "llm_inputs": [
+    "x = tf.constant([0.1, 0.5, 0.9], dtype=tf.float32)",
+    "x = tf.constant([0.1, 0.5, 0.9], dtype=tf.float32)",
+    "x = tf.constant([0.1, 0.5, 0.9], dtype=tf.float32)"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.math.bincount(arr,weights=None,minlength=None,maxlength=None,dtype=tf.dtypes.int32,name=None,axis=None,binary_output=False)",
+  "inputs": [
+    "arr",
+    "weights",
+    "minlength",
+    "maxlength",
+    "dtype",
+    "name",
+    "axis",
+    "binary_output"
+  ],
+  "sample_inputs": [
+    "arr = tf.constant([0, 1, 2, 0, 1, 2, 0], dtype=tf.dtypes.int32)\nweights = tf.constant([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], dtype=tf.dtypes.float32)\nminlength = 0\nmaxlength = 3\ndtype = tf.dtypes.int32\nname = 'bincount_example'\naxis = None\nbinary_output = False\nresult = tf.math.bincount(arr, weights, minlength, maxlength, dtype, name, axis, binary_output)",
+    "arr = tf.constant([0, 1, 2, 3, 4], dtype=tf.dtypes.int32)\nweights = tf.constant([1.0, 1.0, 1.0, 1.0, 1.0], dtype=tf.dtypes.float32)\nminlength = 0\nmaxlength = 5\ndtype = tf.dtypes.int32\nname = 'bincount_example'\naxis = None\nbinary_output = False",
+    "arr = tf.constant([0, 1, 2, 2, 1, 0, 0], dtype=tf.dtypes.int32)\nweights = tf.constant([1.0] * 7, dtype=tf.dtypes.float32)\nminlength = 3\nmaxlength = 5\ndtype = tf.dtypes.int32\nname = 'bincount_example'\naxis = None\nbinary_output = False\nresult = tf.math.bincount(arr, weights, minlength, maxlength, dtype, name, axis, binary_output)"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(arr,weights=None,minlength=None,maxlength=None,dtype=tf.dtypes.int32,name=None,axis=None,binary_output=False):\n  return tf.math.bincount(arr,weights,minlength,maxlength,dtype,name,axis,binary_output)",
+    "pytorch": "def pytorch_call(arr, weights=None, minlength=0, maxlength=None, dtype=torch.int32, name=None, axis=None, binary_output=False):\n    arr = arr.to(torch.long)\n    if weights is not None:\n        weights = weights.to(torch.float32)\n    bincount_result = torch.bincount(arr, weights=weights, minlength=minlength)\n    if maxlength is not None:\n        bincount_result = bincount_result[:maxlength]\n    return bincount_result.to(dtype=torch.float32)"
+  },
+  "llm_inputs": [
+    "arr = tf.constant([0, 1, 2, 0, 1, 2, 0], dtype=tf.dtypes.int32)\nweights = tf.constant([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0], dtype=tf.dtypes.float32)\nminlength = 0\nmaxlength = 3\ndtype = tf.dtypes.int32\nname = 'bincount_example'\naxis = None\nbinary_output = False\nresult = tf.math.bincount(arr, weights, minlength, maxlength, dtype, name, axis, binary_output)",
+    "arr = tf.constant([0, 1, 2, 3, 4], dtype=tf.dtypes.int32)\nweights = tf.constant([1.0, 1.0, 1.0, 1.0, 1.0], dtype=tf.dtypes.float32)\nminlength = 0\nmaxlength = 5\ndtype = tf.dtypes.int32\nname = 'bincount_example'\naxis = None\nbinary_output = False",
+    "arr = tf.constant([0, 1, 2, 2, 1, 0, 0], dtype=tf.dtypes.int32)\nweights = tf.constant([1.0] * 7, dtype=tf.dtypes.float32)\nminlength = 3\nmaxlength = 5\ndtype = tf.dtypes.int32\nname = 'bincount_example'\naxis = None\nbinary_output = False\nresult = tf.math.bincount(arr, weights, minlength, maxlength, dtype, name, axis, binary_output)"
+  ]
+}

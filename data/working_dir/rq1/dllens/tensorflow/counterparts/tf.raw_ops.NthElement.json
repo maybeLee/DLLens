@@ -1,0 +1,24 @@
+{
+  "function_name": "tf.raw_ops.NthElement(input,n,reverse=False,name=None)",
+  "inputs": [
+    "input",
+    "n",
+    "reverse"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nn = tf.constant(2, dtype=tf.int32)\nreverse = False",
+    "n = tf.constant(2, dtype=tf.int32)\nreverse = False\ninput = tf.constant(np.random.randint(-50, 50, (4)), dtype='int32')",
+    "n = tf.constant(2, dtype=tf.int32)\nreverse = False\ninput = tf.constant(np.random.randint(-50, 50, (5)), dtype='int64')",
+    "n = tf.constant(2, dtype=tf.int32)\nreverse = False\ninput = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "input = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nn = tf.constant(2, dtype=tf.int32)\nreverse = True"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,n,reverse=False):\n  return tf.raw_ops.NthElement(input=input,n=n,reverse=reverse)",
+    "pytorch": "def pytorch_call(input, n, reverse=False):\n    sorted_input = torch.sort(input, descending=reverse).values\n    return sorted_input[n.item()]"
+  },
+  "llm_inputs": [
+    "input = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nn = tf.constant(2, dtype=tf.int32)\nreverse = False",
+    "input = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nn = tf.constant(2, dtype=tf.int32)\nreverse = False",
+    "input = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nn = tf.constant(2, dtype=tf.int32)\nreverse = False"
+  ]
+}

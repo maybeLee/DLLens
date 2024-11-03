@@ -1,0 +1,28 @@
+{
+  "function_name": "torch.nn.init.calculate_gain(nonlinearity, param=None)",
+  "inputs": [
+    "nonlinearity",
+    "param"
+  ],
+  "sample_inputs": [
+    "nonlinearity = 'relu'\nparam = torch.tensor(0.5)",
+    "nonlinearity = 'relu'\nparam = torch.tensor(np.random.randn(1,1,1), dtype=torch.float32)",
+    "nonlinearity = 'relu'\nparam = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "nonlinearity = 'relu'\nparam = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "nonlinearity = 'relu'\nparam = torch.tensor(np.random.randn(1,1,1,1), dtype=torch.float32)",
+    "nonlinearity = 'relu'\nparam = torch.tensor(np.random.randn(1,1,1,1,1), dtype=torch.float32)",
+    "nonlinearity = 'relu'\nparam = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "nonlinearity = 'relu'\nparam = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "nonlinearity = 'relu'\nparam = torch.tensor(np.random.randn(1,1), dtype=torch.float32)",
+    "nonlinearity = 'relu'\nparam = torch.tensor(np.random.randn(), dtype=torch.float16)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(nonlinearity,param=None):\n  return torch.nn.init.calculate_gain(nonlinearity,param)",
+    "tensorflow": "def tensorflow_call(nonlinearity, param=None):\n    if nonlinearity == 'relu':\n        gain = tf.sqrt(2.0)\n    elif nonlinearity == 'tanh':\n        gain = 5.0 / 3.0\n    else:\n        raise ValueError(f'Unsupported nonlinearity: {nonlinearity}')\n    return gain"
+  },
+  "llm_inputs": [
+    "nonlinearity = 'relu'\nparam = torch.tensor(0.5)",
+    "nonlinearity = 'relu'\nparam = torch.tensor(0.5)",
+    "nonlinearity = 'relu'\nparam = torch.tensor(0.5)"
+  ]
+}

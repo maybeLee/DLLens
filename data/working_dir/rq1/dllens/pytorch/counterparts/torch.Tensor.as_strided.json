@@ -1,0 +1,37 @@
+{
+  "function_name": "torch.Tensor.as_strided(input, size, stride, storage_offset=0)",
+  "inputs": [
+    "input",
+    "size",
+    "stride",
+    "storage_offset"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=torch.float32)\nsize = (2, 2)\nstride = (3, 1)\nstorage_offset = 0",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nsize = (2, 2)\nstride = (3, 1)\nstorage_offset = 0",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nsize = (2, 2)\nstride = (2, 1)\nstorage_offset = 0",
+    "size = (2, 2)\nstride = (3, 1)\nstorage_offset = 0\ninput = torch.tensor(np.random.randn(3,3), dtype=torch.half)",
+    "size = (2, 2)\nstride = (3, 1)\nstorage_offset = 0\ninput = torch.tensor(np.random.randn(3,3,1), dtype=torch.float32)",
+    "size = (2, 2)\nstride = (3, 1)\nstorage_offset = 0\ninput = torch.tensor(np.random.randn(3,3,1,1), dtype=torch.float32)",
+    "size = (2, 2)\nstride = (3, 1)\nstorage_offset = 0\ninput = torch.tensor(np.random.randn(3,3), dtype=torch.float16)",
+    "size = (2, 2)\nstride = (3, 1)\nstorage_offset = 0\ninput = torch.tensor(np.random.randn(3,3), dtype=torch.float64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=torch.float32)\nsize = (2, 2)\nstride = (3, 1)\nstorage_offset = 4",
+    "size = (2, 2)\nstride = (3, 1)\nstorage_offset = 0\ninput = torch.tensor(np.random.randn(5,3), dtype=torch.float32)",
+    "size = (2, 2)\nstride = (3, 1)\nstorage_offset = 0\ninput = torch.tensor(np.random.randn(3,3,1,1,1), dtype=torch.float32)",
+    "size = (2, 2)\nstride = (3, 1)\nstorage_offset = 0\ninput = torch.tensor(np.random.randn(3,3), dtype=torch.float32)",
+    "size = (2, 2)\nstride = (3, 1)\nstorage_offset = 0\ninput = torch.tensor(np.random.randn(4,3), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=torch.float32)\nsize = (2, 2)\nstride = (3, 1)\nstorage_offset = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=torch.float32)\nsize = (2, 2)\nstride = (3, 1)\nstorage_offset = 2",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=torch.float32)\nsize = (2, 2)\nstride = (3, 1)\nstorage_offset = 3",
+    "size = (2, 2)\nstride = (3, 1)\nstorage_offset = 0\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,size,stride,storage_offset=0):\n  return torch.Tensor.as_strided(input,size,stride,storage_offset)",
+    "tensorflow": "def tensorflow_call(input, size, stride, storage_offset=0):\n    start_index = storage_offset\n    output_shape = size\n    result = tf.TensorArray(dtype=input.dtype, size=output_shape[0] * output_shape[1])\n    for i in range(output_shape[0]):\n        for j in range(output_shape[1]):\n            index = start_index + i * stride[0] + j * stride[1]\n            row = index // input.shape[1]\n            col = index % input.shape[1]\n            result = result.write(i * output_shape[1] + j, input[row, col])\n    return tf.reshape(result.stack(), output_shape)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]], dtype=torch.float32)\nsize = (2, 2)\nstride = (3, 1)\nstorage_offset = 0",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nsize = (2, 2)\nstride = (3, 1)\nstorage_offset = 0",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nsize = (2, 2)\nstride = (2, 1)\nstorage_offset = 0"
+  ]
+}

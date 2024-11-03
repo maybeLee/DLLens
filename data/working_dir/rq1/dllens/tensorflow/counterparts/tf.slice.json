@@ -1,0 +1,25 @@
+{
+  "function_name": "tf.slice(input_,begin,size,name=None)",
+  "inputs": [
+    "input_",
+    "begin",
+    "size"
+  ],
+  "sample_inputs": [
+    "input_ = tf.constant([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]])\nbegin = tf.constant([0, 1])\nsize = tf.constant([2, 2])",
+    "input_ = tf.constant([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]])\nbegin = tf.constant([1, 1])\nsize = tf.constant([2, 3])",
+    "input_ = tf.constant([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]])\nbegin = tf.constant([0, 1])\nsize = tf.constant([2, 3])",
+    "begin = tf.constant([0, 1])\nsize = tf.constant([2, 2])\ninput_ = tf.constant(np.random.randint(-50, 50, (3,5)), dtype='int64')",
+    "begin = tf.constant([0, 1])\nsize = tf.constant([2, 2])\ninput_ = tf.constant(np.random.randint(-50, 50, (3,5)), dtype='int32')",
+    "begin = tf.constant([0, 1])\nsize = tf.constant([2, 2])\ninput_ = tf.constant(np.random.randint(-50, 50, (5,5)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input_,begin,size):\n  return tf.slice(input_,begin,size)",
+    "pytorch": "def pytorch_call(input_, begin, size):\n    return input_[begin[0]:begin[0] + size[0], begin[1]:begin[1] + size[1]]"
+  },
+  "llm_inputs": [
+    "input_ = tf.constant([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]])\nbegin = tf.constant([0, 1])\nsize = tf.constant([2, 2])",
+    "input_ = tf.constant([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]])\nbegin = tf.constant([1, 1])\nsize = tf.constant([2, 3])",
+    "input_ = tf.constant([[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15]])\nbegin = tf.constant([0, 1])\nsize = tf.constant([2, 3])"
+  ]
+}

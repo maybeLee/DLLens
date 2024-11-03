@@ -1,0 +1,37 @@
+{
+  "function_name": "torch.Tensor.remainder_(input, divisor)",
+  "inputs": [
+    "input",
+    "divisor"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[5, 3], [8, 2]])\ndivisor = torch.tensor(3)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndivisor = torch.tensor([[2, 2, 2], [3, 3, 3]])",
+    "input = torch.tensor([[5, 3], [8, 2]])\ndivisor = torch.tensor([[2, 2], [3, 1]])",
+    "divisor = torch.tensor(3)\ninput = torch.tensor(np.random.randint(-50, 50, (4,2)), dtype=torch.int64)",
+    "divisor = torch.tensor(3)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1)), dtype=torch.int64)",
+    "divisor = torch.tensor(3)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)",
+    "divisor = torch.tensor(3)\ninput = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "divisor = torch.tensor(3)\ninput = torch.tensor(np.random.randint(-50, 50, (1,2)), dtype=torch.int64)",
+    "divisor = torch.tensor(3)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "divisor = torch.tensor(3)\ninput = torch.tensor(np.random.randint(-50, 50, (2,5)), dtype=torch.int64)",
+    "input = torch.tensor([[5, 3], [8, 2]])\ndivisor = torch.tensor(np.random.randint(-50, 50, (1,1)), dtype=torch.int64)",
+    "divisor = torch.tensor(3)\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "input = torch.tensor([[5, 3], [8, 2]])\ndivisor = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int32)",
+    "input = torch.tensor([[5, 3], [8, 2]])\ndivisor = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "divisor = torch.tensor(3)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "input = torch.tensor([[5, 3], [8, 2]])\ndivisor = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)",
+    "divisor = torch.tensor(3)\ninput = torch.tensor(np.random.randint(-50, 50, (2,4)), dtype=torch.int64)",
+    "divisor = torch.tensor(3)\ninput = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "divisor = torch.tensor(3)\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,divisor):\n  return torch.Tensor.remainder_(input,divisor)",
+    "tensorflow": "def tensorflow_call(input, divisor):\n    divisor = tf.cast(divisor, input.dtype)\n    return tf.math.floormod(input, divisor)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[5, 3], [8, 2]])\ndivisor = torch.tensor(3)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndivisor = torch.tensor([[2, 2, 2], [3, 3, 3]])",
+    "input = torch.tensor([[5, 3], [8, 2]])\ndivisor = torch.tensor([[2, 2], [3, 1]])"
+  ]
+}

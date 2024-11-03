@@ -1,0 +1,27 @@
+{
+  "function_name": "torch.repeat_interleave(input, repeats, dim=None)",
+  "inputs": [
+    "input",
+    "repeats",
+    "dim"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1], dtype=torch.float32)\nrepeats = torch.tensor(3, dtype=torch.int64)\ndim = 0",
+    "repeats = torch.tensor(3, dtype=torch.int64)\ndim = 0\ninput = torch.tensor(np.random.randn(1), dtype=torch.float16)",
+    "repeats = torch.tensor(3, dtype=torch.int64)\ndim = 0\ninput = torch.tensor(np.random.randn(1,1,1,1), dtype=torch.float32)",
+    "repeats = torch.tensor(3, dtype=torch.int64)\ndim = 0\ninput = torch.tensor(np.random.randn(1,1,1), dtype=torch.float32)",
+    "repeats = torch.tensor(3, dtype=torch.int64)\ndim = 0\ninput = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "repeats = torch.tensor(3, dtype=torch.int64)\ndim = 0\ninput = torch.tensor(np.random.randn(1), dtype=torch.half)",
+    "repeats = torch.tensor(3, dtype=torch.int64)\ndim = 0\ninput = torch.tensor(np.random.randn(1,1), dtype=torch.float32)",
+    "repeats = torch.tensor(3, dtype=torch.int64)\ndim = 0\ninput = torch.tensor(np.random.randn(1), dtype=torch.float64)",
+    "repeats = torch.tensor(3, dtype=torch.int64)\ndim = 0\ninput = torch.tensor(np.random.randn(1,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1], dtype=torch.float32)\nrepeats = torch.tensor(3, dtype=torch.int64)\ndim = -1"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,repeats,dim=None):\n  return torch.repeat_interleave(input,repeats,dim)",
+    "tensorflow": "def tensorflow_call(input, repeats, dim=None):\n    if dim is not None:\n        return tf.repeat(input, repeats, axis=dim)\n    else:\n        return tf.repeat(input, repeats)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1], dtype=torch.float32)\nrepeats = torch.tensor(3, dtype=torch.int64)\ndim = 0"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "function_name": "torch.Tensor.asin_(input)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([0.0, 0.5, -0.5, 1.0, -1.0])",
+    "input = torch.tensor([0.0, 0.5, -0.5, 0.1, -0.1, 0.9, -0.9, 0.3], dtype=torch.float32)[:8]",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.float16)",
+    "input = torch.tensor(np.random.randn(5,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.half)",
+    "input = torch.tensor(np.random.randn(5,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(5), dtype=torch.float64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.Tensor.asin_(input)",
+    "tensorflow": "def tensorflow_call(input):\n    return tf.asin(input)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([0.0, 0.5, -0.5, 1.0, -1.0])",
+    "input = torch.tensor([0.0, 0.5, -0.5, 1.0, -1.0])",
+    "input = torch.tensor([0.0, 0.5, -0.5, 0.1, -0.1, 0.9, -0.9, 0.3], dtype=torch.float32)[:8]"
+  ]
+}

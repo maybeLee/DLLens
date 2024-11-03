@@ -1,0 +1,30 @@
+{
+  "function_name": "torch.Tensor.apply_(input, callable)",
+  "inputs": [
+    "input",
+    "callable"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1.0, 2.0, 3.0])\ncallable = lambda x: x * 2",
+    "callable = lambda x: x * 2\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "callable = lambda x: x * 2\ninput = torch.tensor(np.random.randn(3), dtype=torch.float16)",
+    "callable = lambda x: x * 2\ninput = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "callable = lambda x: x * 2\ninput = torch.tensor(np.random.randn(3), dtype=torch.half)",
+    "callable = lambda x: x * 2\ninput = torch.tensor(np.random.randn(3), dtype=torch.float64)",
+    "callable = lambda x: x * 2\ninput = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "callable = lambda x: x * 2\ninput = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "callable = lambda x: x * 2\ninput = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "callable = lambda x: x * 2\ninput = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "callable = lambda x: x * 2\ninput = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "callable = lambda x: x * 2\ninput = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,callable):\n  return torch.Tensor.apply_(input,callable)",
+    "tensorflow": "def tensorflow_call(input, callable):\n    if tf.rank(input) == 0:\n        return callable(input)\n    else:\n        return tf.map_fn(callable, input)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1.0, 2.0, 3.0])\ncallable = lambda x: x * 2",
+    "input = torch.tensor([1.0, 2.0, 3.0])\ncallable = lambda x: x * 2",
+    "input = torch.tensor([1.0, 2.0, 3.0])\ncallable = lambda x: x * 2"
+  ]
+}

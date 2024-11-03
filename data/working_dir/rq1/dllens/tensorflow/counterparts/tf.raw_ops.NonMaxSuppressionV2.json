@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.raw_ops.NonMaxSuppressionV2(boxes,scores,max_output_size,iou_threshold,name=None)",
+  "inputs": [
+    "boxes",
+    "scores",
+    "max_output_size",
+    "iou_threshold"
+  ],
+  "sample_inputs": [
+    "boxes = tf.constant([[0.1, 0.1, 0.5, 0.5], [0.2, 0.2, 0.6, 0.6]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.75], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\niou_threshold = tf.constant(0.5, dtype=tf.float32)",
+    "boxes = tf.constant([[0.0, 0.0, 1.0, 1.0], [0.5, 0.5, 1.5, 1.5]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.75], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\niou_threshold = tf.constant(0.5, dtype=tf.float32)",
+    "boxes = tf.constant([[0.1, 0.1, 0.5, 0.5], [0.2, 0.2, 0.6, 0.6]], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\niou_threshold = tf.constant(0.5, dtype=tf.float32)\nscores = tf.constant(np.random.randn(2), dtype='float32')",
+    "boxes = tf.constant([[0.1, 0.1, 0.5, 0.5], [0.2, 0.2, 0.6, 0.6]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.75], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\niou_threshold = tf.constant(np.random.randn(), dtype='float16')",
+    "boxes = tf.constant([[0.1, 0.1, 0.5, 0.5], [0.2, 0.2, 0.6, 0.6]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.75], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\niou_threshold = tf.constant(np.random.randn(), dtype='float32')",
+    "scores = tf.constant([0.9, 0.75], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\niou_threshold = tf.constant(0.5, dtype=tf.float32)\nboxes = tf.constant(np.random.randn(2,4), dtype='float32')",
+    "boxes = tf.constant([[0.1, 0.1, 0.5, 0.5], [0.2, 0.2, 0.6, 0.6]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.75], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\niou_threshold = tf.constant(np.random.randn(), dtype='half')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(boxes,scores,max_output_size,iou_threshold):\n  return tf.raw_ops.NonMaxSuppressionV2(boxes=boxes,scores=scores,max_output_size=max_output_size,iou_threshold=iou_threshold)",
+    "pytorch": "def pytorch_call(boxes, scores, max_output_size, iou_threshold):\n    device = boxes.device\n    scores = scores.to(device)\n    sorted_indices = scores.argsort(descending=True)\n    selected_indices = []\n    while sorted_indices.numel() > 0 and len(selected_indices) < max_output_size.item():\n        current_index = sorted_indices[0]\n        selected_indices.append(current_index.item())\n        if sorted_indices.numel() == 1:\n            break\n        current_box = boxes[current_index]\n        remaining_boxes = boxes[sorted_indices[1:]]\n        inter_x1 = torch.max(current_box[0], remaining_boxes[:, 0])\n        inter_y1 = torch.max(current_box[1], remaining_boxes[:, 1])\n        inter_x2 = torch.min(current_box[2], remaining_boxes[:, 2])\n        inter_y2 = torch.min(current_box[3], remaining_boxes[:, 3])\n        inter_area = torch.clamp(inter_x2 - inter_x1, min=0) * torch.clamp(inter_y2 - inter_y1, min=0)\n        current_area = (current_box[2] - current_box[0]) * (current_box[3] - current_box[1])\n        remaining_areas = (remaining_boxes[:, 2] - remaining_boxes[:, 0]) * (remaining_boxes[:, 3] - remaining_boxes[:, 1])\n        union_area = current_area + remaining_areas - inter_area\n        iou = inter_area / union_area\n        below_threshold = iou < iou_threshold.item()\n        sorted_indices = sorted_indices[1:][below_threshold]\n    return torch.tensor(selected_indices, dtype=torch.int32, device=device)"
+  },
+  "llm_inputs": [
+    "boxes = tf.constant([[0.1, 0.1, 0.5, 0.5], [0.2, 0.2, 0.6, 0.6]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.75], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\niou_threshold = tf.constant(0.5, dtype=tf.float32)",
+    "boxes = tf.constant([[0.0, 0.0, 1.0, 1.0], [0.5, 0.5, 1.5, 1.5]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.75], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\niou_threshold = tf.constant(0.5, dtype=tf.float32)",
+    "boxes = tf.constant([[0.0, 0.0, 1.0, 1.0], [0.5, 0.5, 1.5, 1.5]], dtype=tf.float32)\nscores = tf.constant([0.9, 0.75], dtype=tf.float32)\nmax_output_size = tf.constant(2, dtype=tf.int32)\niou_threshold = tf.constant(0.5, dtype=tf.float32)"
+  ]
+}

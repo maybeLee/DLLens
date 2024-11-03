@@ -1,0 +1,28 @@
+{
+  "function_name": "torch.linspace(start, end, steps, *, out=None, dtype=None, layout=torch.strided, device=None, requires_grad=False)",
+  "inputs": [
+    "start",
+    "end",
+    "steps"
+  ],
+  "sample_inputs": [
+    "start = torch.tensor(0.0)\nend = torch.tensor(1.0)\nsteps = torch.tensor(5)",
+    "start = torch.tensor(0.0)\nsteps = torch.tensor(5)\nend = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "start = torch.tensor(0.0)\nsteps = torch.tensor(5)\nend = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "end = torch.tensor(1.0)\nsteps = torch.tensor(5)\nstart = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "start = torch.tensor(0.0)\nsteps = torch.tensor(5)\nend = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "end = torch.tensor(1.0)\nsteps = torch.tensor(5)\nstart = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "start = torch.tensor(0.0)\nsteps = torch.tensor(5)\nend = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "end = torch.tensor(1.0)\nsteps = torch.tensor(5)\nstart = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "end = torch.tensor(1.0)\nsteps = torch.tensor(5)\nstart = torch.tensor(np.random.randn(), dtype=torch.float64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(start,end,steps):\n  return torch.linspace(start,end,steps)",
+    "tensorflow": "def tensorflow_call(start, end, steps):\n    end = tf.cast(end, start.dtype)\n    return tf.linspace(start, end, steps)"
+  },
+  "llm_inputs": [
+    "start = torch.tensor(0.0)\nend = torch.tensor(1.0)\nsteps = torch.tensor(5)",
+    "start = torch.tensor(0.0)\nend = torch.tensor(1.0)\nsteps = torch.tensor(5)",
+    "start = torch.tensor(0.0)\nend = torch.tensor(1.0)\nsteps = torch.tensor(5)"
+  ]
+}

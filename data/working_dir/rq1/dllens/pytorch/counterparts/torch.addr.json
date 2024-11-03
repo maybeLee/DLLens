@@ -1,0 +1,37 @@
+{
+  "function_name": "torch.addr(input, vec1, vec2, *, beta=1, alpha=1, out=None)",
+  "inputs": [
+    "input",
+    "vec1",
+    "vec2"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nvec1 = torch.tensor([1, 0], dtype=torch.float32)\nvec2 = torch.tensor([0, 1], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nvec1 = torch.tensor([1, 1], dtype=torch.float32)\nvec2 = torch.tensor([2, 2], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nvec1 = torch.tensor([1, 0], dtype=torch.float32)\nvec2 = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nvec1 = torch.tensor([1, 0], dtype=torch.float32)\nvec2 = torch.tensor(np.random.randn(2), dtype=torch.float16)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nvec2 = torch.tensor([0, 1], dtype=torch.float32)\nvec1 = torch.tensor(np.random.randn(2), dtype=torch.float16)",
+    "vec1 = torch.tensor([1, 0], dtype=torch.float32)\nvec2 = torch.tensor([0, 1], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nvec2 = torch.tensor([0, 1], dtype=torch.float32)\nvec1 = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nvec2 = torch.tensor([0, 1], dtype=torch.float32)\nvec1 = torch.tensor(np.random.randn(2), dtype=torch.half)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nvec1 = torch.tensor([1, 0], dtype=torch.float32)\nvec2 = torch.tensor(np.random.randn(2), dtype=torch.half)",
+    "vec1 = torch.tensor([1, 0], dtype=torch.float32)\nvec2 = torch.tensor([0, 1], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "vec1 = torch.tensor([1, 0], dtype=torch.float32)\nvec2 = torch.tensor([0, 1], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "vec1 = torch.tensor([1, 0], dtype=torch.float32)\nvec2 = torch.tensor([0, 1], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nvec2 = torch.tensor([0, 1], dtype=torch.float32)\nvec1 = torch.tensor(np.random.randn(2), dtype=torch.float64)",
+    "vec1 = torch.tensor([1, 0], dtype=torch.float32)\nvec2 = torch.tensor([0, 1], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nvec1 = torch.tensor([1, 0], dtype=torch.float32)\nvec2 = torch.tensor(np.random.randn(2), dtype=torch.float64)",
+    "vec1 = torch.tensor([1, 0], dtype=torch.float32)\nvec2 = torch.tensor([0, 1], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "vec1 = torch.tensor([1, 0], dtype=torch.float32)\nvec2 = torch.tensor([0, 1], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "vec1 = torch.tensor([1, 0], dtype=torch.float32)\nvec2 = torch.tensor([0, 1], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,vec1,vec2):\n  return torch.addr(input,vec1,vec2)",
+    "tensorflow": "def tensorflow_call(input, vec1, vec2):\n    vec1 = tf.cast(vec1, input.dtype)\n    vec2 = tf.cast(vec2, input.dtype)\n    outer_product = tf.expand_dims(vec1, axis=-1) * tf.expand_dims(vec2, axis=0)\n    result = input + outer_product\n    return result"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nvec1 = torch.tensor([1, 0], dtype=torch.float32)\nvec2 = torch.tensor([0, 1], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nvec1 = torch.tensor([1, 1], dtype=torch.float32)\nvec2 = torch.tensor([2, 2], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nvec1 = torch.tensor([1, 0], dtype=torch.float32)\nvec2 = torch.tensor([0, 1], dtype=torch.float32)"
+  ]
+}

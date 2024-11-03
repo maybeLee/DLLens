@@ -1,0 +1,29 @@
+{
+  "function_name": "tf.raw_ops.IFFT3D(input,name=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[[1.0 + 2j, 2.0 + 3j]], [[3.0 + 4j, 4.0 + 5j]]], dtype=tf.complex64)",
+    "input = tf.constant([[[1.0 + 2j, 2.0 + 3j], [3.0 + 4j, 4.0 + 5j]], [[5.0 + 6j, 6.0 + 7j], [7.0 + 8j, 8.0 + 9j]]], dtype=tf.complex64)",
+    "input = tf.constant([[[1.0 + 2j, 3.0 + 4j]], [[5.0 + 6j, 7.0 + 8j]]], dtype=tf.complex64)",
+    "input = tf.constant(np.random.randn(2,5,2), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,1,2), dtype='complex128')",
+    "input = tf.constant(np.random.randn(5,1,2), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,1,2,1), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,4,2), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,1,5), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,1,2,1,1), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,1,2), dtype='complex64')",
+    "input = tf.constant(np.random.randn(2,1,1), dtype='complex64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input):\n  return tf.raw_ops.IFFT3D(input=input)",
+    "pytorch": "def pytorch_call(input):\n    return torch.fft.ifftn(input, s=input.shape[-3:])"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[[1.0 + 2j, 2.0 + 3j]], [[3.0 + 4j, 4.0 + 5j]]], dtype=tf.complex64)",
+    "input = tf.constant([[[1.0 + 2j, 2.0 + 3j], [3.0 + 4j, 4.0 + 5j]], [[5.0 + 6j, 6.0 + 7j], [7.0 + 8j, 8.0 + 9j]]], dtype=tf.complex64)",
+    "input = tf.constant([[[1.0 + 2j, 3.0 + 4j]], [[5.0 + 6j, 7.0 + 8j]]], dtype=tf.complex64)"
+  ]
+}

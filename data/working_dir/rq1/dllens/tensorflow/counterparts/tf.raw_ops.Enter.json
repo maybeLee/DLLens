@@ -1,0 +1,45 @@
+{
+  "function_name": "tf.raw_ops.Enter(data,frame_name,is_constant=False,parallel_iterations=10,name=None)",
+  "inputs": [
+    "data",
+    "frame_name",
+    "is_constant",
+    "parallel_iterations"
+  ],
+  "sample_inputs": [
+    "data = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nframe_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5",
+    "data = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nframe_name = 'my_frame'\nis_constant = False\nparallel_iterations = -2",
+    "data = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nframe_name = 'my_frame'\nis_constant = False\nparallel_iterations = 0",
+    "frame_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5\ndata = tf.constant(np.random.randn(2,2), dtype='half')",
+    "frame_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5\ndata = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "frame_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5\ndata = tf.constant(np.random.randn(2), dtype='float32')",
+    "frame_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5\ndata = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "data = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nframe_name = 'my_frame'\nis_constant = False\nparallel_iterations = -5",
+    "frame_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5\ndata = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "frame_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5\ndata = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "data = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nframe_name = 'my_frame'\nis_constant = False\nparallel_iterations = 3",
+    "frame_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5\ndata = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "data = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nframe_name = 'my_frame'\nparallel_iterations = 5\nis_constant = True",
+    "data = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nframe_name = 'my_frame'\nis_constant = False\nparallel_iterations = -4",
+    "frame_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5\ndata = tf.constant(np.random.randn(), dtype='float32')",
+    "data = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nframe_name = 'my_frame'\nis_constant = False\nparallel_iterations = -3",
+    "data = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nframe_name = 'my_frame'\nis_constant = False\nparallel_iterations = 2",
+    "data = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nframe_name = 'my_frame'\nis_constant = False\nparallel_iterations = 1",
+    "frame_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5\ndata = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "frame_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5\ndata = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "data = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nframe_name = 'my_frame'\nis_constant = False\nparallel_iterations = 4",
+    "frame_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5\ndata = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "frame_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5\ndata = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "data = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nframe_name = 'my_frame'\nis_constant = False\nparallel_iterations = -1",
+    "frame_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5\ndata = tf.constant(np.random.randn(2,2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(data,frame_name,is_constant=False,parallel_iterations=10):\n  return tf.raw_ops.Enter(data=data,frame_name=frame_name,is_constant=is_constant,parallel_iterations=parallel_iterations)",
+    "pytorch": "def pytorch_call(data, frame_name, is_constant=False, parallel_iterations=10):\n    return data"
+  },
+  "llm_inputs": [
+    "data = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nframe_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5",
+    "data = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nframe_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5",
+    "data = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nframe_name = 'my_frame'\nis_constant = False\nparallel_iterations = 5"
+  ]
+}

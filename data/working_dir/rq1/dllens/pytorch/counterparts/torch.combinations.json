@@ -1,0 +1,30 @@
+{
+  "function_name": "torch.combinations(input, r=2, with_replacement=False)",
+  "inputs": [
+    "input",
+    "r",
+    "with_replacement"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3, 4, 5])\nr = 2\nwith_replacement = False",
+    "input = torch.tensor([1, 2, 3, 4, 5])\nwith_replacement = False\nr = 5",
+    "r = 2\nwith_replacement = False\ninput = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)",
+    "r = 2\nwith_replacement = False\ninput = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int32)",
+    "input = torch.tensor([1, 2, 3, 4, 5])\nr = 2\nwith_replacement = True",
+    "input = torch.tensor([1, 2, 3, 4, 5])\nwith_replacement = False\nr = 1",
+    "input = torch.tensor([1, 2, 3, 4, 5])\nwith_replacement = False\nr = 4",
+    "input = torch.tensor([1, 2, 3, 4, 5])\nwith_replacement = False\nr = 3",
+    "r = 2\nwith_replacement = False\ninput = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 4, 5])\nwith_replacement = False\nr = 0",
+    "input = torch.tensor([1, 2, 3, 4, 5])\nwith_replacement = False\nr = 2"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,r=2,with_replacement=False):\n  return torch.combinations(input,r,with_replacement)",
+    "tensorflow": "def tensorflow_call(input, r=2, with_replacement=False):\n    import numpy as np\n    from itertools import combinations_with_replacement, combinations\n    input_list = input.numpy().tolist()\n    if with_replacement:\n        comb = list(combinations_with_replacement(input_list, r))\n    else:\n        comb = list(combinations(input_list, r))\n    return tf.constant(comb)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3, 4, 5])\nr = 2\nwith_replacement = False",
+    "input = torch.tensor([1, 2, 3, 4, 5])\nr = 2\nwith_replacement = False",
+    "input = torch.tensor([1, 2, 3, 4, 5])\nr = 2\nwith_replacement = False"
+  ]
+}

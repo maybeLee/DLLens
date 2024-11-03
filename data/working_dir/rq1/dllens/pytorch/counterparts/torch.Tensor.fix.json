@@ -1,0 +1,29 @@
+{
+  "function_name": "torch.Tensor.fix(input)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])",
+    "input = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (5,2)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "input = torch.tensor(np.random.randint(-50, 50, (2,2,1)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (1,2)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.Tensor.fix(input)",
+    "tensorflow": "def tensorflow_call(input):\n    return tf.round(input)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])"
+  ]
+}

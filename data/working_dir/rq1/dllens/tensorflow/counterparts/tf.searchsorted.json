@@ -1,0 +1,29 @@
+{
+  "function_name": "tf.searchsorted(sorted_sequence,values,side='left',out_type=tf.dtypes.int32,name=None)",
+  "inputs": [
+    "sorted_sequence",
+    "values",
+    "side",
+    "out_type"
+  ],
+  "sample_inputs": [
+    "sorted_sequence = tf.constant([1, 2, 3, 4, 5], dtype=tf.dtypes.int32)\nvalues = tf.constant([0, 2, 3, 6], dtype=tf.dtypes.int32)\nside = 'left'\nout_type = tf.dtypes.int32",
+    "sorted_sequence = tf.constant([1, 3, 5, 7, 9], dtype=tf.dtypes.int32)\nvalues = tf.constant([2, 4, 6], dtype=tf.dtypes.int32)\nside = 'left'\nout_type = tf.dtypes.int32",
+    "sorted_sequence = tf.constant([1, 3, 5, 7, 9], dtype=tf.int32)\nvalues = tf.constant([2, 4, 6], dtype=tf.int32)\nside = 'left'\nout_type = tf.dtypes.int32",
+    "sorted_sequence = tf.constant([1, 2, 3, 4, 5], dtype=tf.dtypes.int32)\nside = 'left'\nout_type = tf.dtypes.int32\nvalues = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "values = tf.constant([0, 2, 3, 6], dtype=tf.dtypes.int32)\nside = 'left'\nout_type = tf.dtypes.int32\nsorted_sequence = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "sorted_sequence = tf.constant([1, 2, 3, 4, 5], dtype=tf.dtypes.int32)\nside = 'left'\nout_type = tf.dtypes.int32\nvalues = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "values = tf.constant([0, 2, 3, 6], dtype=tf.dtypes.int32)\nside = 'left'\nout_type = tf.dtypes.int32\nsorted_sequence = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "values = tf.constant([0, 2, 3, 6], dtype=tf.dtypes.int32)\nside = 'left'\nout_type = tf.dtypes.int32\nsorted_sequence = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "sorted_sequence = tf.constant([1, 2, 3, 4, 5], dtype=tf.dtypes.int32)\nside = 'left'\nout_type = tf.dtypes.int32\nvalues = tf.constant(np.random.randint(-50, 50, (4)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(sorted_sequence,values,side='left',out_type=tf.dtypes.int32):\n  return tf.searchsorted(sorted_sequence,values,side,out_type)",
+    "pytorch": "def pytorch_call(sorted_sequence, values, side='left', out_type=torch.int32):\n    return torch.searchsorted(sorted_sequence, values, side=side).to(out_type)"
+  },
+  "llm_inputs": [
+    "sorted_sequence = tf.constant([1, 2, 3, 4, 5], dtype=tf.dtypes.int32)\nvalues = tf.constant([0, 2, 3, 6], dtype=tf.dtypes.int32)\nside = 'left'\nout_type = tf.dtypes.int32",
+    "sorted_sequence = tf.constant([1, 3, 5, 7, 9], dtype=tf.dtypes.int32)\nvalues = tf.constant([2, 4, 6], dtype=tf.dtypes.int32)\nside = 'left'\nout_type = tf.dtypes.int32",
+    "sorted_sequence = tf.constant([1, 3, 5, 7, 9], dtype=tf.int32)\nvalues = tf.constant([2, 4, 6], dtype=tf.int32)\nside = 'left'\nout_type = tf.dtypes.int32"
+  ]
+}

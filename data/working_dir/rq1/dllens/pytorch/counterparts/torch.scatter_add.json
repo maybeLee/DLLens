@@ -1,0 +1,32 @@
+{
+  "function_name": "torch.scatter_add(input, dim, index, src)",
+  "inputs": [
+    "input",
+    "dim",
+    "index",
+    "src"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndim = 0\nindex = torch.tensor([[0, 1, 0], [1, 0, 1]], dtype=torch.int64)\nsrc = torch.tensor([[10, 20, 30], [40, 50, 60]], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndim = 0\nindex = torch.tensor([[0, 1, 0], [1, 0, 1]])\nsrc = torch.tensor([[10, 20, 30], [40, 50, 60]], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\nindex = torch.tensor([[0, 1, 0], [1, 0, 1]], dtype=torch.int64)\nsrc = torch.tensor([[10, 20, 30], [40, 50, 60]], dtype=torch.float32)\ndim = 0",
+    "dim = 0\nindex = torch.tensor([[0, 1, 0], [1, 0, 1]], dtype=torch.int64)\nsrc = torch.tensor([[10, 20, 30], [40, 50, 60]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float32)",
+    "dim = 0\nindex = torch.tensor([[0, 1, 0], [1, 0, 1]], dtype=torch.int64)\nsrc = torch.tensor([[10, 20, 30], [40, 50, 60]], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndim = 0\nindex = torch.tensor([[0, 1, 0], [1, 0, 1]], dtype=torch.int64)\nsrc = torch.tensor(np.random.randn(5,3), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndim = 0\nindex = torch.tensor([[0, 1, 0], [1, 0, 1]], dtype=torch.int64)\nsrc = torch.tensor(np.random.randn(2,4), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\nindex = torch.tensor([[0, 1, 0], [1, 0, 1]], dtype=torch.int64)\nsrc = torch.tensor([[10, 20, 30], [40, 50, 60]], dtype=torch.float32)\ndim = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndim = 0\nindex = torch.tensor([[0, 1, 0], [1, 0, 1]], dtype=torch.int64)\nsrc = torch.tensor(np.random.randn(2,3), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\nindex = torch.tensor([[0, 1, 0], [1, 0, 1]], dtype=torch.int64)\nsrc = torch.tensor([[10, 20, 30], [40, 50, 60]], dtype=torch.float32)\ndim = -1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndim = 0\nindex = torch.tensor([[0, 1, 0], [1, 0, 1]], dtype=torch.int64)\nsrc = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\nindex = torch.tensor([[0, 1, 0], [1, 0, 1]], dtype=torch.int64)\nsrc = torch.tensor([[10, 20, 30], [40, 50, 60]], dtype=torch.float32)\ndim = -2"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim,index,src):\n  return torch.scatter_add(input,dim,index,src)",
+    "tensorflow": "def tensorflow_call(input, dim, index, src):\n    if dim < 0:\n        dim += tf.rank(input)\n    output = tf.identity(input)\n    input_shape = tf.shape(input)\n    for i in range(tf.shape(index)[0]):\n        for j in range(tf.shape(index)[1]):\n            idx = index[i, j]\n            if dim == 0:\n                output = tf.tensor_scatter_nd_update(output, [[idx, j]], [output[idx, j] + src[i, j]])\n            elif dim == 1:\n                output = tf.tensor_scatter_nd_update(output, [[i, idx]], [output[i, idx] + src[i, j]])\n    return output"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndim = 0\nindex = torch.tensor([[0, 1, 0], [1, 0, 1]], dtype=torch.int64)\nsrc = torch.tensor([[10, 20, 30], [40, 50, 60]], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndim = 0\nindex = torch.tensor([[0, 1, 0], [1, 0, 1]])\nsrc = torch.tensor([[10, 20, 30], [40, 50, 60]], dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\ndim = 0\nindex = torch.tensor([[0, 1, 0], [1, 0, 1]])\nsrc = torch.tensor([[10, 20, 30], [40, 50, 60]], dtype=torch.float32)"
+  ]
+}

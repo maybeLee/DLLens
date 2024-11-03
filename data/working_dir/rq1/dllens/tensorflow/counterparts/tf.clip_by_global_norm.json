@@ -1,0 +1,33 @@
+{
+  "function_name": "tf.clip_by_global_norm(t_list,clip_norm,use_norm=None,name=None)",
+  "inputs": [
+    "t_list",
+    "clip_norm",
+    "use_norm"
+  ],
+  "sample_inputs": [
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nclip_norm = tf.constant(5.0)\nuse_norm = tf.constant(4.0)",
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nclip_norm = 5.0\nuse_norm = None",
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nuse_norm = tf.constant(4.0)\nclip_norm = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nclip_norm = tf.constant(5.0)\nuse_norm = tf.constant(np.random.randn(1), dtype='float32')",
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nclip_norm = tf.constant(5.0)\nuse_norm = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nuse_norm = tf.constant(4.0)\nclip_norm = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nclip_norm = tf.constant(5.0)\nuse_norm = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nclip_norm = tf.constant(5.0)\nuse_norm = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nuse_norm = tf.constant(4.0)\nclip_norm = tf.constant(np.random.randn(), dtype='float32')",
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nclip_norm = tf.constant(5.0)\nuse_norm = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nuse_norm = tf.constant(4.0)\nclip_norm = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nclip_norm = tf.constant(5.0)\nuse_norm = tf.constant(np.random.randn(), dtype='float32')",
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nuse_norm = tf.constant(4.0)\nclip_norm = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nuse_norm = tf.constant(4.0)\nclip_norm = tf.constant(np.random.randn(1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(t_list,clip_norm,use_norm=None):\n  return tf.clip_by_global_norm(t_list,clip_norm,use_norm)",
+    "pytorch": "def pytorch_call(t_list, clip_norm, use_norm=None):\n    total_norm = torch.norm(torch.stack([t.detach() for t in t_list]), p=2)\n    if use_norm is None:\n        use_norm = total_norm\n    if total_norm > clip_norm:\n        scale = clip_norm / total_norm\n        for i in range(len(t_list)):\n            t_list[i] = t_list[i] * scale\n    return (t_list, use_norm)"
+  },
+  "llm_inputs": [
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nclip_norm = tf.constant(5.0)\nuse_norm = tf.constant(4.0)",
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nclip_norm = 5.0\nuse_norm = None",
+    "t_list = [tf.constant([1.0]), tf.constant([2.0]), tf.constant([3.0])]\nclip_norm = 5.0\nuse_norm = None"
+  ]
+}

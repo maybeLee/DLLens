@@ -1,0 +1,27 @@
+{
+  "function_name": "torch.Tensor.index_add_(input, dim, index, tensor, *, alpha=1)",
+  "inputs": [
+    "input",
+    "dim",
+    "index",
+    "tensor"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\ndim = 0\nindex = torch.tensor([0, 2])\ntensor = torch.tensor([10.0, 20.0])",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])\ndim = 0\nindex = torch.tensor([0, 2])\ntensor = torch.tensor([10.0, 20.0])",
+    "dim = 0\nindex = torch.tensor([0, 2])\ntensor = torch.tensor([10.0, 20.0])\ninput = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "dim = 0\nindex = torch.tensor([0, 2])\ntensor = torch.tensor([10.0, 20.0])\ninput = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\nindex = torch.tensor([0, 2])\ntensor = torch.tensor([10.0, 20.0])\ndim = -1",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\nindex = torch.tensor([0, 2])\ntensor = torch.tensor([10.0, 20.0])\ndim = 0",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\ndim = 0\nindex = torch.tensor([0, 2])\ntensor = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "dim = 0\nindex = torch.tensor([0, 2])\ntensor = torch.tensor([10.0, 20.0])\ninput = torch.tensor(np.random.randn(4), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim,index,tensor):\n  return torch.Tensor.index_add_(input,dim,index,tensor)",
+    "tensorflow": "def tensorflow_call(input, dim, index, tensor):\n    index = tf.expand_dims(index, axis=-1)\n    updates = tf.zeros_like(input)\n    updates = tf.tensor_scatter_nd_update(updates, index, tensor)\n    return input + updates"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\ndim = 0\nindex = torch.tensor([0, 2])\ntensor = torch.tensor([10.0, 20.0])",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0, 5.0])\ndim = 0\nindex = torch.tensor([0, 2])\ntensor = torch.tensor([10.0, 20.0])"
+  ]
+}

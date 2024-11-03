@@ -1,0 +1,19 @@
+{
+  "function_name": "tf.linalg.cholesky(input,name=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input_matrix = [[4.0, 12.0, -16.0], [12.0, 37.0, -43.0], [-16.0, -43.0, 98.0]]\ninput = tf.constant(input_matrix, dtype=tf.float32)",
+    "input = tf.constant([[4.0, 2.0], [2.0, 2.0]])"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input):\n  return tf.linalg.cholesky(input)",
+    "pytorch": "def pytorch_call(input):\n    return torch.cholesky(input)"
+  },
+  "llm_inputs": [
+    "input_matrix = [[4.0, 12.0, -16.0], [12.0, 37.0, -43.0], [-16.0, -43.0, 98.0]]\ninput = tf.constant(input_matrix, dtype=tf.float32)",
+    "input = tf.constant([[4.0, 2.0], [2.0, 2.0]])",
+    "input = tf.constant([[4.0, 2.0], [2.0, 2.0]])"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "function_name": "torch.ger(input, vec2, *, out=None)",
+  "inputs": [
+    "input",
+    "vec2"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3])\nvec2 = torch.tensor([4, 5])",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nvec2 = torch.tensor([4, 5], dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3])\nvec2 = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int32)",
+    "vec2 = torch.tensor([4, 5])\ninput = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3])\nvec2 = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3])\nvec2 = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3])\nvec2 = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "vec2 = torch.tensor([4, 5])\ninput = torch.tensor(np.random.randint(-50, 50, (3)), dtype=torch.int64)",
+    "vec2 = torch.tensor([4, 5])\ninput = torch.tensor(np.random.randint(-50, 50, (3)), dtype=torch.int32)",
+    "vec2 = torch.tensor([4, 5])\ninput = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,vec2):\n  return torch.ger(input,vec2)",
+    "tensorflow": "def tensorflow_call(input, vec2):\n    input = tf.cast(input, dtype=tf.float32)\n    vec2 = tf.cast(vec2, dtype=tf.float32)\n    return tf.tensordot(input, vec2, axes=0)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3])\nvec2 = torch.tensor([4, 5])",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nvec2 = torch.tensor([4, 5], dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3])\nvec2 = torch.tensor([4, 5])"
+  ]
+}

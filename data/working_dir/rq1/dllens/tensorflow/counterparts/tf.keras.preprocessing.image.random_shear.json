@@ -1,0 +1,25 @@
+{
+  "function_name": "tf.keras.preprocessing.image.random_shear(x,intensity,row_axis=1,col_axis=2,channel_axis=0,fill_mode='nearest',cval=0.0,interpolation_order=1)",
+  "inputs": [
+    "x",
+    "intensity",
+    "row_axis",
+    "col_axis",
+    "channel_axis",
+    "fill_mode",
+    "cval",
+    "interpolation_order"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[[1, 2], [3, 4]], [[5, 6], [7, 8]]], dtype=tf.float32)\nintensity = tf.constant(0.5, dtype=tf.float32)\nrow_axis = 1\ncol_axis = 2\nchannel_axis = 0\nfill_mode = 'nearest'\ncval = 0.0\ninterpolation_order = 1\nresult = tf.keras.preprocessing.image.random_shear(x, intensity, row_axis, col_axis, channel_axis, fill_mode, cval, interpolation_order)",
+    "x = tf.constant([[[1, 2], [3, 4]], [[5, 6], [7, 8]]], dtype=tf.float32)\nintensity = tf.constant(0.5)\nrow_axis = 1\ncol_axis = 2\nchannel_axis = 0\nfill_mode = 'nearest'\ncval = tf.constant(0.0)\ninterpolation_order = tf.constant(1)"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,intensity,row_axis=1,col_axis=2,channel_axis=0,fill_mode='nearest',cval=0.0,interpolation_order=1):\n  return tf.keras.preprocessing.image.random_shear(x,intensity,row_axis,col_axis,channel_axis,fill_mode,cval,interpolation_order)",
+    "pytorch": "def pytorch_call(x, intensity, row_axis=1, col_axis=2, channel_axis=0, fill_mode='nearest', cval=0.0, interpolation_order=1):\n    if isinstance(cval, (int, float)):\n        cval = torch.tensor(cval, dtype=x.dtype)\n    shear_amount = intensity.item()\n    shear_matrix = torch.eye(x.shape[channel_axis] + 1)\n    shear_matrix[0, row_axis] = shear_amount\n    grid = F.affine_grid(shear_matrix[:2].unsqueeze(0), x.unsqueeze(0).size(), align_corners=False)\n    sheared_image = F.grid_sample(x.unsqueeze(0), grid, mode=fill_mode, padding_mode='border', align_corners=False)\n    if fill_mode == 'constant':\n        sheared_image = torch.where(sheared_image == 0, cval, sheared_image)\n    return sheared_image.squeeze(0)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[[1, 2], [3, 4]], [[5, 6], [7, 8]]], dtype=tf.float32)\nintensity = tf.constant(0.5, dtype=tf.float32)\nrow_axis = 1\ncol_axis = 2\nchannel_axis = 0\nfill_mode = 'nearest'\ncval = 0.0\ninterpolation_order = 1\nresult = tf.keras.preprocessing.image.random_shear(x, intensity, row_axis, col_axis, channel_axis, fill_mode, cval, interpolation_order)",
+    "x = tf.constant([[[1, 2], [3, 4]], [[5, 6], [7, 8]]], dtype=tf.float32)\nintensity = tf.constant(0.5)\nrow_axis = 1\ncol_axis = 2\nchannel_axis = 0\nfill_mode = 'nearest'\ncval = tf.constant(0.0)\ninterpolation_order = tf.constant(1)"
+  ]
+}

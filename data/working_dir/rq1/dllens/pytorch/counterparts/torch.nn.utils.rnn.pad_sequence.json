@@ -1,0 +1,27 @@
+{
+  "function_name": "torch.nn.utils.rnn.pad_sequence(sequences, batch_first=False, padding_value=0.0)",
+  "inputs": [
+    "sequences",
+    "batch_first",
+    "padding_value"
+  ],
+  "sample_inputs": [
+    "sequences = [torch.tensor([1, 2, 3]), torch.tensor([4, 5])]\nbatch_first = True\npadding_value = 0.0",
+    "sequences = [torch.tensor([1, 2]), torch.tensor([3, 4, 5])]\nbatch_first = True\npadding_value = 0.0",
+    "sequences = [torch.tensor([1, 2, 3]), torch.tensor([4, 5])]\nbatch_first = True\npadding_value = 8.85",
+    "sequences = [torch.tensor([1, 2, 3]), torch.tensor([4, 5])]\nbatch_first = True\npadding_value = -72.61",
+    "sequences = [torch.tensor([1, 2, 3]), torch.tensor([4, 5])]\nbatch_first = True\npadding_value = -84.27",
+    "sequences = [torch.tensor([1, 2, 3]), torch.tensor([4, 5])]\nbatch_first = True\npadding_value = 66.35",
+    "sequences = [torch.tensor([1, 2, 3]), torch.tensor([4, 5])]\npadding_value = 0.0\nbatch_first = False",
+    "sequences = [torch.tensor([1, 2, 3]), torch.tensor([4, 5])]\nbatch_first = True\npadding_value = 47.96"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(sequences,batch_first=False,padding_value=0.0):\n  return torch.nn.utils.rnn.pad_sequence(sequences,batch_first,padding_value)",
+    "tensorflow": "def tensorflow_call(sequences, batch_first=False, padding_value=0.0):\n    sequences_np = [seq.numpy() for seq in sequences]\n    padded_sequences = tf.keras.preprocessing.sequence.pad_sequences(sequences_np, padding='post', value=padding_value)\n    if not batch_first:\n        padded_sequences = tf.transpose(padded_sequences)\n    return tf.convert_to_tensor(padded_sequences)"
+  },
+  "llm_inputs": [
+    "sequences = [torch.tensor([1, 2, 3]), torch.tensor([4, 5])]\nbatch_first = True\npadding_value = 0.0",
+    "sequences = [torch.tensor([1, 2, 3]), torch.tensor([4, 5])]\nbatch_first = True\npadding_value = 0.0",
+    "sequences = [torch.tensor([1, 2]), torch.tensor([3, 4, 5])]\nbatch_first = True\npadding_value = 0.0"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "function_name": "torch.Tensor.xlogy(input, other)",
+  "inputs": [
+    "input",
+    "other"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "other = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "other = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "other = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3), dtype=torch.half)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "other = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor(np.random.randn(3), dtype=torch.float16)",
+    "other = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "other = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "other = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3), dtype=torch.float64)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "other = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor(np.random.randn(3), dtype=torch.float64)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "other = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "other = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3), dtype=torch.float16)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor(np.random.randn(3), dtype=torch.half)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,other):\n  return torch.Tensor.xlogy(input,other)",
+    "tensorflow": "def tensorflow_call(input, other):\n    input = tf.cast(input, other.dtype)\n    return input * tf.math.log(other)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nother = torch.tensor([0.1, 0.2, 0.3], dtype=torch.float32)"
+  ]
+}

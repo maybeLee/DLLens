@@ -1,0 +1,51 @@
+{
+  "function_name": "torch.Tensor.clip(input, min=None, max=None)",
+  "inputs": [
+    "input",
+    "min",
+    "max"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmin = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nmin = torch.tensor(2)\nmax = torch.tensor(3)",
+    "input = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\nmin = torch.tensor(2, dtype=torch.float32)\nmax = torch.tensor(4, dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\nmin = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\nmin = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "min = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\nmin = torch.tensor(np.random.randn(1,1,1), dtype=torch.float32)",
+    "min = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3), dtype=torch.float16)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\nmin = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "min = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmin = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(np.random.randn(1,1), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmin = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "min = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "min = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3), dtype=torch.half)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\nmin = torch.tensor(np.random.randn(1,1), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\nmin = torch.tensor(np.random.randn(1,1,1,1,1), dtype=torch.float32)",
+    "min = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmin = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmin = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(np.random.randn(1,1,1,1), dtype=torch.float32)",
+    "min = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmin = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmin = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(np.random.randn(1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\nmin = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmin = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "min = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "min = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmin = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmin = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(np.random.randn(1,1,1,1,1), dtype=torch.float32)",
+    "min = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "min = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\ninput = torch.tensor(np.random.randn(3), dtype=torch.float64)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\nmin = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)\nmin = torch.tensor(np.random.randn(1,1,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,min=None,max=None):\n  return torch.Tensor.clip(input,min,max)",
+    "tensorflow": "def tensorflow_call(input, min=None, max=None):\n    if min is not None:\n        min = tf.cast(min, input.dtype)\n    if max is not None:\n        max = tf.cast(max, input.dtype)\n    clipped = input\n    if min is not None:\n        clipped = tf.where(input < min, min, clipped)\n    if max is not None:\n        clipped = tf.where(input > max, max, clipped)\n    return clipped"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3], dtype=torch.float32)\nmin = torch.tensor(1, dtype=torch.float32)\nmax = torch.tensor(2, dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nmin = torch.tensor(2)\nmax = torch.tensor(3)",
+    "input = torch.tensor([1, 2, 3, 4, 5], dtype=torch.float32)\nmin = torch.tensor(2, dtype=torch.float32)\nmax = torch.tensor(4, dtype=torch.float32)"
+  ]
+}

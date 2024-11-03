@@ -1,0 +1,28 @@
+{
+  "function_name": "tf.math.asin(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant(0.5)",
+    "x = tf.constant([0.0, 0.5, -0.5, 1.0, -1.0], dtype=tf.float32)",
+    "x = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(), dtype='half')",
+    "x = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(), dtype='float16')",
+    "x = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(), dtype='float64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.math.asin(x)",
+    "pytorch": "def pytorch_call(x):\n    return torch.asin(x)"
+  },
+  "llm_inputs": [
+    "x = tf.constant(0.5)",
+    "x = tf.constant([0.0, 0.5, -0.5, 1.0, -1.0], dtype=tf.float32)",
+    "x = tf.constant(0.5)"
+  ]
+}

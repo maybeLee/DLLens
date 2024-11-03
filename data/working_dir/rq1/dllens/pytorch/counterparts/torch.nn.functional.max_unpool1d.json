@@ -1,0 +1,43 @@
+{
+  "function_name": "torch.nn.functional.max_unpool1d(input, indices, kernel_size, stride=None, padding=0, output_size=None)",
+  "inputs": [
+    "input",
+    "indices",
+    "kernel_size",
+    "stride",
+    "padding",
+    "output_size"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\nstride = 1\npadding = 0\noutput_size = None",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]])\nindices = torch.tensor([[0, 1, 2, 3, 4]])\nkernel_size = 2\nstride = 1\npadding = 0\noutput_size = None",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nstride = 1\npadding = 0\noutput_size = None\nkernel_size = 5",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nstride = 1\npadding = 0\noutput_size = None\nkernel_size = 4",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nstride = 1\npadding = 0\noutput_size = None\nkernel_size = 3",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\npadding = 0\noutput_size = None\nstride = 1",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\npadding = 0\noutput_size = None\nstride = 2",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\nstride = 1\noutput_size = None\npadding = -5",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\npadding = 0\noutput_size = None\nstride = 4",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\nstride = 1\noutput_size = None\npadding = -1",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\npadding = 0\noutput_size = None\nstride = 5",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nstride = 1\npadding = 0\noutput_size = None\nkernel_size = -3",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\nstride = 1\noutput_size = None\npadding = -4",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\nstride = 1\noutput_size = None\npadding = 0",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nstride = 1\npadding = 0\noutput_size = None\nkernel_size = 2",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\nstride = 1\noutput_size = None\npadding = -2",
+    "indices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\nstride = 1\npadding = 0\noutput_size = None\ninput = torch.tensor(np.random.randn(1,4), dtype=torch.float32)",
+    "indices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\nstride = 1\npadding = 0\noutput_size = None\ninput = torch.tensor(np.random.randn(1,4), dtype=torch.float64)",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nstride = 1\npadding = 0\noutput_size = None\nkernel_size = 1",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\nstride = 1\noutput_size = None\npadding = -3",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\npadding = 0\noutput_size = None\nstride = 3"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,indices,kernel_size,stride=None,padding=0,output_size=None):\n  return torch.nn.functional.max_unpool1d(input,indices,kernel_size,stride,padding,output_size)",
+    "tensorflow": "def tensorflow_call(input, indices, kernel_size, stride=None, padding=0, output_size=None):\n    if stride is None:\n        stride = 1\n    input_shape = tf.shape(input)\n    batch_size = input_shape[0]\n    input_length = input_shape[1]\n    if output_size is None:\n        output_length = (input_length - 1) * stride + kernel_size - 2 * padding\n    else:\n        output_length = output_size\n    if output_length <= 0:\n        return tf.zeros((batch_size, 0), dtype=input.dtype)\n    output = tf.zeros((batch_size, output_length), dtype=input.dtype)\n    for b in range(batch_size):\n        for i in range(input_length):\n            idx = indices[b, i]\n            output_index = idx.numpy()\n            output = tf.tensor_scatter_nd_update(output, [[b, output_index]], [input[b, i]])\n    return output"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\nstride = 1\npadding = 0\noutput_size = None",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0, 5.0]])\nindices = torch.tensor([[0, 1, 2, 3, 4]])\nkernel_size = 2\nstride = 1\npadding = 0\noutput_size = None",
+    "input = torch.tensor([[1.0, 2.0, 3.0, 4.0]], dtype=torch.float32)\nindices = torch.tensor([[0, 1, 2, 3]], dtype=torch.int64)\nkernel_size = 2\nstride = 1\npadding = 0\noutput_size = None"
+  ]
+}

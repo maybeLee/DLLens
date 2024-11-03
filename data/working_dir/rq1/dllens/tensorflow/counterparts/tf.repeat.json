@@ -1,0 +1,42 @@
+{
+  "function_name": "tf.repeat(input,repeats,axis=None,name=None)",
+  "inputs": [
+    "input",
+    "repeats",
+    "axis"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]])\nrepeats = 2\naxis = 0",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nrepeats = tf.constant(2, dtype=tf.int32)\naxis = 0",
+    "input = tf.constant([[1, 2], [3, 4]])\nrepeats = tf.constant(2)\naxis = 0",
+    "repeats = 2\naxis = 0\ninput = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int32')",
+    "repeats = 2\naxis = 0\ninput = tf.constant(np.random.randint(-50, 50, (1,2)), dtype='int32')",
+    "repeats = 2\naxis = 0\ninput = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int32')",
+    "repeats = 2\naxis = 0\ninput = tf.constant(np.random.randint(-50, 50, (2,5)), dtype='int32')",
+    "repeats = 2\naxis = 0\ninput = tf.constant(np.random.randint(-50, 50, (2,2,1,1)), dtype='int32')",
+    "repeats = 2\naxis = 0\ninput = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "input = tf.constant([[1, 2], [3, 4]])\naxis = 0\nrepeats = 3",
+    "input = tf.constant([[1, 2], [3, 4]])\naxis = 0\nrepeats = 0",
+    "input = tf.constant([[1, 2], [3, 4]])\naxis = 0\nrepeats = 4",
+    "repeats = 2\naxis = 0\ninput = tf.constant(np.random.randint(-50, 50, (5,2)), dtype='int32')",
+    "repeats = 2\naxis = 0\ninput = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "input = tf.constant([[1, 2], [3, 4]])\nrepeats = 2\naxis = -1",
+    "input = tf.constant([[1, 2], [3, 4]])\nrepeats = 2\naxis = -2",
+    "input = tf.constant([[1, 2], [3, 4]])\naxis = 0\nrepeats = 1",
+    "repeats = 2\naxis = 0\ninput = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int64')",
+    "input = tf.constant([[1, 2], [3, 4]])\naxis = 0\nrepeats = 5",
+    "repeats = 2\naxis = 0\ninput = tf.constant(np.random.randint(-50, 50, (2,2,1)), dtype='int32')",
+    "input = tf.constant([[1, 2], [3, 4]])\nrepeats = 2\naxis = 1",
+    "repeats = 2\naxis = 0\ninput = tf.constant(np.random.randint(-50, 50, (2,2,1,1,1)), dtype='int32')",
+    "input = tf.constant([[1, 2], [3, 4]])\naxis = 0\nrepeats = 2"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,repeats,axis=None):\n  return tf.repeat(input,repeats,axis)",
+    "pytorch": "def pytorch_call(input, repeats, axis=None):\n    if input.dim() == 0:\n        input = input.unsqueeze(0)\n    if axis is None:\n        return input.repeat(repeats)\n    else:\n        return input.repeat_interleave(repeats, dim=axis)"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]])\nrepeats = 2\naxis = 0",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nrepeats = tf.constant(2, dtype=tf.int32)\naxis = 0",
+    "input = tf.constant([[1, 2], [3, 4]])\nrepeats = tf.constant(2)\naxis = 0"
+  ]
+}

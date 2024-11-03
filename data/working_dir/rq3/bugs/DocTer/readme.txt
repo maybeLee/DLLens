@@ -1,0 +1,1 @@
+We find no bug when running DocTer on our randomly sampled 200 APIs.

@@ -1,0 +1,26 @@
+{
+  "function_name": "tf.dynamic_stitch(indices,data,name=None)",
+  "inputs": [
+    "indices",
+    "data"
+  ],
+  "sample_inputs": [
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant([10, 20, 30], dtype=tf.int32)",
+    "indices = tf.constant([0, 1, 2])\ndata = tf.constant([10, 20, 30])",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant(np.random.randint(-50, 50, (3,1,1)), dtype='int32')",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant(np.random.randint(-50, 50, (3)), dtype='int64')",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant(np.random.randint(-50, 50, (3,1,1,1)), dtype='int32')",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant(np.random.randint(-50, 50, (3,1)), dtype='int32')",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant(np.random.randint(-50, 50, (3,1,1,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(indices,data):\n  return tf.dynamic_stitch(indices,data)",
+    "pytorch": "def pytorch_call(indices, data):\n    output_size = indices.max().item() + 1\n    output = torch.zeros(output_size, dtype=data.dtype)\n    output[indices] = data.view(-1)\n    return output"
+  },
+  "llm_inputs": [
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant([10, 20, 30], dtype=tf.int32)",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndata = tf.constant([10, 20, 30], dtype=tf.int32)",
+    "indices = tf.constant([0, 1, 2])\ndata = tf.constant([10, 20, 30])"
+  ]
+}

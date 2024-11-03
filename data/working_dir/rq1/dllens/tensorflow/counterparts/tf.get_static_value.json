@@ -1,0 +1,34 @@
+{
+  "function_name": "tf.get_static_value(tensor,partial=False)",
+  "inputs": [
+    "tensor",
+    "partial"
+  ],
+  "sample_inputs": [
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\npartial = False",
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\npartial = tf.constant(False)",
+    "tensor = tf.constant([[1, 2], [3, 4]])\npartial = tf.constant(True)",
+    "partial = False\ntensor = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int32')",
+    "partial = False\ntensor = tf.constant(np.random.randint(-50, 50, (2,5)), dtype='int32')",
+    "partial = False\ntensor = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int64')",
+    "partial = False\ntensor = tf.constant(np.random.randint(-50, 50, (1,2)), dtype='int32')",
+    "partial = False\ntensor = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "partial = False\ntensor = tf.constant(np.random.randint(-50, 50, (2,2,1)), dtype='int32')",
+    "partial = False\ntensor = tf.constant(np.random.randint(-50, 50, (2,2,1,1,1)), dtype='int32')",
+    "partial = False\ntensor = tf.constant(np.random.randint(-50, 50, (2,4)), dtype='int32')",
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\npartial = True",
+    "partial = False\ntensor = tf.constant(np.random.randint(-50, 50, (2,2,1,1)), dtype='int32')",
+    "partial = False\ntensor = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "partial = False\ntensor = tf.constant(np.random.randint(-50, 50, (5,2)), dtype='int32')",
+    "partial = False\ntensor = tf.constant(np.random.randint(-50, 50, (2,2)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(tensor,partial=False):\n  return tf.get_static_value(tensor,partial)",
+    "pytorch": "def pytorch_call(tensor, partial=False):\n    if isinstance(partial, torch.Tensor):\n        partial = partial.item()\n    return tensor if not partial else tensor.clone()"
+  },
+  "llm_inputs": [
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\npartial = False",
+    "tensor = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\npartial = tf.constant(False)",
+    "tensor = tf.constant([[1, 2], [3, 4]])\npartial = tf.constant(True)"
+  ]
+}

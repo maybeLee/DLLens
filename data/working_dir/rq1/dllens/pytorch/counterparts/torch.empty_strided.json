@@ -1,0 +1,19 @@
+{
+  "function_name": "torch.empty_strided(size, stride, *, dtype=None, layout=None, device=None, requires_grad=False, pin_memory=False)",
+  "inputs": [
+    "size",
+    "stride"
+  ],
+  "sample_inputs": [
+    "size = (3, 3)\nstride = (3, 1)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(size,stride):\n  return torch.empty_strided(size,stride)",
+    "tensorflow": "def tensorflow_call(size, stride):\n    tensor = tf.Variable(tf.zeros(size, dtype=tf.float32))\n    output_shape = (size[0] // stride[0], size[1] // stride[1])\n    output = tf.Variable(tf.zeros(output_shape, dtype=tf.float32))\n    for i in range(output_shape[0]):\n        for j in range(output_shape[1]):\n            output[i, j].assign(tensor[i * stride[0], j * stride[1]])\n    return output"
+  },
+  "llm_inputs": [
+    "size = (3, 3)\nstride = (3, 1)",
+    "size = (3, 3)\nstride = (3, 1)",
+    "size = (3, 3)\nstride = (3, 1)"
+  ]
+}

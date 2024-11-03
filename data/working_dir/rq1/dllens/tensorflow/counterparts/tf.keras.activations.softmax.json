@@ -1,0 +1,32 @@
+{
+  "function_name": "tf.keras.activations.softmax(x,axis=-1)",
+  "inputs": [
+    "x",
+    "axis"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1.0, 2.0, 3.0], [1.0, 2.0, 3.0]])\naxis = tf.constant(-1)",
+    "x = tf.constant([[1.0, 2.0, 3.0], [1.0, 2.0, 3.0]])\naxis = -1",
+    "axis = tf.constant(-1)\nx = tf.constant(np.random.randn(2,3), dtype='half')",
+    "axis = tf.constant(-1)\nx = tf.constant(np.random.randn(1,3), dtype='float32')",
+    "axis = tf.constant(-1)\nx = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "axis = tf.constant(-1)\nx = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "axis = tf.constant(-1)\nx = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "axis = tf.constant(-1)\nx = tf.constant(np.random.randn(5,3), dtype='float32')",
+    "axis = tf.constant(-1)\nx = tf.constant(np.random.randn(2,4), dtype='float32')",
+    "axis = tf.constant(-1)\nx = tf.constant(np.random.randn(2,3,1,1), dtype='float32')",
+    "axis = tf.constant(-1)\nx = tf.constant(np.random.randn(2,3,1), dtype='float32')",
+    "axis = tf.constant(-1)\nx = tf.constant(np.random.randn(2,3,1,1,1), dtype='float32')",
+    "axis = tf.constant(-1)\nx = tf.constant(np.random.randn(2,3), dtype='float16')",
+    "axis = tf.constant(-1)\nx = tf.constant(np.random.randn(2,3), dtype='float64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,axis=-1):\n  return tf.keras.activations.softmax(x,axis)",
+    "pytorch": "def pytorch_call(x, axis=-1):\n    if x.dtype == torch.half:\n        x = x.float()\n    return torch.nn.functional.softmax(x, dim=axis)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1.0, 2.0, 3.0], [1.0, 2.0, 3.0]])\naxis = tf.constant(-1)",
+    "x = tf.constant([[1.0, 2.0, 3.0], [1.0, 2.0, 3.0]])\naxis = tf.constant(-1)",
+    "x = tf.constant([[1.0, 2.0, 3.0], [1.0, 2.0, 3.0]])\naxis = -1"
+  ]
+}

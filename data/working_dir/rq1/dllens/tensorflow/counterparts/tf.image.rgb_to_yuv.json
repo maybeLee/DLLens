@@ -1,0 +1,24 @@
+{
+  "function_name": "tf.image.rgb_to_yuv(images)",
+  "inputs": [
+    "images"
+  ],
+  "sample_inputs": [
+    "images = tf.constant([[[255, 0, 0], [0, 255, 0]], [[0, 0, 255], [255, 255, 0]]], dtype=tf.float32)",
+    "images = tf.constant(np.random.randn(2,2,3), dtype='half')",
+    "images = tf.constant(np.random.randn(2,2,3), dtype='float32')",
+    "images = tf.constant(np.random.randn(2,2,3), dtype='float16')",
+    "images = tf.constant(np.random.randn(5,2,3), dtype='float32')",
+    "images = tf.constant(np.random.randn(2,1,3), dtype='float32')",
+    "images = tf.constant(np.random.randn(2,2,3), dtype='float64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(images):\n  return tf.image.rgb_to_yuv(images)",
+    "pytorch": "def pytorch_call(images):\n    if images.dim() == 3:\n        images = images.permute(2, 0, 1)\n    R = images[0, :, :]\n    G = images[1, :, :]\n    B = images[2, :, :]\n    Y = 0.299 * R + 0.587 * G + 0.114 * B\n    U = -0.14713 * R - 0.28886 * G + 0.436 * B\n    V = 0.615 * R - 0.51499 * G - 0.10001 * B\n    yuv_images = torch.stack((Y, U, V), dim=0)\n    return yuv_images.permute(1, 2, 0)"
+  },
+  "llm_inputs": [
+    "images = tf.constant([[[255, 0, 0], [0, 255, 0]], [[0, 0, 255], [255, 255, 0]]], dtype=tf.float32)",
+    "images = tf.constant([[[255, 0, 0], [0, 255, 0]], [[0, 0, 255], [255, 255, 0]]], dtype=tf.float32)",
+    "images = tf.constant([[[255, 0, 0], [0, 255, 0]], [[0, 0, 255], [255, 255, 0]]], dtype=tf.float32)"
+  ]
+}

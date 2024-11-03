@@ -1,0 +1,47 @@
+{
+  "function_name": "torch.allclose(input, other, rtol=1e-05, atol=1e-08, equal_nan=False)",
+  "inputs": [
+    "input",
+    "other",
+    "rtol",
+    "atol",
+    "equal_nan"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False",
+    "other = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\nother = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\natol = 1e-08\nequal_nan = False\nrtol = 93.29",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\nother = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\nequal_nan = False\natol = 55.75",
+    "other = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\nequal_nan = False\natol = 33.95",
+    "other = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\nother = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "other = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\natol = 1e-08\nequal_nan = False\nrtol = 4.75",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\nother = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\nother = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\nequal_nan = False\natol = 5.99",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\nother = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\nother = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\natol = 1e-08\nequal_nan = False\nrtol = 60.94",
+    "other = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\nequal_nan = False\natol = 54.14",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = True",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\nother = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "other = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "other = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "other = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\natol = 1e-08\nequal_nan = False\nrtol = 51.16"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,other,rtol=1e-05,atol=1e-08,equal_nan=False):\n  return torch.allclose(input,other,rtol,atol,equal_nan)",
+    "tensorflow": "def tensorflow_call(input, other, rtol=1e-05, atol=1e-08, equal_nan=False):\n    abs_diff = tf.abs(input - other)\n    tol = atol + rtol * tf.abs(other)\n    close = abs_diff <= tol\n    if equal_nan:\n        nan_mask = tf.math.logical_or(tf.math.is_nan(input), tf.math.is_nan(other))\n        return tf.reduce_all(tf.logical_or(close, nan_mask))\n    else:\n        return tf.reduce_all(close)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nrtol = 1e-05\natol = 1e-08\nequal_nan = False"
+  ]
+}

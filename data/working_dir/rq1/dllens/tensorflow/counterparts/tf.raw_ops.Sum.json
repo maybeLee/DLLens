@@ -1,0 +1,32 @@
+{
+  "function_name": "tf.raw_ops.Sum(input,axis,keep_dims=False,name=None)",
+  "inputs": [
+    "input",
+    "axis",
+    "keep_dims"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\naxis = tf.constant([0], dtype=tf.int32)\nkeep_dims = False",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)\naxis = tf.constant([0], dtype=tf.int32)\nkeep_dims = False",
+    "axis = tf.constant([0], dtype=tf.int32)\nkeep_dims = False\ninput = tf.constant(np.random.randn(2,2), dtype='half')",
+    "axis = tf.constant([0], dtype=tf.int32)\nkeep_dims = False\ninput = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "axis = tf.constant([0], dtype=tf.int32)\nkeep_dims = False\ninput = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "axis = tf.constant([0], dtype=tf.int32)\nkeep_dims = False\ninput = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "axis = tf.constant([0], dtype=tf.int32)\nkeep_dims = False\ninput = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "axis = tf.constant([0], dtype=tf.int32)\nkeep_dims = False\ninput = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "axis = tf.constant([0], dtype=tf.int32)\nkeep_dims = False\ninput = tf.constant(np.random.randn(2), dtype='float32')",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\naxis = tf.constant([0], dtype=tf.int32)\nkeep_dims = True",
+    "axis = tf.constant([0], dtype=tf.int32)\nkeep_dims = False\ninput = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "axis = tf.constant([0], dtype=tf.int32)\nkeep_dims = False\ninput = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "axis = tf.constant([0], dtype=tf.int32)\nkeep_dims = False\ninput = tf.constant(np.random.randn(2,2), dtype='float16')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,axis,keep_dims=False):\n  return tf.raw_ops.Sum(input=input,axis=axis,keep_dims=keep_dims)",
+    "pytorch": "def pytorch_call(input, axis, keep_dims=False):\n    axis = axis.tolist()\n    result = torch.sum(input, dim=axis, keepdim=keep_dims)\n    return result"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\naxis = tf.constant([0], dtype=tf.int32)\nkeep_dims = False",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)\naxis = tf.constant([0], dtype=tf.int32)\nkeep_dims = False",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)\naxis = tf.constant([0], dtype=tf.int32)\nkeep_dims = False"
+  ]
+}

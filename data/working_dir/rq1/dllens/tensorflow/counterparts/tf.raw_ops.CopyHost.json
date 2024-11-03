@@ -1,0 +1,29 @@
+{
+  "function_name": "tf.raw_ops.CopyHost(input,tensor_name='',debug_ops_spec=[],name=None)",
+  "inputs": [
+    "input",
+    "tensor_name",
+    "debug_ops_spec"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1.0, 2.0]], dtype=tf.float32)\ntensor_name = 'example_tensor'\ndebug_ops_spec = []",
+    "tensor_name = 'example_tensor'\ndebug_ops_spec = []\ninput = tf.constant(np.random.randn(1,2,1), dtype='float32')",
+    "tensor_name = 'example_tensor'\ndebug_ops_spec = []\ninput = tf.constant(np.random.randn(1,3), dtype='float32')",
+    "tensor_name = 'example_tensor'\ndebug_ops_spec = []\ninput = tf.constant(np.random.randn(), dtype='float32')",
+    "tensor_name = 'example_tensor'\ndebug_ops_spec = []\ninput = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "tensor_name = 'example_tensor'\ndebug_ops_spec = []\ninput = tf.constant(np.random.randn(1,2,1,1,1), dtype='float32')",
+    "tensor_name = 'example_tensor'\ndebug_ops_spec = []\ninput = tf.constant(np.random.randn(1,2,1,1), dtype='float32')",
+    "tensor_name = 'example_tensor'\ndebug_ops_spec = []\ninput = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "tensor_name = 'example_tensor'\ndebug_ops_spec = []\ninput = tf.constant(np.random.randn(1), dtype='float32')",
+    "tensor_name = 'example_tensor'\ndebug_ops_spec = []\ninput = tf.constant(np.random.randn(1,2), dtype='float64')",
+    "tensor_name = 'example_tensor'\ndebug_ops_spec = []\ninput = tf.constant(np.random.randn(1,2), dtype='half')",
+    "tensor_name = 'example_tensor'\ndebug_ops_spec = []\ninput = tf.constant(np.random.randn(1,2), dtype='float16')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,tensor_name='',debug_ops_spec=[]):\n  return tf.raw_ops.CopyHost(input=input,tensor_name=tensor_name,debug_ops_spec=debug_ops_spec)",
+    "pytorch": "def pytorch_call(input, tensor_name='', debug_ops_spec=[]):\n    return input"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1.0, 2.0]], dtype=tf.float32)\ntensor_name = 'example_tensor'\ndebug_ops_spec = []"
+  ]
+}

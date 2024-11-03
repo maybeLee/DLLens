@@ -1,0 +1,34 @@
+{
+  "function_name": "torch.Tensor.argmin(input, dim=None, keepdim=False)",
+  "inputs": [
+    "input",
+    "dim",
+    "keepdim"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 1\nkeepdim = True",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndim = 1\nkeepdim = True",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nkeepdim = True\ndim = 1",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2,5)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nkeepdim = True\ndim = -1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nkeepdim = True\ndim = 0",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2,3,1,1,1)), dtype=torch.int64)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (1,3)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 1\nkeepdim = False",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2,3)), dtype=torch.int64)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2,3)), dtype=torch.int32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nkeepdim = True\ndim = -2",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2,3,1,1)), dtype=torch.int64)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2,3,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim=None,keepdim=False):\n  return torch.Tensor.argmin(input,dim,keepdim)",
+    "tensorflow": "def tensorflow_call(input, dim=None, keepdim=False):\n    axis = dim\n    result = tf.argmin(input, axis=axis)\n    if keepdim:\n        result = tf.expand_dims(result, axis)\n    return result"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 1\nkeepdim = True",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 1\nkeepdim = True",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\ndim = 1\nkeepdim = True"
+  ]
+}

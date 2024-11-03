@@ -1,0 +1,31 @@
+{
+  "function_name": "tf.raw_ops.MatrixSolveLs(matrix,rhs,l2_regularizer,fast=True,name=None)",
+  "inputs": [
+    "matrix",
+    "rhs",
+    "l2_regularizer",
+    "fast"
+  ],
+  "sample_inputs": [
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float64)\nrhs = tf.constant([[5.0], [6.0]], dtype=tf.float64)\nl2_regularizer = tf.constant(0.1, dtype=tf.float64)\nfast = True",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.double)\nrhs = tf.constant([[1.0], [2.0]], dtype=tf.double)\nl2_regularizer = tf.constant(0.1, dtype=tf.double)\nfast = True",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float64)\nrhs = tf.constant([[5.0], [6.0]], dtype=tf.float64)\nl2_regularizer = tf.constant(0.1, dtype=tf.float64)\nfast = False",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float64)\nl2_regularizer = tf.constant(0.1, dtype=tf.float64)\nfast = True\nrhs = tf.constant(np.random.randn(2,1), dtype='float64')",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float64)\nl2_regularizer = tf.constant(0.1, dtype=tf.float64)\nfast = True\nrhs = tf.constant(np.random.randn(2,3), dtype='float64')",
+    "rhs = tf.constant([[5.0], [6.0]], dtype=tf.float64)\nl2_regularizer = tf.constant(0.1, dtype=tf.float64)\nfast = True\nmatrix = tf.constant(np.random.randn(2,1), dtype='float64')",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float64)\nl2_regularizer = tf.constant(0.1, dtype=tf.float64)\nfast = True\nrhs = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "rhs = tf.constant([[5.0], [6.0]], dtype=tf.float64)\nl2_regularizer = tf.constant(0.1, dtype=tf.float64)\nfast = True\nmatrix = tf.constant(np.random.randn(2,5), dtype='float64')",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float64)\nl2_regularizer = tf.constant(0.1, dtype=tf.float64)\nfast = True\nrhs = tf.constant(np.random.randn(2,5), dtype='float64')",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float64)\nrhs = tf.constant([[5.0], [6.0]], dtype=tf.float64)\nfast = True\nl2_regularizer = tf.constant(np.random.randn(), dtype='float64')",
+    "rhs = tf.constant([[5.0], [6.0]], dtype=tf.float64)\nl2_regularizer = tf.constant(0.1, dtype=tf.float64)\nfast = True\nmatrix = tf.constant(np.random.randn(2,2), dtype='float64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(matrix,rhs,l2_regularizer,fast=True):\n  return tf.raw_ops.MatrixSolveLs(matrix=matrix,rhs=rhs,l2_regularizer=l2_regularizer,fast=fast)",
+    "pytorch": "def pytorch_call(matrix, rhs, l2_regularizer, fast=True):\n    reg_matrix = l2_regularizer * torch.eye(matrix.size(1), dtype=matrix.dtype, device=matrix.device)\n    if fast:\n        solution = torch.linalg.solve(matrix.T @ matrix + reg_matrix, matrix.T @ rhs)\n    else:\n        solution = torch.linalg.pinv(matrix) @ rhs\n    return solution"
+  },
+  "llm_inputs": [
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float64)\nrhs = tf.constant([[5.0], [6.0]], dtype=tf.float64)\nl2_regularizer = tf.constant(0.1, dtype=tf.float64)\nfast = True",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.double)\nrhs = tf.constant([[1.0], [2.0]], dtype=tf.double)\nl2_regularizer = tf.constant(0.1, dtype=tf.double)\nfast = True",
+    "matrix = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float64)\nrhs = tf.constant([[5.0], [6.0]], dtype=tf.float64)\nl2_regularizer = tf.constant(0.1, dtype=tf.float64)\nfast = True"
+  ]
+}

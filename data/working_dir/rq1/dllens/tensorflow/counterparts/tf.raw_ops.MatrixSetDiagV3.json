@@ -1,0 +1,26 @@
+{
+  "function_name": "tf.raw_ops.MatrixSetDiagV3(input,diagonal,k,align='RIGHT_LEFT',name=None)",
+  "inputs": [
+    "input",
+    "diagonal",
+    "k",
+    "align"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ndiagonal = tf.constant([5, 6], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)\nalign = 'RIGHT_LEFT'",
+    "diagonal = tf.constant([5, 6], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(3,2), dtype='float32')",
+    "diagonal = tf.constant([5, 6], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "diagonal = tf.constant([5, 6], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "diagonal = tf.constant([5, 6], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)\nalign = 'RIGHT_LEFT'\ndiagonal = tf.constant(np.random.randn(2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,diagonal,k,align='RIGHT_LEFT'):\n  return tf.raw_ops.MatrixSetDiagV3(input=input,diagonal=diagonal,k=k,align=align)",
+    "pytorch": "def pytorch_call(input, diagonal, k, align='RIGHT_LEFT'):\n    diag_size = diagonal.shape[0]\n    output = input.clone()\n    if align == 'RIGHT_LEFT':\n        start_row = max(0, k.item())\n        start_col = max(0, -k.item())\n    else:\n        start_row = k.item()\n        start_col = k.item()\n    for i in range(diag_size):\n        row = start_row + i\n        col = start_col + i\n        if 0 <= row < output.shape[0] and 0 <= col < output.shape[1]:\n            output[row, col] = diagonal[i]\n    return output"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ndiagonal = tf.constant([5, 6], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)\nalign = 'RIGHT_LEFT'",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ndiagonal = tf.constant([5, 6], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)\nalign = 'RIGHT_LEFT'",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ndiagonal = tf.constant([5, 6], dtype=tf.float32)\nk = tf.constant(0, dtype=tf.int32)\nalign = 'RIGHT_LEFT'"
+  ]
+}

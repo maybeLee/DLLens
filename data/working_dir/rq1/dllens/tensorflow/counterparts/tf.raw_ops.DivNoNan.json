@@ -1,0 +1,36 @@
+{
+  "function_name": "tf.raw_ops.DivNoNan(x,y,name=None)",
+  "inputs": [
+    "x",
+    "y"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([[1.0, 0.5], [2.0, 0.0]])",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\ny = tf.constant([[1.0, 0.5], [0.25, 1.0]], dtype=tf.float32)",
+    "y = tf.constant([[1.0, 0.5], [2.0, 0.0]])\nx = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(2), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "y = tf.constant([[1.0, 0.5], [2.0, 0.0]])\nx = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "y = tf.constant([[1.0, 0.5], [2.0, 0.0]])\nx = tf.constant(np.random.randn(2), dtype='float32')",
+    "y = tf.constant([[1.0, 0.5], [2.0, 0.0]])\nx = tf.constant(np.random.randn(), dtype='float32')",
+    "y = tf.constant([[1.0, 0.5], [2.0, 0.0]])\nx = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "y = tf.constant([[1.0, 0.5], [2.0, 0.0]])\nx = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "y = tf.constant([[1.0, 0.5], [2.0, 0.0]])\nx = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "y = tf.constant([[1.0, 0.5], [2.0, 0.0]])\nx = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant(np.random.randn(2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,y):\n  return tf.raw_ops.DivNoNan(x=x,y=y)",
+    "pytorch": "def pytorch_call(x, y):\n    return torch.where(y != 0, x / y, torch.zeros_like(x))"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([[1.0, 0.5], [2.0, 0.0]])",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\ny = tf.constant([[1.0, 0.5], [2.0, 0.0]])",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\ny = tf.constant([[1.0, 0.5], [0.25, 1.0]], dtype=tf.float32)"
+  ]
+}

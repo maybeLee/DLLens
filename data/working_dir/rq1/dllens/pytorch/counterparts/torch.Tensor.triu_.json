@@ -1,0 +1,35 @@
+{
+  "function_name": "torch.Tensor.triu_(input, diagonal=0)",
+  "inputs": [
+    "input",
+    "diagonal"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1]], dtype=torch.float32)\ndiagonal = 0",
+    "input = torch.tensor([[1]], dtype=torch.float32)\ndiagonal = -5",
+    "input = torch.tensor([[1]], dtype=torch.float32)\ndiagonal = 4",
+    "input = torch.tensor([[1]], dtype=torch.float32)\ndiagonal = 2",
+    "input = torch.tensor([[1]], dtype=torch.float32)\ndiagonal = 5",
+    "diagonal = 0\ninput = torch.tensor(np.random.randn(1,5), dtype=torch.float32)",
+    "input = torch.tensor([[1]], dtype=torch.float32)\ndiagonal = 1",
+    "diagonal = 0\ninput = torch.tensor(np.random.randn(1,1,1,1,1), dtype=torch.float32)",
+    "diagonal = 0\ninput = torch.tensor(np.random.randn(1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1]], dtype=torch.float32)\ndiagonal = -3",
+    "input = torch.tensor([[1]], dtype=torch.float32)\ndiagonal = -1",
+    "input = torch.tensor([[1]], dtype=torch.float32)\ndiagonal = 3",
+    "diagonal = 0\ninput = torch.tensor(np.random.randn(1,1), dtype=torch.half)",
+    "diagonal = 0\ninput = torch.tensor(np.random.randn(1,1), dtype=torch.float16)",
+    "diagonal = 0\ninput = torch.tensor(np.random.randn(1,1), dtype=torch.float64)",
+    "input = torch.tensor([[1]], dtype=torch.float32)\ndiagonal = -4",
+    "diagonal = 0\ninput = torch.tensor(np.random.randn(1,1,1), dtype=torch.float32)",
+    "diagonal = 0\ninput = torch.tensor(np.random.randn(1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1]], dtype=torch.float32)\ndiagonal = -2"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,diagonal=0):\n  return torch.Tensor.triu_(input,diagonal)",
+    "tensorflow": "def tensorflow_call(input, diagonal=0):\n    (num_rows, num_cols) = (tf.shape(input)[0], tf.shape(input)[1])\n    if diagonal < 0:\n        num_lower = -diagonal\n        if num_lower > num_rows:\n            num_lower = num_rows\n        return tf.linalg.band_part(input, num_lower=-num_lower, num_upper=0)\n    elif diagonal >= num_cols:\n        return tf.zeros_like(input)\n    return tf.linalg.band_part(input, num_lower=0, num_upper=num_cols - 1 - diagonal)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1]], dtype=torch.float32)\ndiagonal = 0"
+  ]
+}

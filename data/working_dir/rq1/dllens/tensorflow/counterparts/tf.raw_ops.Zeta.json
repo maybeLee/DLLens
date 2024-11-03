@@ -1,0 +1,31 @@
+{
+  "function_name": "tf.raw_ops.Zeta(x,q,name=None)",
+  "inputs": [
+    "x",
+    "q"
+  ],
+  "sample_inputs": [
+    "x = tf.constant(5.0)\nq = tf.constant(3.0)",
+    "q = tf.constant(3.0)\nx = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "x = tf.constant(5.0)\nq = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "q = tf.constant(3.0)\nx = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "q = tf.constant(3.0)\nx = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant(5.0)\nq = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant(5.0)\nq = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "q = tf.constant(3.0)\nx = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "x = tf.constant(5.0)\nq = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "x = tf.constant(5.0)\nq = tf.constant(np.random.randn(), dtype='float32')",
+    "q = tf.constant(3.0)\nx = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "q = tf.constant(3.0)\nx = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant(5.0)\nq = tf.constant(np.random.randn(1,1,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,q):\n  return tf.raw_ops.Zeta(x=x,q=q)",
+    "pytorch": "def pytorch_call(x, q):\n    x = x.float()\n    q = q.float()\n    if x <= 1.0:\n        return torch.tensor(float('nan'))\n    num_terms = 1000\n    terms = torch.arange(q.item(), q.item() + num_terms, dtype=torch.float32)\n    zeta_value = torch.sum(1.0 / terms ** x)\n    return zeta_value"
+  },
+  "llm_inputs": [
+    "x = tf.constant(5.0)\nq = tf.constant(3.0)",
+    "x = tf.constant(5.0)\nq = tf.constant(3.0)",
+    "x = tf.constant(5.0)\nq = tf.constant(3.0)"
+  ]
+}

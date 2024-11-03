@@ -1,0 +1,28 @@
+{
+  "function_name": "torch.Tensor.hsplit(input, split_size_or_sections)",
+  "inputs": [
+    "input",
+    "split_size_or_sections"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4], [5, 6], [7, 8]])\nsplit_size_or_sections = 2",
+    "split_size_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (4,2,1,1,1)), dtype=torch.int64)",
+    "split_size_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (4,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4], [5, 6], [7, 8]])\nsplit_size_or_sections = 1",
+    "split_size_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (4,2,1)), dtype=torch.int64)",
+    "split_size_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (5,2)), dtype=torch.int64)",
+    "split_size_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (4,2,1,1)), dtype=torch.int64)",
+    "split_size_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (4)), dtype=torch.int64)",
+    "split_size_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (4,2)), dtype=torch.int32)",
+    "split_size_or_sections = 2\ninput = torch.tensor(np.random.randint(-50, 50, (1,2)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,split_size_or_sections):\n  return torch.Tensor.hsplit(input,split_size_or_sections)",
+    "tensorflow": "def tensorflow_call(input, split_size_or_sections):\n    input_shape = tf.shape(input)\n    if input_shape.shape[0] == 1:\n        return tf.split(input, num_or_size_splits=split_size_or_sections, axis=0)\n    split_size = input_shape[1] // split_size_or_sections\n    return tf.split(input, num_or_size_splits=split_size_or_sections, axis=1)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4], [5, 6], [7, 8]])\nsplit_size_or_sections = 2",
+    "input = torch.tensor([[1, 2], [3, 4], [5, 6], [7, 8]])\nsplit_size_or_sections = 2",
+    "input = torch.tensor([[1, 2], [3, 4], [5, 6], [7, 8]])\nsplit_size_or_sections = 2"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.image.adjust_contrast(images,contrast_factor)",
+  "inputs": [
+    "images",
+    "contrast_factor"
+  ],
+  "sample_inputs": [
+    "images = tf.constant([[[0.1, 0.2], [0.3, 0.4]], [[0.5, 0.6], [0.7, 0.8]]])\ncontrast_factor = tf.constant(1.5)",
+    "images = tf.constant([[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], [[0.7, 0.8, 0.9], [1.0, 1.1, 1.2]]], dtype=tf.float32)\ncontrast_factor = tf.constant(1.5, dtype=tf.float32)",
+    "contrast_factor = tf.constant(1.5)\nimages = tf.constant(np.random.randn(2,2,2,1), dtype='float32')",
+    "images = tf.constant([[[0.1, 0.2], [0.3, 0.4]], [[0.5, 0.6], [0.7, 0.8]]])\ncontrast_factor = tf.constant(np.random.randn(), dtype='float32')",
+    "contrast_factor = tf.constant(1.5)\nimages = tf.constant(np.random.randn(1,2,2), dtype='float32')",
+    "contrast_factor = tf.constant(1.5)\nimages = tf.constant(np.random.randn(2,2,2), dtype='float64')",
+    "contrast_factor = tf.constant(1.5)\nimages = tf.constant(np.random.randn(2,2,2,1,1), dtype='float32')",
+    "contrast_factor = tf.constant(1.5)\nimages = tf.constant(np.random.randn(2,3,2), dtype='float32')",
+    "contrast_factor = tf.constant(1.5)\nimages = tf.constant(np.random.randn(2,2,2), dtype='float32')",
+    "contrast_factor = tf.constant(1.5)\nimages = tf.constant(np.random.randn(2,2,5), dtype='float32')",
+    "contrast_factor = tf.constant(1.5)\nimages = tf.constant(np.random.randn(5,2,2), dtype='float32')",
+    "contrast_factor = tf.constant(1.5)\nimages = tf.constant(np.random.randn(2,1,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(images,contrast_factor):\n  return tf.image.adjust_contrast(images,contrast_factor)",
+    "pytorch": "def pytorch_call(images, contrast_factor):\n    mean = images.mean(dim=(-2, -3), keepdim=True)\n    adjusted_images = (images - mean) * contrast_factor + mean\n    return adjusted_images"
+  },
+  "llm_inputs": [
+    "images = tf.constant([[[0.1, 0.2], [0.3, 0.4]], [[0.5, 0.6], [0.7, 0.8]]])\ncontrast_factor = tf.constant(1.5)",
+    "images = tf.constant([[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], [[0.7, 0.8, 0.9], [1.0, 1.1, 1.2]]], dtype=tf.float32)\ncontrast_factor = tf.constant(1.5, dtype=tf.float32)",
+    "images = tf.constant([[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], [[0.7, 0.8, 0.9], [1.0, 1.1, 1.2]]], dtype=tf.float32)\ncontrast_factor = tf.constant(1.5, dtype=tf.float32)"
+  ]
+}

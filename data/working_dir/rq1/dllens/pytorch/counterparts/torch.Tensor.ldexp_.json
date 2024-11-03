@@ -1,0 +1,27 @@
+{
+  "function_name": "torch.Tensor.ldexp_(input, other)",
+  "inputs": [
+    "input",
+    "other"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1.0, 2.0, 3.0])\nother = torch.tensor([1, 2, 3])",
+    "other = torch.tensor([1, 2, 3])\ninput = torch.tensor(np.random.randn(3), dtype=torch.float16)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nother = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)",
+    "other = torch.tensor([1, 2, 3])\ninput = torch.tensor(np.random.randn(3), dtype=torch.float64)",
+    "other = torch.tensor([1, 2, 3])\ninput = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nother = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nother = torch.tensor(np.random.randint(-50, 50, (3)), dtype=torch.int64)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nother = torch.tensor(np.random.randint(-50, 50, (3)), dtype=torch.int32)",
+    "other = torch.tensor([1, 2, 3])\ninput = torch.tensor(np.random.randn(3), dtype=torch.half)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,other):\n  return torch.Tensor.ldexp_(input,other)",
+    "tensorflow": "def tensorflow_call(input, other):\n    return tf.multiply(input, tf.pow(2.0, tf.cast(other, input.dtype)))"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1.0, 2.0, 3.0])\nother = torch.tensor([1, 2, 3])",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nother = torch.tensor([1, 2, 3])",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nother = torch.tensor([1, 2, 3])"
+  ]
+}

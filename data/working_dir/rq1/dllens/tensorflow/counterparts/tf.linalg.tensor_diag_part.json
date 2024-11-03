@@ -1,0 +1,22 @@
+{
+  "function_name": "tf.linalg.tensor_diag_part(input,name=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])",
+    "input = tf.constant([[1, 2], [3, 4]])",
+    "input = tf.constant(np.random.randint(-50, 50, (3,3)), dtype='int64')",
+    "input = tf.constant(np.random.randint(-50, 50, (3,3)), dtype='int32')",
+    "input = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input):\n  return tf.linalg.tensor_diag_part(input)",
+    "pytorch": "def pytorch_call(input):\n    if input.dim() == 0:\n        return input\n    return input.diagonal()"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])",
+    "input = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])",
+    "input = tf.constant([[1, 2], [3, 4]])"
+  ]
+}

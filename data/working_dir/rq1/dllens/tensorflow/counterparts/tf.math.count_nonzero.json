@@ -1,0 +1,36 @@
+{
+  "function_name": "tf.math.count_nonzero(input,axis=None,keepdims=None,dtype=tf.dtypes.int64,name=None)",
+  "inputs": [
+    "input",
+    "axis",
+    "keepdims",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 0, 0], [0, 1, 1]], dtype=tf.int64)\naxis = 0\nkeepdims = True\ndtype = tf.dtypes.int64",
+    "input = tf.constant([[1, 0, 3], [0, 5, 0]], dtype=tf.int64)\naxis = 0\nkeepdims = True\ndtype = tf.dtypes.int64",
+    "input = tf.constant([[1, 0, 3], [0, 5, 0]], dtype=tf.int32)\naxis = 0\nkeepdims = True\ndtype = tf.dtypes.int64",
+    "axis = 0\nkeepdims = True\ndtype = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (2,1)), dtype='int64')",
+    "axis = 0\nkeepdims = True\ndtype = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (2,3,1)), dtype='int64')",
+    "axis = 0\nkeepdims = True\ndtype = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (2,3,1,1)), dtype='int64')",
+    "input = tf.constant([[1, 0, 0], [0, 1, 1]], dtype=tf.int64)\nkeepdims = True\ndtype = tf.dtypes.int64\naxis = -1",
+    "axis = 0\nkeepdims = True\ndtype = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (2,3)), dtype='int64')",
+    "input = tf.constant([[1, 0, 0], [0, 1, 1]], dtype=tf.int64)\nkeepdims = True\ndtype = tf.dtypes.int64\naxis = 1",
+    "axis = 0\nkeepdims = True\ndtype = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (2)), dtype='int64')",
+    "axis = 0\nkeepdims = True\ndtype = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (5,3)), dtype='int64')",
+    "input = tf.constant([[1, 0, 0], [0, 1, 1]], dtype=tf.int64)\nkeepdims = True\ndtype = tf.dtypes.int64\naxis = 0",
+    "input = tf.constant([[1, 0, 0], [0, 1, 1]], dtype=tf.int64)\naxis = 0\ndtype = tf.dtypes.int64\nkeepdims = False",
+    "input = tf.constant([[1, 0, 0], [0, 1, 1]], dtype=tf.int64)\nkeepdims = True\ndtype = tf.dtypes.int64\naxis = -2",
+    "axis = 0\nkeepdims = True\ndtype = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (2,3)), dtype='int32')",
+    "axis = 0\nkeepdims = True\ndtype = tf.dtypes.int64\ninput = tf.constant(np.random.randint(-50, 50, (2,3,1,1,1)), dtype='int64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,axis=None,keepdims=None,dtype=tf.dtypes.int64):\n  return tf.math.count_nonzero(input,axis,keepdims,dtype)",
+    "pytorch": "def pytorch_call(input, axis=None, keepdims=None, dtype=torch.int64):\n    count = torch.count_nonzero(input, dim=axis)\n    if keepdims:\n        if axis is not None:\n            shape = list(count.shape)\n            shape.insert(axis, 1)\n            count = count.view(*shape)\n        else:\n            count = count.unsqueeze(0)\n    return count.to(dtype)"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 0, 0], [0, 1, 1]], dtype=tf.int64)\naxis = 0\nkeepdims = True\ndtype = tf.dtypes.int64",
+    "input = tf.constant([[1, 0, 3], [0, 5, 0]], dtype=tf.int64)\naxis = 0\nkeepdims = True\ndtype = tf.dtypes.int64",
+    "input = tf.constant([[1, 0, 3], [0, 5, 0]], dtype=tf.int32)\naxis = 0\nkeepdims = True\ndtype = tf.dtypes.int64"
+  ]
+}

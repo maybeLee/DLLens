@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.acos(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant(0.5)",
+    "x = tf.constant(np.random.randn(), dtype='half')",
+    "x = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(), dtype='float64')",
+    "x = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(), dtype='float16')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.acos(x)",
+    "pytorch": "def pytorch_call(x):\n    return torch.acos(x)"
+  },
+  "llm_inputs": [
+    "x = tf.constant(0.5)",
+    "x = tf.constant(0.5)",
+    "x = tf.constant(0.5)"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "function_name": "torch.prod(input, dim, keepdim=False, *, dtype=None)",
+  "inputs": [
+    "input",
+    "dim",
+    "keepdim"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\ndim = 0\nkeepdim = True",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.int32)\ndim = 0\nkeepdim = True",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 0\nkeepdim = True",
+    "dim = 0\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (5,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nkeepdim = True\ndim = -2",
+    "dim = 0\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (1,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nkeepdim = True\ndim = 1",
+    "input = torch.tensor([[1, 2], [3, 4]])\nkeepdim = True\ndim = 0",
+    "dim = 0\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "dim = 0\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)",
+    "dim = 0\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\nkeepdim = True\ndim = -1",
+    "dim = 0\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1)), dtype=torch.int64)",
+    "dim = 0\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "dim = 0\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\ndim = 0\nkeepdim = False",
+    "dim = 0\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2,4)), dtype=torch.int64)",
+    "dim = 0\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)",
+    "dim = 0\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "dim = 0\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (2,5)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim,keepdim=False):\n  return torch.prod(input,dim,keepdim)",
+    "tensorflow": "def tensorflow_call(input, dim, keepdim=False):\n    if input.shape.ndims == 0:\n        return tf.identity(input)\n    return tf.reduce_prod(input, axis=dim, keepdims=keepdim)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\ndim = 0\nkeepdim = True",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.int32)\ndim = 0\nkeepdim = True",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 0\nkeepdim = True"
+  ]
+}

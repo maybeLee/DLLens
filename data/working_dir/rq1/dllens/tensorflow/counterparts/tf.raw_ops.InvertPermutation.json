@@ -1,0 +1,19 @@
+{
+  "function_name": "tf.raw_ops.InvertPermutation(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([0, 1, 2, 3, 4, 5, 6, 7, 8])",
+    "x = tf.constant([0, 1, 2, 3, 4, 5, 6, 7, 8, 9][:5])"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.raw_ops.InvertPermutation(x=x)",
+    "pytorch": "def pytorch_call(x):\n    inverted_indices = torch.empty_like(x)\n    inverted_indices[x] = torch.arange(len(x))\n    return inverted_indices"
+  },
+  "llm_inputs": [
+    "x = tf.constant([0, 1, 2, 3, 4, 5, 6, 7, 8])",
+    "x = tf.constant([0, 1, 2, 3, 4, 5, 6, 7, 8, 9][:5])",
+    "x = tf.constant([0, 1, 2, 3, 4, 5, 6, 7, 8])"
+  ]
+}

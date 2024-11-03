@@ -1,0 +1,45 @@
+{
+  "function_name": "tf.foldl(fn,elems,initializer=None,parallel_iterations=10,back_prop=True,swap_memory=False,name=None)",
+  "inputs": [
+    "fn",
+    "elems",
+    "initializer",
+    "parallel_iterations",
+    "back_prop",
+    "swap_memory"
+  ],
+  "sample_inputs": [
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False",
+    "fn = lambda x, y: x + y\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\nelems = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nback_prop = True\nswap_memory = False\nparallel_iterations = 1",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninitializer = tf.constant(np.random.randint(-50, 50, (1,1,1)), dtype='int32')",
+    "fn = lambda x, y: x + y\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\nelems = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "fn = lambda x, y: x + y\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\nelems = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "fn = lambda x, y: x + y\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\nelems = tf.constant(np.random.randint(-50, 50, (3,1)), dtype='int32')",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninitializer = tf.constant(np.random.randint(-50, 50, (1,1,1,1,1)), dtype='int32')",
+    "fn = lambda x, y: x + y\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\nelems = tf.constant(np.random.randint(-50, 50, (3,1,1,1,1)), dtype='int32')",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nback_prop = True\nswap_memory = False\nparallel_iterations = 3",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nswap_memory = False\nback_prop = False",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nback_prop = True\nswap_memory = False\nparallel_iterations = 5",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninitializer = tf.constant(np.random.randint(-50, 50, (1,1,1,1)), dtype='int32')",
+    "fn = lambda x, y: x + y\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\nelems = tf.constant(np.random.randint(-50, 50, (3,1,1,1)), dtype='int32')",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nback_prop = True\nswap_memory = False\nparallel_iterations = 2",
+    "fn = lambda x, y: x + y\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\nelems = tf.constant(np.random.randint(-50, 50, (3,1,1)), dtype='int32')",
+    "fn = lambda x, y: x + y\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\nelems = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nback_prop = True\nswap_memory = False\nparallel_iterations = 4",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninitializer = tf.constant(np.random.randint(-50, 50, (1,1)), dtype='int32')",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninitializer = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = True",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False\ninitializer = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(fn,elems,initializer=None,parallel_iterations=10,back_prop=True,swap_memory=False):\n  return tf.foldl(fn,elems,initializer,parallel_iterations,back_prop,swap_memory)",
+    "pytorch": "def pytorch_call(fn, elems, initializer=None, parallel_iterations=10, back_prop=True, swap_memory=False):\n    if initializer is None:\n        initializer = elems[0]\n    result = initializer\n    for i in range(len(elems)):\n        result = fn(result, elems[i])\n    return result"
+  },
+  "llm_inputs": [
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False",
+    "fn = lambda x, y: x + y\nelems = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\ninitializer = tf.constant(0, dtype=tf.int32)\nparallel_iterations = 5\nback_prop = True\nswap_memory = False"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "function_name": "tf.raw_ops.DepthToSpace(input,block_size,data_format='NHWC',name=None)",
+  "inputs": [
+    "input",
+    "block_size",
+    "data_format"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[[[1, 2, 3, 4]]]], dtype=tf.float32)\nblock_size = tf.constant(2, dtype=tf.int32)\ndata_format = 'NHWC'",
+    "block_size = tf.constant(2, dtype=tf.int32)\ndata_format = 'NHWC'\ninput = tf.constant(np.random.randn(5,1,1,4), dtype='float32')",
+    "block_size = tf.constant(2, dtype=tf.int32)\ndata_format = 'NHWC'\ninput = tf.constant(np.random.randn(1,1,1,4), dtype='float64')",
+    "block_size = tf.constant(2, dtype=tf.int32)\ndata_format = 'NHWC'\ninput = tf.constant(np.random.randn(1,1,1,4), dtype='float16')",
+    "block_size = tf.constant(2, dtype=tf.int32)\ndata_format = 'NHWC'\ninput = tf.constant(np.random.randn(1,1,1,4), dtype='half')",
+    "block_size = tf.constant(2, dtype=tf.int32)\ndata_format = 'NHWC'\ninput = tf.constant(np.random.randn(1,1,1,4), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,block_size,data_format='NHWC'):\n  return tf.raw_ops.DepthToSpace(input=input,block_size=block_size,data_format=data_format)",
+    "pytorch": "def pytorch_call(input, block_size, data_format='NHWC'):\n    if data_format != 'NHWC':\n        raise ValueError(\"Currently, only 'NHWC' data format is supported.\")\n    (N, H, W, C) = input.shape\n    block_size = block_size.item()\n    if C % block_size ** 2 != 0:\n        raise ValueError('The number of channels must be divisible by block_size squared.')\n    new_C = C // block_size ** 2\n    new_H = H * block_size\n    new_W = W * block_size\n    input_reshaped = input.view(N, H, W, block_size, block_size, new_C)\n    output = input_reshaped.permute(0, 3, 4, 1, 2, 5).contiguous()\n    output = output.view(N, new_H, new_W, new_C)\n    return output"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[[[1, 2, 3, 4]]]], dtype=tf.float32)\nblock_size = tf.constant(2, dtype=tf.int32)\ndata_format = 'NHWC'"
+  ]
+}

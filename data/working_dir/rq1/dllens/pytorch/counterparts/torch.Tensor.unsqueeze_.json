@@ -1,0 +1,35 @@
+{
+  "function_name": "torch.Tensor.unsqueeze_(input, dim)",
+  "inputs": [
+    "input",
+    "dim"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\ndim = 1",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "input = torch.tensor([[1, 2], [3, 4]])\ndim = -3",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (5,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\ndim = -1",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\ndim = -2",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,5)), dtype=torch.int64)",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (4,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\ndim = 0",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,4)), dtype=torch.int64)",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)",
+    "dim = 1\ninput = torch.tensor(np.random.randint(-50, 50, (2,2,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2], [3, 4]])\ndim = 2"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim):\n  return torch.Tensor.unsqueeze_(input,dim)",
+    "tensorflow": "def tensorflow_call(input, dim):\n    return tf.expand_dims(input, axis=dim)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]])\ndim = 1",
+    "input = torch.tensor([[1, 2], [3, 4]])\ndim = 1",
+    "input = torch.tensor([[1, 2], [3, 4]])\ndim = 1"
+  ]
+}

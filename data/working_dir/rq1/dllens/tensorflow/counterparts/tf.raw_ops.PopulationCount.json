@@ -1,0 +1,29 @@
+{
+  "function_name": "tf.raw_ops.PopulationCount(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([1, 2, 3, 4, 5])",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)",
+    "x = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)",
+    "x = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (5,1,1)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (5)), dtype='int64')",
+    "x = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (5,1)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (4)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (5,1,1,1,1)), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "x = tf.constant(np.random.randint(-50, 50, (5,1,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.raw_ops.PopulationCount(x=x)",
+    "pytorch": "def pytorch_call(x):\n    max_bits = x.dtype.itemsize * 8\n    bit_positions = torch.arange(max_bits, device=x.device)\n    count = (x.unsqueeze(-1) & 1 << bit_positions).count_nonzero(dim=-1)\n    return count"
+  },
+  "llm_inputs": [
+    "x = tf.constant([1, 2, 3, 4, 5])",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)",
+    "x = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)"
+  ]
+}

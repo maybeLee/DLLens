@@ -1,0 +1,29 @@
+{
+  "function_name": "torch.Tensor.qr(input, some=True)",
+  "inputs": [
+    "input",
+    "some"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nsome = True",
+    "some = True\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "some = True\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "some = True\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nsome = False",
+    "some = True\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "some = True\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "some = True\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "some = True\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "some = True\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "some = True\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,some=True):\n  return torch.Tensor.qr(input,some)",
+    "tensorflow": "def tensorflow_call(input, some=True):\n    (q, r) = tf.linalg.qr(input, full_matrices=not some)\n    return (q, r)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nsome = True",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nsome = True",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nsome = True"
+  ]
+}

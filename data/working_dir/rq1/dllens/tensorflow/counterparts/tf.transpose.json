@@ -1,0 +1,31 @@
+{
+  "function_name": "tf.transpose(a,perm=None,conjugate=False,name='transpose')",
+  "inputs": [
+    "a",
+    "perm",
+    "conjugate"
+  ],
+  "sample_inputs": [
+    "a = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)\nperm = [1, 0]\nconjugate = False",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nperm = [1, 0]\nconjugate = False",
+    "a = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)\nperm = [1, 0]\nconjugate = True",
+    "perm = [1, 0]\nconjugate = False\na = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "perm = [1, 0]\nconjugate = False\na = tf.constant(np.random.randn(2,3), dtype='half')",
+    "perm = [1, 0]\nconjugate = False\na = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "perm = [1, 0]\nconjugate = False\na = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "perm = [1, 0]\nconjugate = False\na = tf.constant(np.random.randn(2,3), dtype='float16')",
+    "perm = [1, 0]\nconjugate = False\na = tf.constant(np.random.randn(1,3), dtype='float32')",
+    "perm = [1, 0]\nconjugate = False\na = tf.constant(np.random.randn(5,3), dtype='float32')",
+    "perm = [1, 0]\nconjugate = False\na = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "perm = [1, 0]\nconjugate = False\na = tf.constant(np.random.randn(2,3), dtype='float64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(a,perm=None,conjugate=False):\n  return tf.transpose(a,perm,conjugate)",
+    "pytorch": "def pytorch_call(a, perm=None, conjugate=False):\n    if conjugate:\n        a = a.conj()\n    return a.permute(*perm)"
+  },
+  "llm_inputs": [
+    "a = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)\nperm = [1, 0]\nconjugate = False",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nperm = [1, 0]\nconjugate = False",
+    "a = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nperm = [1, 0]\nconjugate = False"
+  ]
+}

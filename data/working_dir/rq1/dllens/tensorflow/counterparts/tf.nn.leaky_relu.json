@@ -1,0 +1,40 @@
+{
+  "function_name": "tf.nn.leaky_relu(features,alpha=0.2,name=None)",
+  "inputs": [
+    "features",
+    "alpha"
+  ],
+  "sample_inputs": [
+    "features = tf.constant([[1.0, -2.0], [3.0, -4.0]], dtype=tf.float32)\nalpha = 0.2",
+    "features = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nalpha = 0.2",
+    "features = tf.constant([[1.0, -2.0, 3.0], [-1.0, 2.0, -3.0]], dtype=tf.float32)\nalpha = 0.2",
+    "alpha = 0.2\nfeatures = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "alpha = 0.2\nfeatures = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "features = tf.constant([[1.0, -2.0], [3.0, -4.0]], dtype=tf.float32)\nalpha = -63.02",
+    "alpha = 0.2\nfeatures = tf.constant(np.random.randn(4,2), dtype='float32')",
+    "features = tf.constant([[1.0, -2.0], [3.0, -4.0]], dtype=tf.float32)\nalpha = -55.98",
+    "alpha = 0.2\nfeatures = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "alpha = 0.2\nfeatures = tf.constant(np.random.randn(), dtype='float32')",
+    "alpha = 0.2\nfeatures = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "alpha = 0.2\nfeatures = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "alpha = 0.2\nfeatures = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "features = tf.constant([[1.0, -2.0], [3.0, -4.0]], dtype=tf.float32)\nalpha = -53.89",
+    "alpha = 0.2\nfeatures = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "features = tf.constant([[1.0, -2.0], [3.0, -4.0]], dtype=tf.float32)\nalpha = 10.79",
+    "alpha = 0.2\nfeatures = tf.constant(np.random.randn(2,2), dtype='half')",
+    "alpha = 0.2\nfeatures = tf.constant(np.random.randn(2), dtype='float32')",
+    "alpha = 0.2\nfeatures = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "features = tf.constant([[1.0, -2.0], [3.0, -4.0]], dtype=tf.float32)\nalpha = -62.58",
+    "alpha = 0.2\nfeatures = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "alpha = 0.2\nfeatures = tf.constant(np.random.randn(2,2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(features,alpha=0.2):\n  return tf.nn.leaky_relu(features,alpha)",
+    "pytorch": "def pytorch_call(features, alpha=0.2):\n    return torch.where(features > 0, features, features * alpha)"
+  },
+  "llm_inputs": [
+    "features = tf.constant([[1.0, -2.0], [3.0, -4.0]], dtype=tf.float32)\nalpha = 0.2",
+    "features = tf.constant([[0.0, -1.0, 2.0], [3.0, -4.0, 5.0]], dtype=tf.float32)\nalpha = 0.2",
+    "features = tf.constant([[1.0, -2.0, 3.0], [-1.0, 2.0, -3.0]], dtype=tf.float32)\nalpha = 0.2"
+  ]
+}

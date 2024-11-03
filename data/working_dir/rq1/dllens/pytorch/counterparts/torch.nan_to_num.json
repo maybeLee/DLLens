@@ -1,0 +1,51 @@
+{
+  "function_name": "torch.nan_to_num(input, nan=0.0, posinf=None, neginf=None, *, out=None)",
+  "inputs": [
+    "input",
+    "nan",
+    "posinf",
+    "neginf"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nnan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nnan = 0.0\nposinf = float('inf')\nneginf = float('-inf')",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nnan = float('nan')\nneginf = float('-inf')\nposinf = 20.6",
+    "nan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nnan = float('nan')\nneginf = float('-inf')\nposinf = 60.5",
+    "nan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "nan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "nan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "nan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "nan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')\ninput = torch.tensor(np.random.randn(2,4), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nnan = float('nan')\nposinf = float('inf')\nneginf = -46.12",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nposinf = float('inf')\nneginf = float('-inf')\nnan = -61.25",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nnan = float('nan')\nposinf = float('inf')\nneginf = 10.51",
+    "nan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nnan = float('nan')\nneginf = float('-inf')\nposinf = -9.44",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nnan = float('nan')\nposinf = float('inf')\nneginf = 94.77",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nposinf = float('inf')\nneginf = float('-inf')\nnan = 57.81",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nnan = float('nan')\nposinf = float('inf')\nneginf = -96.66",
+    "nan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "nan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nnan = float('nan')\nposinf = float('inf')\nneginf = 68.09",
+    "nan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "nan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nposinf = float('inf')\nneginf = float('-inf')\nnan = -93.94",
+    "nan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "nan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "nan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nnan = float('nan')\nneginf = float('-inf')\nposinf = -32.27",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nnan = float('nan')\nneginf = float('-inf')\nposinf = 66.22",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nposinf = float('inf')\nneginf = float('-inf')\nnan = -92.91",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nposinf = float('inf')\nneginf = float('-inf')\nnan = 31.03"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,nan=0.0,posinf=None,neginf=None):\n  return torch.nan_to_num(input,nan,posinf,neginf)",
+    "tensorflow": "def tensorflow_call(input, nan=0.0, posinf=None, neginf=None):\n    input = tf.where(tf.math.is_nan(input), tf.fill(tf.shape(input), tf.cast(nan, input.dtype)), input)\n    if posinf is not None:\n        input = tf.where(input == float('inf'), tf.fill(tf.shape(input), tf.cast(posinf, input.dtype)), input)\n    if neginf is not None:\n        input = tf.where(input == float('-inf'), tf.fill(tf.shape(input), tf.cast(neginf, input.dtype)), input)\n    return input"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nnan = float('nan')\nposinf = float('inf')\nneginf = float('-inf')",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nnan = 0.0\nposinf = float('inf')\nneginf = float('-inf')",
+    "input = torch.tensor([[1.0, 2.0], [float('nan'), 4.0]])\nnan = 0.0\nposinf = float('inf')\nneginf = float('-inf')"
+  ]
+}

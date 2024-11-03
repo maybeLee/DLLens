@@ -1,0 +1,34 @@
+{
+  "function_name": "torch.polar(abs, angle, *, out=None)",
+  "inputs": [
+    "abs",
+    "angle"
+  ],
+  "sample_inputs": [
+    "abs = torch.tensor([1.0, 2.0, 3.0])\nangle = torch.tensor([0.0, 0.5, 1.0])",
+    "abs = torch.tensor([1.0, 2.0, 3.0], dtype=torch.float32)\nangle = torch.tensor([0.0, 1.0, 1.57], dtype=torch.float32)",
+    "abs = torch.tensor([1.0, 2.0, 3.0])\nangle = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "abs = torch.tensor([1.0, 2.0, 3.0])\nangle = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "abs = torch.tensor([1.0, 2.0, 3.0])\nangle = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "angle = torch.tensor([0.0, 0.5, 1.0])\nabs = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "angle = torch.tensor([0.0, 0.5, 1.0])\nabs = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "angle = torch.tensor([0.0, 0.5, 1.0])\nabs = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "angle = torch.tensor([0.0, 0.5, 1.0])\nabs = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "angle = torch.tensor([0.0, 0.5, 1.0])\nabs = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "abs = torch.tensor([1.0, 2.0, 3.0])\nangle = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "angle = torch.tensor([0.0, 0.5, 1.0])\nabs = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "abs = torch.tensor([1.0, 2.0, 3.0])\nangle = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "abs = torch.tensor([1.0, 2.0, 3.0])\nangle = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "angle = torch.tensor([0.0, 0.5, 1.0])\nabs = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "abs = torch.tensor([1.0, 2.0, 3.0])\nangle = torch.tensor(np.random.randn(), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(abs,angle):\n  return torch.polar(abs,angle)",
+    "tensorflow": "def tensorflow_call(abs, angle):\n    real = abs * tf.cos(angle)\n    imag = abs * tf.sin(angle)\n    return tf.complex(real, imag)"
+  },
+  "llm_inputs": [
+    "abs = torch.tensor([1.0, 2.0, 3.0])\nangle = torch.tensor([0.0, 0.5, 1.0])",
+    "abs = torch.tensor([1.0, 2.0, 3.0], dtype=torch.float32)\nangle = torch.tensor([0.0, 1.0, 1.57], dtype=torch.float32)",
+    "abs = torch.tensor([1.0, 2.0, 3.0], dtype=torch.float32)\nangle = torch.tensor([0.0, 1.0, 1.57], dtype=torch.float32)"
+  ]
+}

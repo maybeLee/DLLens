@@ -1,0 +1,22 @@
+{
+  "function_name": "tf.raw_ops.ResizeBilinearGrad(grads,original_image,align_corners=False,half_pixel_centers=False,name=None)",
+  "inputs": [
+    "grads",
+    "original_image",
+    "align_corners",
+    "half_pixel_centers"
+  ],
+  "sample_inputs": [
+    "grads = tf.constant([[[[1.0, 2.0], [3.0, 4.0]]]], dtype=tf.float32)\noriginal_image = tf.constant([[[[5.0, 6.0], [7.0, 8.0]]]], dtype=tf.float32)\nalign_corners = False\nhalf_pixel_centers = False\nresult = tf.raw_ops.ResizeBilinearGrad(grads=grads, original_image=original_image, align_corners=align_corners, half_pixel_centers=half_pixel_centers)",
+    "grads = tf.constant([[[[1.0, 2.0], [3.0, 4.0]]]], dtype=tf.float32)\noriginal_image = tf.constant([[[[5.0, 6.0], [7.0, 8.0]]]], dtype=tf.float32)\nalign_corners = False\nhalf_pixel_centers = False"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(grads,original_image,align_corners=False,half_pixel_centers=False):\n  return tf.raw_ops.ResizeBilinearGrad(grads=grads,original_image=original_image,align_corners=align_corners,half_pixel_centers=half_pixel_centers)",
+    "pytorch": "def pytorch_call(grads, original_image, align_corners=False, half_pixel_centers=False):\n    original_size = original_image.shape[2:]\n    output_size = (original_size[0], original_size[1])\n    resized_grads = F.interpolate(grads, size=output_size, mode='bilinear', align_corners=align_corners)\n    return resized_grads"
+  },
+  "llm_inputs": [
+    "grads = tf.constant([[[[1.0, 2.0], [3.0, 4.0]]]], dtype=tf.float32)\noriginal_image = tf.constant([[[[5.0, 6.0], [7.0, 8.0]]]], dtype=tf.float32)\nalign_corners = False\nhalf_pixel_centers = False\nresult = tf.raw_ops.ResizeBilinearGrad(grads=grads, original_image=original_image, align_corners=align_corners, half_pixel_centers=half_pixel_centers)",
+    "grads = tf.constant([[[[1.0, 2.0], [3.0, 4.0]]]], dtype=tf.float32)\noriginal_image = tf.constant([[[[5.0, 6.0], [7.0, 8.0]]]], dtype=tf.float32)\nalign_corners = False\nhalf_pixel_centers = False",
+    "grads = tf.constant([[[[1.0, 2.0], [3.0, 4.0]]]], dtype=tf.float32)\noriginal_image = tf.constant([[[[5.0, 6.0], [7.0, 8.0]]]], dtype=tf.float32)\nalign_corners = False\nhalf_pixel_centers = False"
+  ]
+}

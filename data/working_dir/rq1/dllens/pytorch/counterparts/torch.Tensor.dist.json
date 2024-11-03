@@ -1,0 +1,53 @@
+{
+  "function_name": "torch.Tensor.dist(input, other, p=2)",
+  "inputs": [
+    "input",
+    "other",
+    "p"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 2",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor([[4, 5], [6, 7]], dtype=torch.float32)\np = 2",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = -3",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 4",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = -2",
+    "other = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 2\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "other = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 2\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 3",
+    "other = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 2\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 2\nother = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 1",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 2\nother = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 2\nother = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "other = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 2\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 2\nother = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "other = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 2\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 2\nother = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 2\nother = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "other = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 2\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = -5",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = -1",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 5",
+    "other = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 2\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 2\nother = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "other = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 2\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 2\nother = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "other = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 2\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "other = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 2\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "other = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 2\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 2\nother = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = -4",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 0",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 2\nother = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\np = 2\nother = torch.tensor(np.random.randn(2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,other,p=2):\n  return torch.Tensor.dist(input,other,p)",
+    "tensorflow": "def tensorflow_call(input, other, p=2):\n    input = tf.cast(input, tf.float32)\n    other = tf.cast(other, tf.float32)\n    difference = input - other\n    if p < 0:\n        return tf.constant(0.0)\n    elif p < 1:\n        return tf.reduce_max(tf.abs(difference))\n    elif p == 0:\n        return tf.reduce_sum(tf.cast(tf.equal(difference, 0), tf.float32))\n    else:\n        return tf.norm(difference, ord=p)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nother = torch.tensor([[1.0, 1.0], [1.0, 1.0]])\np = 2",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor([[4, 5], [6, 7]], dtype=torch.float32)\np = 2",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nother = torch.tensor([[4, 5], [6, 7]], dtype=torch.float32)\np = 2"
+  ]
+}

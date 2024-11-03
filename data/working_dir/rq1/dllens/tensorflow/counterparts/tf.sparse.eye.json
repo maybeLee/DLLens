@@ -1,0 +1,21 @@
+{
+  "function_name": "tf.sparse.eye(num_rows,num_columns=None,dtype=tf.dtypes.float32,name=None)",
+  "inputs": [
+    "num_rows",
+    "num_columns",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "num_rows = tf.constant(5)\nnum_columns = tf.constant(3)\ndtype = tf.dtypes.float32",
+    "num_rows = 5\nnum_columns = 3\ndtype = tf.dtypes.float32"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(num_rows,num_columns=None,dtype=tf.dtypes.float32):\n  return tf.sparse.eye(num_rows,num_columns,dtype)",
+    "pytorch": "def pytorch_call(num_rows, num_columns=None, dtype=torch.float32):\n    if isinstance(num_rows, torch.Tensor):\n        num_rows = num_rows.item()\n    if num_columns is None:\n        num_columns = num_rows\n    elif isinstance(num_columns, torch.Tensor):\n        num_columns = num_columns.item()\n    return torch.eye(num_rows, num_columns, dtype=dtype).to_sparse()"
+  },
+  "llm_inputs": [
+    "num_rows = tf.constant(5)\nnum_columns = tf.constant(3)\ndtype = tf.dtypes.float32",
+    "num_rows = tf.constant(5)\nnum_columns = tf.constant(3)\ndtype = tf.dtypes.float32",
+    "num_rows = 5\nnum_columns = 3\ndtype = tf.dtypes.float32"
+  ]
+}

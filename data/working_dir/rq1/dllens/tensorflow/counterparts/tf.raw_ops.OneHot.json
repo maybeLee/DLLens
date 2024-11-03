@@ -1,0 +1,35 @@
+{
+  "function_name": "tf.raw_ops.OneHot(indices,depth,on_value,off_value,axis=-1,name=None)",
+  "inputs": [
+    "indices",
+    "depth",
+    "on_value",
+    "off_value",
+    "axis"
+  ],
+  "sample_inputs": [
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndepth = tf.constant(3, dtype=tf.int32)\non_value = tf.constant(1.0)\noff_value = tf.constant(0.0)\naxis = tf.constant(-1, dtype=tf.int32)",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndepth = tf.constant(4, dtype=tf.int32)\non_value = tf.constant(1.0, dtype=tf.float32)\noff_value = tf.constant(0.0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndepth = tf.constant(3, dtype=tf.int32)\non_value = tf.constant(1.0, dtype=tf.float32)\noff_value = tf.constant(0.0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndepth = tf.constant(3, dtype=tf.int32)\non_value = tf.constant(1.0)\naxis = tf.constant(-1, dtype=tf.int32)\noff_value = tf.constant(np.random.randn(), dtype='float32')",
+    "depth = tf.constant(3, dtype=tf.int32)\non_value = tf.constant(1.0)\noff_value = tf.constant(0.0)\naxis = tf.constant(-1, dtype=tf.int32)\nindices = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndepth = tf.constant(3, dtype=tf.int32)\noff_value = tf.constant(0.0)\naxis = tf.constant(-1, dtype=tf.int32)\non_value = tf.constant(np.random.randn(), dtype='float32')",
+    "depth = tf.constant(3, dtype=tf.int32)\non_value = tf.constant(1.0)\noff_value = tf.constant(0.0)\naxis = tf.constant(-1, dtype=tf.int32)\nindices = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "depth = tf.constant(3, dtype=tf.int32)\non_value = tf.constant(1.0)\noff_value = tf.constant(0.0)\naxis = tf.constant(-1, dtype=tf.int32)\nindices = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "depth = tf.constant(3, dtype=tf.int32)\non_value = tf.constant(1.0)\noff_value = tf.constant(0.0)\naxis = tf.constant(-1, dtype=tf.int32)\nindices = tf.constant(np.random.randint(-50, 50, (5)), dtype='int32')",
+    "depth = tf.constant(3, dtype=tf.int32)\non_value = tf.constant(1.0)\noff_value = tf.constant(0.0)\naxis = tf.constant(-1, dtype=tf.int32)\nindices = tf.constant(np.random.randint(-50, 50, (3)), dtype='int64')",
+    "depth = tf.constant(3, dtype=tf.int32)\non_value = tf.constant(1.0)\noff_value = tf.constant(0.0)\naxis = tf.constant(-1, dtype=tf.int32)\nindices = tf.constant(np.random.randint(-50, 50, (3,1,1)), dtype='int32')",
+    "depth = tf.constant(3, dtype=tf.int32)\non_value = tf.constant(1.0)\noff_value = tf.constant(0.0)\naxis = tf.constant(-1, dtype=tf.int32)\nindices = tf.constant(np.random.randint(-50, 50, (3,1,1,1,1)), dtype='int32')",
+    "depth = tf.constant(3, dtype=tf.int32)\non_value = tf.constant(1.0)\noff_value = tf.constant(0.0)\naxis = tf.constant(-1, dtype=tf.int32)\nindices = tf.constant(np.random.randint(-50, 50, (3,1,1,1)), dtype='int32')",
+    "depth = tf.constant(3, dtype=tf.int32)\non_value = tf.constant(1.0)\noff_value = tf.constant(0.0)\naxis = tf.constant(-1, dtype=tf.int32)\nindices = tf.constant(np.random.randint(-50, 50, (3,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(indices,depth,on_value,off_value,axis=-1):\n  return tf.raw_ops.OneHot(indices=indices,depth=depth,on_value=on_value,off_value=off_value,axis=axis)",
+    "pytorch": "def pytorch_call(indices, depth, on_value, off_value, axis=-1):\n    indices = indices.to(torch.int64)\n    valid_mask = (indices >= 0) & (indices < depth)\n    indices = torch.clamp(indices, min=0, max=depth - 1)\n    one_hot = torch.nn.functional.one_hot(indices, num_classes=depth).to(on_value.dtype)\n    result = one_hot * on_value + (1 - one_hot) * off_value\n    result[~valid_mask] = off_value\n    if axis != -1:\n        result = result.permute(*[i for i in range(result.dim()) if i != axis] + [axis])\n    return result"
+  },
+  "llm_inputs": [
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndepth = tf.constant(3, dtype=tf.int32)\non_value = tf.constant(1.0)\noff_value = tf.constant(0.0)\naxis = tf.constant(-1, dtype=tf.int32)",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndepth = tf.constant(4, dtype=tf.int32)\non_value = tf.constant(1.0, dtype=tf.float32)\noff_value = tf.constant(0.0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)",
+    "indices = tf.constant([0, 1, 2], dtype=tf.int32)\ndepth = tf.constant(3, dtype=tf.int32)\non_value = tf.constant(1.0, dtype=tf.float32)\noff_value = tf.constant(0.0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)"
+  ]
+}

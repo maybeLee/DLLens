@@ -1,0 +1,29 @@
+{
+  "function_name": "tf.math.angle(input,name=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([1 + 2j, 3 + 4j, 5 + 6j])",
+    "input = tf.constant([1 + 1j, 2 + 2j, 3 + 3j])",
+    "input = tf.constant([1 + 1j, 2 + 2j, 3 + 3j], dtype=tf.complex64)",
+    "input = tf.constant(np.random.randn(3), dtype='complex128')",
+    "input = tf.constant(np.random.randn(3,1,1,1,1), dtype='complex128')",
+    "input = tf.constant(np.random.randn(3,1,1), dtype='complex128')",
+    "input = tf.constant(np.random.randn(5), dtype='complex128')",
+    "input = tf.constant(np.random.randn(3,1), dtype='complex128')",
+    "input = tf.constant(np.random.randn(), dtype='complex128')",
+    "input = tf.constant(np.random.randn(1), dtype='complex128')",
+    "input = tf.constant(np.random.randn(3), dtype='complex64')",
+    "input = tf.constant(np.random.randn(3,1,1,1), dtype='complex128')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input):\n  return tf.math.angle(input)",
+    "pytorch": "def pytorch_call(input):\n    return torch.angle(input)"
+  },
+  "llm_inputs": [
+    "input = tf.constant([1 + 2j, 3 + 4j, 5 + 6j])",
+    "input = tf.constant([1 + 1j, 2 + 2j, 3 + 3j])",
+    "input = tf.constant([1 + 1j, 2 + 2j, 3 + 3j], dtype=tf.complex64)"
+  ]
+}

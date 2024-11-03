@@ -1,0 +1,28 @@
+{
+  "function_name": "tf.raw_ops.Bincount(arr,size,weights,name=None)",
+  "inputs": [
+    "arr",
+    "size",
+    "weights"
+  ],
+  "sample_inputs": [
+    "arr = tf.constant([1, 2, 2, 3, 3, 3], dtype=tf.int32)\nsize = tf.constant(4, dtype=tf.int32)\nweights = tf.constant([0.5, 1.0, 1.5, 2.0, 2.5, 3.0], dtype=tf.float32)",
+    "arr = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nsize = tf.constant(6, dtype=tf.int32)\nweights = tf.constant([1.0, 1.0, 1.0, 1.0, 1.0], dtype=tf.float32)",
+    "arr = tf.constant([0, 1, 2, 1, 0], dtype=tf.int32)\nsize = tf.constant(3, dtype=tf.int32)\nweights = tf.constant([1.0, 2.0, 1.0, 2.0, 1.0], dtype=tf.float32)",
+    "arr = tf.constant([1, 2, 2, 3, 3, 3], dtype=tf.int32)\nsize = tf.constant(4, dtype=tf.int32)\nweights = tf.constant(np.random.randn(6,1,1,1), dtype='float32')",
+    "arr = tf.constant([1, 2, 2, 3, 3, 3], dtype=tf.int32)\nsize = tf.constant(4, dtype=tf.int32)\nweights = tf.constant(np.random.randn(6), dtype='float32')",
+    "arr = tf.constant([1, 2, 2, 3, 3, 3], dtype=tf.int32)\nsize = tf.constant(4, dtype=tf.int32)\nweights = tf.constant(np.random.randn(6,1,1,1,1), dtype='float32')",
+    "arr = tf.constant([1, 2, 2, 3, 3, 3], dtype=tf.int32)\nsize = tf.constant(4, dtype=tf.int32)\nweights = tf.constant(np.random.randn(6), dtype='float64')",
+    "arr = tf.constant([1, 2, 2, 3, 3, 3], dtype=tf.int32)\nsize = tf.constant(4, dtype=tf.int32)\nweights = tf.constant(np.random.randn(6,1), dtype='float32')",
+    "arr = tf.constant([1, 2, 2, 3, 3, 3], dtype=tf.int32)\nsize = tf.constant(4, dtype=tf.int32)\nweights = tf.constant(np.random.randn(6,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(arr,size,weights):\n  return tf.raw_ops.Bincount(arr=arr,size=size,weights=weights)",
+    "pytorch": "def pytorch_call(arr, size, weights):\n    weights = weights.view(-1)\n    counts = torch.bincount(arr, weights=weights, minlength=size.item())\n    return counts"
+  },
+  "llm_inputs": [
+    "arr = tf.constant([1, 2, 2, 3, 3, 3], dtype=tf.int32)\nsize = tf.constant(4, dtype=tf.int32)\nweights = tf.constant([0.5, 1.0, 1.5, 2.0, 2.5, 3.0], dtype=tf.float32)",
+    "arr = tf.constant([1, 2, 3, 4, 5], dtype=tf.int32)\nsize = tf.constant(6, dtype=tf.int32)\nweights = tf.constant([1.0, 1.0, 1.0, 1.0, 1.0], dtype=tf.float32)",
+    "arr = tf.constant([0, 1, 2, 1, 0], dtype=tf.int32)\nsize = tf.constant(3, dtype=tf.int32)\nweights = tf.constant([1.0, 2.0, 1.0, 2.0, 1.0], dtype=tf.float32)"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "function_name": "tf.raw_ops.ClipByValue(t,clip_value_min,clip_value_max,name=None)",
+  "inputs": [
+    "t",
+    "clip_value_min",
+    "clip_value_max"
+  ],
+  "sample_inputs": [
+    "t = tf.constant([1.0, -2.0, 3.0, -4.0, 5.0])\nclip_value_min = tf.constant(-1.0)\nclip_value_max = tf.constant(2.0)",
+    "t = tf.constant([[1.0, -2.0], [3.0, -4.0]], dtype=tf.float32)\nclip_value_min = tf.constant(-1.0, dtype=tf.float32)\nclip_value_max = tf.constant(2.0, dtype=tf.float32)",
+    "t = tf.constant([[1.0, -2.0, 3.0], [4.0, -5.0, 6.0]], dtype=tf.float32)\nclip_value_min = tf.constant(-3.0, dtype=tf.float32)\nclip_value_max = tf.constant(2.0, dtype=tf.float32)",
+    "clip_value_min = tf.constant(-1.0)\nclip_value_max = tf.constant(2.0)\nt = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "clip_value_min = tf.constant(-1.0)\nclip_value_max = tf.constant(2.0)\nt = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "clip_value_min = tf.constant(-1.0)\nclip_value_max = tf.constant(2.0)\nt = tf.constant(np.random.randn(), dtype='float32')",
+    "clip_value_min = tf.constant(-1.0)\nclip_value_max = tf.constant(2.0)\nt = tf.constant(np.random.randn(5), dtype='float32')",
+    "clip_value_min = tf.constant(-1.0)\nclip_value_max = tf.constant(2.0)\nt = tf.constant(np.random.randn(5,1,1,1), dtype='float32')",
+    "t = tf.constant([1.0, -2.0, 3.0, -4.0, 5.0])\nclip_value_max = tf.constant(2.0)\nclip_value_min = tf.constant(np.random.randn(), dtype='float32')",
+    "clip_value_min = tf.constant(-1.0)\nclip_value_max = tf.constant(2.0)\nt = tf.constant(np.random.randn(1), dtype='float32')",
+    "clip_value_min = tf.constant(-1.0)\nclip_value_max = tf.constant(2.0)\nt = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "t = tf.constant([1.0, -2.0, 3.0, -4.0, 5.0])\nclip_value_min = tf.constant(-1.0)\nclip_value_max = tf.constant(np.random.randn(), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(t,clip_value_min,clip_value_max):\n  return tf.raw_ops.ClipByValue(t=t,clip_value_min=clip_value_min,clip_value_max=clip_value_max)",
+    "pytorch": "def pytorch_call(t, clip_value_min, clip_value_max):\n    return torch.clamp(t, min=clip_value_min.item(), max=clip_value_max.item())"
+  },
+  "llm_inputs": [
+    "t = tf.constant([1.0, -2.0, 3.0, -4.0, 5.0])\nclip_value_min = tf.constant(-1.0)\nclip_value_max = tf.constant(2.0)",
+    "t = tf.constant([[1.0, -2.0], [3.0, -4.0]], dtype=tf.float32)\nclip_value_min = tf.constant(-1.0, dtype=tf.float32)\nclip_value_max = tf.constant(2.0, dtype=tf.float32)",
+    "t = tf.constant([[1.0, -2.0, 3.0], [4.0, -5.0, 6.0]], dtype=tf.float32)\nclip_value_min = tf.constant(-3.0, dtype=tf.float32)\nclip_value_max = tf.constant(2.0, dtype=tf.float32)"
+  ]
+}

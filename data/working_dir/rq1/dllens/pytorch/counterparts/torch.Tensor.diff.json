@@ -1,0 +1,40 @@
+{
+  "function_name": "torch.Tensor.diff(input, n=1, dim=-1, prepend=None, append=None)",
+  "inputs": [
+    "input",
+    "n",
+    "dim",
+    "prepend",
+    "append"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nn = 1\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor([[0], [0]])",
+    "n = 1\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor([[0], [0]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nn = 1\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nn = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor([[0], [0]])\ndim = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nn = 1\ndim = 1\nappend = torch.tensor([[0], [0]])\nprepend = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nn = 1\ndim = 1\nappend = torch.tensor([[0], [0]])\nprepend = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "n = 1\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor([[0], [0]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,5)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor([[0], [0]])\nn = 2",
+    "n = 1\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor([[0], [0]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,3)), dtype=torch.int32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor([[0], [0]])\nn = 5",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nn = 1\ndim = 1\nappend = torch.tensor([[0], [0]])\nprepend = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "n = 1\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor([[0], [0]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,3)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor([[0], [0]])\nn = 1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor([[0], [0]])\nn = 0",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nn = 1\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor(np.random.randint(-50, 50, (2,5)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nn = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor([[0], [0]])\ndim = -1",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor([[0], [0]])\nn = 3",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nn = 1\ndim = 1\nappend = torch.tensor([[0], [0]])\nprepend = torch.tensor(np.random.randint(-50, 50, (2,5)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor([[0], [0]])\nn = 4",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nn = 1\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int32)",
+    "n = 1\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor([[0], [0]])\ninput = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,n=1,dim=-1,prepend=None,append=None):\n  return torch.Tensor.diff(input,n,dim,prepend,append)",
+    "tensorflow": "def tensorflow_call(input, n=1, dim=-1, prepend=None, append=None):\n    input = tf.convert_to_tensor(input)\n    shape = tf.shape(input)\n    if dim < 0:\n        dim += tf.rank(input)\n    if prepend is None:\n        prepend = tf.zeros(shape[:dim] + [n] + shape[dim + 1:], dtype=input.dtype)\n    if append is None:\n        append = tf.zeros(shape[:dim] + [n] + shape[dim + 1:], dtype=input.dtype)\n    prepend = tf.cast(prepend, dtype=input.dtype)\n    append = tf.cast(append, dtype=input.dtype)\n    extended_input = tf.concat([prepend, input, append], axis=dim)\n    if n == 0:\n        return extended_input[..., tf.shape(prepend)[-1]:tf.shape(extended_input)[-1] - tf.shape(append)[-1]]\n    for _ in range(n):\n        extended_input = extended_input[..., 1:] - extended_input[..., :-1]\n    return extended_input"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]])\nn = 1\ndim = 1\nprepend = torch.tensor([[0], [0]])\nappend = torch.tensor([[0], [0]])"
+  ]
+}

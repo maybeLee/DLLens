@@ -1,0 +1,37 @@
+{
+  "function_name": "tf.math.cumsum(x,axis=0,exclusive=False,reverse=False,name=None)",
+  "inputs": [
+    "x",
+    "axis",
+    "exclusive",
+    "reverse"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.float32)\naxis = 0\nexclusive = False\nreverse = False",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)\naxis = 0\nexclusive = False\nreverse = False",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(4), dtype='half')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(4,1,1,1), dtype='float32')",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.float32)\nexclusive = False\nreverse = False\naxis = 0",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.float32)\naxis = 0\nexclusive = False\nreverse = True",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(2), dtype='float32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(4), dtype='float32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.float32)\nexclusive = False\nreverse = False\naxis = -1",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(4), dtype='float16')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(4,1,1,1,1), dtype='float32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(4), dtype='float64')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(4,1,1), dtype='float32')",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(5), dtype='float32')",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.float32)\naxis = 0\nreverse = False\nexclusive = True",
+    "axis = 0\nexclusive = False\nreverse = False\nx = tf.constant(np.random.randn(4,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,axis=0,exclusive=False,reverse=False):\n  return tf.math.cumsum(x,axis,exclusive,reverse)",
+    "pytorch": "def pytorch_call(x, axis=0, exclusive=False, reverse=False):\n    if x.dtype == torch.half:\n        x = x.to(torch.float32)\n    if reverse:\n        x = x.flip(dims=[axis])\n    if exclusive:\n        cumsum = torch.cumsum(x, dim=axis)\n        cumsum = torch.cat((torch.zeros_like(x[0:1]), cumsum[:-1]), dim=0)\n    else:\n        cumsum = torch.cumsum(x, dim=axis)\n    if reverse:\n        cumsum = cumsum.flip(dims=[axis])\n    return cumsum"
+  },
+  "llm_inputs": [
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.float32)\naxis = 0\nexclusive = False\nreverse = False",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.float32)\naxis = 0\nexclusive = False\nreverse = False",
+    "x = tf.constant([1, 2, 3, 4], dtype=tf.int32)\naxis = 0\nexclusive = False\nreverse = False"
+  ]
+}

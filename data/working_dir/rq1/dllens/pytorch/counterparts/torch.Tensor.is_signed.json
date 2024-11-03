@@ -1,0 +1,28 @@
+{
+  "function_name": "torch.Tensor.is_signed(input)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3], dtype=torch.int32)",
+    "input = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int32)",
+    "input = torch.tensor(np.random.randint(-50, 50, (3)), dtype=torch.int32)",
+    "input = torch.tensor(np.random.randint(-50, 50, (3,1,1)), dtype=torch.int32)",
+    "input = torch.tensor(np.random.randint(-50, 50, (3,1,1,1)), dtype=torch.int32)",
+    "input = torch.tensor(np.random.randint(-50, 50, (3,1)), dtype=torch.int32)",
+    "input = torch.tensor(np.random.randint(-50, 50, (3,1,1,1,1)), dtype=torch.int32)",
+    "input = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int32)",
+    "input = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int32)",
+    "input = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int32)",
+    "input = torch.tensor(np.random.randint(-50, 50, (3)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.Tensor.is_signed(input)",
+    "tensorflow": "def tensorflow_call(input):\n    return input.dtype in {tf.int8, tf.int16, tf.int32, tf.int64}"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3], dtype=torch.int32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.int32)",
+    "input = torch.tensor([1, 2, 3], dtype=torch.int32)"
+  ]
+}

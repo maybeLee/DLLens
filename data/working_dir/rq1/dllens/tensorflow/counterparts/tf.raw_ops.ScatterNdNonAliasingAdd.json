@@ -1,0 +1,21 @@
+{
+  "function_name": "tf.raw_ops.ScatterNdNonAliasingAdd(input,indices,updates,name=None)",
+  "inputs": [
+    "input",
+    "indices",
+    "updates"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2], [3, 4], [5, 6]], dtype=tf.float32)\nindices = tf.constant([[0], [1]], dtype=tf.int32)\nupdates = tf.constant([[10, 1], [20, 2]], dtype=tf.float32)",
+    "input = tf.constant([[1, 2], [3, 4], [5, 6]], dtype=tf.float32)\nindices = tf.constant([[0], [1]], dtype=tf.int32)\nupdates = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "indices = tf.constant([[0], [1]], dtype=tf.int32)\nupdates = tf.constant([[10, 1], [20, 2]], dtype=tf.float32)\ninput = tf.constant(np.random.randn(3,2), dtype='float32')",
+    "indices = tf.constant([[0], [1]], dtype=tf.int32)\nupdates = tf.constant([[10, 1], [20, 2]], dtype=tf.float32)\ninput = tf.constant(np.random.randn(5,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,indices,updates):\n  return tf.raw_ops.ScatterNdNonAliasingAdd(input=input,indices=indices,updates=updates)",
+    "pytorch": "def pytorch_call(input, indices, updates):\n    indices = indices.to(torch.int64)\n    expanded_indices = indices.expand(-1, updates.size(1))\n    return input.scatter_add(0, expanded_indices, updates)"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2], [3, 4], [5, 6]], dtype=tf.float32)\nindices = tf.constant([[0], [1]], dtype=tf.int32)\nupdates = tf.constant([[10, 1], [20, 2]], dtype=tf.float32)"
+  ]
+}

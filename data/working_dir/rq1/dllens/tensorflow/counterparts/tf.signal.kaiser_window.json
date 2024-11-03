@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.signal.kaiser_window(window_length,beta=12.0,dtype=tf.dtypes.float32,name=None)",
+  "inputs": [
+    "window_length",
+    "beta",
+    "dtype"
+  ],
+  "sample_inputs": [
+    "window_length = tf.constant(5)\nbeta = tf.constant(12.0)\ndtype = tf.dtypes.float32",
+    "window_length = tf.constant(5, dtype=tf.int32)\nbeta = tf.constant(12.0, dtype=tf.float32)\ndtype = tf.dtypes.float32",
+    "window_length = tf.constant(5)\ndtype = tf.dtypes.float32\nbeta = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "window_length = tf.constant(5)\ndtype = tf.dtypes.float32\nbeta = tf.constant(np.random.randn(1), dtype='float32')",
+    "window_length = tf.constant(5)\ndtype = tf.dtypes.float32\nbeta = tf.constant(np.random.randn(), dtype='float16')",
+    "window_length = tf.constant(5)\ndtype = tf.dtypes.float32\nbeta = tf.constant(np.random.randn(), dtype='half')",
+    "window_length = tf.constant(5)\ndtype = tf.dtypes.float32\nbeta = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "window_length = tf.constant(5)\ndtype = tf.dtypes.float32\nbeta = tf.constant(np.random.randn(), dtype='float32')",
+    "window_length = tf.constant(5)\ndtype = tf.dtypes.float32\nbeta = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "window_length = tf.constant(5)\ndtype = tf.dtypes.float32\nbeta = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "window_length = tf.constant(5)\ndtype = tf.dtypes.float32\nbeta = tf.constant(np.random.randn(), dtype='float64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(window_length,beta=12.0,dtype=tf.dtypes.float32):\n  return tf.signal.kaiser_window(window_length,beta,dtype)",
+    "pytorch": "def pytorch_call(window_length, beta=12.0, dtype=torch.float32):\n    window_length = window_length.to(dtype=torch.int32)\n    n = torch.arange(0, window_length.item(), dtype=dtype)\n    alpha = (window_length - 1) / 2\n    kaiser_window = torch.special.i0(beta * torch.sqrt(1 - ((n - alpha) / alpha) ** 2)) / torch.special.i0(beta)\n    return kaiser_window"
+  },
+  "llm_inputs": [
+    "window_length = tf.constant(5)\nbeta = tf.constant(12.0)\ndtype = tf.dtypes.float32",
+    "window_length = tf.constant(5)\nbeta = tf.constant(12.0)\ndtype = tf.dtypes.float32",
+    "window_length = tf.constant(5, dtype=tf.int32)\nbeta = tf.constant(12.0, dtype=tf.float32)\ndtype = tf.dtypes.float32"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "function_name": "tf.boolean_mask(tensor,mask,axis=None,name='boolean_mask')",
+  "inputs": [
+    "tensor",
+    "mask",
+    "axis"
+  ],
+  "sample_inputs": [
+    "tensor = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nmask = tf.constant([True, False, True])\naxis = 0",
+    "tensor = tf.constant([[1, 2, 3], [4, 5, 6]])\nmask = tf.constant([True, False])\naxis = 0",
+    "mask = tf.constant([True, False, True])\naxis = 0\ntensor = tf.constant(np.random.randint(-50, 50, (3)), dtype='int32')",
+    "mask = tf.constant([True, False, True])\naxis = 0\ntensor = tf.constant(np.random.randint(-50, 50, (3,3)), dtype='int64')",
+    "tensor = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nmask = tf.constant([True, False, True])\naxis = 1",
+    "mask = tf.constant([True, False, True])\naxis = 0\ntensor = tf.constant(np.random.randint(-50, 50, (3,2)), dtype='int32')",
+    "mask = tf.constant([True, False, True])\naxis = 0\ntensor = tf.constant(np.random.randint(-50, 50, (3,3,1)), dtype='int32')",
+    "mask = tf.constant([True, False, True])\naxis = 0\ntensor = tf.constant(np.random.randint(-50, 50, (3,5)), dtype='int32')",
+    "tensor = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nmask = tf.constant([True, False, True])\naxis = -2",
+    "mask = tf.constant([True, False, True])\naxis = 0\ntensor = tf.constant(np.random.randint(-50, 50, (3,3)), dtype='int32')",
+    "mask = tf.constant([True, False, True])\naxis = 0\ntensor = tf.constant(np.random.randint(-50, 50, (3,1)), dtype='int32')",
+    "mask = tf.constant([True, False, True])\naxis = 0\ntensor = tf.constant(np.random.randint(-50, 50, (3,3,1,1,1)), dtype='int32')",
+    "mask = tf.constant([True, False, True])\naxis = 0\ntensor = tf.constant(np.random.randint(-50, 50, (3,3,1,1)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(tensor,mask,axis=None):\n  return tf.boolean_mask(tensor,mask,axis)",
+    "pytorch": "def pytorch_call(tensor, mask, axis=None):\n    if axis is not None:\n        if axis == 0:\n            return tensor[mask]\n        elif axis == 1:\n            return tensor[:, mask]\n        elif axis == -1:\n            return tensor[:, mask]\n        elif axis == -2:\n            return tensor[mask]\n        else:\n            raise ValueError('Unsupported axis. Only 0, 1, -1, and -2 are supported.')\n    else:\n        return tensor[mask]"
+  },
+  "llm_inputs": [
+    "tensor = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nmask = tf.constant([True, False, True])\naxis = 0",
+    "tensor = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nmask = tf.constant([True, False, True])\naxis = 0",
+    "tensor = tf.constant([[1, 2, 3], [4, 5, 6]])\nmask = tf.constant([True, False])\naxis = 0"
+  ]
+}

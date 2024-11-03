@@ -1,0 +1,39 @@
+{
+  "function_name": "torch.Tensor.copysign(input, other)",
+  "inputs": [
+    "input",
+    "other"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\nother = torch.tensor([[0.0, 0.0], [0.0, 0.0]])",
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\nother = torch.tensor([[5.0, 6.0], [7.0, 8.0]])",
+    "other = torch.tensor([[0.0, 0.0], [0.0, 0.0]])\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\nother = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "other = torch.tensor([[0.0, 0.0], [0.0, 0.0]])\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "other = torch.tensor([[0.0, 0.0], [0.0, 0.0]])\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\nother = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "other = torch.tensor([[0.0, 0.0], [0.0, 0.0]])\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\nother = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\nother = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "other = torch.tensor([[0.0, 0.0], [0.0, 0.0]])\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\nother = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "other = torch.tensor([[0.0, 0.0], [0.0, 0.0]])\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "other = torch.tensor([[0.0, 0.0], [0.0, 0.0]])\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "other = torch.tensor([[0.0, 0.0], [0.0, 0.0]])\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\nother = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "other = torch.tensor([[0.0, 0.0], [0.0, 0.0]])\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\nother = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\nother = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\nother = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "other = torch.tensor([[0.0, 0.0], [0.0, 0.0]])\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,other):\n  return torch.Tensor.copysign(input,other)",
+    "tensorflow": "def tensorflow_call(input, other):\n    input = tf.cast(input, tf.float32)\n    other = tf.cast(other, tf.float32)\n    other_sign = tf.sign(other)\n    other_sign = tf.where(tf.equal(other, 0.0), tf.ones_like(other), other_sign)\n    return tf.abs(input) * other_sign"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\nother = torch.tensor([[0.0, 0.0], [0.0, 0.0]])",
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\nother = torch.tensor([[0.0, 0.0], [0.0, 0.0]])",
+    "input = torch.tensor([[1.0, -2.0], [3.0, -4.0]])\nother = torch.tensor([[5.0, 6.0], [7.0, 8.0]])"
+  ]
+}

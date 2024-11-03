@@ -1,0 +1,25 @@
+{
+  "function_name": "tf.linalg.inv(input,adjoint=False,name=None)",
+  "inputs": [
+    "input",
+    "adjoint"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nadjoint = False",
+    "input = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nadjoint = False",
+    "input = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nadjoint = True",
+    "adjoint = False\ninput = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "adjoint = False\ninput = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "adjoint = False\ninput = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "adjoint = False\ninput = tf.constant(np.random.randn(2,2), dtype='float64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,adjoint=False):\n  return tf.linalg.inv(input,adjoint)",
+    "pytorch": "def pytorch_call(input, adjoint=False):\n    if adjoint:\n        return torch.linalg.inv(input.conj().T)\n    else:\n        return torch.linalg.inv(input)"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1.0, 2.0], [3.0, 4.0]])\nadjoint = False",
+    "input = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nadjoint = False",
+    "input = tf.constant([[1.0, 2.0], [3.0, 4.0]], dtype=tf.float32)\nadjoint = False"
+  ]
+}

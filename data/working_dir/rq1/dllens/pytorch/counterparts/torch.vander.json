@@ -1,0 +1,32 @@
+{
+  "function_name": "torch.vander(x, N=None, increasing=False)",
+  "inputs": [
+    "x",
+    "N",
+    "increasing"
+  ],
+  "sample_inputs": [
+    "x = torch.tensor([1, 2, 3, 4], dtype=torch.float32)\nN = 3\nincreasing = True",
+    "x = torch.tensor([1, 2, 3, 4], dtype=torch.float32)\nN = 4\nincreasing = True",
+    "x = torch.tensor([1, 2, 3, 4], dtype=torch.float32)\nincreasing = True\nN = 3",
+    "x = torch.tensor([1, 2, 3, 4], dtype=torch.float32)\nincreasing = True\nN = 2",
+    "x = torch.tensor([1, 2, 3, 4], dtype=torch.float32)\nincreasing = True\nN = 4",
+    "x = torch.tensor([1, 2, 3, 4], dtype=torch.float32)\nN = 3\nincreasing = False",
+    "N = 3\nincreasing = True\nx = torch.tensor(np.random.randn(4), dtype=torch.float32)",
+    "x = torch.tensor([1, 2, 3, 4], dtype=torch.float32)\nincreasing = True\nN = 1",
+    "x = torch.tensor([1, 2, 3, 4], dtype=torch.float32)\nincreasing = True\nN = 5",
+    "N = 3\nincreasing = True\nx = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "x = torch.tensor([1, 2, 3, 4], dtype=torch.float32)\nincreasing = True\nN = 0",
+    "N = 3\nincreasing = True\nx = torch.tensor(np.random.randn(4), dtype=torch.float64)",
+    "N = 3\nincreasing = True\nx = torch.tensor(np.random.randn(1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(x,N=None,increasing=False):\n  return torch.vander(x,N,increasing)",
+    "tensorflow": "def tensorflow_call(x, N=None, increasing=False):\n    x_length = tf.shape(x)[0]\n    if N is None:\n        N = x_length\n    if increasing:\n        vander_matrix = tf.pow(tf.reshape(x, (-1, 1)), tf.range(N, dtype=x.dtype))\n    else:\n        vander_matrix = tf.pow(tf.reshape(x, (-1, 1)), tf.range(N - 1, -1, -1, dtype=x.dtype))\n    return vander_matrix"
+  },
+  "llm_inputs": [
+    "x = torch.tensor([1, 2, 3, 4], dtype=torch.float32)\nN = 3\nincreasing = True",
+    "x = torch.tensor([1, 2, 3, 4], dtype=torch.float32)\nN = 3\nincreasing = True",
+    "x = torch.tensor([1, 2, 3, 4], dtype=torch.float32)\nN = 4\nincreasing = True"
+  ]
+}

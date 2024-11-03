@@ -1,0 +1,24 @@
+{
+  "function_name": "torch.Tensor.map_(input, tensor, callable)",
+  "inputs": [
+    "input",
+    "tensor",
+    "callable"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3, 4, 5])\ntensor = torch.tensor([2, 3, 4, 5, 6])\ncallable = lambda x, y: x + y",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ncallable = lambda x, y: x + y\ntensor = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)",
+    "tensor = torch.tensor([2, 3, 4, 5, 6])\ncallable = lambda x, y: x + y\ninput = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ncallable = lambda x, y: x + y\ntensor = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ncallable = lambda x, y: x + y\ntensor = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,tensor,callable):\n  return torch.Tensor.map_(input,tensor,callable)",
+    "tensorflow": "def tensorflow_call(input, tensor, callable):\n    input = tf.cast(input, tf.int32)\n    tensor = tf.cast(tensor, tf.int32)\n    tensor = tf.broadcast_to(tensor, tf.shape(input))\n    return tf.map_fn(lambda x: callable(x[0], x[1]), tf.stack([input, tensor], axis=1), dtype=tf.int32)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3, 4, 5])\ntensor = torch.tensor([2, 3, 4, 5, 6])\ncallable = lambda x, y: x + y",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ntensor = torch.tensor([2, 3, 4, 5, 6])\ncallable = lambda x, y: x + y",
+    "input = torch.tensor([1, 2, 3, 4, 5])\ntensor = torch.tensor([2, 3, 4, 5, 6])\ncallable = lambda x, y: x + y"
+  ]
+}

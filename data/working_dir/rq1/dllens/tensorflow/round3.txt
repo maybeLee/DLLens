@@ -1,0 +1,17 @@
+tf.raw_ops.TensorScatterSub
+tf.math.special.bessel_j0
+tf.math.special.bessel_j1
+tf.math.special.fresnel_cos
+tf.metrics.mae
+tf.keras.utils.unpack_x_y_sample_weight
+tf.linalg.cholesky
+tf.keras.losses.mean_squared_logarithmic_error
+tf.image.adjust_hue
+tf.image.rgb_to_yiq
+tf.sparse.reorder
+tf.raw_ops.BatchToSpaceND
+tf.raw_ops.CopyHost
+tf.raw_ops.OrderedMapSize
+tf.raw_ops.PlaceholderWithDefault
+tf.raw_ops.PyFuncStateless
+tf.raw_ops.MirrorPadGrad

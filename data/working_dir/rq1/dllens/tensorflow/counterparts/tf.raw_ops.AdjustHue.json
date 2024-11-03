@@ -1,0 +1,26 @@
+{
+  "function_name": "tf.raw_ops.AdjustHue(images,delta,name=None)",
+  "inputs": [
+    "images",
+    "delta"
+  ],
+  "sample_inputs": [
+    "images = tf.constant([[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], [[0.7, 0.8, 0.9], [1.0, 1.1, 1.2]]], dtype=tf.float32)\ndelta = tf.constant(0.5, dtype=tf.float32)",
+    "images = tf.constant([[[0.5, 0.5, 0.5]]], dtype=tf.float32)\ndelta = tf.constant(0.1, dtype=tf.float32)",
+    "images = tf.constant([[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]]], dtype=tf.float32)\ndelta = tf.constant(0.1, dtype=tf.float32)",
+    "delta = tf.constant(0.5, dtype=tf.float32)\nimages = tf.constant(np.random.randn(2,1,3), dtype='float32')",
+    "delta = tf.constant(0.5, dtype=tf.float32)\nimages = tf.constant(np.random.randn(2,2,3), dtype='float32')",
+    "delta = tf.constant(0.5, dtype=tf.float32)\nimages = tf.constant(np.random.randn(2,5,3), dtype='float32')",
+    "delta = tf.constant(0.5, dtype=tf.float32)\nimages = tf.constant(np.random.randn(2,4,3), dtype='float32')",
+    "images = tf.constant([[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], [[0.7, 0.8, 0.9], [1.0, 1.1, 1.2]]], dtype=tf.float32)\ndelta = tf.constant(np.random.randn(), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(images,delta):\n  return tf.raw_ops.AdjustHue(images=images,delta=delta)",
+    "pytorch": "def pytorch_call(images, delta):\n\n    def rgb_to_hsv(rgb):\n        (r, g, b) = rgb.unbind(dim=-1)\n        maxc = rgb.max(dim=-1)[0]\n        minc = rgb.min(dim=-1)[0]\n        delta = maxc - minc\n        h = torch.zeros_like(maxc)\n        s = torch.zeros_like(maxc)\n        mask = delta != 0\n        h[mask] = torch.where(maxc[mask] == r[mask], (g[mask] - b[mask]) / delta[mask] % 6, torch.where(maxc[mask] == g[mask], (b[mask] - r[mask]) / delta[mask] + 2, (r[mask] - g[mask]) / delta[mask] + 4))\n        h = h / 6.0\n        h[delta == 0] = 0.0\n        s[maxc != 0] = delta[maxc != 0] / maxc[maxc != 0]\n        v = maxc\n        return torch.stack((h, s, v), dim=-1)\n\n    def hsv_to_rgb(hsv):\n        (h, s, v) = hsv.unbind(dim=-1)\n        i = (h * 6).floor().long() % 6\n        f = h * 6 - i.float()\n        p = v * (1 - s)\n        q = v * (1 - f * s)\n        t = v * (1 - (1 - f) * s)\n        rgb = torch.zeros_like(hsv)\n        rgb[i == 0] = torch.stack((v[i == 0], t[i == 0], p[i == 0]), dim=-1)\n        rgb[i == 1] = torch.stack((q[i == 1], v[i == 1], p[i == 1]), dim=-1)\n        rgb[i == 2] = torch.stack((p[i == 2], v[i == 2], t[i == 2]), dim=-1)\n        rgb[i == 3] = torch.stack((p[i == 3], q[i == 3], v[i == 3]), dim=-1)\n        rgb[i == 4] = torch.stack((t[i == 4], p[i == 4], v[i == 4]), dim=-1)\n        rgb[i == 5] = torch.stack((v[i == 5], p[i == 5], q[i == 5]), dim=-1)\n        return rgb\n    hsv_images = rgb_to_hsv(images)\n    hsv_images[..., 0] = (hsv_images[..., 0] + delta) % 1.0\n    adjusted_images = hsv_to_rgb(hsv_images)\n    return adjusted_images"
+  },
+  "llm_inputs": [
+    "images = tf.constant([[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], [[0.7, 0.8, 0.9], [1.0, 1.1, 1.2]]], dtype=tf.float32)\ndelta = tf.constant(0.5, dtype=tf.float32)",
+    "images = tf.constant([[[0.5, 0.5, 0.5]]], dtype=tf.float32)\ndelta = tf.constant(0.1, dtype=tf.float32)",
+    "images = tf.constant([[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]]], dtype=tf.float32)\ndelta = tf.constant(0.1, dtype=tf.float32)"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "function_name": "torch.msort(input, *, out=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([3, 1, 4, 1, 5, 9])",
+    "input = torch.tensor([[3, 1, 2], [6, 5, 4]])",
+    "input = torch.tensor(np.random.randint(-50, 50, (6)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (6,1)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (6,1,1,1)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (6,1,1)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (6,1,1,1,1)), dtype=torch.int64)",
+    "input = torch.tensor(np.random.randint(-50, 50, (6)), dtype=torch.int32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.msort(input)",
+    "tensorflow": "def tensorflow_call(input):\n    if tf.rank(input) == 0:\n        return input\n    sorted_output = tf.sort(input, axis=0)\n    return sorted_output"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([3, 1, 4, 1, 5, 9])",
+    "input = torch.tensor([[3, 1, 2], [6, 5, 4]])",
+    "input = torch.tensor([[3, 1, 2], [6, 5, 4]])"
+  ]
+}

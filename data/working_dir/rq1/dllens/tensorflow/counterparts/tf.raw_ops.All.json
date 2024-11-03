@@ -1,0 +1,22 @@
+{
+  "function_name": "tf.raw_ops.All(input,axis,keep_dims=False,name=None)",
+  "inputs": [
+    "input",
+    "axis",
+    "keep_dims"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[True, False, True], [False, True, True]], dtype=tf.bool)\naxis = tf.constant(1, dtype=tf.int32)\nkeep_dims = False",
+    "input = tf.constant([[True, False, True], [False, True, True]], dtype=tf.bool)\naxis = tf.constant(0, dtype=tf.int32)\nkeep_dims = False",
+    "input = tf.constant([[True, False, True], [False, True, True]], dtype=tf.bool)\naxis = tf.constant(1, dtype=tf.int32)\nkeep_dims = True"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,axis,keep_dims=False):\n  return tf.raw_ops.All(input=input,axis=axis,keep_dims=keep_dims)",
+    "pytorch": "def pytorch_call(input, axis, keep_dims=False):\n    axis = axis.item()\n    result = torch.all(input, dim=axis)\n    if keep_dims:\n        result = result.unsqueeze(axis)\n    return result"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[True, False, True], [False, True, True]], dtype=tf.bool)\naxis = tf.constant(1, dtype=tf.int32)\nkeep_dims = False",
+    "input = tf.constant([[True, False, True], [False, True, True]], dtype=tf.bool)\naxis = tf.constant(1, dtype=tf.int32)\nkeep_dims = False",
+    "input = tf.constant([[True, False, True], [False, True, True]], dtype=tf.bool)\naxis = tf.constant(0, dtype=tf.int32)\nkeep_dims = False"
+  ]
+}

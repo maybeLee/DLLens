@@ -1,0 +1,34 @@
+{
+  "function_name": "torch.nn.functional.group_norm(input, num_groups, weight=None, bias=None, eps=1e-05)",
+  "inputs": [
+    "input",
+    "num_groups",
+    "weight",
+    "bias",
+    "eps"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnum_groups = torch.tensor(2)\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = torch.tensor(1e-05)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnum_groups = 2\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = 1e-05",
+    "num_groups = torch.tensor(2)\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = torch.tensor(1e-05)\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnum_groups = torch.tensor(2)\nweight = torch.tensor([1.0, 1.0])\neps = torch.tensor(1e-05)\nbias = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnum_groups = torch.tensor(2)\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnum_groups = torch.tensor(2)\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "num_groups = torch.tensor(2)\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = torch.tensor(1e-05)\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnum_groups = torch.tensor(2)\nbias = torch.tensor([0.0, 0.0])\neps = torch.tensor(1e-05)\nweight = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnum_groups = torch.tensor(2)\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "num_groups = torch.tensor(2)\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = torch.tensor(1e-05)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "num_groups = torch.tensor(2)\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = torch.tensor(1e-05)\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnum_groups = torch.tensor(2)\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "num_groups = torch.tensor(2)\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = torch.tensor(1e-05)\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,num_groups,weight=None,bias=None,eps=1e-05):\n  return torch.nn.functional.group_norm(input,num_groups,weight,bias,eps)",
+    "tensorflow": "def tensorflow_call(input, num_groups, weight=None, bias=None, eps=1e-05):\n    eps = tf.cast(eps, dtype=tf.float32)\n    input_shape = tf.shape(input)\n    (N, C) = (input_shape[0], input_shape[1])\n    input = tf.reshape(input, (N, num_groups, C // num_groups))\n    (mean, variance) = tf.nn.moments(input, axes=[2], keepdims=True)\n    normalized = (input - mean) / tf.sqrt(variance + eps)\n    normalized = tf.reshape(normalized, (N, C))\n    if weight is not None:\n        weight = tf.reshape(weight, (1, C))\n        normalized = normalized * weight\n    if bias is not None:\n        bias = tf.reshape(bias, (1, C))\n        normalized = normalized + bias\n    return normalized"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnum_groups = torch.tensor(2)\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = torch.tensor(1e-05)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnum_groups = torch.tensor(2)\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = torch.tensor(1e-05)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nnum_groups = 2\nweight = torch.tensor([1.0, 1.0])\nbias = torch.tensor([0.0, 0.0])\neps = 1e-05"
+  ]
+}

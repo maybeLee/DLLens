@@ -1,0 +1,17 @@
+tf.raw_ops.StageSize
+tf.raw_ops.Timestamp
+tf.math.sobol_sample
+tf.losses.mae
+tf.math.bincount
+tf.metrics.mean_squared_logarithmic_error
+tf.nn.conv1d
+tf.nn.max_pool3d
+tf.nn.pool
+tf.nn.softmax_cross_entropy_with_logits
+tf.linalg.logm
+tf.keras.losses.poisson
+tf.image.adjust_contrast
+tf.image.random_flip_up_down
+tf.signal.kaiser_window
+tf.raw_ops.ResizeBilinearGrad
+tf.raw_ops.MapIncompleteSize

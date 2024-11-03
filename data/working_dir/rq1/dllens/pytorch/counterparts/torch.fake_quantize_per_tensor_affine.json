@@ -1,0 +1,51 @@
+{
+  "function_name": "torch.fake_quantize_per_tensor_affine(input, scale, zero_point, quant_min, quant_max)",
+  "inputs": [
+    "input",
+    "scale",
+    "zero_point",
+    "quant_min",
+    "quant_max"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nscale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nscale = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nscale = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nscale = torch.tensor(0.1, dtype=torch.float32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nzero_point = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int32)",
+    "scale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nscale = torch.tensor(np.random.randn(1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nscale = torch.tensor(0.1, dtype=torch.float32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nzero_point = torch.tensor(np.random.randint(-50, 50, (1,1,1,1)), dtype=torch.int32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nscale = torch.tensor(0.1, dtype=torch.float32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nzero_point = torch.tensor(np.random.randint(-50, 50, (1,1)), dtype=torch.int32)",
+    "scale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nscale = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nscale = torch.tensor(np.random.randn(1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nscale = torch.tensor(0.1, dtype=torch.float32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nzero_point = torch.tensor(np.random.randint(-50, 50, (1,1,1,1,1)), dtype=torch.int32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nscale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nquant_min = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "scale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "scale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nscale = torch.tensor(np.random.randn(1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nscale = torch.tensor(0.1, dtype=torch.float32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nzero_point = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int32)",
+    "scale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nscale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nquant_min = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int32)",
+    "scale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nscale = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nscale = torch.tensor(0.1, dtype=torch.float32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nzero_point = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "scale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nscale = torch.tensor(np.random.randn(1,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nscale = torch.tensor(0.1, dtype=torch.float32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nzero_point = torch.tensor(np.random.randint(-50, 50, (1,1,1)), dtype=torch.int32)",
+    "scale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "scale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\nscale = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "scale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "scale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,scale,zero_point,quant_min,quant_max):\n  return torch.fake_quantize_per_tensor_affine(input,scale,zero_point,quant_min,quant_max)",
+    "tensorflow": "def tensorflow_call(input, scale, zero_point, quant_min, quant_max):\n    input = tf.cast(input, dtype=tf.float32)\n    scale = tf.cast(scale, dtype=tf.float32)\n    quant_min = tf.cast(quant_min, dtype=tf.float32)\n    quant_max = tf.cast(quant_max, dtype=tf.float32)\n    scaled_input = input / scale\n    quantized = tf.quantization.fake_quant_with_min_max_vars(scaled_input, quant_min, quant_max, num_bits=8, narrow_range=False)\n    return quantized * scale"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nscale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nscale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nscale = torch.tensor(0.1, dtype=torch.float32)\nzero_point = torch.tensor(0, dtype=torch.int32)\nquant_min = torch.tensor(0, dtype=torch.int32)\nquant_max = torch.tensor(255, dtype=torch.int32)"
+  ]
+}

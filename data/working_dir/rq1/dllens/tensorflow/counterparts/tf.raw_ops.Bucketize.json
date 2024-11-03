@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.raw_ops.Bucketize(input,boundaries,name=None)",
+  "inputs": [
+    "input",
+    "boundaries"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([1.0, 2.0, 3.0, 4.0], dtype=tf.float32)\nboundaries = [1.5, 2.5, 3.5]",
+    "input = tf.constant([1.0, 2.5, 3.0, 4.7], dtype=tf.float32)\nboundaries = [1.0, 2.0, 3.0]",
+    "input = tf.constant([1.5, 2.5, 3.5], dtype=tf.float32)\nboundaries = [1.0, 2.0, 3.0]",
+    "boundaries = [1.5, 2.5, 3.5]\ninput = tf.constant(np.random.randn(4,1), dtype='float32')",
+    "boundaries = [1.5, 2.5, 3.5]\ninput = tf.constant(np.random.randn(), dtype='float32')",
+    "boundaries = [1.5, 2.5, 3.5]\ninput = tf.constant(np.random.randn(4), dtype='float64')",
+    "boundaries = [1.5, 2.5, 3.5]\ninput = tf.constant(np.random.randn(5), dtype='float32')",
+    "boundaries = [1.5, 2.5, 3.5]\ninput = tf.constant(np.random.randn(4,1,1,1,1), dtype='float32')",
+    "boundaries = [1.5, 2.5, 3.5]\ninput = tf.constant(np.random.randn(4,1,1), dtype='float32')",
+    "boundaries = [1.5, 2.5, 3.5]\ninput = tf.constant(np.random.randn(4), dtype='float32')",
+    "boundaries = [1.5, 2.5, 3.5]\ninput = tf.constant(np.random.randn(1), dtype='float32')",
+    "boundaries = [1.5, 2.5, 3.5]\ninput = tf.constant(np.random.randn(4,1,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,boundaries):\n  return tf.raw_ops.Bucketize(input=input,boundaries=boundaries)",
+    "pytorch": "def pytorch_call(input, boundaries):\n    if input.dim() == 0:\n        input = input.unsqueeze(0)\n    output = torch.empty_like(input, dtype=torch.long)\n    for i in range(input.size(0)):\n        output[i] = torch.sum(input[i] >= torch.tensor(boundaries, dtype=input.dtype)).item()\n    return output"
+  },
+  "llm_inputs": [
+    "input = tf.constant([1.0, 2.0, 3.0, 4.0], dtype=tf.float32)\nboundaries = [1.5, 2.5, 3.5]",
+    "input = tf.constant([1.0, 2.5, 3.0, 4.7], dtype=tf.float32)\nboundaries = [1.0, 2.0, 3.0]",
+    "input = tf.constant([1.5, 2.5, 3.5], dtype=tf.float32)\nboundaries = [1.0, 2.0, 3.0]"
+  ]
+}

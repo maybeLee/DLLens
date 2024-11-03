@@ -1,0 +1,48 @@
+{
+  "function_name": "tf.keras.utils.normalize(x,axis=-1,order=2)",
+  "inputs": [
+    "x",
+    "axis",
+    "order"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = -1\norder = 2",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = 1\norder = 2",
+    "axis = -1\norder = 2\nx = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = -1\norder = -5",
+    "axis = -1\norder = 2\nx = tf.constant(np.random.randn(4,2), dtype='float32')",
+    "axis = -1\norder = 2\nx = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = -1\norder = 4",
+    "axis = -1\norder = 2\nx = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = -1\norder = -4",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = -1\norder = 1",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\norder = 2\naxis = 1",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\norder = 2\naxis = -2",
+    "axis = -1\norder = 2\nx = tf.constant(np.random.randn(2,2), dtype='half')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = -1\norder = 3",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = -1\norder = -2",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = -1\norder = 5",
+    "axis = -1\norder = 2\nx = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "axis = -1\norder = 2\nx = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\norder = 2\naxis = -1",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = -1\norder = -3",
+    "axis = -1\norder = 2\nx = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = -1\norder = 0",
+    "axis = -1\norder = 2\nx = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "axis = -1\norder = 2\nx = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "axis = -1\norder = 2\nx = tf.constant(np.random.randn(3,2), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = -1\norder = -1",
+    "axis = -1\norder = 2\nx = tf.constant(np.random.randn(2), dtype='float32')",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\norder = 2\naxis = 0",
+    "axis = -1\norder = 2\nx = tf.constant(np.random.randn(2,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x,axis=-1,order=2):\n  return tf.keras.utils.normalize(x,axis,order)",
+    "pytorch": "def pytorch_call(x, axis=-1, order=2):\n    norm = torch.norm(x, p=order, dim=axis, keepdim=True)\n    norm = torch.where(norm == 0, torch.ones_like(norm), norm)\n    return x / norm"
+  },
+  "llm_inputs": [
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = -1\norder = 2",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = -1\norder = 2",
+    "x = tf.constant([[1.0, 2.0], [3.0, 4.0]])\naxis = 1\norder = 2"
+  ]
+}

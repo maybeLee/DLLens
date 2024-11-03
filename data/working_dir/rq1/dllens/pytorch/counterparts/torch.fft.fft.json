@@ -1,0 +1,38 @@
+{
+  "function_name": "torch.fft.fft(input, n=None, dim=-1, norm=None, *, out=None)",
+  "inputs": [
+    "input",
+    "n",
+    "dim",
+    "norm"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\nn = 4\ndim = -1\nnorm = None",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nn = 2\ndim = -1\nnorm = None",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\nn = 2\ndim = -1\nnorm = None",
+    "n = 4\ndim = -1\nnorm = None\ninput = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\nn = 4\nnorm = None\ndim = 0",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\ndim = -1\nnorm = None\nn = 2",
+    "n = 4\ndim = -1\nnorm = None\ninput = torch.tensor(np.random.randn(4,1,1,1), dtype=torch.float32)",
+    "n = 4\ndim = -1\nnorm = None\ninput = torch.tensor(np.random.randn(4,1), dtype=torch.float32)",
+    "n = 4\ndim = -1\nnorm = None\ninput = torch.tensor(np.random.randn(4), dtype=torch.float32)",
+    "n = 4\ndim = -1\nnorm = None\ninput = torch.tensor(np.random.randn(4,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\nn = 4\nnorm = None\ndim = -1",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\ndim = -1\nnorm = None\nn = 5",
+    "n = 4\ndim = -1\nnorm = None\ninput = torch.tensor(np.random.randn(4,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\ndim = -1\nnorm = None\nn = 1",
+    "n = 4\ndim = -1\nnorm = None\ninput = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\ndim = -1\nnorm = None\nn = 3",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\ndim = -1\nnorm = None\nn = 4",
+    "n = 4\ndim = -1\nnorm = None\ninput = torch.tensor(np.random.randn(4), dtype=torch.float64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,n=None,dim=-1,norm=None):\n  return torch.fft.fft(input,n,dim,norm)",
+    "tensorflow": "def tensorflow_call(input, n=None, dim=-1, norm=None):\n    if n is not None:\n        input_shape = tf.shape(input)\n        if dim < 0:\n            dim = len(input_shape) + dim\n        size = input_shape[dim]\n        if size < n:\n            paddings = tf.zeros([dim, n - size])\n            input = tf.pad(input, [[0, 0]] * dim + [[0, n - size]])\n        elif size > n:\n            input = tf.slice(input, [0] * len(input_shape), tf.concat([[n], tf.fill([tf.rank(input) - 1], -1)], axis=0))\n    return tf.signal.fft(tf.cast(input, tf.complex64))"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\nn = 4\ndim = -1\nnorm = None",
+    "input = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nn = 2\ndim = -1\nnorm = None",
+    "input = torch.tensor([1.0, 2.0, 3.0, 4.0])\nn = 2\ndim = -1\nnorm = None"
+  ]
+}

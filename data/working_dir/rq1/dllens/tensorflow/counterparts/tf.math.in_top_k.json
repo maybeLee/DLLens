@@ -1,0 +1,28 @@
+{
+  "function_name": "tf.math.in_top_k(targets,predictions,k,name=None)",
+  "inputs": [
+    "targets",
+    "predictions",
+    "k"
+  ],
+  "sample_inputs": [
+    "targets = tf.constant([1, 0, 1, 0], dtype=tf.int32)\npredictions = tf.constant([[0.1, 0.9], [0.8, 0.2], [0.6, 0.4], [0.3, 0.7]], dtype=tf.float32)\nk = tf.constant(1, dtype=tf.int32)",
+    "targets = tf.constant([1, 0, 1, 0, 1], dtype=tf.int32)\npredictions = tf.constant([[0.1, 0.9], [0.8, 0.2], [0.4, 0.6], [0.3, 0.7], [0.2, 0.8]], dtype=tf.float32)\nk = tf.constant(1, dtype=tf.int32)",
+    "targets = tf.constant([1, 0, 1, 0, 1], dtype=tf.int32)\npredictions = tf.constant([[0.1, 0.9], [0.8, 0.2], [0.6, 0.4], [0.3, 0.7], [0.2, 0.8]], dtype=tf.float32)\nk = tf.constant(1, dtype=tf.int32)",
+    "targets = tf.constant([1, 0, 1, 0], dtype=tf.int32)\nk = tf.constant(1, dtype=tf.int32)\npredictions = tf.constant(np.random.randn(4,5), dtype='float32')",
+    "predictions = tf.constant([[0.1, 0.9], [0.8, 0.2], [0.6, 0.4], [0.3, 0.7]], dtype=tf.float32)\nk = tf.constant(1, dtype=tf.int32)\ntargets = tf.constant(np.random.randint(-50, 50, (4)), dtype='int32')",
+    "targets = tf.constant([1, 0, 1, 0], dtype=tf.int32)\npredictions = tf.constant([[0.1, 0.9], [0.8, 0.2], [0.6, 0.4], [0.3, 0.7]], dtype=tf.float32)\nk = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "targets = tf.constant([1, 0, 1, 0], dtype=tf.int32)\nk = tf.constant(1, dtype=tf.int32)\npredictions = tf.constant(np.random.randn(4,4), dtype='float32')",
+    "targets = tf.constant([1, 0, 1, 0], dtype=tf.int32)\nk = tf.constant(1, dtype=tf.int32)\npredictions = tf.constant(np.random.randn(4,1), dtype='float32')",
+    "targets = tf.constant([1, 0, 1, 0], dtype=tf.int32)\nk = tf.constant(1, dtype=tf.int32)\npredictions = tf.constant(np.random.randn(4,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(targets,predictions,k):\n  return tf.math.in_top_k(targets,predictions,k)",
+    "pytorch": "def pytorch_call(targets, predictions, k):\n    k = k.item()\n    num_classes = predictions.size(1)\n    if k <= 0 or k > num_classes:\n        return torch.zeros(targets.size(), dtype=torch.bool)\n    (top_k_values, top_k_indices) = torch.topk(predictions, k, dim=1)\n    targets_expanded = targets.unsqueeze(1)\n    correct = top_k_indices == targets_expanded\n    return correct.any(dim=1)"
+  },
+  "llm_inputs": [
+    "targets = tf.constant([1, 0, 1, 0], dtype=tf.int32)\npredictions = tf.constant([[0.1, 0.9], [0.8, 0.2], [0.6, 0.4], [0.3, 0.7]], dtype=tf.float32)\nk = tf.constant(1, dtype=tf.int32)",
+    "targets = tf.constant([1, 0, 1, 0, 1], dtype=tf.int32)\npredictions = tf.constant([[0.1, 0.9], [0.8, 0.2], [0.4, 0.6], [0.3, 0.7], [0.2, 0.8]], dtype=tf.float32)\nk = tf.constant(1, dtype=tf.int32)",
+    "targets = tf.constant([1, 0, 1, 0, 1], dtype=tf.int32)\npredictions = tf.constant([[0.1, 0.9], [0.8, 0.2], [0.6, 0.4], [0.3, 0.7], [0.2, 0.8]], dtype=tf.float32)\nk = tf.constant(1, dtype=tf.int32)"
+  ]
+}

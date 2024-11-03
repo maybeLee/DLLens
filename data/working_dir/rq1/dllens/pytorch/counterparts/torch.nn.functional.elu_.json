@@ -1,0 +1,36 @@
+{
+  "function_name": "torch.nn.functional.elu_(input, alpha=1.)",
+  "inputs": [
+    "input",
+    "alpha"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nalpha = torch.tensor(1.0)",
+    "alpha = torch.tensor(1.0)\ninput = torch.tensor(np.random.randn(2,1), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nalpha = torch.tensor(np.random.randn(), dtype=torch.half)",
+    "alpha = torch.tensor(1.0)\ninput = torch.tensor(np.random.randn(2,2,1), dtype=torch.float32)",
+    "alpha = torch.tensor(1.0)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "alpha = torch.tensor(1.0)\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "alpha = torch.tensor(1.0)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nalpha = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "alpha = torch.tensor(1.0)\ninput = torch.tensor(np.random.randn(1,2), dtype=torch.float32)",
+    "alpha = torch.tensor(1.0)\ninput = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "alpha = torch.tensor(1.0)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float16)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nalpha = torch.tensor(np.random.randn(), dtype=torch.float16)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nalpha = torch.tensor(np.random.randn(), dtype=torch.float64)",
+    "alpha = torch.tensor(1.0)\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "alpha = torch.tensor(1.0)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.half)",
+    "alpha = torch.tensor(1.0)\ninput = torch.tensor(np.random.randn(5,2), dtype=torch.float32)",
+    "alpha = torch.tensor(1.0)\ninput = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "alpha = torch.tensor(1.0)\ninput = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,alpha=1.0):\n  return torch.nn.functional.elu_(input,alpha)",
+    "tensorflow": "def tensorflow_call(input, alpha=1.0):\n    return tf.nn.elu(input, alpha)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nalpha = torch.tensor(1.0)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nalpha = torch.tensor(1.0)",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])\nalpha = torch.tensor(1.0)"
+  ]
+}

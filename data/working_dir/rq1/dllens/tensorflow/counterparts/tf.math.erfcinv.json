@@ -1,0 +1,20 @@
+{
+  "function_name": "tf.math.erfcinv(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([0.1, 0.5, 1.0, 1.5, 1.9], dtype=tf.float32)\nassert x.shape[0] < 10",
+    "x = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)",
+    "x = tf.constant([0.1, 0.5, 0.9], dtype=tf.float32)"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.math.erfcinv(x)",
+    "pytorch": "def pytorch_call(x):\n    return torch.erfinv(1 - x)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([0.1, 0.5, 1.0, 1.5, 1.9], dtype=tf.float32)\nassert x.shape[0] < 10",
+    "x = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)",
+    "x = tf.constant([0.1, 0.5, 0.9], dtype=tf.float32)"
+  ]
+}

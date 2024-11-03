@@ -1,0 +1,34 @@
+{
+  "function_name": "tf.shape(input,out_type=tf.dtypes.int32,name=None)",
+  "inputs": [
+    "input",
+    "out_type"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.dtypes.float32)\nout_type = tf.dtypes.int32",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nout_type = tf.dtypes.int32",
+    "out_type = tf.dtypes.int32\ninput = tf.constant(np.random.randn(), dtype='float32')",
+    "out_type = tf.dtypes.int32\ninput = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "out_type = tf.dtypes.int32\ninput = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "out_type = tf.dtypes.int32\ninput = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "out_type = tf.dtypes.int32\ninput = tf.constant(np.random.randn(4,2), dtype='float32')",
+    "out_type = tf.dtypes.int32\ninput = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "out_type = tf.dtypes.int32\ninput = tf.constant(np.random.randn(2,2,1,1), dtype='float32')",
+    "out_type = tf.dtypes.int32\ninput = tf.constant(np.random.randn(2,2,1), dtype='float32')",
+    "out_type = tf.dtypes.int32\ninput = tf.constant(np.random.randn(2,2), dtype='half')",
+    "out_type = tf.dtypes.int32\ninput = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "out_type = tf.dtypes.int32\ninput = tf.constant(np.random.randn(3,2), dtype='float32')",
+    "out_type = tf.dtypes.int32\ninput = tf.constant(np.random.randn(2), dtype='float32')",
+    "out_type = tf.dtypes.int32\ninput = tf.constant(np.random.randn(2,2,1,1,1), dtype='float32')",
+    "out_type = tf.dtypes.int32\ninput = tf.constant(np.random.randn(2,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,out_type=tf.dtypes.int32):\n  return tf.shape(input,out_type)",
+    "pytorch": "def pytorch_call(input, out_type=torch.int32):\n    shape = input.shape\n    return torch.tensor(shape, dtype=out_type)"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.dtypes.float32)\nout_type = tf.dtypes.int32",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.int32)\nout_type = tf.dtypes.int32",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.dtypes.float32)\nout_type = tf.dtypes.int32"
+  ]
+}

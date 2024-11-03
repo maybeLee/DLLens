@@ -1,0 +1,32 @@
+{
+  "function_name": "torch.special.polygamma(n, input, *, out=None)",
+  "inputs": [
+    "n",
+    "input"
+  ],
+  "sample_inputs": [
+    "n = torch.tensor(2)\ninput = torch.tensor([1.0, 2.0, 3.0])",
+    "n = torch.tensor(3)\ninput = torch.tensor([1.0, 2.0, 3.0])",
+    "n = torch.tensor(2)\ninput = torch.tensor(np.random.randn(5), dtype=torch.float32)",
+    "n = torch.tensor(2)\ninput = torch.tensor(np.random.randn(3), dtype=torch.float64)",
+    "n = torch.tensor(2)\ninput = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "n = torch.tensor(2)\ninput = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "n = torch.tensor(2)\ninput = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "n = torch.tensor(2)\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "n = torch.tensor(2)\ninput = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "n = torch.tensor(2)\ninput = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "n = torch.tensor(2)\ninput = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "n = torch.tensor(2)\ninput = torch.tensor(np.random.randn(3), dtype=torch.half)",
+    "n = torch.tensor(2)\ninput = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "n = torch.tensor(2)\ninput = torch.tensor(np.random.randn(3), dtype=torch.float16)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(n,input):\n  return torch.special.polygamma(n,input)",
+    "tensorflow": "def tensorflow_call(n, input):\n    input = tf.cast(input, tf.float32)\n    return tf.math.polygamma(tf.cast(n, tf.float32), input)"
+  },
+  "llm_inputs": [
+    "n = torch.tensor(2)\ninput = torch.tensor([1.0, 2.0, 3.0])",
+    "n = torch.tensor(3)\ninput = torch.tensor([1.0, 2.0, 3.0])",
+    "n = torch.tensor(2)\ninput = torch.tensor([1.0, 2.0, 3.0])"
+  ]
+}

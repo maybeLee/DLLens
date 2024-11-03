@@ -1,0 +1,30 @@
+{
+  "function_name": "torch.is_tensor(obj)",
+  "inputs": [
+    "obj"
+  ],
+  "sample_inputs": [
+    "obj = torch.tensor([[1, 2], [3, 4]])",
+    "obj = torch.tensor(np.random.randint(-50, 50, (2,2,1)), dtype=torch.int64)",
+    "obj = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)",
+    "obj = torch.tensor(np.random.randint(-50, 50, (3,2)), dtype=torch.int64)",
+    "obj = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)",
+    "obj = torch.tensor(np.random.randint(-50, 50, (5,2)), dtype=torch.int64)",
+    "obj = torch.tensor(np.random.randint(-50, 50, (2,1)), dtype=torch.int64)",
+    "obj = torch.tensor(np.random.randint(-50, 50, (2,4)), dtype=torch.int64)",
+    "obj = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "obj = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)",
+    "obj = torch.tensor(np.random.randint(-50, 50, (1,2)), dtype=torch.int64)",
+    "obj = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "obj = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(obj):\n  return torch.is_tensor(obj)",
+    "tensorflow": "def tensorflow_call(obj):\n    return tf.is_tensor(obj)"
+  },
+  "llm_inputs": [
+    "obj = torch.tensor([[1, 2], [3, 4]])",
+    "obj = torch.tensor([[1, 2], [3, 4]])",
+    "obj = torch.tensor([[1, 2], [3, 4]])"
+  ]
+}

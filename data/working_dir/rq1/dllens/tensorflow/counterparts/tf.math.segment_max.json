@@ -1,0 +1,28 @@
+{
+  "function_name": "tf.math.segment_max(data,segment_ids,name=None)",
+  "inputs": [
+    "data",
+    "segment_ids"
+  ],
+  "sample_inputs": [
+    "data = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nsegment_ids = tf.constant([0, 0, 1, 1, 1], dtype=tf.int32)",
+    "data = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nsegment_ids = tf.constant([0, 0, 1, 1, 2], dtype=tf.int32)",
+    "segment_ids = tf.constant([0, 0, 1, 1, 1], dtype=tf.int32)\ndata = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "segment_ids = tf.constant([0, 0, 1, 1, 1], dtype=tf.int32)\ndata = tf.constant(np.random.randn(5), dtype='float64')",
+    "segment_ids = tf.constant([0, 0, 1, 1, 1], dtype=tf.int32)\ndata = tf.constant(np.random.randn(5), dtype='float32')",
+    "segment_ids = tf.constant([0, 0, 1, 1, 1], dtype=tf.int32)\ndata = tf.constant(np.random.randn(5), dtype='half')",
+    "segment_ids = tf.constant([0, 0, 1, 1, 1], dtype=tf.int32)\ndata = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "segment_ids = tf.constant([0, 0, 1, 1, 1], dtype=tf.int32)\ndata = tf.constant(np.random.randn(5,1,1,1), dtype='float32')",
+    "segment_ids = tf.constant([0, 0, 1, 1, 1], dtype=tf.int32)\ndata = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "segment_ids = tf.constant([0, 0, 1, 1, 1], dtype=tf.int32)\ndata = tf.constant(np.random.randn(5), dtype='float16')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(data,segment_ids):\n  return tf.math.segment_max(data,segment_ids)",
+    "pytorch": "def pytorch_call(data, segment_ids):\n    num_segments = segment_ids.max().item() + 1\n    max_values = torch.full((num_segments, *data.shape[1:]), float('-inf'), dtype=data.dtype)\n    for i in range(num_segments):\n        mask = segment_ids == i\n        if mask.any():\n            max_values[i] = data[mask].max(dim=0)[0]\n    return max_values"
+  },
+  "llm_inputs": [
+    "data = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nsegment_ids = tf.constant([0, 0, 1, 1, 1], dtype=tf.int32)",
+    "data = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nsegment_ids = tf.constant([0, 0, 1, 1, 1], dtype=tf.int32)",
+    "data = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nsegment_ids = tf.constant([0, 0, 1, 1, 2], dtype=tf.int32)"
+  ]
+}

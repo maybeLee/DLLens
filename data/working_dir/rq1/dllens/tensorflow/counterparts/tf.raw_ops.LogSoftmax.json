@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.raw_ops.LogSoftmax(logits,name=None)",
+  "inputs": [
+    "logits"
+  ],
+  "sample_inputs": [
+    "logits = tf.constant([1.0, 2.0, 3.0])",
+    "logits = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)",
+    "logits = tf.constant([[1.0, 2.0, 3.0], [1.0, 2.0, 3.0]])",
+    "logits = tf.constant(np.random.randn(1), dtype='float32')",
+    "logits = tf.constant(np.random.randn(5), dtype='float32')",
+    "logits = tf.constant(np.random.randn(3,1,1), dtype='float32')",
+    "logits = tf.constant(np.random.randn(3,1,1,1,1), dtype='float32')",
+    "logits = tf.constant(np.random.randn(3), dtype='float32')",
+    "logits = tf.constant(np.random.randn(3), dtype='float64')",
+    "logits = tf.constant(np.random.randn(3), dtype='float16')",
+    "logits = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "logits = tf.constant(np.random.randn(3), dtype='half')",
+    "logits = tf.constant(np.random.randn(3,1,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(logits):\n  return tf.raw_ops.LogSoftmax(logits=logits)",
+    "pytorch": "def pytorch_call(logits):\n    if logits.dtype == torch.half:\n        logits = logits.float()\n    return torch.nn.functional.log_softmax(logits, dim=-1)"
+  },
+  "llm_inputs": [
+    "logits = tf.constant([1.0, 2.0, 3.0])",
+    "logits = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)",
+    "logits = tf.constant([[1.0, 2.0, 3.0], [1.0, 2.0, 3.0]])"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "function_name": "torch.nn.functional.smooth_l1_loss(input, target, size_average=None, reduce=None, reduction='mean', beta=1.0)",
+  "inputs": [
+    "input",
+    "target",
+    "size_average",
+    "reduce",
+    "reduction",
+    "beta"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1.0, 2.0, 3.0])\ntarget = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\ntarget = torch.tensor([0.0, 1.0, 2.0], dtype=torch.float32)\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0",
+    "input = torch.tensor([1.0, 2.0, 3.0], dtype=torch.float32)\ntarget = torch.tensor([1.5, 2.5, 3.5], dtype=torch.float32)\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ntarget = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ntarget = torch.tensor(np.random.randn(3), dtype=torch.float64)",
+    "target = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ninput = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "target = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ninput = torch.tensor(np.random.randn(3), dtype=torch.float64)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ntarget = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "target = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ninput = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ntarget = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "target = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ninput = torch.tensor(np.random.randn(3), dtype=torch.half)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ntarget = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ntarget = torch.tensor(np.random.randn(3,1,1,1), dtype=torch.float32)",
+    "target = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ninput = torch.tensor(np.random.randn(3), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\ntarget = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 14.04",
+    "target = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ninput = torch.tensor(np.random.randn(3,1,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ntarget = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\ntarget = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 70.21",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ntarget = torch.tensor(np.random.randn(3), dtype=torch.float16)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\ntarget = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 69.1",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ntarget = torch.tensor(np.random.randn(3), dtype=torch.half)",
+    "target = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ninput = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ntarget = torch.tensor(np.random.randn(3,1,1), dtype=torch.float32)",
+    "target = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ninput = torch.tensor(np.random.randn(3), dtype=torch.float16)",
+    "target = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ninput = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([1.0, 2.0, 3.0])\ntarget = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 17.44",
+    "target = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0\ninput = torch.tensor(np.random.randn(), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,target,size_average=None,reduce=None,reduction='mean',beta=1.0):\n  return torch.nn.functional.smooth_l1_loss(input,target,size_average,reduce,reduction,beta)",
+    "tensorflow": "def tensorflow_call(input, target, size_average=None, reduce=None, reduction='mean', beta=1.0):\n    input = tf.cast(input, target.dtype)\n    diff = tf.abs(input - target)\n    loss = tf.where(diff < beta, 0.5 * tf.square(diff) / beta, diff - 0.5 * beta)\n    if reduction == 'mean':\n        return tf.reduce_mean(loss)\n    elif reduction == 'sum':\n        return tf.reduce_sum(loss)\n    else:\n        return loss"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1.0, 2.0, 3.0])\ntarget = torch.tensor([1.5, 2.5, 3.5])\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0",
+    "input = torch.tensor([0.5, 1.0, 1.5], dtype=torch.float32)\ntarget = torch.tensor([0.0, 1.0, 2.0], dtype=torch.float32)\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0",
+    "input = torch.tensor([1.0, 2.0, 3.0], dtype=torch.float32)\ntarget = torch.tensor([1.5, 2.5, 3.5], dtype=torch.float32)\nsize_average = None\nreduce = None\nreduction = 'mean'\nbeta = 1.0"
+  ]
+}

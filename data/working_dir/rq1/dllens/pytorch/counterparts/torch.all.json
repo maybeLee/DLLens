@@ -1,0 +1,36 @@
+{
+  "function_name": "torch.all(input, dim, keepdim=False, *, out=None)",
+  "inputs": [
+    "input",
+    "dim",
+    "keepdim"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 1], [1, 0], [0, 0]])\ndim = 1\nkeepdim = True",
+    "input = torch.tensor([[1, 1], [1, 0], [0, 1]])\ndim = 1\nkeepdim = False",
+    "input = torch.tensor([[True, True, False], [True, True, True]], dtype=torch.bool)\ndim = 1\nkeepdim = False",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (3,2)), dtype=torch.int32)",
+    "input = torch.tensor([[1, 1], [1, 0], [0, 0]])\nkeepdim = True\ndim = -1",
+    "input = torch.tensor([[1, 1], [1, 0], [0, 0]])\ndim = 1\nkeepdim = False",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (3,2)), dtype=torch.int64)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (5,2)), dtype=torch.int64)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (3,2,1,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 1], [1, 0], [0, 0]])\nkeepdim = True\ndim = 1",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (1,2)), dtype=torch.int64)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (3,2,1,1,1)), dtype=torch.int64)",
+    "input = torch.tensor([[1, 1], [1, 0], [0, 0]])\nkeepdim = True\ndim = 0",
+    "input = torch.tensor([[1, 1], [1, 0], [0, 0]])\nkeepdim = True\ndim = -2",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (3,5)), dtype=torch.int64)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (3,2,1)), dtype=torch.int64)",
+    "dim = 1\nkeepdim = True\ninput = torch.tensor(np.random.randint(-50, 50, (3,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,dim,keepdim=False):\n  return torch.all(input,dim,keepdim)",
+    "tensorflow": "def tensorflow_call(input, dim, keepdim=False):\n    input = tf.cast(input, tf.bool)\n    return tf.reduce_all(input, axis=dim, keepdims=keepdim)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 1], [1, 0], [0, 0]])\ndim = 1\nkeepdim = True",
+    "input = torch.tensor([[1, 1], [1, 0], [0, 1]])\ndim = 1\nkeepdim = False",
+    "input = torch.tensor([[True, True, False], [True, True, True]], dtype=torch.bool)\ndim = 1\nkeepdim = False"
+  ]
+}

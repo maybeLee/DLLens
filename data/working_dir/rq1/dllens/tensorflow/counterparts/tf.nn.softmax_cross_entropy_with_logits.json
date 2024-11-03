@@ -1,0 +1,35 @@
+{
+  "function_name": "tf.nn.softmax_cross_entropy_with_logits(labels,logits,axis=-1,name=None)",
+  "inputs": [
+    "labels",
+    "logits",
+    "axis"
+  ],
+  "sample_inputs": [
+    "labels = tf.constant([[1.0, 0.0], [0.0, 1.0]])\nlogits = tf.constant([[2.0, 0.5], [0.1, 1.0]])\naxis = -1",
+    "labels = tf.constant([[1.0, 0.0], [0.0, 1.0]])\nlogits = tf.constant([[2.0, 0.5], [0.1, 1.5]])\naxis = tf.constant(-1)",
+    "labels = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\nlogits = tf.constant([[2.0, 1.0, 0.1], [0.0, 1.0, 2.0]], dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)",
+    "labels = tf.constant([[1.0, 0.0], [0.0, 1.0]])\nlogits = tf.constant([[2.0, 0.5], [0.1, 1.0]])\naxis = 0",
+    "labels = tf.constant([[1.0, 0.0], [0.0, 1.0]])\naxis = -1\nlogits = tf.constant(np.random.randn(2,2), dtype='float16')",
+    "logits = tf.constant([[2.0, 0.5], [0.1, 1.0]])\naxis = -1\nlabels = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "logits = tf.constant([[2.0, 0.5], [0.1, 1.0]])\naxis = -1\nlabels = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "logits = tf.constant([[2.0, 0.5], [0.1, 1.0]])\naxis = -1\nlabels = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "logits = tf.constant([[2.0, 0.5], [0.1, 1.0]])\naxis = -1\nlabels = tf.constant(np.random.randn(2,2), dtype='half')",
+    "labels = tf.constant([[1.0, 0.0], [0.0, 1.0]])\naxis = -1\nlogits = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "labels = tf.constant([[1.0, 0.0], [0.0, 1.0]])\naxis = -1\nlogits = tf.constant(np.random.randn(2,2), dtype='half')",
+    "labels = tf.constant([[1.0, 0.0], [0.0, 1.0]])\nlogits = tf.constant([[2.0, 0.5], [0.1, 1.0]])\naxis = 1",
+    "logits = tf.constant([[2.0, 0.5], [0.1, 1.0]])\naxis = -1\nlabels = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "labels = tf.constant([[1.0, 0.0], [0.0, 1.0]])\naxis = -1\nlogits = tf.constant(np.random.randn(2,2), dtype='float64')",
+    "logits = tf.constant([[2.0, 0.5], [0.1, 1.0]])\naxis = -1\nlabels = tf.constant(np.random.randn(2), dtype='float32')",
+    "logits = tf.constant([[2.0, 0.5], [0.1, 1.0]])\naxis = -1\nlabels = tf.constant(np.random.randn(2,2), dtype='float16')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(labels,logits,axis=-1):\n  return tf.nn.softmax_cross_entropy_with_logits(labels,logits,axis)",
+    "pytorch": "def pytorch_call(labels, logits, axis=-1):\n    if isinstance(axis, torch.Tensor):\n        axis = axis.item()\n    logits = logits.float()\n    softmax_logits = torch.softmax(logits, dim=axis)\n    nll_loss = -torch.log(softmax_logits + 1e-10)\n    cross_entropy_loss = nll_loss * labels\n    return cross_entropy_loss.sum(dim=axis)"
+  },
+  "llm_inputs": [
+    "labels = tf.constant([[1.0, 0.0], [0.0, 1.0]])\nlogits = tf.constant([[2.0, 0.5], [0.1, 1.0]])\naxis = -1",
+    "labels = tf.constant([[1.0, 0.0], [0.0, 1.0]])\nlogits = tf.constant([[2.0, 0.5], [0.1, 1.5]])\naxis = tf.constant(-1)",
+    "labels = tf.constant([[1, 0, 0], [0, 1, 0]], dtype=tf.float32)\nlogits = tf.constant([[2.0, 1.0, 0.1], [0.0, 1.0, 2.0]], dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.raw_ops.PadV2(input,paddings,constant_values,name=None)",
+  "inputs": [
+    "input",
+    "paddings",
+    "constant_values"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\npaddings = tf.constant([[1, 1], [1, 1]], dtype=tf.int32)\nconstant_values = tf.constant(0, dtype=tf.float32)",
+    "paddings = tf.constant([[1, 1], [1, 1]], dtype=tf.int32)\nconstant_values = tf.constant(0, dtype=tf.float32)\ninput = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "paddings = tf.constant([[1, 1], [1, 1]], dtype=tf.int32)\nconstant_values = tf.constant(0, dtype=tf.float32)\ninput = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "paddings = tf.constant([[1, 1], [1, 1]], dtype=tf.int32)\nconstant_values = tf.constant(0, dtype=tf.float32)\ninput = tf.constant(np.random.randn(1,2), dtype='float32')",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\npaddings = tf.constant([[1, 1], [1, 1]], dtype=tf.int32)\nconstant_values = tf.constant(np.random.randn(), dtype='float32')",
+    "paddings = tf.constant([[1, 1], [1, 1]], dtype=tf.int32)\nconstant_values = tf.constant(0, dtype=tf.float32)\ninput = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "paddings = tf.constant([[1, 1], [1, 1]], dtype=tf.int32)\nconstant_values = tf.constant(0, dtype=tf.float32)\ninput = tf.constant(np.random.randn(2,4), dtype='float32')",
+    "paddings = tf.constant([[1, 1], [1, 1]], dtype=tf.int32)\nconstant_values = tf.constant(0, dtype=tf.float32)\ninput = tf.constant(np.random.randn(2,5), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,paddings,constant_values):\n  return tf.raw_ops.PadV2(input=input,paddings=paddings,constant_values=constant_values)",
+    "pytorch": "def pytorch_call(input, paddings, constant_values):\n    pad = paddings.flatten().tolist()\n    return torch.nn.functional.pad(input, pad, value=constant_values.item())"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\npaddings = tf.constant([[1, 1], [1, 1]], dtype=tf.int32)\nconstant_values = tf.constant(0, dtype=tf.float32)",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\npaddings = tf.constant([[1, 1], [1, 1]], dtype=tf.int32)\nconstant_values = tf.constant(0, dtype=tf.float32)",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\npaddings = tf.constant([[1, 1], [1, 1]], dtype=tf.int32)\nconstant_values = tf.constant(0, dtype=tf.float32)"
+  ]
+}

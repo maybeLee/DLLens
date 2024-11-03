@@ -1,0 +1,35 @@
+{
+  "function_name": "tf.image.random_flip_up_down(image,seed=None)",
+  "inputs": [
+    "image",
+    "seed"
+  ],
+  "sample_inputs": [
+    "image = tf.constant([[[1, 2], [3, 4]]], dtype=tf.float32)\nseed = tf.constant(42)",
+    "seed = tf.constant(42)\nimage = tf.constant(np.random.randn(1,2,1), dtype='float32')",
+    "seed = tf.constant(42)\nimage = tf.constant(np.random.randn(1,2,2), dtype='float64')",
+    "seed = tf.constant(42)\nimage = tf.constant(np.random.randn(5,2,2), dtype='float32')",
+    "seed = tf.constant(42)\nimage = tf.constant(np.random.randn(1,2,2), dtype='float32')",
+    "image = tf.constant([[[1, 2], [3, 4]]], dtype=tf.float32)\nseed = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "image = tf.constant([[[1, 2], [3, 4]]], dtype=tf.float32)\nseed = tf.constant(np.random.randint(-50, 50, (1)), dtype='int32')",
+    "image = tf.constant([[[1, 2], [3, 4]]], dtype=tf.float32)\nseed = tf.constant(np.random.randint(-50, 50, (1,1)), dtype='int32')",
+    "seed = tf.constant(42)\nimage = tf.constant(np.random.randn(1,2,2), dtype='float16')",
+    "seed = tf.constant(42)\nimage = tf.constant(np.random.randn(1,2,2,1), dtype='float32')",
+    "image = tf.constant([[[1, 2], [3, 4]]], dtype=tf.float32)\nseed = tf.constant(np.random.randint(-50, 50, ()), dtype='int64')",
+    "image = tf.constant([[[1, 2], [3, 4]]], dtype=tf.float32)\nseed = tf.constant(np.random.randint(-50, 50, (1,1,1,1)), dtype='int32')",
+    "seed = tf.constant(42)\nimage = tf.constant(np.random.randn(1,2,2), dtype='half')",
+    "seed = tf.constant(42)\nimage = tf.constant(np.random.randn(1,5,2), dtype='float32')",
+    "image = tf.constant([[[1, 2], [3, 4]]], dtype=tf.float32)\nseed = tf.constant(np.random.randint(-50, 50, (1,1,1)), dtype='int32')",
+    "image = tf.constant([[[1, 2], [3, 4]]], dtype=tf.float32)\nseed = tf.constant(np.random.randint(-50, 50, (1,1,1,1,1)), dtype='int32')",
+    "seed = tf.constant(42)\nimage = tf.constant(np.random.randn(1,1,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(image,seed=None):\n  return tf.image.random_flip_up_down(image,seed)",
+    "pytorch": "def pytorch_call(image, seed=None):\n    if seed is not None:\n        torch.manual_seed(seed.item())\n    if torch.rand(1).item() > 0.5:\n        return image\n    else:\n        return torch.flip(image, [2])"
+  },
+  "llm_inputs": [
+    "image = tf.constant([[[1, 2], [3, 4]]], dtype=tf.float32)\nseed = tf.constant(42)",
+    "image = tf.constant([[[1, 2], [3, 4]]], dtype=tf.float32)\nseed = tf.constant(42)",
+    "image = tf.constant([[[1, 2], [3, 4]]], dtype=tf.float32)\nseed = tf.constant(42)"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "function_name": "torch.broadcast_shapes(*shapes)",
+  "inputs": [
+    "*shapes"
+  ],
+  "sample_inputs": [
+    "shapes = (torch.tensor([2, 3]), torch.tensor([3, 1]), torch.tensor([2, 1]))",
+    "shapes = (torch.tensor([2, 3]), torch.tensor([3, 1]), torch.tensor([1, 4]))"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(*shapes):\n  return torch.broadcast_shapes(*shapes)",
+    "tensorflow": "def tensorflow_call(*shapes):\n    shape_list = [tf.shape(shape) for shape in shapes]\n    broadcasted_shape = tf.TensorArray(dtype=tf.int32, size=0, dynamic_size=True)\n    max_rank = max((tf.rank(shape) for shape in shape_list)) if shape_list else 0\n    for i in range(max_rank):\n        dim_sizes = []\n        for shape in shape_list:\n            size = tf.cond(tf.greater(tf.rank(shape), i), lambda : shape[i], lambda : tf.constant(1))\n            dim_sizes.append(size)\n        broadcasted_dim = tf.reduce_max(dim_sizes)\n        broadcasted_shape = broadcasted_shape.write(i, broadcasted_dim)\n    return broadcasted_shape.stack()"
+  },
+  "llm_inputs": [
+    "shapes = (torch.tensor([2, 3]), torch.tensor([3, 1]), torch.tensor([2, 1]))",
+    "shapes = (torch.tensor([2, 3]), torch.tensor([3, 1]), torch.tensor([2, 1]))",
+    "shapes = (torch.tensor([2, 3]), torch.tensor([3, 1]), torch.tensor([1, 4]))"
+  ]
+}

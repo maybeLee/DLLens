@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.tensor_scatter_nd_update(tensor,indices,updates,name=None)",
+  "inputs": [
+    "tensor",
+    "indices",
+    "updates"
+  ],
+  "sample_inputs": [
+    "tensor = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nindices = tf.constant([[0, 1], [1, 2]], dtype=tf.int32)\nupdates = tf.constant([10, 20], dtype=tf.int32)",
+    "tensor = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([[0, 1], [1, 0]])\nupdates = tf.constant([10, 20])",
+    "tensor = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([[0, 1], [1, 2]])\nupdates = tf.constant([10, 20])",
+    "indices = tf.constant([[0, 1], [1, 2]], dtype=tf.int32)\nupdates = tf.constant([10, 20], dtype=tf.int32)\ntensor = tf.constant(np.random.randint(-50, 50, (4,3)), dtype='int32')",
+    "tensor = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nindices = tf.constant([[0, 1], [1, 2]], dtype=tf.int32)\nupdates = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "indices = tf.constant([[0, 1], [1, 2]], dtype=tf.int32)\nupdates = tf.constant([10, 20], dtype=tf.int32)\ntensor = tf.constant(np.random.randint(-50, 50, (2,3)), dtype='int32')",
+    "indices = tf.constant([[0, 1], [1, 2]], dtype=tf.int32)\nupdates = tf.constant([10, 20], dtype=tf.int32)\ntensor = tf.constant(np.random.randint(-50, 50, (2,5)), dtype='int32')",
+    "indices = tf.constant([[0, 1], [1, 2]], dtype=tf.int32)\nupdates = tf.constant([10, 20], dtype=tf.int32)\ntensor = tf.constant(np.random.randint(-50, 50, (2,4)), dtype='int32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(tensor,indices,updates):\n  return tf.tensor_scatter_nd_update(tensor,indices,updates)",
+    "pytorch": "def pytorch_call(tensor, indices, updates):\n    indices = indices.long()\n    tensor[indices[:, 0], indices[:, 1]] = updates\n    return tensor"
+  },
+  "llm_inputs": [
+    "tensor = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nindices = tf.constant([[0, 1], [1, 2]], dtype=tf.int32)\nupdates = tf.constant([10, 20], dtype=tf.int32)",
+    "tensor = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([[0, 1], [1, 0]])\nupdates = tf.constant([10, 20])",
+    "tensor = tf.constant([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nindices = tf.constant([[0, 1], [1, 2]])\nupdates = tf.constant([10, 20])"
+  ]
+}

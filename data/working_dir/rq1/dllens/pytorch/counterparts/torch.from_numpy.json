@@ -1,0 +1,19 @@
+{
+  "function_name": "torch.from_numpy(ndarray)",
+  "inputs": [
+    "ndarray"
+  ],
+  "sample_inputs": [
+    "ndarray = np.array([[1, 2, 3], [4, 5, 6]])",
+    "ndarray = np.array([[1, 2], [3, 4]], dtype=np.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(ndarray):\n  return torch.from_numpy(ndarray)",
+    "tensorflow": "def tensorflow_call(ndarray):\n    return tf.convert_to_tensor(ndarray)"
+  },
+  "llm_inputs": [
+    "ndarray = np.array([[1, 2, 3], [4, 5, 6]])",
+    "ndarray = np.array([[1, 2, 3], [4, 5, 6]])",
+    "ndarray = np.array([[1, 2], [3, 4]], dtype=np.float32)"
+  ]
+}

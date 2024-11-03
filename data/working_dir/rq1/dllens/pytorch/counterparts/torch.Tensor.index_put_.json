@@ -1,0 +1,30 @@
+{
+  "function_name": "torch.Tensor.index_put_(input, indices, values, accumulate=False)",
+  "inputs": [
+    "input",
+    "indices",
+    "values",
+    "accumulate"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\nindices = (torch.tensor([0, 1]), torch.tensor([1, 2]))\nvalues = torch.tensor([10, 20], dtype=torch.float32)\naccumulate = False",
+    "indices = (torch.tensor([0, 1]), torch.tensor([1, 2]))\nvalues = torch.tensor([10, 20], dtype=torch.float32)\naccumulate = False\ninput = torch.tensor(np.random.randn(2,5), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\nindices = (torch.tensor([0, 1]), torch.tensor([1, 2]))\naccumulate = False\nvalues = torch.tensor(np.random.randn(1), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\nindices = (torch.tensor([0, 1]), torch.tensor([1, 2]))\nvalues = torch.tensor([10, 20], dtype=torch.float32)\naccumulate = True",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\nindices = (torch.tensor([0, 1]), torch.tensor([1, 2]))\naccumulate = False\nvalues = torch.tensor(np.random.randn(), dtype=torch.float32)",
+    "indices = (torch.tensor([0, 1]), torch.tensor([1, 2]))\nvalues = torch.tensor([10, 20], dtype=torch.float32)\naccumulate = False\ninput = torch.tensor(np.random.randn(5,3), dtype=torch.float32)",
+    "indices = (torch.tensor([0, 1]), torch.tensor([1, 2]))\nvalues = torch.tensor([10, 20], dtype=torch.float32)\naccumulate = False\ninput = torch.tensor(np.random.randn(2,3), dtype=torch.float32)",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\nindices = (torch.tensor([0, 1]), torch.tensor([1, 2]))\naccumulate = False\nvalues = torch.tensor(np.random.randn(2), dtype=torch.float32)",
+    "indices = (torch.tensor([0, 1]), torch.tensor([1, 2]))\nvalues = torch.tensor([10, 20], dtype=torch.float32)\naccumulate = False\ninput = torch.tensor(np.random.randn(4,3), dtype=torch.float32)",
+    "indices = (torch.tensor([0, 1]), torch.tensor([1, 2]))\nvalues = torch.tensor([10, 20], dtype=torch.float32)\naccumulate = False\ninput = torch.tensor(np.random.randn(3,3), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,indices,values,accumulate=False):\n  return torch.Tensor.index_put_(input,indices,values,accumulate)",
+    "tensorflow": "def tensorflow_call(input, indices, values, accumulate=False):\n    indices = tf.stack(indices, axis=-1)\n    if values.shape.ndims == 0:\n        values = tf.expand_dims(values, axis=0)\n    if values.shape[0] != indices.shape[0]:\n        values = tf.broadcast_to(values, (indices.shape[0],) + values.shape[1:])\n    if accumulate:\n        existing_values = tf.gather_nd(input, indices)\n        updated_values = existing_values + values\n        input = tf.tensor_scatter_nd_update(input, indices, updated_values)\n    else:\n        input = tf.tensor_scatter_nd_update(input, indices, values)\n    return input"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\nindices = (torch.tensor([0, 1]), torch.tensor([1, 2]))\nvalues = torch.tensor([10, 20], dtype=torch.float32)\naccumulate = False",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\nindices = (torch.tensor([0, 1]), torch.tensor([1, 2]))\nvalues = torch.tensor([10, 20], dtype=torch.float32)\naccumulate = False",
+    "input = torch.tensor([[1, 2, 3], [4, 5, 6]], dtype=torch.float32)\nindices = (torch.tensor([0, 1]), torch.tensor([1, 2]))\nvalues = torch.tensor([10, 20], dtype=torch.float32)\naccumulate = False"
+  ]
+}

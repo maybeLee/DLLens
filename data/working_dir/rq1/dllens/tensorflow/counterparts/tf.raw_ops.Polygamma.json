@@ -1,0 +1,35 @@
+{
+  "function_name": "tf.raw_ops.Polygamma(a,x,name=None)",
+  "inputs": [
+    "a",
+    "x"
+  ],
+  "sample_inputs": [
+    "a = tf.constant(2.0)\nx = tf.constant([1.0, 2.0, 3.0])",
+    "a = tf.constant(1.0)\nx = tf.constant([1.0, 2.0, 3.0])",
+    "a = tf.constant(3.0)\nx = tf.constant([1.0, 2.0, 3.0])",
+    "x = tf.constant([1.0, 2.0, 3.0])\na = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "a = tf.constant(2.0)\nx = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "a = tf.constant(2.0)\nx = tf.constant(np.random.randn(3,1,1), dtype='float32')",
+    "x = tf.constant([1.0, 2.0, 3.0])\na = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "a = tf.constant(2.0)\nx = tf.constant(np.random.randn(3,1,1,1), dtype='float32')",
+    "a = tf.constant(2.0)\nx = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant([1.0, 2.0, 3.0])\na = tf.constant(np.random.randn(1), dtype='float32')",
+    "a = tf.constant(2.0)\nx = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant([1.0, 2.0, 3.0])\na = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "a = tf.constant(2.0)\nx = tf.constant(np.random.randn(3,1,1,1,1), dtype='float32')",
+    "a = tf.constant(2.0)\nx = tf.constant(np.random.randn(5), dtype='float32')",
+    "x = tf.constant([1.0, 2.0, 3.0])\na = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "a = tf.constant(2.0)\nx = tf.constant(np.random.randn(3), dtype='float32')",
+    "x = tf.constant([1.0, 2.0, 3.0])\na = tf.constant(np.random.randn(), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(a,x):\n  return tf.raw_ops.Polygamma(a=a,x=x)",
+    "pytorch": "def pytorch_call(a, x):\n    if a < 0 or a != int(a):\n        return torch.full_like(x, float('nan')).view_as(x)\n    return torch.polygamma(int(a.item()), x)"
+  },
+  "llm_inputs": [
+    "a = tf.constant(2.0)\nx = tf.constant([1.0, 2.0, 3.0])",
+    "a = tf.constant(1.0)\nx = tf.constant([1.0, 2.0, 3.0])",
+    "a = tf.constant(3.0)\nx = tf.constant([1.0, 2.0, 3.0])"
+  ]
+}

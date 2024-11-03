@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.keras.activations.tanh(x)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5])",
+    "x = tf.constant([1.0, 2.0, 3.0])",
+    "x = tf.constant(np.random.randn(5), dtype='float64')",
+    "x = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(4), dtype='float32')",
+    "x = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='float16')",
+    "x = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='half')",
+    "x = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.keras.activations.tanh(x)",
+    "pytorch": "def pytorch_call(x):\n    return torch.tanh(x)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5])",
+    "x = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5])",
+    "x = tf.constant([1.0, 2.0, 3.0])"
+  ]
+}

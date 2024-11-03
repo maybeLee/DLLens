@@ -1,0 +1,33 @@
+{
+  "function_name": "tf.raw_ops.Complex(real,imag,Tout=tf.dtypes.complex64,name=None)",
+  "inputs": [
+    "real",
+    "imag",
+    "Tout"
+  ],
+  "sample_inputs": [
+    "real = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nimag = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nTout = tf.dtypes.complex64",
+    "real = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nTout = tf.dtypes.complex64\nimag = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "imag = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nTout = tf.dtypes.complex64\nreal = tf.constant(np.random.randn(3), dtype='float32')",
+    "imag = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nTout = tf.dtypes.complex64\nreal = tf.constant(np.random.randn(), dtype='float32')",
+    "real = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nTout = tf.dtypes.complex64\nimag = tf.constant(np.random.randn(3), dtype='float32')",
+    "imag = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nTout = tf.dtypes.complex64\nreal = tf.constant(np.random.randn(3,1), dtype='float32')",
+    "imag = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nTout = tf.dtypes.complex64\nreal = tf.constant(np.random.randn(3,1,1,1), dtype='float32')",
+    "imag = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nTout = tf.dtypes.complex64\nreal = tf.constant(np.random.randn(3,1,1,1,1), dtype='float32')",
+    "real = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nTout = tf.dtypes.complex64\nimag = tf.constant(np.random.randn(3,1,1), dtype='float32')",
+    "real = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nTout = tf.dtypes.complex64\nimag = tf.constant(np.random.randn(1), dtype='float32')",
+    "real = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nTout = tf.dtypes.complex64\nimag = tf.constant(np.random.randn(3,1,1,1), dtype='float32')",
+    "real = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nTout = tf.dtypes.complex64\nimag = tf.constant(np.random.randn(), dtype='float32')",
+    "imag = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nTout = tf.dtypes.complex64\nreal = tf.constant(np.random.randn(3,1,1), dtype='float32')",
+    "real = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nTout = tf.dtypes.complex64\nimag = tf.constant(np.random.randn(3,1,1,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(real,imag,Tout=tf.dtypes.complex64):\n  return tf.raw_ops.Complex(real=real,imag=imag,Tout=Tout)",
+    "pytorch": "def pytorch_call(real, imag=None, Tout=torch.complex64):\n    if imag is None:\n        imag = torch.zeros_like(real)\n    return torch.complex(real, imag)"
+  },
+  "llm_inputs": [
+    "real = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nimag = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nTout = tf.dtypes.complex64",
+    "real = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nimag = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nTout = tf.dtypes.complex64",
+    "real = tf.constant([1.0, 2.0, 3.0], dtype=tf.float32)\nimag = tf.constant([4.0, 5.0, 6.0], dtype=tf.float32)\nTout = tf.dtypes.complex64"
+  ]
+}

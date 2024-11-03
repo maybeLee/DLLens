@@ -1,0 +1,25 @@
+{
+  "function_name": "torch.nn.init.eye_(tensor)",
+  "inputs": [
+    "tensor"
+  ],
+  "sample_inputs": [
+    "tensor = torch.tensor([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]])",
+    "tensor = torch.tensor(np.random.randn(3,3), dtype=torch.half)",
+    "tensor = torch.tensor(np.random.randn(3,1), dtype=torch.float32)",
+    "tensor = torch.tensor(np.random.randn(3,5), dtype=torch.float32)",
+    "tensor = torch.tensor(np.random.randn(3,3), dtype=torch.float16)",
+    "tensor = torch.tensor(np.random.randn(5,3), dtype=torch.float32)",
+    "tensor = torch.tensor(np.random.randn(3,3), dtype=torch.float32)",
+    "tensor = torch.tensor(np.random.randn(3,3), dtype=torch.float64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(tensor):\n  return torch.nn.init.eye_(tensor)",
+    "tensorflow": "def tensorflow_call(tensor):\n    shape = tf.shape(tensor)\n    identity_tensor = tf.linalg.eye(num_rows=shape[0], num_columns=shape[1], batch_shape=shape[2:])\n    return identity_tensor"
+  },
+  "llm_inputs": [
+    "tensor = torch.tensor([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]])",
+    "tensor = torch.tensor([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]])",
+    "tensor = torch.tensor([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]])"
+  ]
+}

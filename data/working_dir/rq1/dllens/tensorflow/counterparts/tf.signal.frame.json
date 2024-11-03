@@ -1,0 +1,42 @@
+{
+  "function_name": "tf.signal.frame(signal,frame_length,frame_step,pad_end=False,pad_value=0,axis=-1,name=None)",
+  "inputs": [
+    "signal",
+    "frame_length",
+    "frame_step",
+    "pad_end",
+    "pad_value",
+    "axis"
+  ],
+  "sample_inputs": [
+    "signal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nframe_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\npad_value = tf.constant(0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)",
+    "signal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nframe_length = 2\nframe_step = 1\npad_end = False\npad_value = 0\naxis = -1",
+    "signal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nframe_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\naxis = tf.constant(-1, dtype=tf.int32)\npad_value = tf.constant(np.random.randn(1,1,1,1), dtype='float32')",
+    "frame_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\npad_value = tf.constant(0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)\nsignal = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "signal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nframe_length = tf.constant(3, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\npad_value = tf.constant(0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)\nframe_step = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "signal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nframe_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\naxis = tf.constant(-1, dtype=tf.int32)\npad_value = tf.constant(np.random.randn(1,1), dtype='float32')",
+    "signal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nframe_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\naxis = tf.constant(-1, dtype=tf.int32)\npad_value = tf.constant(np.random.randn(1,1,1), dtype='float32')",
+    "frame_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\npad_value = tf.constant(0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)\nsignal = tf.constant(np.random.randn(5), dtype='float64')",
+    "signal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nframe_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\naxis = tf.constant(-1, dtype=tf.int32)\npad_value = tf.constant(np.random.randn(), dtype='float32')",
+    "frame_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\npad_value = tf.constant(0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)\nsignal = tf.constant(np.random.randn(5,1,1,1), dtype='float32')",
+    "signal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nframe_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\naxis = tf.constant(-1, dtype=tf.int32)\npad_value = tf.constant(np.random.randn(1,1,1,1,1), dtype='float32')",
+    "signal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nframe_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\naxis = tf.constant(-1, dtype=tf.int32)\npad_value = tf.constant(np.random.randn(), dtype='half')",
+    "signal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nframe_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\naxis = tf.constant(-1, dtype=tf.int32)\npad_value = tf.constant(np.random.randn(), dtype='float16')",
+    "signal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nframe_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\naxis = tf.constant(-1, dtype=tf.int32)\npad_value = tf.constant(np.random.randn(), dtype='float64')",
+    "frame_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\npad_value = tf.constant(0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)\nsignal = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "frame_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\npad_value = tf.constant(0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)\nsignal = tf.constant(np.random.randn(5), dtype='float16')",
+    "signal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nframe_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\naxis = tf.constant(-1, dtype=tf.int32)\npad_value = tf.constant(np.random.randn(1), dtype='float32')",
+    "frame_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\npad_value = tf.constant(0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)\nsignal = tf.constant(np.random.randn(5), dtype='half')",
+    "frame_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\npad_value = tf.constant(0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)\nsignal = tf.constant(np.random.randn(5,1,1), dtype='float32')",
+    "frame_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\npad_value = tf.constant(0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)\nsignal = tf.constant(np.random.randn(5), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(signal,frame_length,frame_step,pad_end=False,pad_value=0,axis=-1):\n  return tf.signal.frame(signal,frame_length,frame_step,pad_end,pad_value,axis)",
+    "pytorch": "def pytorch_call(signal, frame_length, frame_step, pad_end=False, pad_value=0, axis=-1):\n    if signal.dim() != 1:\n        return torch.empty((0,))\n    if isinstance(frame_length, torch.Tensor):\n        frame_length = frame_length.item()\n    if isinstance(frame_step, torch.Tensor):\n        frame_step = frame_step.item()\n    if isinstance(pad_end, torch.Tensor):\n        pad_end = pad_end.item()\n    if isinstance(pad_value, torch.Tensor):\n        pad_value = pad_value.item()\n    if isinstance(axis, torch.Tensor):\n        axis = axis.item()\n    signal_length = signal.size(0)\n    if pad_end:\n        num_frames = (signal_length + frame_step - 1) // frame_step\n        total_length = num_frames * frame_step + frame_length - 1\n        padded_signal = torch.cat([signal, torch.full((total_length - signal_length,), pad_value)])\n    else:\n        total_length = signal_length\n        padded_signal = signal\n    num_frames = (total_length - frame_length) // frame_step + 1\n    if num_frames <= 0:\n        return torch.empty((0,))\n    frames = torch.empty((num_frames, frame_length), dtype=signal.dtype)\n    for i in range(num_frames):\n        start = i * frame_step\n        frames[i] = padded_signal[start:start + frame_length]\n    return frames"
+  },
+  "llm_inputs": [
+    "signal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nframe_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\npad_value = tf.constant(0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)",
+    "signal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nframe_length = tf.constant(3, dtype=tf.int32)\nframe_step = tf.constant(2, dtype=tf.int32)\npad_end = tf.constant(False, dtype=tf.bool)\npad_value = tf.constant(0, dtype=tf.float32)\naxis = tf.constant(-1, dtype=tf.int32)",
+    "signal = tf.constant([1, 2, 3, 4, 5], dtype=tf.float32)\nframe_length = 2\nframe_step = 1\npad_end = False\npad_value = 0\naxis = -1"
+  ]
+}

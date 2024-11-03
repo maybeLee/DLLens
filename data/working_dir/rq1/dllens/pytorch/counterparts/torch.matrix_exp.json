@@ -1,0 +1,22 @@
+{
+  "function_name": "torch.matrix_exp(input)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])",
+    "input = torch.tensor(np.random.randn(2,2,1,1,1), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2,2), dtype=torch.float32)",
+    "input = torch.tensor(np.random.randn(2,2), dtype=torch.float64)",
+    "input = torch.tensor(np.random.randn(2,2,1,1), dtype=torch.float32)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.matrix_exp(input)",
+    "tensorflow": "def tensorflow_call(input):\n    return tf.linalg.expm(input)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])",
+    "input = torch.tensor([[1.0, 2.0], [3.0, 4.0]])"
+  ]
+}

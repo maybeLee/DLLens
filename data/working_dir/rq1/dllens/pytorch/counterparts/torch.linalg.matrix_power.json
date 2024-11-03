@@ -1,0 +1,25 @@
+{
+  "function_name": "torch.linalg.matrix_power(A, n, *, out=None)",
+  "inputs": [
+    "A",
+    "n"
+  ],
+  "sample_inputs": [
+    "A = torch.tensor([[1, 2], [3, 4]])\nn = torch.tensor(2)",
+    "A = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nn = torch.tensor(2)",
+    "A = torch.tensor([[1, 2], [3, 4]])\nn = torch.tensor(3)",
+    "n = torch.tensor(2)\nA = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int32)",
+    "n = torch.tensor(2)\nA = torch.tensor(np.random.randint(-50, 50, (2,2,1,1,1)), dtype=torch.int64)",
+    "n = torch.tensor(2)\nA = torch.tensor(np.random.randint(-50, 50, (2,2,1,1)), dtype=torch.int64)",
+    "n = torch.tensor(2)\nA = torch.tensor(np.random.randint(-50, 50, (2,2)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(A,n):\n  return torch.linalg.matrix_power(A,n)",
+    "tensorflow": "def tensorflow_call(A, n):\n    result = A\n    for _ in range(1, n.numpy()):\n        result = tf.linalg.matmul(result, A)\n    return result"
+  },
+  "llm_inputs": [
+    "A = torch.tensor([[1, 2], [3, 4]])\nn = torch.tensor(2)",
+    "A = torch.tensor([[1, 2], [3, 4]], dtype=torch.float32)\nn = torch.tensor(2)",
+    "A = torch.tensor([[1, 2], [3, 4]])\nn = torch.tensor(3)"
+  ]
+}

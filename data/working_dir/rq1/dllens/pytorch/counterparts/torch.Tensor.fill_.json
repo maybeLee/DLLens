@@ -1,0 +1,39 @@
+{
+  "function_name": "torch.Tensor.fill_(input, value)",
+  "inputs": [
+    "input",
+    "value"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([1, 2, 3])\nvalue = 5",
+    "input = torch.tensor([1, 2, 3])\nvalue = 1",
+    "input = torch.tensor([1, 2, 3])\nvalue = -1",
+    "value = 5\ninput = torch.tensor(np.random.randint(-50, 50, (3)), dtype=torch.int32)",
+    "value = 5\ninput = torch.tensor(np.random.randint(-50, 50, (5)), dtype=torch.int64)",
+    "value = 5\ninput = torch.tensor(np.random.randint(-50, 50, (3)), dtype=torch.int64)",
+    "value = 5\ninput = torch.tensor(np.random.randint(-50, 50, ()), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3])\nvalue = -5",
+    "value = 5\ninput = torch.tensor(np.random.randint(-50, 50, (3,1,1,1)), dtype=torch.int64)",
+    "value = 5\ninput = torch.tensor(np.random.randint(-50, 50, (2)), dtype=torch.int64)",
+    "value = 5\ninput = torch.tensor(np.random.randint(-50, 50, (3,1,1)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3])\nvalue = 4",
+    "input = torch.tensor([1, 2, 3])\nvalue = 2",
+    "input = torch.tensor([1, 2, 3])\nvalue = -3",
+    "value = 5\ninput = torch.tensor(np.random.randint(-50, 50, (1)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3])\nvalue = -2",
+    "input = torch.tensor([1, 2, 3])\nvalue = 3",
+    "value = 5\ninput = torch.tensor(np.random.randint(-50, 50, (3,1,1,1,1)), dtype=torch.int64)",
+    "input = torch.tensor([1, 2, 3])\nvalue = -4",
+    "input = torch.tensor([1, 2, 3])\nvalue = 0",
+    "value = 5\ninput = torch.tensor(np.random.randint(-50, 50, (3,1)), dtype=torch.int64)"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input,value):\n  return torch.Tensor.fill_(input,value)",
+    "tensorflow": "def tensorflow_call(input, value):\n    return tf.fill(tf.shape(input), value)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([1, 2, 3])\nvalue = 5",
+    "input = torch.tensor([1, 2, 3])\nvalue = 5",
+    "input = torch.tensor([1, 2, 3])\nvalue = 5"
+  ]
+}

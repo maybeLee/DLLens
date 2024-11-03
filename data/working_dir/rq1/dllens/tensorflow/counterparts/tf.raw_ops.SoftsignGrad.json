@@ -1,0 +1,22 @@
+{
+  "function_name": "tf.raw_ops.SoftsignGrad(gradients,features,name=None)",
+  "inputs": [
+    "gradients",
+    "features"
+  ],
+  "sample_inputs": [
+    "gradients = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\nfeatures = tf.constant([[0.5, 0.6], [0.7, 0.8]], dtype=tf.float32)",
+    "gradients = tf.constant([[0.1, -0.2], [0.3, 0.4]], dtype=tf.float32)\nfeatures = tf.constant([[0.5, 0.6], [0.7, 0.8]], dtype=tf.float32)",
+    "gradients = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\nfeatures = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "features = tf.constant([[0.5, 0.6], [0.7, 0.8]], dtype=tf.float32)\ngradients = tf.constant(np.random.randn(2,2), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(gradients,features):\n  return tf.raw_ops.SoftsignGrad(gradients=gradients,features=features)",
+    "pytorch": "def pytorch_call(gradients, features):\n    softsign_features = features / (1 + torch.abs(features))\n    softsign_grad = 1 / (1 + torch.abs(features)) ** 2\n    return gradients * softsign_grad"
+  },
+  "llm_inputs": [
+    "gradients = tf.constant([[0.1, 0.2], [0.3, 0.4]], dtype=tf.float32)\nfeatures = tf.constant([[0.5, 0.6], [0.7, 0.8]], dtype=tf.float32)",
+    "gradients = tf.constant([[0.1, -0.2], [0.3, 0.4]], dtype=tf.float32)\nfeatures = tf.constant([[0.5, 0.6], [0.7, 0.8]], dtype=tf.float32)",
+    "gradients = tf.constant([[0.1, -0.2], [0.3, 0.4]], dtype=tf.float32)\nfeatures = tf.constant([[0.5, 0.6], [0.7, 0.8]], dtype=tf.float32)"
+  ]
+}

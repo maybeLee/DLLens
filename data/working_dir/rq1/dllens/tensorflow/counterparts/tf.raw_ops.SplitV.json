@@ -1,0 +1,30 @@
+{
+  "function_name": "tf.raw_ops.SplitV(value,size_splits,axis,num_split,name=None)",
+  "inputs": [
+    "value",
+    "size_splits",
+    "axis",
+    "num_split"
+  ],
+  "sample_inputs": [
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nsize_splits = tf.constant([1, 2], dtype=tf.int32)\naxis = tf.constant(1, dtype=tf.int32)\nnum_split = tf.constant(2, dtype=tf.int32)",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)\nsize_splits = tf.constant([1, 2], dtype=tf.int32)\naxis = tf.constant(1, dtype=tf.int32)\nnum_split = tf.constant(2, dtype=tf.int32)",
+    "size_splits = tf.constant([1, 2], dtype=tf.int32)\naxis = tf.constant(1, dtype=tf.int32)\nnum_split = tf.constant(2, dtype=tf.int32)\nvalue = tf.constant(np.random.randint(-50, 50, (5,3)), dtype='int32')",
+    "size_splits = tf.constant([1, 2], dtype=tf.int32)\naxis = tf.constant(1, dtype=tf.int32)\nnum_split = tf.constant(2, dtype=tf.int32)\nvalue = tf.constant(np.random.randint(-50, 50, (2,3)), dtype='int32')",
+    "size_splits = tf.constant([1, 2], dtype=tf.int32)\naxis = tf.constant(1, dtype=tf.int32)\nnum_split = tf.constant(2, dtype=tf.int32)\nvalue = tf.constant(np.random.randint(-50, 50, (4,3)), dtype='int32')",
+    "size_splits = tf.constant([1, 2], dtype=tf.int32)\naxis = tf.constant(1, dtype=tf.int32)\nnum_split = tf.constant(2, dtype=tf.int32)\nvalue = tf.constant(np.random.randint(-50, 50, (2,3,1,1,1)), dtype='int32')",
+    "size_splits = tf.constant([1, 2], dtype=tf.int32)\naxis = tf.constant(1, dtype=tf.int32)\nnum_split = tf.constant(2, dtype=tf.int32)\nvalue = tf.constant(np.random.randint(-50, 50, (2,3,1)), dtype='int32')",
+    "size_splits = tf.constant([1, 2], dtype=tf.int32)\naxis = tf.constant(1, dtype=tf.int32)\nnum_split = tf.constant(2, dtype=tf.int32)\nvalue = tf.constant(np.random.randint(-50, 50, (2,3,1,1)), dtype='int32')",
+    "size_splits = tf.constant([1, 2], dtype=tf.int32)\naxis = tf.constant(1, dtype=tf.int32)\nnum_split = tf.constant(2, dtype=tf.int32)\nvalue = tf.constant(np.random.randint(-50, 50, (1,3)), dtype='int32')",
+    "size_splits = tf.constant([1, 2], dtype=tf.int32)\naxis = tf.constant(1, dtype=tf.int32)\nnum_split = tf.constant(2, dtype=tf.int32)\nvalue = tf.constant(np.random.randint(-50, 50, (2,3)), dtype='int64')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(value,size_splits,axis,num_split):\n  return tf.raw_ops.SplitV(value=value,size_splits=size_splits,axis=axis,num_split=num_split)",
+    "pytorch": "def pytorch_call(value, size_splits, axis, num_split):\n    axis = axis.item()\n    size_splits = size_splits.tolist()\n    return torch.split(value, size_splits, dim=axis)"
+  },
+  "llm_inputs": [
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.int32)\nsize_splits = tf.constant([1, 2], dtype=tf.int32)\naxis = tf.constant(1, dtype=tf.int32)\nnum_split = tf.constant(2, dtype=tf.int32)",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)\nsize_splits = tf.constant([1, 2], dtype=tf.int32)\naxis = tf.constant(1, dtype=tf.int32)\nnum_split = tf.constant(2, dtype=tf.int32)",
+    "value = tf.constant([[1, 2, 3], [4, 5, 6]], dtype=tf.float32)\nsize_splits = tf.constant([1, 2], dtype=tf.int32)\naxis = tf.constant(1, dtype=tf.int32)\nnum_split = tf.constant(2, dtype=tf.int32)"
+  ]
+}

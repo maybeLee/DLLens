@@ -1,0 +1,25 @@
+{
+  "function_name": "tf.raw_ops.InTopKV2(predictions,targets,k,name=None)",
+  "inputs": [
+    "predictions",
+    "targets",
+    "k"
+  ],
+  "sample_inputs": [
+    "predictions = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], dtype=tf.float32)\ntargets = tf.constant([2, 1], dtype=tf.int32)\nk = tf.constant(2, dtype=tf.int32)",
+    "predictions = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], dtype=tf.float32)\ntargets = tf.constant([2, 1], dtype=tf.int32)\nk = tf.constant(np.random.randint(-50, 50, ()), dtype='int32')",
+    "predictions = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], dtype=tf.float32)\nk = tf.constant(2, dtype=tf.int32)\ntargets = tf.constant(np.random.randint(-50, 50, (2)), dtype='int32')",
+    "targets = tf.constant([2, 1], dtype=tf.int32)\nk = tf.constant(2, dtype=tf.int32)\npredictions = tf.constant(np.random.randn(2,1), dtype='float32')",
+    "targets = tf.constant([2, 1], dtype=tf.int32)\nk = tf.constant(2, dtype=tf.int32)\npredictions = tf.constant(np.random.randn(2,3), dtype='float32')",
+    "targets = tf.constant([2, 1], dtype=tf.int32)\nk = tf.constant(2, dtype=tf.int32)\npredictions = tf.constant(np.random.randn(2,5), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(predictions,targets,k):\n  return tf.raw_ops.InTopKV2(predictions=predictions,targets=targets,k=k)",
+    "pytorch": "def pytorch_call(predictions, targets, k):\n    k_value = k.item()\n    num_classes = predictions.size(1)\n    if k_value <= 0 or k_value > num_classes:\n        return torch.tensor([False] * predictions.size(0), dtype=torch.bool)\n    (topk_values, topk_indices) = torch.topk(predictions, k_value, dim=1)\n    targets_expanded = targets.unsqueeze(1)\n    in_top_k = (topk_indices == targets_expanded).any(dim=1)\n    return in_top_k"
+  },
+  "llm_inputs": [
+    "predictions = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], dtype=tf.float32)\ntargets = tf.constant([2, 1], dtype=tf.int32)\nk = tf.constant(2, dtype=tf.int32)",
+    "predictions = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], dtype=tf.float32)\ntargets = tf.constant([2, 1], dtype=tf.int32)\nk = tf.constant(2, dtype=tf.int32)",
+    "predictions = tf.constant([[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]], dtype=tf.float32)\ntargets = tf.constant([2, 1], dtype=tf.int32)\nk = tf.constant(2, dtype=tf.int32)"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.linalg.set_diag(input,diagonal,name='set_diag',k=0,align='RIGHT_LEFT')",
+  "inputs": [
+    "input",
+    "diagonal",
+    "name",
+    "k",
+    "align"
+  ],
+  "sample_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ndiagonal = tf.constant([5, 6], dtype=tf.float32)\nname = 'set_diag'\nk = 0\nalign = 'RIGHT_LEFT'",
+    "diagonal = tf.constant([5, 6], dtype=tf.float32)\nname = 'set_diag'\nk = 0\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(2,5), dtype='float32')",
+    "diagonal = tf.constant([5, 6], dtype=tf.float32)\nname = 'set_diag'\nk = 0\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(2,2), dtype='float32')",
+    "diagonal = tf.constant([5, 6], dtype=tf.float32)\nname = 'set_diag'\nk = 0\nalign = 'RIGHT_LEFT'\ninput = tf.constant(np.random.randn(5,2), dtype='float32')",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\nname = 'set_diag'\nk = 0\nalign = 'RIGHT_LEFT'\ndiagonal = tf.constant(np.random.randn(2), dtype='float32')",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ndiagonal = tf.constant([5, 6], dtype=tf.float32)\nname = 'set_diag'\nalign = 'RIGHT_LEFT'\nk = 0"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(input,diagonal,name='set_diag',k=0,align='RIGHT_LEFT'):\n  return tf.linalg.set_diag(input,diagonal,name,k,align)",
+    "pytorch": "def pytorch_call(input, diagonal, name='set_diag', k=0, align='RIGHT_LEFT'):\n    output = input.clone()\n    (rows, cols) = input.shape\n    if k >= 0:\n        for i in range(min(rows, cols - k)):\n            output[i, i + k] = diagonal[i]\n    else:\n        for i in range(min(rows + k, cols)):\n            output[i - k, i] = diagonal[i]\n    return output"
+  },
+  "llm_inputs": [
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ndiagonal = tf.constant([5, 6], dtype=tf.float32)\nname = 'set_diag'\nk = 0\nalign = 'RIGHT_LEFT'",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ndiagonal = tf.constant([5, 6], dtype=tf.float32)\nname = 'set_diag'\nk = 0\nalign = 'RIGHT_LEFT'",
+    "input = tf.constant([[1, 2], [3, 4]], dtype=tf.float32)\ndiagonal = tf.constant([5, 6], dtype=tf.float32)\nname = 'set_diag'\nk = 0\nalign = 'RIGHT_LEFT'"
+  ]
+}

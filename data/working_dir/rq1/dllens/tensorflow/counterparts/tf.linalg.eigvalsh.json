@@ -1,0 +1,23 @@
+{
+  "function_name": "tf.linalg.eigvalsh(tensor,name=None)",
+  "inputs": [
+    "tensor"
+  ],
+  "sample_inputs": [
+    "tensor = tf.constant([[4.0, 1.0, 0.0], [1.0, 3.0, 0.0], [0.0, 0.0, 2.0]])",
+    "tensor = tf.constant([[1.0, 2.0, 3.0], [2.0, 5.0, 6.0], [3.0, 6.0, 9.0]])",
+    "tensor = tf.constant(np.random.randn(3,3), dtype='float64')",
+    "tensor = tf.constant(np.random.randn(3,3,1,1,1), dtype='float32')",
+    "tensor = tf.constant(np.random.randn(3,3,1,1), dtype='float32')",
+    "tensor = tf.constant(np.random.randn(3,3), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(tensor):\n  return tf.linalg.eigvalsh(tensor)",
+    "pytorch": "def pytorch_call(tensor):\n    return torch.linalg.eigvalsh(tensor)"
+  },
+  "llm_inputs": [
+    "tensor = tf.constant([[4.0, 1.0, 0.0], [1.0, 3.0, 0.0], [0.0, 0.0, 2.0]])",
+    "tensor = tf.constant([[1.0, 2.0, 3.0], [2.0, 5.0, 6.0], [3.0, 6.0, 9.0]])",
+    "tensor = tf.constant([[1.0, 2.0, 3.0], [2.0, 5.0, 6.0], [3.0, 6.0, 9.0]])"
+  ]
+}

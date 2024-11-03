@@ -1,0 +1,27 @@
+{
+  "function_name": "tf.math.ndtri(x,name=None)",
+  "inputs": [
+    "x"
+  ],
+  "sample_inputs": [
+    "x = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)",
+    "x = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5])",
+    "x = tf.constant(np.random.randn(5,1,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='float64')",
+    "x = tf.constant(np.random.randn(), dtype='float32')",
+    "x = tf.constant(np.random.randn(5), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1,1,1), dtype='float32')",
+    "x = tf.constant(np.random.randn(1), dtype='float32')",
+    "x = tf.constant(np.random.randn(5,1,1), dtype='float32')"
+  ],
+  "counterparts": {
+    "tensorflow": "def tensorflow_call(x):\n  return tf.math.ndtri(x)",
+    "pytorch": "def pytorch_call(x):\n    x_clipped = torch.clamp(x, 0.0, 1.0)\n    normal_dist = torch.distributions.Normal(0, 1)\n    return normal_dist.icdf(x_clipped)"
+  },
+  "llm_inputs": [
+    "x = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5], dtype=tf.float32)",
+    "x = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5])",
+    "x = tf.constant([0.1, 0.2, 0.3, 0.4, 0.5])"
+  ]
+}

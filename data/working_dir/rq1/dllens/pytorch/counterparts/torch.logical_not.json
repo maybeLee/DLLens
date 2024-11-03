@@ -1,0 +1,18 @@
+{
+  "function_name": "torch.logical_not(input, *, out=None)",
+  "inputs": [
+    "input"
+  ],
+  "sample_inputs": [
+    "input = torch.tensor([[True, False], [False, True]])"
+  ],
+  "counterparts": {
+    "pytorch": "def pytorch_call(input):\n  return torch.logical_not(input)",
+    "tensorflow": "def tensorflow_call(input):\n    return tf.logical_not(input)"
+  },
+  "llm_inputs": [
+    "input = torch.tensor([[True, False], [False, True]])",
+    "input = torch.tensor([[True, False], [False, True]])",
+    "input = torch.tensor([[True, False], [False, True]])"
+  ]
+}
