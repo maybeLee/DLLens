@@ -1,6 +1,8 @@
 # Enhancing Differential Testing With LLMs For Testing Deep Learning Libraries
 
-This is the artifact of our submission, "Enhancing Differential Testing With LLMs For Testing Deep Learning Libraries".
+This is the artifact of our TOSEM paper, "Enhancing Differential Testing With LLMs For Testing Deep Learning Libraries". 
+Currently, this repository only contains the experiment results and some important code files.
+We are still doing the code cleaning and plan to open source the rest of DLLens before the end of June 2025.
 
 ## Repository Structure
 
