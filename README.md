@@ -2,7 +2,7 @@
 
 This is the artifact of our TOSEM paper, "Enhancing Differential Testing With LLMs For Testing Deep Learning Libraries". 
 Currently, this repository only contains the experiment results and some important code files.
-We are still doing the code cleaning and plan to open source the rest of out tool (DLLens) before the end of June 2025.
+We are still doing the code cleaning.
 
 ## Repository Structure
 
